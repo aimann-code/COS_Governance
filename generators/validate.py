@@ -74,6 +74,49 @@ def main():
     transcript = read("discussions/user-excerpts.json")
     require(transcript["complete_provider_export"] is False, "Do not claim complete transcript")
     require(len(transcript["excerpts"]) == 21, "Discussion excerpt count mismatch")
+    source_map = read("architecture/source-map.yaml")
+    require(manifest["source_model"]["decision"] == "SOURCE-MAP-01",
+            "Missing source-model approval")
+    groups = source_map["groups"]
+    expected_groups = {"standards", "architecture", "features", "decisions", "templates", "ownership"}
+    require(len(groups) == 6 and {g["ref"] for g in groups} == expected_groups,
+            "Expected six distinct maintained groups")
+    require(set(source_map["common_fields"]) == {"version", "source_ref", "change_history"},
+            "Missing provenance fields")
+    for group in groups:
+        require(group["fields"] and group["outputs"] and group["owner"],
+                "Missing maintained group contract")
+        for path in group["files"]:
+            require((ROOT / path).is_file(), "Missing maintained source " + path)
+    baseline = read("standards/baseline.yaml")
+    require(len(baseline["catalogue"]) == 23, "Lost standard during consolidation")
+    require({r["standard_ref"] for r in baseline["catalogue"]} ==
+            {r["Draft_Ref"] for r in standards["definitions"]},
+            "Baseline catalogue differs from source")
+    rule_refs = {r["Review Ref"] for r in standards["rules"]}
+    for standard in baseline["catalogue"]:
+        require((ROOT / standard["rule_source"]).is_file(), "Missing canonical rule source")
+        for rule_ref in standard["rule_refs"]:
+            require(rule_ref == "D67" or rule_ref in rule_refs,
+                    "Unknown consolidated rule reference: " + rule_ref)
+    decisions = read("decisions/decisions.yaml")
+    reconciliation = decisions["reconciliation"]
+    require(len({r["ref"] for r in reconciliation}) == len(reconciliation),
+            "Duplicate reconciliation reference")
+    require(set(baseline["reconciliation_refs"]) == {r["ref"] for r in reconciliation},
+            "Unlinked reconciliation item")
+    require(any(r["ref"] == "SOURCE-MAP-01" for r in decisions["discussion_directions"]),
+            "Missing approved source-model decision")
+    ownership = read("architecture/ownership.yaml")["mappings"]
+    require(len({r["ref"] for r in ownership}) == len(ownership), "Duplicate ownership mapping")
+    feature_refs = {r["ref"] for r in features}
+    for row in ownership:
+        require(set(row["feature_refs"]) <= feature_refs, "Unknown ownership feature link")
+        if row["code_location"] is not None:
+            require(row["repository"] and re.fullmatch("[0-9a-f]{40}", row["ref_commit"]),
+                    "Implemented mapping needs repository and exact commit")
+    print("PASS: six approved maintained groups, 23 standards, linked ownership and "
+          "10 reconciliation items. Individual pending rule approval is unchanged.")
     print("PASS: 44 tabs, 1695 historical rows, 52 terms, 12 frozen rules, 23 standards, "
           "18 design sections, 5 source texts and 21 selected discussion excerpts.")
     print("Scope: content consistency only. No authority cutover, code extraction, production "

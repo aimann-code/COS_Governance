@@ -13,3 +13,6 @@ Do not put secrets, live employee data or credentials in this repository. Do not
 Keep definitions once. Code/classes/methods/repos come from the application repository; use generated technical catalogues. Any field/screen business semantics not represented in code need explicit transfer before retiring a source.
 
 Run python generators/validate.py and python generators/render.py where execution is authorized. Report actual outcomes. This draft has no complete native-doc publisher or application code generator.
+
+## Approved maintained-source model — 23-Oct-2026
+User approval SOURCE-MAP-01 establishes six logical groups in architecture/source-map.yaml. Use architecture/ownership.yaml for linked ownership and standards/baseline.yaml for the consolidated review profile. Application-specific features/decisions remain with the application owner after reviewed transfer. Preserve business field meanings; do not replace them with schema extraction. Do not treat this approval as authority cutover, PR merge, source deletion or approval of all pending standards.

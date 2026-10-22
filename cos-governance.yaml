@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.0",
@@ -15,7 +15,10 @@
     "migration": "migration/register-map.yaml",
     "discussion": "discussions/README.md",
     "comparison": "comparisons/design-comparison.md",
-    "flow": "docs/flow.md"
+    "flow": "docs/flow.md",
+    "source_map": "architecture/source-map.yaml",
+    "ownership": "architecture/ownership.yaml",
+    "standards_baseline": "standards/baseline.yaml"
   },
   "authority": {
     "current": "Existing approved source records and user instructions remain authoritative during migration",
@@ -37,5 +40,11 @@
     "No global publication or automatic document/code generator claimed",
     "Git history does not replace database/document recovery rules"
   ],
-  "governance_format": "YAML files use the JSON-compatible YAML 1.2 subset; checked with Python standard json parser"
+  "governance_format": "YAML files use the JSON-compatible YAML 1.2 subset; checked with Python standard json parser",
+  "source_model": {
+    "version": "0.1.0",
+    "status": "approved by user; source migration/cutover pending",
+    "file": "architecture/source-map.yaml",
+    "decision": "SOURCE-MAP-01"
+  }
 }

@@ -908,6 +908,25 @@
       "status": "authorized by user ok do it; created",
       "recorded_on": "23-Oct-2026",
       "date_note": "Import recording date; not an invented original message timestamp"
+    },
+    {
+      "ref": "SOURCE-MAP-01",
+      "decision": "Approve six maintained groups, their required fields and generated outputs; keep application-specific features/decisions/implementation in their owning repository and governed definitions/templates centrally.",
+      "status": "approved source model; implementation/migration pending where stated",
+      "recorded_on": "23-Oct-2026",
+      "source": "User: approved goahead; preceding source-of-truth proposal",
+      "affected_targets": [
+        "architecture/source-map.yaml",
+        "architecture/ownership.yaml",
+        "standards/baseline.yaml",
+        "manifest",
+        "generators"
+      ],
+      "non_effects": [
+        "No blanket approval of pending standards",
+        "No GitHub authority cutover",
+        "No Drive deletion or application rename"
+      ]
     }
   ],
   "pending": [
@@ -1140,5 +1159,97 @@
       "Recorded_At": "22-Oct-2026"
     }
   ],
-  "note": "References remain temporary/source references, not newly allocated permanent COS IDs."
+  "note": "References remain temporary/source references, not newly allocated permanent COS IDs.",
+  "reconciliation": [
+    {
+      "ref": "RECON-01",
+      "topic": "Prefix and casing",
+      "difference": "Earlier mandatory COS prefixes versus frozen selective-prefix naming",
+      "current": "Resolved by D67 / Naming 0.2.0",
+      "next": "Use frozen naming definitions; preserve old record bodies",
+      "status": "resolved",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-02",
+      "topic": "Register authority",
+      "difference": "Earlier editable workbook versus approved repository source model",
+      "current": "Source model approved; cutover not completed",
+      "next": "Verify semantic migration and explicitly adopt before retiring workbook authority",
+      "status": "pending cutover",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-03",
+      "topic": "Native backup location",
+      "difference": "Project Backups versus Ashish central 03_Backup",
+      "current": "User selected Ashish backup standard",
+      "next": "Use Ashish central destination for future authorized native backups; historical copies stay traceable",
+      "status": "resolved direction; rollout pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-04",
+      "topic": "Backup filename time/collision",
+      "difference": "Original timestamp pattern versus later unresolved time/collision clarification",
+      "current": "Date display direction retained; exact time/collision unresolved",
+      "next": "Select one exact convention explicitly; do not invent it",
+      "status": "pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-05",
+      "topic": "Recovery scope",
+      "difference": "Git revision history versus native-document/database backups",
+      "current": "Repository history does not replace recovery policy",
+      "next": "Keep artifact-specific recovery and verify restore separately",
+      "status": "resolved scope; operational targets pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-06",
+      "topic": "Technology versus standard",
+      "difference": "Proposed TypeScript backend versus Java/Spring implementation",
+      "current": "User selects Ritesh implementation and Ashish naming",
+      "next": "Do not rewrite historic proposal; align language-specific implementation names separately",
+      "status": "resolved direction; rename work pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-07",
+      "topic": "API contract authority",
+      "difference": "Code-derived routes/DTOs versus intended design contracts",
+      "current": "Authoritative contract strategy not selected",
+      "next": "Choose code-first with checked outputs or specification-first and define compatibility",
+      "status": "pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-08",
+      "topic": "Schema versus semantic data",
+      "difference": "Typed field design versus encrypted aggregate implementation",
+      "current": "Actual schema and intended meaning must remain distinguishable",
+      "next": "Use migrations for physical structure and transfer field meanings without loss",
+      "status": "pending reconciliation",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-09",
+      "topic": "Employee identity policy",
+      "difference": "Manual/Auto/composite identity requirement versus current registration behaviour",
+      "current": "Business choice not resolved by a naming/source-map approval",
+      "next": "Resolve in Employee Management feature review",
+      "status": "pending domain decision",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    },
+    {
+      "ref": "RECON-10",
+      "topic": "Development storage scope",
+      "difference": "Shared-drive/local-file restrictions versus approved GitHub repository and remote checks",
+      "current": "GitHub work specifically authorized; unrelated restrictions not waived",
+      "next": "Keep governed native outputs in approved storage; obtain scope decisions for other execution/storage",
+      "status": "pending general policy; current repo authorized",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+    }
+  ]
 }

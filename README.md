@@ -1,8 +1,9 @@
 # COS_Governance
 
-Private COS governance migration draft, recorded 23-Oct-2026. Start at [cos-governance.yaml](cos-governance.yaml).
+Private COS governance migration draft 0.2.0, recorded 23-Oct-2026. Start at [cos-governance.yaml](cos-governance.yaml).
 
 ## Current state
+- The six-group source model is approved: [source map](architecture/source-map.yaml). Migration and authority cutover remain pending.
 - Frozen Naming Standard **0.2.0**, source decision **D67**: 32 code terms, 20 retained terms, 12 rules.
 - Existing workbook's **44 tabs / 1,695 populated rows** captured as readable historical values.
 - Five source documents preserved as readable text snapshots.
@@ -19,12 +20,17 @@ Private COS governance migration draft, recorded 23-Oct-2026. Start at [cos-gove
 | features/features.yaml | Requirement inventory and open design work |
 | decisions/decisions.yaml | Decisions, evidence references and pending questions |
 | templates/design.yaml | Autoinspire-adapted design output structure |
+| architecture/ownership.yaml | Ownership links to implementation and data authority |
+
+These files form six logical groups; the [consolidated standards profile](standards/baseline.yaml) references canonical rules without duplicating editable bodies.
 
 JSON-compatible YAML 1.2 is used so the initial validator needs only Python's standard library. Code inventories are to be extracted from application code; do not manually duplicate method/DTO/physical schema definitions here.
 
 ## Review and history
 - [Discussion coverage](discussions/README.md)
 - [Design comparison](comparisons/design-comparison.md)
+- [Source-model approval](discussions/source-map-approval.md)
+- [Consolidated standards profile](standards/baseline.yaml)
 - [Register migration map](migration/register-map.yaml)
 - [Source manifest](migration/source-manifest.json)
 - [Flow](docs/flow.md)
@@ -37,7 +43,7 @@ Source snapshots are immutable historical evidence, not competing editable live 
 python generators/validate.py
 python generators/render.py
 ```
-The renderer creates draft Markdown previews only. It is not a Java application generator or native Google Docs publication pipeline. Technical extraction, full semantic migration and cutover still need implementation/review.
+The renderer creates seven draft Markdown previews, including the approved source map and consolidated standards review. Individual pending rules remain pending. It is not a Java application generator or native Google Docs publication pipeline. Technical extraction, full semantic migration and cutover still need implementation/review.
 
 ## Changes
 Use a pull request; identify source instruction, before/after, reason, impacted consumers, approval state and actual checks. Frozen naming changes require an explicit decision. Keep permanent existing IDs, preserve framework/external names and use forward DB migrations. Git history complements, but does not replace, Ashish's native-document/database recovery rules.

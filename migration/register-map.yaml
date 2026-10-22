@@ -1,5 +1,5 @@
 {
-  "status": "proposed dispositions; original records preserved; deletion not performed",
+  "status": "approved maintain/generate source model; per-record semantic transfer and deletion/cutover pending",
   "registers": [
     {
       "name": "Readme",
@@ -280,5 +280,7 @@
     "No native Google Docs publication pipeline",
     "No complete provider chat export",
     "No global approval or release"
-  ]
+  ],
+  "source_map": "architecture/source-map.yaml",
+  "source_map_decision": "SOURCE-MAP-01"
 }

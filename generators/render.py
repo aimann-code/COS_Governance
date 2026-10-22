@@ -60,7 +60,26 @@ def main():
     (OUT / "register-map.md").write_text(body, encoding="utf-8")
     (OUT / "flow.md").write_text((ROOT / "docs/flow.md").read_text(encoding="utf-8"),
                                encoding="utf-8")
-    print("Generated 5 draft Markdown previews in .generated; no native publication.")
+    source_map = read("architecture/source-map.yaml")
+    body = title + "## Approved maintained sources\n\n" + source_map["status"] + "\n\n"
+    body += table(["Group", "Owner", "Fields", "Generated outputs"],
+                  [[r["name"], r["owner"], ", ".join(r["fields"]), ", ".join(r["outputs"])]
+                   for r in source_map["groups"]])
+    body += "\nCommon fields: " + ", ".join(source_map["common_fields"]) + ".\n"
+    body += "\nBusiness meanings and operational master records retain their owning authority.\n"
+    (OUT / "source-map.md").write_text(body, encoding="utf-8")
+    baseline = read("standards/baseline.yaml")
+    body = title + "## Consolidated standards review\n\n" + baseline["status"] + "\n\n"
+    body += table(["Standard", "Source version", "Canonical source", "Approval", "Rule references"],
+                  [[r["name"], r["source_version"], r["rule_source"], r["approval"],
+                    ", ".join(r["rule_refs"])] for r in baseline["catalogue"]])
+    conflicts = read("decisions/decisions.yaml")["reconciliation"]
+    body += "\n## Reconciliation\n\n"
+    body += table(["Ref", "Topic", "Difference", "Status", "Next action"],
+                  [[r[k] for k in ("ref", "topic", "difference", "status", "next")]
+                   for r in conflicts])
+    (OUT / "standards-review.md").write_text(body, encoding="utf-8")
+    print("Generated 7 draft Markdown previews in .generated; no native publication.")
 
 
 if __name__ == "__main__":
