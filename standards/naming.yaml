@@ -1,12 +1,12 @@
 {
   "standard": "Naming Standard",
-  "version": "0.2.0",
-  "status": "frozen by user; not published",
-  "decision_ref": "D67",
-  "approval_evidence": "User: ok freeze name standard",
+  "version": "0.2.1",
+  "status": "frozen base with explicit user-approved lowercase amendment; not published",
+  "decision_ref": "NAM-LOWER-01",
+  "approval_evidence": "User: SYS_EMP_ID & EMP_Reg make it lower case; user later: update git hub",
   "preserve": [
-    "SYS_EMP_ID",
-    "EMP_Reg"
+    "sys_emp_id",
+    "emp_reg"
   ],
   "rules": [
     {
@@ -53,9 +53,10 @@
     },
     {
       "ref": "NAM-FRZ-R08",
-      "rule": "Use UPPER_SNAKE_CASE constants/controlled codes and full readable frontend/document labels. Keep architecture-level suffix words out of frontend navigation.",
-      "status": "Frozen by user; not published",
-      "source_version": "0.2.0"
+      "rule": "Use UPPER_SNAKE_CASE constants/controlled codes except explicitly preserved tokens sys_emp_id and emp_reg. Use full readable frontend/document labels; omit architecture-level suffix words from frontend navigation.",
+      "status": "User-approved amendment to frozen naming; not published",
+      "source_version": "0.2.1",
+      "decision_ref": "NAM-LOWER-01"
     },
     {
       "ref": "NAM-FRZ-R09",
@@ -65,9 +66,10 @@
     },
     {
       "ref": "NAM-FRZ-R10",
-      "rule": "Preserve established identifiers and tokens including SYS_EMP_ID and EMP_Reg. Master names have no RPT suffix. Do not silently rename external headers or values.",
-      "status": "Frozen by user; not published",
-      "source_version": "0.2.0"
+      "rule": "Preserve the explicitly approved lowercase identifiers sys_emp_id and emp_reg. Master names have no RPT suffix. Preserve legacy spelling through explicit compatibility mappings; do not silently rename external headers or values.",
+      "status": "User-approved amendment to frozen naming; not published",
+      "source_version": "0.2.1",
+      "decision_ref": "NAM-LOWER-01"
     },
     {
       "ref": "NAM-FRZ-R11",
@@ -552,5 +554,29 @@
       "status": "Frozen by user"
     }
   ],
-  "change_policy": "Explicit decision and compatibility review; no automatic code/API/database renames"
+  "change_policy": "Explicit decision and compatibility review; no automatic code/API/database renames",
+  "base_decision_ref": "D67",
+  "aliases": [
+    {
+      "previous": "SYS_EMP_ID",
+      "current": "sys_emp_id",
+      "scope": "Business identifier spelling; existing contracts require compatibility migration"
+    },
+    {
+      "previous": "EMP_Reg",
+      "current": "emp_reg",
+      "scope": "Registration component code and current feature reference"
+    }
+  ],
+  "migration_status": "Governance names updated only; application code, external headers, API properties, database and encryption contexts not renamed.",
+  "change_history": [
+    {
+      "version": "0.2.1",
+      "previous_version": "0.2.0",
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-LOWER-01",
+      "summary": "Explicitly supersede the two uppercase preservation exceptions; other frozen terms and casing profiles unchanged.",
+      "historical_source": "migration/naming-v0.2.0.json"
+    }
+  ]
 }

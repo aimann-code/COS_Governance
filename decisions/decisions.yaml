@@ -987,6 +987,32 @@
       "canonical_source": "architecture/objects.yaml",
       "evidence": "discussions/hrms-mapping-23-Oct-2026.md",
       "limits": "Dashboard observations are candidate requirements. Contractor payment ownership, detailed policies and implementation checks remain pending."
+    },
+    {
+      "ref": "NAM-LOWER-01",
+      "decision": "Explicitly change SYS_EMP_ID to sys_emp_id and EMP_Reg to emp_reg; other naming rules/terms retained.",
+      "status": "User-selected and authorized for governance recording; implementation migration pending",
+      "recorded_on": "23-Oct-2026",
+      "source": "User make it lower case; latest update git hub",
+      "canonical_source": "standards/naming.yaml",
+      "historical_source": "migration/naming-v0.2.0.json"
+    },
+    {
+      "ref": "COMMON-REQ-01",
+      "decision": "Record consolidated common requirements for entity-configured uniqueness/fields, access groups/subscriptions, confirmed preferences/defaults, uploads/sync/email, reports/search and traceable configurable errors.",
+      "status": "User requirements/design directions recorded; detailed implementation pending",
+      "recorded_on": "23-Oct-2026",
+      "source": "Latest user update git hub following displayed consolidated requirements and refinements",
+      "canonical_source": "features/common.yaml",
+      "evidence": "discussions/common-requirements-23-Oct-2026.md",
+      "supersedes": "Earlier fixed employee uniqueness combination and earlier permission for single-field unique rules"
+    },
+    {
+      "ref": "EMP-DATA-01",
+      "decision": "Record proposed logical Employee Management data model, updated to current configurable uniqueness and lowercase identifiers.",
+      "status": "Proposed logical design recorded; no physical DB or DDL approval inferred",
+      "recorded_on": "23-Oct-2026",
+      "canonical_source": "architecture/emp-data-design.yaml"
     }
   ],
   "pending": [
@@ -1067,9 +1093,9 @@
       "Readable_ID": "",
       "Draft_Ref": "PENDING-DRAFT-7",
       "Pending_Item": "ID and uniqueness scope",
-      "Required_Decision_or_Work": "Confirm SYS_EMP_ID scheme, nationality/issuer normalisation and no-ID exceptions",
+      "Required_Decision_or_Work": "Confirm sys_emp_id scope, actual default key fields, normalization and migration exceptions without permitting keyless updates.",
       "Affected_Records": "Table_Register; identity rules",
-      "Current_State": "No new employee IDs issued",
+      "Current_State": "Old fixed identity combination superseded by COMMON-REQ-01. Entity-admin default combinations and Number meaning remain pending.",
       "Owner": "",
       "Status": "Pending",
       "Recorded_At": "21-Oct-2026"
@@ -1301,10 +1327,14 @@
       "ref": "RECON-09",
       "topic": "Employee identity policy",
       "difference": "Manual/Auto/composite identity requirement versus current registration behaviour",
-      "current": "Business choice not resolved by a naming/source-map approval",
-      "next": "Resolve in Employee Management feature review",
-      "status": "pending domain decision",
-      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+      "current": "Entity administrators choose versioned uniqueness with at least two populated fields; no update source bypasses complete-key matching. Candidate fields replace the historical fixed combination; actual per-entity defaults remain pending.",
+      "next": "Complete key configuration/defaults and identity scope, manual/auto ID behaviour and migration impact review.",
+      "status": "partially resolved direction; domain configuration/migration pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026",
+      "resolution_refs": [
+        "COMMON-REQ-01",
+        "NAM-LOWER-01"
+      ]
     },
     {
       "ref": "RECON-10",

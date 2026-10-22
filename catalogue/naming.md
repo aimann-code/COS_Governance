@@ -1,12 +1,12 @@
 # Naming and shortcodes
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
-Frozen Naming Standard **0.2.0**, source decision **D67**. COS prefixes are selective. Preserve SYS_EMP_ID and EMP_Reg. Existing application names have not been migrated.
+Frozen Naming Standard **0.2.1**, source decision **NAM-LOWER-01**. COS prefixes are selective. Current preserved tokens: sys_emp_id, emp_reg. Existing application names have not been migrated.
 
 | Reference | Rule | Status |
 | --- | --- | --- |
@@ -17,9 +17,9 @@ Frozen Naming Standard **0.2.0**, source decision **D67**. COS prefixes are sele
 | NAM-FRZ-R05 | Use PascalCase purpose/direction plus DTO suffix for transport types; shared envelopes omit a domain token and domain payloads include one. Internal commands remain distinct from transport DTOs. | Frozen by user; not published |
 | NAM-FRZ-R06 | Use kebab-case role-based TypeScript utility filenames and kebab-case React component filenames without a mandatory cos- prefix. | Frozen by user; not published |
 | NAM-FRZ-R07 | Use lower_snake_case schema, table and column identifiers. Employee-domain schema is emp rather than people. Scope/ownership still determines whether a table belongs in that schema. | Frozen by user; not published |
-| NAM-FRZ-R08 | Use UPPER_SNAKE_CASE constants/controlled codes and full readable frontend/document labels. Keep architecture-level suffix words out of frontend navigation. | Frozen by user; not published |
+| NAM-FRZ-R08 | Use UPPER_SNAKE_CASE constants/controlled codes except explicitly preserved tokens sys_emp_id and emp_reg. Use full readable frontend/document labels; omit architecture-level suffix words from frontend navigation. | User-approved amendment to frozen naming; not published |
 | NAM-FRZ-R09 | Within a namespace a shortcode has one meaning. reg means registration; use Register for a governed catalogue where needed. Do not use res for both response and resource. | Frozen by user; not published |
-| NAM-FRZ-R10 | Preserve established identifiers and tokens including SYS_EMP_ID and EMP_Reg. Master names have no RPT suffix. Do not silently rename external headers or values. | Frozen by user; not published |
+| NAM-FRZ-R10 | Preserve the explicitly approved lowercase identifiers sys_emp_id and emp_reg. Master names have no RPT suffix. Preserve legacy spelling through explicit compatibility mappings; do not silently rename external headers or values. | User-approved amendment to frozen naming; not published |
 | NAM-FRZ-R11 | Use resource-oriented URLs and clear unique camelCase operation IDs without a mandatory COS prefix. Preserve required framework/tool/third-party names and explicitly map exceptions. | Frozen by user; not published |
 | NAM-FRZ-R12 | Frozen naming changes require an explicit decision and impact mapping. Existing code, database columns, API properties/routes, encryption contexts and references are migrated only through reviewed compatibility handling; this freeze does not perform those changes. | Frozen by user; not published |
 

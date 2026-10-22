@@ -7,11 +7,11 @@
       "Draft_Ref": "STD-DRAFT-1",
       "Standard_Name": "Naming Standard",
       "Purpose": "Names, prefixes, abbreviations, aliases and source-file conventions",
-      "Version": "0.2.0",
-      "Catalogue_Direction": "Frozen by user for agreed naming scope",
-      "Rule_Completion": "12 frozen naming rules plus 32 code terms and 20 retained terms; unrelated proposals remain pending; migration not implemented",
+      "Version": "0.2.1",
+      "Catalogue_Direction": "Frozen naming with explicit user-approved lowercase amendment",
+      "Rule_Completion": "12 retained rules, with NAM-LOWER-01 amendments to two preservation exceptions; 52 terms unchanged; implementation migration pending",
       "Owner": "",
-      "Source": "User freeze instruction; 22-Oct-2026; D67 / C22. No permanent IDs allocated.",
+      "Source": "D67 base; NAM-LOWER-01 current user amendment recorded 23-Oct-2026",
       "canonical_file": "standards/naming.yaml"
     },
     {
@@ -8010,6 +8010,16 @@
       "Effective_To": "",
       "Supersedes": "0.1.1 naming convention scope",
       "Evidence": "D67 / C22; 12 frozen rules; Code_Shortcode. Does not approve unrelated historical proposals or publish a release."
+    },
+    {
+      "Standard_Ref": "STD-DRAFT-1",
+      "Version": "0.2.1",
+      "Approval_Status": "Explicit user-approved lowercase amendment",
+      "Publication_Status": "Not published",
+      "Effective_From": "",
+      "Effective_To": "",
+      "Supersedes": "0.2.0 only for current sys_emp_id/emp_reg preservation exceptions",
+      "Evidence": "NAM-LOWER-01; user update git hub"
     }
   ],
   "applicability": [
@@ -8361,5 +8371,5 @@
     }
   ],
   "exceptions": [],
-  "note": "Naming 0.2.0 is authoritative in its frozen scope via naming.yaml. Historical mandatory COS prefix rules remain superseded. Pending standards do not become approved through migration. Current approved scoped supplements DATE-TIME-01, BACKUP-TIME-01, API-PATH-01 and GITHUB-CONFIRM-01 override conflicting historical wording only within their explicit scopes. Frozen naming bodies remain unchanged."
+  "note": "Current naming authority is Naming 0.2.1 with explicit NAM-LOWER-01 amendment; 0.2.0 and old prefix proposals remain historical. Current scoped supplements and individual approvals remain separate from implementation/publication."
 }

@@ -49,7 +49,7 @@
     },
     {
       "Object ID": "",
-      "Object Short Code": "EMP_Reg",
+      "Object Short Code": "emp_reg",
       "Object Name": "Employee Registration",
       "Object Type": "Component",
       "Scope": "COS",
@@ -61,7 +61,8 @@
       "Owner": "",
       "Status": "Proposed component boundary; requirements/implementation verification pending",
       "Architecture Ref": "ARCH-DRAFT-4",
-      "Source Ref": "HRMS-MAP-01"
+      "Source Ref": "HRMS-MAP-01",
+      "Previous Object Short Code": "EMP_Reg"
     },
     {
       "Object ID": "",
@@ -649,13 +650,15 @@
       "Display_Name": "Employee Registration",
       "Object_Type": "Component",
       "Parent_Draft_Ref": "Employee Management",
-      "Short_Code": "EMP_Reg",
-      "Responsibility": "Configured employee creation, manual/auto ID behaviour, duplicate validation and custom fields; preserve SYS_EMP_ID. Existing implementation must be improved, reconciled and tested.",
+      "Short_Code": "emp_reg",
+      "Responsibility": "Configured employee creation, manual/auto ID behaviour, duplicate validation and custom fields; preserve sys_emp_id. Existing implementation must be improved, reconciled and tested.",
       "Status": "Proposed component boundary; requirements/implementation verification pending",
       "Source": "https://docs.google.com/document/d/1ALDYB1ZNpx3kKGfJmae-PFg01zs7YU3FDA1qRgNzl4o",
       "Source_Ref": "HRMS-MAP-01",
       "Approval_Status": "Approved to record as proposed",
-      "Implementation_Status": "Existing implementation baseline linked; required improvements and tests not verified by this update"
+      "Implementation_Status": "Existing implementation baseline linked; required improvements and tests not verified by this update",
+      "Previous_Short_Code": "EMP_Reg",
+      "Naming_Decision": "NAM-LOWER-01"
     },
     {
       "Record_UUID": "",
@@ -1253,7 +1256,14 @@
       "Detailed leave policy, statutory processing and final settlement requirements remain pending.",
       "Automatic roster reassignment rules and exact shared service ownership remain pending.",
       "Component-by-component current code gap review and acceptance testing remain pending.",
-      "New module/component shortcodes and permanent identities remain unallocated; preserve EMP_MGT as proposed and EMP_Reg as retained."
+      "New module/component shortcodes and permanent identities remain unallocated; preserve EMP_MGT as proposed and emp_reg as retained."
     ]
-  }
+  },
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-LOWER-01",
+      "summary": "Current registration component code is emp_reg; previous spelling retained in explicit mapping."
+    }
+  ]
 }

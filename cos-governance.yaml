@@ -1,9 +1,9 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
-  "naming_version": "0.2.0",
+  "naming_version": "0.2.1",
   "entry_points": {
     "standards": "standards/standards.yaml",
     "naming": "standards/naming.yaml",
@@ -19,7 +19,9 @@
     "source_map": "architecture/source-map.yaml",
     "ownership": "architecture/ownership.yaml",
     "standards_baseline": "standards/baseline.yaml",
-    "catalogue": "catalogue/README.md"
+    "catalogue": "catalogue/README.md",
+    "common_requirements": "features/common.yaml",
+    "employee_data_design": "architecture/emp-data-design.yaml"
   },
   "authority": {
     "current": "Existing approved source records and user instructions remain authoritative during migration",
@@ -43,7 +45,7 @@
   ],
   "governance_format": "YAML files use the JSON-compatible YAML 1.2 subset; checked with Python standard json parser",
   "source_model": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "approved by user; source migration/cutover pending",
     "file": "architecture/source-map.yaml",
     "decision": "SOURCE-MAP-01"
@@ -53,11 +55,12 @@
     "generator": "generators/catalogue.mjs",
     "command": "node generators/build-catalogue.mjs --write",
     "check": "node generators/build-catalogue.mjs --check",
-    "scope": "23 standards, 38 architecture entries, 40 feature records; five proposed HRMS modules and 28 components; not a complete COS inventory",
+    "scope": "23 standards, 38 architecture entries, 52 feature inventory entries; 74 common requirements and proposed logical employee data design; not full COS inventory",
     "expected_counts": {
       "standards": 23,
       "architecture": 38,
-      "features": 40
+      "features": 52,
+      "common_requirements": 74
     }
   },
   "change_history": [
@@ -85,6 +88,19 @@
       ],
       "approval": "User yes to recording the proposed HRMS mapping",
       "limits": "Internal draft revision; no blanket requirements approval, code migration, PR merge or publication."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.2",
+      "draft_version": "0.3.3",
+      "summary": "Record shared requirements and logical employee DB proposal; apply explicit lowercase naming amendment; regenerate catalogue.",
+      "decision_refs": [
+        "NAM-LOWER-01",
+        "COMMON-REQ-01",
+        "EMP-DATA-01"
+      ],
+      "approval": "User update git hub",
+      "limits": "No app code, DB, API contract migration, merge, publication or authority cutover. Subsequent new design discussion requires its own update approval."
     }
   ]
 }

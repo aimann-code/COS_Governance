@@ -1,15 +1,16 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
     "source": "standards/naming.yaml",
-    "version": "0.2.0",
-    "decision": "D67"
+    "version": "0.2.1",
+    "decision": "NAM-LOWER-01",
+    "base_decision": "D67"
   },
   "source_priority": [
     "Explicit current user decisions within their scope",
-    "Frozen naming 0.2.0 for revised naming scope",
+    "Frozen Naming 0.2.1 with explicit NAM-LOWER-01 amendment",
     "Ashish COS governing controls with their recorded statuses",
     "Pending source rules retained as proposals",
     "Implementation supplies evidence; Autoinspire supplies presentation only"
@@ -18,13 +19,14 @@
     {
       "standard_ref": "STD-DRAFT-1",
       "name": "Naming Standard",
-      "source_version": "0.2.0",
+      "source_version": "0.2.1",
       "rule_source": "standards/naming.yaml",
       "rule_refs": [
-        "D67"
+        "D67",
+        "NAM-LOWER-01"
       ],
-      "approval": "Frozen for agreed scope; not published",
-      "completion": "12 frozen naming rules plus 32 code terms and 20 retained terms; unrelated proposals remain pending; migration not implemented"
+      "approval": "Frozen base and explicit user-approved lowercase amendment; not published",
+      "completion": "12 retained rules, with NAM-LOWER-01 amendments to two preservation exceptions; 52 terms unchanged; implementation migration pending"
     },
     {
       "standard_ref": "STD-DRAFT-2",
@@ -320,9 +322,10 @@
     {
       "topic": "Shortcode naming",
       "source_refs": [
-        "D67"
+        "D67",
+        "NAM-LOWER-01"
       ],
-      "disposition": "Frozen selective COS use and controlled terms; old mandatory prefix patterns superseded"
+      "disposition": "Selective COS use and controlled terms retained; lowercase sys_emp_id/emp_reg explicitly supersede previous uppercase exceptions."
     },
     {
       "topic": "Generated technical views",
@@ -382,6 +385,18 @@
     "No major/minor/patch scheme silently approved",
     "No API strategy or domain identity decision silently resolved",
     "No blank permanent IDs allocated",
-    "No frozen naming content changed"
+    "Naming change is limited to explicit NAM-LOWER-01 amendment; historical snapshot retained; no application migration."
+  ],
+  "requirement_profiles": [
+    {
+      "source": "features/common.yaml",
+      "ref": "COMMON-REQ-01",
+      "scope": "Shared cross-suite functional requirements; implementation pending"
+    },
+    {
+      "source": "architecture/emp-data-design.yaml",
+      "ref": "EMP-DATA-01",
+      "scope": "Proposed logical employee data design; physical schema pending"
+    }
   ]
 }

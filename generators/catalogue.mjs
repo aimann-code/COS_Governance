@@ -47,13 +47,15 @@ export function buildCatalogue(src) {
       ["[Features](features.md)",f.length+" requirements/features and unresolved acceptance criteria"],
       ["[Design structure](design.md)",t.sections.length+" required design sections; scope and completion limits"],
       ["[Implementation links](implementation.md)","Pinned ownership mappings to application code; partial inventory"],
-      ["[Decisions](decisions.md)","Recorded directions, source decisions and reconciliation items"]
+      ["[Decisions](decisions.md)","Recorded directions, source decisions and reconciliation items"],
+      ["[Common requirements](common-requirements.md)","Cross-suite configurable features, controls and open decisions"],
+      ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"]
     ])+
     "\n## Browse the known HRMS hierarchy\n\n"+
     a.filter(x=>["Suite","Engine","Module","Component"].includes(x.Object_Type)).map(r=>"- "+archLink(r)+" — "+r.Object_Type+"; "+r.Status).join("\n")+
     "\n\n## Current limits\n\nThis catalogue covers the imported scope, not every possible COS suite or engine. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.\n\n[Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md)\n";
   out["catalogue/standards.md"]=header("Standards")+
-    "Naming 0.2.0 is frozen for its agreed scope. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.\n\n"+
+    "Naming "+n.version+" retains its frozen base and explicit amendment. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.\n\n"+
     table(["Standard","Source version","Approval / completion"],s.definitions.map(r=>[stdLink(r),r.Version,r.Rule_Completion]))+
     "\nAliases: Coding Standard → Development Standard; API Standard → API / Integration Standard.\n";
   for(const st of s.definitions) {
@@ -72,7 +74,7 @@ export function buildCatalogue(src) {
     out["catalogue/"+path.std(st)]=body;
   }
   out["catalogue/naming.md"]=header("Naming and shortcodes")+
-    "Frozen Naming Standard **"+n.version+"**, source decision **"+n.decision_ref+"**. COS prefixes are selective. Preserve SYS_EMP_ID and EMP_Reg. Existing application names have not been migrated.\n\n"+
+    "Frozen Naming Standard **"+n.version+"**, source decision **"+n.decision_ref+"**. COS prefixes are selective. Current preserved tokens: "+n.preserve.join(", ")+". Existing application names have not been migrated.\n\n"+
     table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+
     "\n## Code terms\n\n"+table(["Term","Code","Meaning","Example"],n.terms.map(r=>[r.term,r.shortcode,r.meaning,r.example]))+
     "\n[Maintained naming source](../standards/naming.yaml)\n\n## Current scoped supplements\n\nThe approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/std-draft-11.md) and [URL Standard](standards/std-draft-23.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.\n";
@@ -115,6 +117,11 @@ export function buildCatalogue(src) {
       ["Feature ref",fe.ref],["Owner",ownerText(fe)],["Requirement/design state",fe.status],["Behaviour",fe.behaviour],["Architecture responsibility",a.find(x=>x.Draft_Ref===fe.architecture_ref)?.Responsibility||"Not mapped"],["Open decisions/gaps",fe.open],["Acceptance criteria",fe.acceptance_criteria_status]
     ])+"\n## Architecture links\n\n"+(matches.length?matches.map(x=>"- "+archLink(x,"../")).join("\n")+"\n":"Placement is unresolved; no hierarchy invented.\n");
     body+="\n## Implementation evidence\n\n"+(maps.length?table(["Source","Architecture owner","State"],maps.map(x=>[codeLink(x,x.ref),x.architecture_owner||"Unresolved",x.implementation_status])):"No linked implementation mapping in this partial inventory. Detailed code extraction remains future work.\n");
+    if(fe.requirement_group_ref && src.common) {
+      const group=src.common.groups.find(g=>g.ref===fe.requirement_group_ref);
+      if(group)body+="\n## Common requirements\n\n"+table(["Ref","Requirement","Status"],group.requirements.map(r=>[r.ref,r.text,r.status]))+
+        "\n[All common requirements](../common-requirements.md)\n";
+    }
     body+="\n## Design and standards\n\n[Design sections](../design.md) · [Naming](../naming.md) · [Standards](../standards.md) · [Decisions](../decisions.md)\n\nMissing screens, DTO schemas, rules and acceptance criteria are not fabricated by the catalogue.\n";
     out["catalogue/"+path.feat(fe)]=body;
   }
@@ -132,5 +139,24 @@ export function buildCatalogue(src) {
     "\n## Reconciliation\n\n"+table(["Ref","Topic","Difference","Status","Next"],(d.reconciliation||[]).map(r=>[r.ref,r.topic,r.difference,r.status,r.next]))+
     "\n## Preserved source decisions\n\n"+table(["Ref","Topic","Decision","Approval","Implementation"],d.source_decisions.map(r=>[r["Review Ref"],r.Topic,r.Decision,r["Approval Status"],r["Implementation Status"]]))+
     "\n[Decision source](../decisions/decisions.yaml) · [Discussion archive](../discussions/README.md)\n";
+  if(src.common) {
+    const c=src.common;
+    let body=header("Shared requirements across suites and modules")+c.status+"\n\n"+c.scope+"\n\n";
+    for(const g of c.groups)body+="## "+g.name+"\n\n"+table(["Reference","Requirement","State"],g.requirements.map(r=>[r.ref,r.text,r.status]))+"\n";
+    body+="## Pending decisions\n\n"+c.pending.map(x=>"- "+x).join("\n")+"\n\n"+
+      "[Canonical requirements](../features/common.yaml) · [Approval and source evidence](../"+c.source_evidence+")\n";
+    out["catalogue/common-requirements.md"]=body;
+  }
+  if(src.employeeData) {
+    const e=src.employeeData;
+    let body=header("Employee Management logical database design")+e.status+"\n\n"+
+      table(["Property","Value"],[["Target schema",e.target_schema],["Current schema",e.current_schema],["Common controls","[Shared requirements](common-requirements.md)"]])+
+      "\n## Principles\n\n"+e.principles.map(x=>"- "+x).join("\n")+"\n\n"+
+      table(["Proposed table","Purpose","Indicative fields","Status"],e.tables.map(r=>[r.name,r.purpose,r.fields,r.status]));
+    body+="\n## Relationships\n\n\`\`\`mermaid\nerDiagram\n"+e.relationships.map(r=>"    "+r.parent+" ||--o{ "+r.child+" : has").join("\n")+"\n\`\`\`\n";
+    body+="\n## Shared logical records\n\n"+e.shared_records.map(x=>"- "+x).join("\n")+"\n\n## Pending design work\n\n"+e.pending.map(x=>"- "+x).join("\n")+"\n\n"+
+      "[Canonical logical design](../architecture/emp-data-design.yaml) · [Evidence](../"+e.source_evidence+")\n";
+    out["catalogue/employee-data-design.md"]=body;
+  }
   return out;
 }

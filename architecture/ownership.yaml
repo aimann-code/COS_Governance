@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "initial mapping links; not an exhaustive technical inventory",
   "reference_policy": "Artifact refs below are local mapping references; architecture display refs do not allocate permanent COS IDs.",
   "mappings": [
@@ -7,7 +7,7 @@
       "ref": "emp-onboarding-service",
       "architecture_owner": "Employee Management",
       "feature_refs": [
-        "EMP_Reg",
+        "emp_reg",
         "EMP_Update"
       ],
       "repository": "aimann-code/EMPRegister",
@@ -22,7 +22,7 @@
       "ref": "emp-onboarding-contracts",
       "architecture_owner": "Employee Management",
       "feature_refs": [
-        "EMP_Reg",
+        "emp_reg",
         "EMP_Dtl",
         "EMP_Update"
       ],
@@ -37,7 +37,7 @@
       "ref": "emp-physical-schema",
       "architecture_owner": "Employee Management",
       "feature_refs": [
-        "EMP_Reg",
+        "emp_reg",
         "EMP_Update",
         "Change_Hist"
       ],
@@ -61,6 +61,13 @@
       "dataset_authority": "Domain-specific masters retain their own authoritative writers",
       "implementation_status": "Planned shared capability; owner placement unresolved",
       "note": "Do not present planned RegService/RegHandler as existing code"
+    }
+  ],
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-LOWER-01",
+      "summary": "Governance feature references changed to emp_reg; pinned implementation evidence unchanged."
     }
   ]
 }

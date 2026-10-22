@@ -1,8 +1,8 @@
 {
-  "status": "Transitional requirement inventory expanded by proposed HRMS mapping; not completed BRD; no implementation inference",
+  "status": "Transitional domain inventory plus cross-suite requirement links; no implementation inferred",
   "features": [
     {
-      "ref": "EMP_Reg",
+      "ref": "emp_reg",
       "name": "Employee Registration",
       "owner": "HRMS / Employee Management",
       "behaviour": "HR direct registration; current implementation has drafts and direct registration",
@@ -10,7 +10,9 @@
       "status": "draft requirement inventory",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
       "architecture_ref": "ARCH-DRAFT-4",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "previous_ref": "EMP_Reg",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "EMP_Dtl",
@@ -40,7 +42,8 @@
       "behaviour": "Approved custom fields, values, permissions and configuration change history",
       "open": "Administrator review of configuration changes",
       "status": "source requirement",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "Reg_Shared",
@@ -49,7 +52,8 @@
       "behaviour": "Reuse drafts, form rendering, validation infrastructure, transport, history, import/sync and approval facilities",
       "open": "Domain-specific payloads, uniqueness, authority and repositories",
       "status": "user direction; detailed design pending",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "Reg_Bulk",
@@ -58,7 +62,8 @@
       "behaviour": "Validate, map, preview, submit and report row outcomes",
       "open": "Expanded-profile bulk import not completed in reviewed implementation",
       "status": "required capability; implementation gap",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "Sheet_Sync",
@@ -67,7 +72,8 @@
       "behaviour": "Authorized source, mapping, preview and defined source/conflict policy",
       "open": "Live integration not configured; no schedule activated",
       "status": "required capability; implementation gap",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "Change_Hist",
@@ -76,7 +82,8 @@
       "behaviour": "Separate configuration changes, field-definition changes, data-value history and security audit",
       "open": "Sensitive history protected; transaction and retention policies explicit",
       "status": "user direction",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "common_requirements_source": "features/common.yaml"
     },
     {
       "ref": "Payroll",
@@ -418,6 +425,126 @@
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-38",
       "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-1",
+      "name": "Configurable uniqueness",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-UNIQUE.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-UNIQUE"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-2",
+      "name": "Entity field and form control",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-FIELD.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-FIELD"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-3",
+      "name": "Access groups",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-ACCESS.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-ACCESS"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-4",
+      "name": "Entity subscriptions",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-SUBSCRIPTION.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-SUBSCRIPTION"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-5",
+      "name": "Preferences and defaults",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-PREF.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-PREF"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-6",
+      "name": "Bulk upload and templates",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-IMPORT.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-IMPORT"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-7",
+      "name": "Google Sheet input and output",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-SHEET.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-SHEET"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-8",
+      "name": "Email extraction",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-EMAIL.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-EMAIL"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-9",
+      "name": "Reports and dashboards",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-REPORT.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-REPORT"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-10",
+      "name": "Search at every level",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-SEARCH.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-SEARCH"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-11",
+      "name": "Configurable errors and source traceability",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-ERROR.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-ERROR"
+    },
+    {
+      "ref": "FEAT-COMMON-DRAFT-12",
+      "name": "Shared architecture and history",
+      "owner": "Shared cross-suite capability; exact architectural placement pending",
+      "behaviour": "Canonical requirements are in features/common.yaml, group COMMON-REUSE.",
+      "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
+      "status": "Recorded requirements/design directions; implementation not verified",
+      "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
+      "requirement_group_ref": "COMMON-REUSE"
     }
   ],
   "traceability": [

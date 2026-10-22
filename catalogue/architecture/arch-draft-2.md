@@ -1,7 +1,7 @@
 # HRMS
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -69,7 +69,7 @@ User authorized recording proposed five-module mapping; no blanket BRD approval 
 - Detailed leave policy, statutory processing and final settlement requirements remain pending.
 - Automatic roster reassignment rules and exact shared service ownership remain pending.
 - Component-by-component current code gap review and acceptance testing remain pending.
-- New module/component shortcodes and permanent identities remain unallocated; preserve EMP_MGT as proposed and EMP_Reg as retained.
+- New module/component shortcodes and permanent identities remain unallocated; preserve EMP_MGT as proposed and emp_reg as retained.
 
 [Source and approval evidence](../../discussions/hrms-mapping-23-Oct-2026.md). HRMS scope only; full 9-suite/47-engine architecture from the attachment is not imported by this update
 

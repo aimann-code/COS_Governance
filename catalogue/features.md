@@ -1,16 +1,16 @@
 # Features
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
-Transitional requirement inventory expanded by proposed HRMS mapping; not completed BRD; no implementation inference. These references are discussion inventory keys; they do not allocate new architecture components.
+Transitional domain inventory plus cross-suite requirement links; no implementation inferred. These references are discussion inventory keys; they do not allocate new architecture components.
 
 | Feature | Ref | Owner | Requirement state |
 | --- | --- | --- | --- |
-| [Employee Registration](features/emp-reg.md) | EMP_Reg | HRMS / Employee Management | draft requirement inventory |
+| [Employee Registration](features/emp-reg.md) | emp_reg | HRMS / Employee Management | draft requirement inventory |
 | [Employee Details](features/emp-dtl.md) | EMP_Dtl | HRMS / Employee Management | draft requirement inventory |
 | [Employee Update](features/emp-update.md) | EMP_Update | HRMS / Employee Management | source requirement; reconcile implementation evidence |
 | [Form Configuration](features/form-config.md) | Form_Config | Shared ownership pending | source requirement |
@@ -50,3 +50,15 @@ Transitional requirement inventory expanded by proposed HRMS mapping; not comple
 | [Payment Reconciliation](features/feat-hrms-draft-24.md) | FEAT-HRMS-DRAFT-24 | HRMS / Payroll Management | Proposed architecture inventory; not an approved complete BRD |
 | [Statutory Processing](features/feat-hrms-draft-25.md) | FEAT-HRMS-DRAFT-25 | HRMS / Payroll Management | Proposed architecture inventory; not an approved complete BRD |
 | [Final Settlement](features/feat-hrms-draft-26.md) | FEAT-HRMS-DRAFT-26 | HRMS / Payroll Management | Proposed architecture inventory; not an approved complete BRD |
+| [Configurable uniqueness](features/feat-common-draft-1.md) | FEAT-COMMON-DRAFT-1 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Entity field and form control](features/feat-common-draft-2.md) | FEAT-COMMON-DRAFT-2 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Access groups](features/feat-common-draft-3.md) | FEAT-COMMON-DRAFT-3 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Entity subscriptions](features/feat-common-draft-4.md) | FEAT-COMMON-DRAFT-4 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Preferences and defaults](features/feat-common-draft-5.md) | FEAT-COMMON-DRAFT-5 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Bulk upload and templates](features/feat-common-draft-6.md) | FEAT-COMMON-DRAFT-6 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Google Sheet input and output](features/feat-common-draft-7.md) | FEAT-COMMON-DRAFT-7 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Email extraction](features/feat-common-draft-8.md) | FEAT-COMMON-DRAFT-8 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Reports and dashboards](features/feat-common-draft-9.md) | FEAT-COMMON-DRAFT-9 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Search at every level](features/feat-common-draft-10.md) | FEAT-COMMON-DRAFT-10 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Configurable errors and source traceability](features/feat-common-draft-11.md) | FEAT-COMMON-DRAFT-11 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Shared architecture and history](features/feat-common-draft-12.md) | FEAT-COMMON-DRAFT-12 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |

@@ -27,8 +27,8 @@ def main():
         require((ROOT / path).is_file(), "Missing entry point: " + path)
         require(ROOT in (ROOT / path).resolve().parents, "Entry escapes repository")
     naming = read("standards/naming.yaml")
-    require(naming["version"] == manifest["naming_version"] == "0.2.0", "Naming version mismatch")
-    require(naming["decision_ref"] == "D67", "Missing freeze evidence")
+    require(naming["version"] == manifest["naming_version"] == "0.2.1", "Naming version mismatch")
+    require(naming["decision_ref"] == "NAM-LOWER-01" and naming["base_decision_ref"] == "D67", "Missing freeze evidence")
     terms = naming["terms"]
     require(len(terms) == 52, "Expected 32 terms and 20 retained terms")
     codes = [row["shortcode"] for row in terms]
@@ -41,7 +41,15 @@ def main():
     rules = naming["rules"]
     require(len(rules) == 12, "Expected 12 frozen rules")
     require(len({r["ref"] for r in rules}) == 12, "Duplicate naming rule")
-    require(set(naming["preserve"]) == {"SYS_EMP_ID", "EMP_Reg"}, "Lost business identifiers")
+    require(set(naming["preserve"]) == {"sys_emp_id", "emp_reg"}, "Lost current business identifiers")
+    historical_naming = read("migration/naming-v0.2.0.json")
+    require(historical_naming["version"] == "0.2.0", "Lost previous naming baseline")
+    require(set(historical_naming["preserve"]) == {"SYS_EMP_ID", "EMP_Reg"},
+            "Historical naming tokens changed")
+    require(naming["terms"] == historical_naming["terms"], "Unapproved term catalogue change")
+    aliases = {r["previous"]: r["current"] for r in naming["aliases"]}
+    require(aliases == {"SYS_EMP_ID": "sys_emp_id", "EMP_Reg": "emp_reg"},
+            "Missing explicit lowercase migration mapping")
     snapshot = read("migration/source-snapshot.json")
     sheets = snapshot["sheets"]
     require(len(sheets) == 44, "Expected 44 historical tabs")
@@ -96,7 +104,7 @@ def main():
     require(len(modules) == architecture["hrms_scope"]["counts"]["modules"] == 5, "HRMS module scope mismatch")
     require(len(components) == architecture["hrms_scope"]["counts"]["components"] == 28, "HRMS component scope mismatch")
     require(by_name["HRMS"]["Parent_Draft_Ref"] == "Enterprise Management", "Wrong HRMS suite")
-    require(by_name["Employee Registration"]["Short_Code"] == "EMP_Reg", "Lost registration code")
+    require(by_name["Employee Registration"]["Short_Code"] == "emp_reg", "Lost registration code")
     refs = {r["Draft_Ref"] for r in nodes}
     for feature in features:
         if feature.get("architecture_ref"):
@@ -105,6 +113,22 @@ def main():
     require(len(nodes) == expected["architecture"] and len(features) == expected["features"],
             "Catalogue expected scope mismatch")
     print("PASS: five HRMS modules, 28 components, typed parent references, no cycles and feature mappings.")
+    common = read("features/common.yaml")
+    groups = common["groups"]
+    common_refs = [r["ref"] for g in groups for r in g["requirements"]]
+    require(len(common_refs) == len(set(common_refs)) == manifest["catalogue"]["expected_counts"]["common_requirements"],
+            "Missing or duplicate common requirement")
+    require(len({g["ref"] for g in groups}) == len(groups), "Duplicate requirement group")
+    group_refs = {g["ref"] for g in groups}
+    for feature in features:
+        if feature.get("requirement_group_ref"):
+            require(feature["requirement_group_ref"] in group_refs, "Unknown common requirement group")
+    logical = read("architecture/emp-data-design.yaml")
+    require(len({r["name"] for r in logical["tables"]}) == len(logical["tables"]),
+            "Duplicate logical table")
+    require(logical["target_schema"] == "emp", "Wrong employee schema target")
+    require(logical["common_requirement_source"] == "features/common.yaml", "Unlinked common controls")
+    print("PASS: current lowercase aliases, unchanged term catalogue, linked common requirements and logical data design.")
     transcript = read("discussions/user-excerpts.json")
     require(transcript["complete_provider_export"] is False, "Do not claim complete transcript")
     require(len(transcript["excerpts"]) == 21, "Discussion excerpt count mismatch")
@@ -131,7 +155,7 @@ def main():
     for standard in baseline["catalogue"]:
         require((ROOT / standard["rule_source"]).is_file(), "Missing canonical rule source")
         for rule_ref in standard["rule_refs"]:
-            require(rule_ref == "D67" or rule_ref in rule_refs,
+            require(rule_ref in {"D67", naming["decision_ref"]} or rule_ref in rule_refs,
                     "Unknown consolidated rule reference: " + rule_ref)
     decisions = read("decisions/decisions.yaml")
     reconciliation = decisions["reconciliation"]

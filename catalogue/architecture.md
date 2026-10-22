@@ -1,7 +1,7 @@
 # Architecture
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -13,7 +13,7 @@ Parent references are resolved from the imported architecture records. These loc
 | [Enterprise Management](architecture/arch-draft-1.md) | Suite | COS-EMS | Root / placement unresolved | Established reference; registration IDs pending |
 | [HRMS](architecture/arch-draft-2.md) | Engine | HRMS | Enterprise Management | HRMS name explicitly confirmed; proposed five-module design; publication pending |
 | [Employee Management](architecture/arch-draft-3.md) | Module | EMP_MGT | HRMS | Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved |
-| [Employee Registration](architecture/arch-draft-4.md) | Component | EMP_Reg | Employee Management | Proposed component boundary; requirements/implementation verification pending |
+| [Employee Registration](architecture/arch-draft-4.md) | Component | emp_reg | Employee Management | Proposed component boundary; requirements/implementation verification pending |
 | [Employee Details](architecture/arch-draft-5.md) | Component | Unassigned | Employee Management | Proposed component boundary; requirements/implementation verification pending |
 | [Shared Request Processing](architecture/arch-draft-6.md) | Shared capability | Unassigned | Root / placement unresolved | Exact registered engine/module pending |
 | [Shared Security and Approval](architecture/arch-draft-7.md) | Shared capability | Unassigned | Root / placement unresolved | Exact registered engine/module pending |

@@ -1,16 +1,16 @@
 # Standards
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
-Naming 0.2.0 is frozen for its agreed scope. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.
+Naming 0.2.1 retains its frozen base and explicit amendment. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.
 
 | Standard | Source version | Approval / completion |
 | --- | --- | --- |
-| [Naming Standard](standards/std-draft-1.md) | 0.2.0 | 12 frozen naming rules plus 32 code terms and 20 retained terms; unrelated proposals remain pending; migration not implemented |
+| [Naming Standard](standards/std-draft-1.md) | 0.2.1 | 12 retained rules, with NAM-LOWER-01 amendments to two preservation exceptions; 52 terms unchanged; implementation migration pending |
 | [Architecture Standard](standards/std-draft-2.md) | 0.1.1 | Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending |
 | [Data Standard](standards/std-draft-3.md) | 0.1.1 | Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending |
 | [Master Data Standard](standards/std-draft-4.md) | 0.1.0 | Partial / requires rule review |

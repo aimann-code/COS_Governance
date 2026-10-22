@@ -1,0 +1,167 @@
+{
+  "version": "0.1.0",
+  "status": "Proposed logical Employee Management data design; no DDL or migration performed",
+  "source_ref": "EMP-DATA-01",
+  "source_evidence": "discussions/common-requirements-23-Oct-2026.md",
+  "target_schema": "emp",
+  "current_schema": "people at pinned implementation baseline; reviewed migration pending",
+  "naming_source": "standards/naming.yaml",
+  "common_requirement_source": "features/common.yaml",
+  "principles": [
+    "Stable internal IDs for relationships; sys_emp_id is the business identifier.",
+    "Employee Master is a generated view/report with no RPT suffix, not a duplicate editable master.",
+    "Active entity-admin uniqueness configuration supersedes the older fixed employee identity combination; minimum two selected fields.",
+    "Physical database constraints should enforce applicable configured uniqueness and concurrent-write safety; detailed implementation remains pending.",
+    "Salary, attendance and leave remain in owning modules; application identity/access records remain shared.",
+    "Typed custom responses reference field-definition versions. Protect identity/bank values and sensitive history."
+  ],
+  "tables": [
+    {
+      "name": "emp.emp",
+      "purpose": "Stable employee identity",
+      "fields": "id; sys_emp_id; name; father_name; nationality reference",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_identity",
+      "purpose": "National identity details",
+      "fields": "emp_id; identity type; protected number; protected matching token; verification status",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_contact",
+      "purpose": "Contact details",
+      "fields": "emp_id; contact type/value; primary flag; verification status",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_address",
+      "purpose": "Addresses",
+      "fields": "emp_id; address type; address fields; effective dates",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.employment",
+      "purpose": "Employment relationship",
+      "fields": "emp_id; organization reference; employment type; current status",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.employment_period",
+      "purpose": "Joining, exit and rejoining",
+      "fields": "employment_id; joining date; exit date/reason",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_assignment",
+      "purpose": "Department, role, group and location assignments",
+      "fields": "employment_id; assignment type; owning master reference; effective dates",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_id_map",
+      "purpose": "External system IDs",
+      "fields": "emp_id; source system; external ID; effective dates",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_doc",
+      "purpose": "Employee links to shared document storage",
+      "fields": "emp_id; document type; document reference; verification status",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_bank",
+      "purpose": "Payment account details",
+      "fields": "emp_id; protected account details; verification status; effective dates",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    },
+    {
+      "name": "emp.emp_field_value",
+      "purpose": "Configured custom field responses",
+      "fields": "emp_id; field-definition reference; typed value; configuration version",
+      "status": "Proposed logical table and indicative fields; not deployed"
+    }
+  ],
+  "relationships": [
+    {
+      "parent": "EMP",
+      "child": "EMP_IDENTITY",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_CONTACT",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_ADDRESS",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMPLOYMENT",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMPLOYMENT",
+      "child": "EMPLOYMENT_PERIOD",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMPLOYMENT",
+      "child": "EMP_ASSIGNMENT",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_ID_MAP",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_DOC",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_BANK",
+      "cardinality": "one-to-many"
+    },
+    {
+      "parent": "EMP",
+      "child": "EMP_FIELD_VALUE",
+      "cardinality": "one-to-many"
+    }
+  ],
+  "shared_records": [
+    "Field definition and entity field configuration",
+    "Versioned uniqueness rules and key fields",
+    "Form configuration",
+    "Access group, hierarchy/field permission and user-group assignment",
+    "Entity subscription/entitlement",
+    "Source-to-field mapping and suggested match decisions",
+    "Import/export/sync execution and row outcomes",
+    "Google Sheet authorized connection/profile",
+    "Email extraction profile and processed-source references",
+    "Report definition, dataset, dashboard and saved views",
+    "User preferences and confirmation history",
+    "Configuration/field/data/audit history",
+    "Requests and approval decisions",
+    "Shared document metadata and integration events"
+  ],
+  "pending": [
+    "Logical table names and fields need physical schema review.",
+    "Scope of sys_emp_id and internal identity versus organization/tenant needs confirmation.",
+    "Migration from existing encrypted profile aggregates must preserve data, history and encryption compatibility.",
+    "Detailed DB APIs, DTOs, types, indexes and acceptance tests remain pending."
+  ],
+  "change_history": [
+    {
+      "version": "0.1.0",
+      "recorded_on": "23-Oct-2026",
+      "summary": "Record proposed normalized employee data model with latest configurable identity rules; no physical migration."
+    }
+  ]
+}

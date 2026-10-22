@@ -1,7 +1,7 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -26,6 +26,9 @@ Source references are temporary/history references unless an approved permanent 
 | API-PATH-01 | Approved scoped standard: API / Integration Standard; canonical rule API-PATH-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
 | GITHUB-CONFIRM-01 | Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
 | HRMS-MAP-01 | Retain HRMS engine name under Enterprise Management; record five proposed modules and 28 proposed components, shared capability boundaries and inter-module data flows. | User authorized GitHub recording of proposal; no full BRD approval, code changes or publication |
+| NAM-LOWER-01 | Explicitly change SYS_EMP_ID to sys_emp_id and EMP_Reg to emp_reg; other naming rules/terms retained. | User-selected and authorized for governance recording; implementation migration pending |
+| COMMON-REQ-01 | Record consolidated common requirements for entity-configured uniqueness/fields, access groups/subscriptions, confirmed preferences/defaults, uploads/sync/email, reports/search and traceable configurable errors. | User requirements/design directions recorded; detailed implementation pending |
+| EMP-DATA-01 | Record proposed logical Employee Management data model, updated to current configurable uniqueness and lowercase identifiers. | Proposed logical design recorded; no physical DB or DDL approval inferred |
 
 ## Reconciliation
 
@@ -39,7 +42,7 @@ Source references are temporary/history references unless an approved permanent 
 | RECON-06 | Technology versus standard | Proposed TypeScript backend versus Java/Spring implementation | resolved direction; rename work pending | Do not rewrite historic proposal; align language-specific implementation names separately |
 | RECON-07 | API contract authority | Code-derived routes/DTOs versus intended design contracts | pending | Choose code-first with checked outputs or specification-first and define compatibility |
 | RECON-08 | Schema versus semantic data | Typed field design versus encrypted aggregate implementation | pending reconciliation | Use migrations for physical structure and transfer field meanings without loss |
-| RECON-09 | Employee identity policy | Manual/Auto/composite identity requirement versus current registration behaviour | pending domain decision | Resolve in Employee Management feature review |
+| RECON-09 | Employee identity policy | Manual/Auto/composite identity requirement versus current registration behaviour | partially resolved direction; domain configuration/migration pending | Complete key configuration/defaults and identity scope, manual/auto ID behaviour and migration impact review. |
 | RECON-10 | Development storage scope | Shared-drive/local-file restrictions versus approved GitHub repository and remote checks | pending general policy; current repo authorized | Keep governed native outputs in approved storage; obtain scope decisions for other execution/storage |
 
 ## Preserved source decisions

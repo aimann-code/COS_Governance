@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "approved source model; migration and authority cutover pending",
   "approval": {
     "evidence": "User approved goahead after the six-group source-of-truth proposal",
@@ -44,7 +44,8 @@
       "name": "Architecture",
       "owner": "COS_Governance",
       "files": [
-        "architecture/objects.yaml"
+        "architecture/objects.yaml",
+        "architecture/emp-data-design.yaml"
       ],
       "fields": [
         "object_ref",
@@ -68,7 +69,8 @@
       "name": "Features",
       "owner": "Owning application repository; shared capabilities referenced centrally",
       "files": [
-        "features/features.yaml"
+        "features/features.yaml",
+        "features/common.yaml"
       ],
       "fields": [
         "feature_ref",
@@ -203,5 +205,11 @@
     "No application or database rename",
     "No publication or merge approval inferred",
     "No new permanent identifiers allocated"
+  ],
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "summary": "Add central shared requirement and logical employee data design sources within existing six logical groups; no new group or cutover."
+    }
   ]
 }

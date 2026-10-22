@@ -19,3 +19,5 @@ Append corrections and superseding decisions; preserve historical wording. Do no
 - [Date/time, backup, API and GitHub confirmation — 23-Oct-2026](approved-controls-23-Oct-2026.md): selected user evidence and scoped approval; not a complete transcript.
 
 - [Proposed HRMS mapping — 23-Oct-2026](hrms-mapping-23-Oct-2026.md): five modules, 28 components, retrieval coverage and unresolved ownership; authorized recording of proposal.
+
+- [Common requirements and lowercase naming amendment — 23-Oct-2026](common-requirements-23-Oct-2026.md): latest uniqueness, access, import/report/sync/search/default/error refinements; selected evidence and supersession.
