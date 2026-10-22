@@ -1,7 +1,7 @@
 # Operations Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -18,6 +18,7 @@
 
 | Reference | Rule | Version | Recorded approval | Mapping state |
 | --- | --- | --- | --- | --- |
+| BACKUP-TIME-01 | Use DD-MMM-YYYY_IST_HH_MM_SS for the timestamp portion of backup filenames. HH is 24-hour time; calculate it in Asia/Kolkata (IST), for example 23-Oct-2026_IST_14_05_09. Retain the existing approved base filename, _bck, version and storage/lifecycle conventions. Same-second collision handling remains pending. This decision does not rename historical backups or create a backup schedule. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 | S-D06 | Use _bck consistently. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D07 | Use <filename>_bck_v<version>_<YYYYMMDD_HHMMSS>; timezone Asia/Kolkata. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D09 | Published backups preserve previous approved versions; separate _arch copies are unnecessary. | 0.1.0 | Pending | Proposed mapping; Pending |
@@ -28,7 +29,7 @@
 | S-D14 | Back up draft and publication; apply approved changes inside the existing published file. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D15 | Preserve latest live data during publishing and existing tab IDs where possible. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D54 | Moving files without content/structural change requires no backup. All future backup copies go to approved shared-drive folder 03_Backup: https://drive.google.com/drive/folders/1dQ_2t8ibU30HBx7x1gilqZA_JfRPbjpN. Six existing backup copies were relocated there; working drafts remain in Draft_V5. | 0.1.0 | Approved | Proposed mapping; Approved |
-| S-D55 | Apply DD-MMM-YYYY to user-visible dates, per D38. Time-of-day representation and backup filename collision handling remain unresolved; do not silently freeze a new time convention. | 0.1.0 | Approved | Proposed mapping; Approved |
+| S-D55 | Apply DD-MMM-YYYY to user-visible dates, per D38. Time-of-day representation and backup filename collision handling remain unresolved; do not silently freeze a new time convention. Current disposition: Historical wording retained. DATE-TIME-01 and BACKUP-TIME-01 resolve display time and backup timestamp; only same-second backup collisions remain pending. | 0.1.0 | Approved | Proposed mapping; Approved |
 
 ## Applicability and exceptions
 

@@ -1,7 +1,7 @@
 # URL Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -34,6 +34,7 @@
 | DRAFT-URL-R14 | Keep browser API origin/proxy, server upstream and allowed origins configured; never expose server secrets through public URL config. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-URL-R15 | Ensure supported frontend deep links, browser history, refresh and signed-in landing paths resolve consistently. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-URL-R16 | Keep environment/service hostnames separate from logical resource identity and standard names; document base URLs without freezing local hosts as production. | 0.1.0 | Pending | Initial detailed draft; Pending |
+| API-PATH-01 | Use /api/v1/<resource> as the default API path; cos is not required in the path. Use /api/cos/v1/<resource> only when a shared host requires product separation. This supplements NAM-FRZ-R11 without changing frozen Naming 0.2.0. Existing routes remain unchanged until an explicitly reviewed compatibility migration. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 
 ## Applicability and exceptions
 

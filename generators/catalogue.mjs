@@ -63,7 +63,7 @@ export function buildCatalogue(src) {
     if(st.Standard_Name==="Naming Standard")body+=table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+"\n[All controlled shortcodes](../naming.md)\n";
     else {
       const rows=[...(groupMap.get(st.Standard_Name)?.values()||[])];
-      body+=rows.length?table(["Reference","Rule","Version","Recorded approval","Mapping state"],rows.map(({r,mapStatus})=>[r["Review Ref"],r.Rule,r.Version,r["Approval Status"],mapStatus])):"No detailed rules mapped yet. This standard requires completion and review.\n";
+      body+=rows.length?table(["Reference","Rule","Version","Recorded approval","Mapping state"],rows.map(({r,mapStatus})=>[r["Review Ref"],r.Rule+(r.Current_Disposition?" Current disposition: "+r.Current_Disposition:""),r.Version,r["Approval Status"],mapStatus])):"No detailed rules mapped yet. This standard requires completion and review.\n";
     }
     body+="\n## Applicability and exceptions\n\n";
     const app=s.applicability.filter(r=>Object.values(r).some(v=>v===st.Draft_Ref||v===st.Standard_Name));
@@ -75,7 +75,7 @@ export function buildCatalogue(src) {
     "Frozen Naming Standard **"+n.version+"**, source decision **"+n.decision_ref+"**. COS prefixes are selective. Preserve SYS_EMP_ID and EMP_Reg. Existing application names have not been migrated.\n\n"+
     table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+
     "\n## Code terms\n\n"+table(["Term","Code","Meaning","Example"],n.terms.map(r=>[r.term,r.shortcode,r.meaning,r.example]))+
-    "\n[Maintained naming source](../standards/naming.yaml)\n";
+    "\n[Maintained naming source](../standards/naming.yaml)\n\n## Current scoped supplements\n\nThe approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/std-draft-11.md) and [URL Standard](standards/std-draft-23.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.\n";
   out["catalogue/architecture.md"]=header("Architecture")+
     "Parent references are resolved from the imported architecture records. These local draft references are not permanent COS IDs. Empty shared placement remains unresolved.\n\n"+
     table(["Object","Type","Code","Parent","Status"],a.map(r=>[archLink(r),r.Object_Type,r.Short_Code||"Unassigned",r.Parent_Draft_Ref||"Root / placement unresolved",r.Status]))+

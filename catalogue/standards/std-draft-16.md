@@ -1,7 +1,7 @@
 # Workspace Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -20,6 +20,7 @@
 | --- | --- | --- | --- | --- |
 | S-D37 | Shared-drive-only storage applies across COS and MHL chats and projects. Use native Google Docs and Google Sheets under the approved shared-drive root https://drive.google.com/drive/folders/1KmWT6rD0EMBIDFIioE5KMShGB4Kb9u7y. Do not create or save deliverables in My Drive. Do not create local files, temporary local build/export files, Excel files or downloadable artifacts without explicit documented approval from ashish.maan@mannhospitality.com (main user/workspace authority). Do not treat a tool or skill default as approval. If the native shared-drive route cannot complete a task, stop before the prohibited operation and request that approval. Any user-specific local-file standard is maintained separately in that user's workspace and remains subject to this approval requirement. Current draft destination: https://drive.google.com/drive/folders/1Ihxx88hRxupD41ve6aEw6OINY2mudHAi. Global applicability is a governance requirement; recording it does not automatically configure or enforce other chats or projects. | 0.1.0 | Approved | Proposed mapping; Approved |
 | S-D49 | Use one registered logical Project Name across Drive, Apps Script, AI and backend platforms where the project exists. Register actual platform IDs and distinguish service/environment names. | 0.1.0 | Approved | Proposed mapping; Approved |
+| BACKUP-TIME-01 | Use DD-MMM-YYYY_IST_HH_MM_SS for the timestamp portion of backup filenames. HH is 24-hour time; calculate it in Asia/Kolkata (IST), for example 23-Oct-2026_IST_14_05_09. Retain the existing approved base filename, _bck, version and storage/lifecycle conventions. Same-second collision handling remains pending. This decision does not rename historical backups or create a backup schedule. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 
 ## Applicability and exceptions
 

@@ -14,3 +14,6 @@ This is not a complete provider transcript. A complete original export, earlier 
 
 ## Change policy
 Append corrections and superseding decisions; preserve historical wording. Do not overwrite an old proposal to make it appear it always matched the accepted rule. No GitHub Discussions feature was enabled; these are versioned repository files.
+
+## Subsequent approvals
+- [Date/time, backup, API and GitHub confirmation — 23-Oct-2026](approved-controls-23-Oct-2026.md): selected user evidence and scoped approval; not a complete transcript.

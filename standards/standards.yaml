@@ -575,7 +575,8 @@
       "Rule": "Use DD-MMM-YYYY for user-readable date displays and the date portion of timestamps, for example 20-Oct-2026. Preserve typed date/timestamp values; apply display formatting rather than replacing underlying values with text. This instruction specifies the date format only; time-of-day format and same-day backup filename uniqueness remain unresolved. Existing files are not renamed and historical records are not rewritten by this registration.",
       "Decision Ref": "D38",
       "Version": "0.1.0",
-      "Approval Status": "Approved"
+      "Approval Status": "Approved",
+      "Current_Disposition": "Historical wording retained. DATE-TIME-01 and BACKUP-TIME-01 resolve display time and backup timestamp; only same-second backup collisions remain pending."
     },
     {
       "Review Ref": "S-D39",
@@ -692,7 +693,8 @@
       "Rule": "Apply DD-MMM-YYYY to user-visible dates, per D38. Time-of-day representation and backup filename collision handling remain unresolved; do not silently freeze a new time convention.",
       "Decision Ref": "D55",
       "Version": "0.1.0",
-      "Approval Status": "Approved"
+      "Approval Status": "Approved",
+      "Current_Disposition": "Historical wording retained. DATE-TIME-01 and BACKUP-TIME-01 resolve display time and backup timestamp; only same-second backup collisions remain pending."
     },
     {
       "Review Ref": "S-D57",
@@ -2232,6 +2234,50 @@
       "Decision Ref": "D66",
       "Version": "0.1.1",
       "Approval Status": "Pending"
+    },
+    {
+      "Review Ref": "DATE-TIME-01",
+      "Scope": "COS",
+      "Standard Name": "Data Standard",
+      "Rule": "Use DD-MMM-YYYY for user-readable dates, for example 23-Oct-2026. Use hh-mm-ss AM/PM for user-readable time, for example 02-05-09 PM. This display convention does not replace typed dates/timestamps or redefine API wire formats.",
+      "Decision Ref": "DATE-TIME-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved by user; not published",
+      "Implementation_Status": "Governance definition recorded; application changes not performed",
+      "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
+    },
+    {
+      "Review Ref": "BACKUP-TIME-01",
+      "Scope": "COS",
+      "Standard Name": "Operations Standard",
+      "Rule": "Use DD-MMM-YYYY_IST_HH_MM_SS for the timestamp portion of backup filenames. HH is 24-hour time; calculate it in Asia/Kolkata (IST), for example 23-Oct-2026_IST_14_05_09. Retain the existing approved base filename, _bck, version and storage/lifecycle conventions. Same-second collision handling remains pending. This decision does not rename historical backups or create a backup schedule.",
+      "Decision Ref": "BACKUP-TIME-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved by user; not published",
+      "Implementation_Status": "Governance definition recorded; application changes not performed",
+      "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
+    },
+    {
+      "Review Ref": "API-PATH-01",
+      "Scope": "COS",
+      "Standard Name": "API / Integration Standard",
+      "Rule": "Use /api/v1/<resource> as the default API path; cos is not required in the path. Use /api/cos/v1/<resource> only when a shared host requires product separation. This supplements NAM-FRZ-R11 without changing frozen Naming 0.2.0. Existing routes remain unchanged until an explicitly reviewed compatibility migration.",
+      "Decision Ref": "API-PATH-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved by user; not published",
+      "Implementation_Status": "Governance definition recorded; application changes not performed",
+      "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
+    },
+    {
+      "Review Ref": "GITHUB-CONFIRM-01",
+      "Scope": "COS",
+      "Standard Name": "AI / Analytics Standard",
+      "Rule": "Before any future GitHub update, show the proposed content and summary and ask: Update Git Hub - Yes/No. Perform the specified update only after an affirmative user instruction. Authorization covers the necessary commits, generated catalogue refresh and verification for that described update; it does not authorize unrelated edits, merging or publication. Read-only GitHub checks need no update approval.",
+      "Decision Ref": "GITHUB-CONFIRM-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved by user; not published",
+      "Implementation_Status": "Governance definition recorded; application changes not performed",
+      "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
     }
   ],
   "rule_details": [
@@ -7562,6 +7608,106 @@
       "Mapping_Status": "Frozen naming mapping",
       "Rule_Approval": "Frozen by user; not published",
       "Source": "D67 / C22"
+    },
+    {
+      "Rule_Ref": "DATE-TIME-01",
+      "Standard_Name": "Data Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "DATE-TIME-01"
+    },
+    {
+      "Rule_Ref": "DATE-TIME-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "DATE-TIME-01"
+    },
+    {
+      "Rule_Ref": "DATE-TIME-01",
+      "Standard_Name": "Frontend Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "DATE-TIME-01"
+    },
+    {
+      "Rule_Ref": "BACKUP-TIME-01",
+      "Standard_Name": "Operations Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "BACKUP-TIME-01"
+    },
+    {
+      "Rule_Ref": "BACKUP-TIME-01",
+      "Standard_Name": "Workspace Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "BACKUP-TIME-01"
+    },
+    {
+      "Rule_Ref": "BACKUP-TIME-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "BACKUP-TIME-01"
+    },
+    {
+      "Rule_Ref": "API-PATH-01",
+      "Standard_Name": "API / Integration Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "API-PATH-01"
+    },
+    {
+      "Rule_Ref": "API-PATH-01",
+      "Standard_Name": "URL Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "API-PATH-01"
+    },
+    {
+      "Rule_Ref": "GITHUB-CONFIRM-01",
+      "Standard_Name": "AI / Analytics Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "GITHUB-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "GITHUB-CONFIRM-01",
+      "Standard_Name": "Development Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Only the scope explicitly stated in the rule",
+      "Mapping_Status": "Approved decision supplement",
+      "Rule_Approval": "Approved by user; not published",
+      "Source": "GITHUB-CONFIRM-01"
     }
   ],
   "versions": [
@@ -8215,5 +8361,5 @@
     }
   ],
   "exceptions": [],
-  "note": "Naming 0.2.0 is authoritative in its frozen scope via naming.yaml. Historical mandatory COS prefix rules remain superseded. Pending standards do not become approved through migration."
+  "note": "Naming 0.2.0 is authoritative in its frozen scope via naming.yaml. Historical mandatory COS prefix rules remain superseded. Pending standards do not become approved through migration. Current approved scoped supplements DATE-TIME-01, BACKUP-TIME-01, API-PATH-01 and GITHUB-CONFIRM-01 override conflicting historical wording only within their explicit scopes. Frozen naming bodies remain unchanged."
 }

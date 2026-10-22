@@ -1,7 +1,7 @@
 # AI / Analytics Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -18,6 +18,7 @@
 
 | Reference | Rule | Version | Recorded approval | Mapping state |
 | --- | --- | --- | --- | --- |
+| GITHUB-CONFIRM-01 | Before any future GitHub update, show the proposed content and summary and ask: Update Git Hub - Yes/No. Perform the specified update only after an affirmative user instruction. Authorization covers the necessary commits, generated catalogue refresh and verification for that described update; it does not authorize unrelated edits, merging or publication. Read-only GitHub checks need no update approval. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 | S-D17 | AI Standard is the umbrella containing AI Chat Standard. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D18 | Show summary and relevant examples before generating or updating files. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D19 | Display content, dataset, status, update, new-file and backup controls. | 0.1.0 | Pending | Proposed mapping; Pending |

@@ -1,7 +1,7 @@
 # API / Integration Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -38,6 +38,7 @@
 | DRAFT-API-R18 | Keep wire schema/API version separate from code/document versions; breaking changes require consumer impact, transition and retirement evidence. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DRAFT-API-R19 | Maintain an authoritative machine-readable contract or approved equivalent and generate examples/documentation from pinned schemas; do not assume annotations alone are complete. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DRAFT-API-R20 | Record implementation/build/integration evidence for each operation, including unavailable sources and stub responses; code presence alone is not end-to-end delivery. | 0.1.1 | Pending | Initial detailed draft; Pending |
+| API-PATH-01 | Use /api/v1/<resource> as the default API path; cos is not required in the path. Use /api/cos/v1/<resource> only when a shared host requires product separation. This supplements NAM-FRZ-R11 without changing frozen Naming 0.2.0. Existing routes remain unchanged until an explicitly reviewed compatibility migration. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 
 ## Applicability and exceptions
 

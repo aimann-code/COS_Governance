@@ -1,7 +1,7 @@
 # Frontend Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -36,6 +36,7 @@
 | DRAFT-FE-R16 | Mask restricted values, avoid sensitive URLs/browser persistence, and require explicit authorisation for printing/exporting. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-FE-R17 | Use DD-MMM-YYYY for user-readable dates while retaining typed values and wire formats; format money and timezone deliberately. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-FE-R18 | Label design previews, demo mode and running-app screenshots accurately; test current connected flows separately from historical demo tests. | 0.1.0 | Pending | Initial detailed draft; Pending |
+| DATE-TIME-01 | Use DD-MMM-YYYY for user-readable dates, for example 23-Oct-2026. Use hh-mm-ss AM/PM for user-readable time, for example 02-05-09 PM. This display convention does not replace typed dates/timestamps or redefine API wire formats. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 
 ## Applicability and exceptions
 

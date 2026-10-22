@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
@@ -53,7 +53,8 @@
         "S-D57",
         "DRAFT-DAT-R01",
         "DRAFT-DAT-R14",
-        "DRAFT-DAT-R18"
+        "DRAFT-DAT-R18",
+        "DATE-TIME-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending"
@@ -126,7 +127,8 @@
         "DRAFT-COD-R01",
         "DRAFT-COD-R02",
         "DRAFT-COD-R08",
-        "DRAFT-COD-R15"
+        "DRAFT-COD-R15",
+        "GITHUB-CONFIRM-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending"
@@ -139,7 +141,8 @@
       "rule_refs": [
         "DRAFT-API-R01",
         "DRAFT-API-R18",
-        "DRAFT-API-R19"
+        "DRAFT-API-R19",
+        "API-PATH-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending"
@@ -162,7 +165,9 @@
       "name": "AI / Analytics Standard",
       "source_version": "0.1.0",
       "rule_source": "standards/standards.yaml",
-      "rule_refs": [],
+      "rule_refs": [
+        "GITHUB-CONFIRM-01"
+      ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
     },
@@ -182,7 +187,8 @@
       "rule_source": "standards/standards.yaml",
       "rule_refs": [
         "S-D54",
-        "DRAFT-DAT-R19"
+        "DRAFT-DAT-R19",
+        "BACKUP-TIME-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -195,7 +201,8 @@
       "rule_refs": [
         "S-D37",
         "S-D49",
-        "S-D54"
+        "S-D54",
+        "BACKUP-TIME-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -230,7 +237,9 @@
         "S-D18",
         "S-D59",
         "S-D61",
-        "S-D62"
+        "S-D62",
+        "DATE-TIME-01",
+        "BACKUP-TIME-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -252,7 +261,8 @@
       "rule_refs": [
         "DRAFT-FE-R01",
         "DRAFT-FE-R07",
-        "DRAFT-FE-R17"
+        "DRAFT-FE-R17",
+        "DATE-TIME-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft prepared; approval and repository compliance pending"
@@ -279,7 +289,8 @@
       "rule_refs": [
         "DRAFT-URL-R01",
         "DRAFT-URL-R02",
-        "DRAFT-URL-R13"
+        "DRAFT-URL-R13",
+        "API-PATH-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft prepared; approval and repository compliance pending"
@@ -301,9 +312,10 @@
       "source_refs": [
         "S-D37",
         "S-D54",
-        "S-D55"
+        "S-D55",
+        "BACKUP-TIME-01"
       ],
-      "disposition": "Use selected Ashish controls for authorized native operations; exact backup time/collision and retention remain unresolved"
+      "disposition": "Use selected Ashish controls and approved 24-hour IST backup timestamp. Collision handling and retention targets remain unresolved; historical copies are not renamed."
     },
     {
       "topic": "Shortcode naming",
@@ -327,6 +339,27 @@
         "DRAFT-DAT-R01"
       ],
       "disposition": "Retain intended meaning, controlled values, authority and acceptance criteria; code extraction does not replace them"
+    },
+    {
+      "topic": "Readable date/time",
+      "source_refs": [
+        "DATE-TIME-01"
+      ],
+      "disposition": "Approved display convention; typed dates and API wire formats remain distinct."
+    },
+    {
+      "topic": "API path supplement",
+      "source_refs": [
+        "API-PATH-01"
+      ],
+      "disposition": "Default resource path without cos; conditional product namespace; existing routes require reviewed migration."
+    },
+    {
+      "topic": "GitHub update confirmation",
+      "source_refs": [
+        "GITHUB-CONFIRM-01"
+      ],
+      "disposition": "User confirmation required for each described GitHub update; no implicit merge or publication."
     }
   ],
   "aliases": {

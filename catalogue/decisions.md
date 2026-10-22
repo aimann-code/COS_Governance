@@ -1,7 +1,7 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -21,6 +21,10 @@ Source references are temporary/history references unless an approved permanent 
 | GITHUB-01 | Set up a separate private governance repository and initial draft; application repository remains separate | authorized by user ok do it; created |
 | SOURCE-MAP-01 | Approve six maintained groups, their required fields and generated outputs; keep application-specific features/decisions/implementation in their owning repository and governed definitions/templates centrally. | approved source model; implementation/migration pending where stated |
 | CATALOGUE-01 | Create a clickable generated COS Catalogue in GitHub for standards, names, architecture, features, design availability and implementation links. | User-authorized catalogue implementation; no rule approval or authority cutover |
+| DATE-TIME-01 | Approved scoped standard: Data Standard; canonical rule DATE-TIME-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| BACKUP-TIME-01 | Approved scoped standard: Operations Standard; canonical rule BACKUP-TIME-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| API-PATH-01 | Approved scoped standard: API / Integration Standard; canonical rule API-PATH-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| GITHUB-CONFIRM-01 | Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
 
 ## Reconciliation
 
@@ -29,7 +33,7 @@ Source references are temporary/history references unless an approved permanent 
 | RECON-01 | Prefix and casing | Earlier mandatory COS prefixes versus frozen selective-prefix naming | resolved | Use frozen naming definitions; preserve old record bodies |
 | RECON-02 | Register authority | Earlier editable workbook versus approved repository source model | pending cutover | Verify semantic migration and explicitly adopt before retiring workbook authority |
 | RECON-03 | Native backup location | Project Backups versus Ashish central 03_Backup | resolved direction; rollout pending | Use Ashish central destination for future authorized native backups; historical copies stay traceable |
-| RECON-04 | Backup filename time/collision | Original timestamp pattern versus later unresolved time/collision clarification | pending | Select one exact convention explicitly; do not invent it |
+| RECON-04 | Backup filename time/collision | Original timestamp pattern versus later unresolved time/collision clarification | partially resolved; collision handling pending | Use the approved timestamp convention. Select collision handling separately; do not silently choose overwrite, suffix or retry behavior. |
 | RECON-05 | Recovery scope | Git revision history versus native-document/database backups | resolved scope; operational targets pending | Keep artifact-specific recovery and verify restore separately |
 | RECON-06 | Technology versus standard | Proposed TypeScript backend versus Java/Spring implementation | resolved direction; rename work pending | Do not rewrite historic proposal; align language-specific implementation names separately |
 | RECON-07 | API contract authority | Code-derived routes/DTOs versus intended design contracts | pending | Choose code-first with checked outputs or specification-first and define compatibility |

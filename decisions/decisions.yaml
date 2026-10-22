@@ -941,6 +941,42 @@
         "README.md",
         "workflow"
       ]
+    },
+    {
+      "ref": "DATE-TIME-01",
+      "decision": "Approved scoped standard: Data Standard; canonical rule DATE-TIME-01 in standards/standards.yaml.",
+      "status": "approved by user; governance recorded; not globally published",
+      "recorded_on": "23-Oct-2026",
+      "source": "Visible chat; user: update git hub",
+      "canonical_rule": "standards/standards.yaml#DATE-TIME-01",
+      "implementation": "No application route or historic filename changed"
+    },
+    {
+      "ref": "BACKUP-TIME-01",
+      "decision": "Approved scoped standard: Operations Standard; canonical rule BACKUP-TIME-01 in standards/standards.yaml.",
+      "status": "approved by user; governance recorded; not globally published",
+      "recorded_on": "23-Oct-2026",
+      "source": "Visible chat; user: update git hub",
+      "canonical_rule": "standards/standards.yaml#BACKUP-TIME-01",
+      "implementation": "No application route or historic filename changed"
+    },
+    {
+      "ref": "API-PATH-01",
+      "decision": "Approved scoped standard: API / Integration Standard; canonical rule API-PATH-01 in standards/standards.yaml.",
+      "status": "approved by user; governance recorded; not globally published",
+      "recorded_on": "23-Oct-2026",
+      "source": "Visible chat; user: update git hub",
+      "canonical_rule": "standards/standards.yaml#API-PATH-01",
+      "implementation": "No application route or historic filename changed"
+    },
+    {
+      "ref": "GITHUB-CONFIRM-01",
+      "decision": "Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml.",
+      "status": "approved by user; governance recorded; not globally published",
+      "recorded_on": "23-Oct-2026",
+      "source": "Visible chat; user: update git hub",
+      "canonical_rule": "standards/standards.yaml#GITHUB-CONFIRM-01",
+      "implementation": "No application route or historic filename changed"
     }
   ],
   "pending": [
@@ -1206,10 +1242,14 @@
       "ref": "RECON-04",
       "topic": "Backup filename time/collision",
       "difference": "Original timestamp pattern versus later unresolved time/collision clarification",
-      "current": "Date display direction retained; exact time/collision unresolved",
-      "next": "Select one exact convention explicitly; do not invent it",
-      "status": "pending",
-      "source": "Preserved source records and current source-model approval; 23-Oct-2026"
+      "current": "BACKUP-TIME-01 resolves timestamp format and 24-hour IST time; same-second filename collision handling remains undecided.",
+      "next": "Use the approved timestamp convention. Select collision handling separately; do not silently choose overwrite, suffix or retry behavior.",
+      "status": "partially resolved; collision handling pending",
+      "source": "Preserved source records and current source-model approval; 23-Oct-2026",
+      "resolution_refs": [
+        "DATE-TIME-01",
+        "BACKUP-TIME-01"
+      ]
     },
     {
       "ref": "RECON-05",

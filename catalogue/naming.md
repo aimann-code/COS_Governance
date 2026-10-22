@@ -1,7 +1,7 @@
 # Naming and shortcodes
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -81,3 +81,7 @@ Frozen Naming Standard **0.2.0**, source decision **D67**. COS prefixes are sele
 | Dto | dto | dto | dto |
 
 [Maintained naming source](../standards/naming.yaml)
+
+## Current scoped supplements
+
+The approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/std-draft-11.md) and [URL Standard](standards/std-draft-23.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.

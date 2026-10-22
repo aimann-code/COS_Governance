@@ -16,3 +16,6 @@ Run python generators/validate.py and python generators/render.py where executio
 
 ## Approved maintained-source model — 23-Oct-2026
 User approval SOURCE-MAP-01 establishes six logical groups in architecture/source-map.yaml. Use architecture/ownership.yaml for linked ownership and standards/baseline.yaml for the consolidated review profile. Application-specific features/decisions remain with the application owner after reviewed transfer. Preserve business field meanings; do not replace them with schema extraction. Do not treat this approval as authority cutover, PR merge, source deletion or approval of all pending standards.
+
+## GitHub update confirmation — 23-Oct-2026
+Before future GitHub writes, show proposed content and summary and ask `Update Git Hub - Yes/No`. Wait for an affirmative user instruction for the specified update. That instruction covers necessary commits, regenerated views and verification within the described scope. It does not authorize unrelated changes, merge or publication. Read-only checks can proceed. Canonical rule: GITHUB-CONFIRM-01 in standards/standards.yaml.

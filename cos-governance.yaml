@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.0",
@@ -54,5 +54,21 @@
     "command": "node generators/build-catalogue.mjs --write",
     "check": "node generators/build-catalogue.mjs --check",
     "scope": "23 standards, 8 architecture entries, 14 feature records; not a complete COS inventory"
-  }
+  },
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.0",
+      "draft_version": "0.3.1",
+      "summary": "Record approved readable date/time, backup timestamp, API path and GitHub confirmation supplements; regenerate catalogue.",
+      "decision_refs": [
+        "DATE-TIME-01",
+        "BACKUP-TIME-01",
+        "API-PATH-01",
+        "GITHUB-CONFIRM-01"
+      ],
+      "approval": "User: update git hub",
+      "limits": "Internal draft revision only; no authority cutover, standard publication, application migration or global versioning policy adopted."
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 # Development Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -35,6 +35,7 @@
 | DRAFT-COD-R15 | Review behavioural changes and add forward migrations instead of editing applied database migrations. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DRAFT-COD-R16 | Link source files and verification to registered rules/decisions; distinguish planned names from files that exist. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | S-D63 | Custom callable symbols use COS_ACTION_OBJECT; classes/DTOs/services use COS + PascalCase; code files use cos-<scope>-<purpose>.<role>.<extension>; shared services omit EMP. Preserve framework-required names and existing business IDs. | 0.1.0 | Superseded in symbol/file naming by D67; retained business IDs remain | Historical mapping; D67 controls revised naming; Superseded in naming scope |
+| GITHUB-CONFIRM-01 | Before any future GitHub update, show the proposed content and summary and ask: Update Git Hub - Yes/No. Perform the specified update only after an affirmative user instruction. Authorization covers the necessary commits, generated catalogue refresh and verification for that described update; it does not authorize unrelated edits, merging or publication. Read-only GitHub checks need no update approval. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
 
 ## Applicability and exceptions
 
