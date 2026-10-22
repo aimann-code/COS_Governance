@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "Recorded cross-suite requirements and design directions; not implemented or published",
   "scope": "All subscribed suites, engines, modules and components, subject to domain applicability",
   "source_ref": "COMMON-REQ-01",
@@ -352,6 +352,11 @@
           "ref": "COMMON-REPORT-07",
           "text": "Shared favorites/shortcuts open permitted components; employee self-service is a role-based workspace, not a duplicate business module.",
           "status": "Recorded requirement/design direction; implementation not verified"
+        },
+        {
+          "ref": "COMMON-REPORT-08",
+          "text": "All reporting reads database-backed virtual marts through the reporting service; canonical governing rule VIRTUAL-MART-01 in standards/standards.yaml. Google Sheets is an output, not reporting authority.",
+          "status": "User-selected requirement; implementation pending"
         }
       ]
     },
@@ -461,6 +466,11 @@
       "version": "0.1.0",
       "recorded_on": "23-Oct-2026",
       "summary": "Initial consolidated shared requirement record including latest refinements; one-field uniqueness superseded."
+    },
+    {
+      "version": "0.1.1",
+      "recorded_on": "23-Oct-2026",
+      "summary": "Link all reporting and output channels to VIRTUAL-MART-01."
     }
   ]
 }

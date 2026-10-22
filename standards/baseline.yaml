@@ -1,16 +1,17 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
     "source": "standards/naming.yaml",
-    "version": "0.2.1",
-    "decision": "NAM-LOWER-01",
-    "base_decision": "D67"
+    "version": "0.2.2",
+    "decision": "NAM-REG-01",
+    "base_decision": "D67",
+    "previous_amendment": "NAM-LOWER-01"
   },
   "source_priority": [
     "Explicit current user decisions within their scope",
-    "Frozen Naming 0.2.1 with explicit NAM-LOWER-01 amendment",
+    "Naming 0.2.2 frozen base with explicit scoped amendments",
     "Ashish COS governing controls with their recorded statuses",
     "Pending source rules retained as proposals",
     "Implementation supplies evidence; Autoinspire supplies presentation only"
@@ -19,14 +20,15 @@
     {
       "standard_ref": "STD-DRAFT-1",
       "name": "Naming Standard",
-      "source_version": "0.2.1",
+      "source_version": "0.2.2",
       "rule_source": "standards/naming.yaml",
       "rule_refs": [
         "D67",
-        "NAM-LOWER-01"
+        "NAM-LOWER-01",
+        "NAM-REG-01"
       ],
-      "approval": "Frozen base and explicit user-approved lowercase amendment; not published",
-      "completion": "12 retained rules, with NAM-LOWER-01 amendments to two preservation exceptions; 52 terms unchanged; implementation migration pending"
+      "approval": "User-authorized scoped amendments; not published",
+      "completion": "12 base rules with explicit amendments; 53 controlled terms; scoped registration and virtual-view profiles; live migration pending"
     },
     {
       "standard_ref": "STD-DRAFT-2",
@@ -56,7 +58,8 @@
         "DRAFT-DAT-R01",
         "DRAFT-DAT-R14",
         "DRAFT-DAT-R18",
-        "DATE-TIME-01"
+        "DATE-TIME-01",
+        "VIRTUAL-MART-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending"
@@ -144,7 +147,8 @@
         "DRAFT-API-R01",
         "DRAFT-API-R18",
         "DRAFT-API-R19",
-        "API-PATH-01"
+        "API-PATH-01",
+        "VIRTUAL-MART-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending"
@@ -264,7 +268,8 @@
         "DRAFT-FE-R01",
         "DRAFT-FE-R07",
         "DRAFT-FE-R17",
-        "DATE-TIME-01"
+        "DATE-TIME-01",
+        "VIRTUAL-MART-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft prepared; approval and repository compliance pending"
@@ -278,7 +283,8 @@
         "DRAFT-BE-R02",
         "DRAFT-BE-R03",
         "DRAFT-BE-R06",
-        "DRAFT-BE-R16"
+        "DRAFT-BE-R16",
+        "VIRTUAL-MART-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft prepared; approval and repository compliance pending"
@@ -323,7 +329,8 @@
       "topic": "Shortcode naming",
       "source_refs": [
         "D67",
-        "NAM-LOWER-01"
+        "NAM-LOWER-01",
+        "NAM-REG-01"
       ],
       "disposition": "Selective COS use and controlled terms retained; lowercase sys_emp_id/emp_reg explicitly supersede previous uppercase exceptions."
     },
@@ -385,7 +392,7 @@
     "No major/minor/patch scheme silently approved",
     "No API strategy or domain identity decision silently resolved",
     "No blank permanent IDs allocated",
-    "Naming change is limited to explicit NAM-LOWER-01 amendment; historical snapshot retained; no application migration."
+    "Naming amendments limited to NAM-LOWER-01 and NAM-REG-01; historical snapshots retained; no live code/API/DB rename."
   ],
   "requirement_profiles": [
     {

@@ -1,7 +1,7 @@
 # Data Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -39,6 +39,7 @@
 | DRAFT-DAT-R19 | Define approved retention, deletion, backup, encryption-key pairing and restore verification; mandatory history must not disappear through cascade deletion. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DRAFT-DAT-R20 | Reject or flag unknown/duplicate/conflicting definitions, label illustrative versus actual datasets, and retain exceptions for review rather than invent values. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DATE-TIME-01 | Use DD-MMM-YYYY for user-readable dates, for example 23-Oct-2026. Use hh-mm-ss AM/PM for user-readable time, for example 02-05-09 PM. This display convention does not replace typed dates/timestamps or redefine API wire formats. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
+| VIRTUAL-MART-01 | All reports, dashboards and their file/Google Sheet outputs read database-backed authorized virtual marts through the reporting service. System/domain tables remain authoritative; no parallel editable reporting master. Field selection and filters use governed datasets; enforce entity, subscription, group/field/record access. Physical view schema/grain/ownership and performance plans remain design work. | 0.1.0 | User-selected direction; authorized recording; not published | User-authorized direction; User-selected direction; authorized recording; not published |
 | S-D38 | Use DD-MMM-YYYY for user-readable date displays and the date portion of timestamps, for example 20-Oct-2026. Preserve typed date/timestamp values; apply display formatting rather than replacing underlying values with text. This instruction specifies the date format only; time-of-day format and same-day backup filename uniqueness remain unresolved. Existing files are not renamed and historical records are not rewritten by this registration. Current disposition: Historical wording retained. DATE-TIME-01 and BACKUP-TIME-01 resolve display time and backup timestamp; only same-second backup collisions remain pending. | 0.1.0 | Approved | Proposed mapping; Approved |
 | S-D39 | Retain both a UUID and a readable prefixed ID for registered records. Any later removal requires dependency review and an approved migration. | 0.1.0 | Approved | Proposed mapping; Approved |
 | S-D40 | Proposed schema uses immutable UUID primary keys and UUID foreign keys. Readable IDs are unique alternate keys; relationships are stored explicitly rather than inferred from ID text. | 0.1.0 | Pending | Proposed mapping; Pending |

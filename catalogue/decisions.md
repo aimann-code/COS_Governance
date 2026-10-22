@@ -1,7 +1,7 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -29,6 +29,10 @@ Source references are temporary/history references unless an approved permanent 
 | NAM-LOWER-01 | Explicitly change SYS_EMP_ID to sys_emp_id and EMP_Reg to emp_reg; other naming rules/terms retained. | User-selected and authorized for governance recording; implementation migration pending |
 | COMMON-REQ-01 | Record consolidated common requirements for entity-configured uniqueness/fields, access groups/subscriptions, confirmed preferences/defaults, uploads/sync/email, reports/search and traceable configurable errors. | User requirements/design directions recorded; detailed implementation pending |
 | EMP-DATA-01 | Record proposed logical Employee Management data model, updated to current configurable uniqueness and lowercase identifiers. | Proposed logical design recorded; no physical DB or DDL approval inferred |
+| NAM-REG-01 | Record source term, scoped emp_reg/vnd_reg/agg_reg/source_reg component pattern and vw_<domain>_<purpose> view pattern. | User-authorized scoped naming/design additions; implementation pending |
+| DEV-GUIDE-01 | Generate 18-section Autoinspire-derived developer guide with implementation/API/DTO/connection/test/task matrices and per-table formats. | User-authorized derivative design; implementation and executed application tests not claimed |
+| VIRTUAL-MART-01 | All reporting reads database virtual marts through controlled reporting service. | User direction recorded; views not implemented |
+| UPLOAD-STORAGE-01 | Version template definitions in GitHub; generate entity-specific blanks via application; real files in approved private storage, staged rows/outcomes in DB, validated records in owning tables. Working-sheet gathering comes next. | Proposed storage/data-flow design recorded; no file moves, new storage adoption or uploads |
 
 ## Reconciliation
 

@@ -1,7 +1,7 @@
 # Reports and dashboards
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -35,6 +35,7 @@ No linked implementation mapping in this partial inventory. Detailed code extrac
 | COMMON-REPORT-05 | Support filtered report output to existing or explicitly new Google Sheet destinations using the mandatory append/clear confirmation process. | Recorded requirement/design direction; implementation not verified |
 | COMMON-REPORT-06 | Official controlled outputs retain required definitions while allowing permitted presentation changes. Personal preferences do not alter approved payroll meanings. | Recorded requirement/design direction; implementation not verified |
 | COMMON-REPORT-07 | Shared favorites/shortcuts open permitted components; employee self-service is a role-based workspace, not a duplicate business module. | Recorded requirement/design direction; implementation not verified |
+| COMMON-REPORT-08 | All reporting reads database-backed virtual marts through the reporting service; canonical governing rule VIRTUAL-MART-01 in standards/standards.yaml. Google Sheets is an output, not reporting authority. | User-selected requirement; implementation pending |
 
 [All common requirements](../common-requirements.md)
 

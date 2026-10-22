@@ -27,10 +27,10 @@ def main():
         require((ROOT / path).is_file(), "Missing entry point: " + path)
         require(ROOT in (ROOT / path).resolve().parents, "Entry escapes repository")
     naming = read("standards/naming.yaml")
-    require(naming["version"] == manifest["naming_version"] == "0.2.1", "Naming version mismatch")
-    require(naming["decision_ref"] == "NAM-LOWER-01" and naming["base_decision_ref"] == "D67", "Missing freeze evidence")
+    require(naming["version"] == manifest["naming_version"] == "0.2.2", "Naming version mismatch")
+    require(naming["decision_ref"] == "NAM-REG-01" and naming["previous_decision_ref"] == "NAM-LOWER-01" and naming["base_decision_ref"] == "D67", "Missing freeze evidence")
     terms = naming["terms"]
-    require(len(terms) == 52, "Expected 32 terms and 20 retained terms")
+    require(len(terms) == 53, "Expected 52 base terms and one authorized source term")
     codes = [row["shortcode"] for row in terms]
     require(len(codes) == len(set(codes)), "Duplicate shortcode")
     require(all(re.fullmatch("[a-z][a-z0-9_]*", code) for code in codes), "Invalid shortcode")
@@ -46,7 +46,7 @@ def main():
     require(historical_naming["version"] == "0.2.0", "Lost previous naming baseline")
     require(set(historical_naming["preserve"]) == {"SYS_EMP_ID", "EMP_Reg"},
             "Historical naming tokens changed")
-    require(naming["terms"] == historical_naming["terms"], "Unapproved term catalogue change")
+    require(naming["terms"][:52] == historical_naming["terms"], "Unapproved term catalogue change")
     aliases = {r["previous"]: r["current"] for r in naming["aliases"]}
     require(aliases == {"SYS_EMP_ID": "sys_emp_id", "EMP_Reg": "emp_reg"},
             "Missing explicit lowercase migration mapping")
@@ -65,7 +65,7 @@ def main():
                 "Unknown migration action")
     frozen_sheet = next(s for s in sheets if s["name"] == "Code_Shortcode")
     require(len(frozen_sheet["values"]) == 53, "Shortcode source row mismatch")
-    for source, term in zip(frozen_sheet["values"][1:], terms):
+    for source, term in zip(frozen_sheet["values"][1:], historical_naming["terms"]):
         require(source[0] == term["term"] and source[1] == term["shortcode"],
                 "Shortcode snapshot/source mismatch")
     docs = read("migration/source-docs.json")["documents"]
@@ -128,7 +128,38 @@ def main():
             "Duplicate logical table")
     require(logical["target_schema"] == "emp", "Wrong employee schema target")
     require(logical["common_requirement_source"] == "features/common.yaml", "Unlinked common controls")
-    print("PASS: current lowercase aliases, unchanged term catalogue, linked common requirements and logical data design.")
+    require(term_map.get("Source") == "source", "Missing authorized source term")
+    previous_naming = read("migration/naming-v0.2.1.json")
+    require(previous_naming["version"] == "0.2.1" and len(previous_naming["terms"]) == 52,
+            "Previous lowercase baseline not preserved")
+    profiles = naming["profiles"]["registration"]["domains"]
+    require({r["code"] for r in profiles} == {"emp_reg", "vnd_reg", "agg_reg", "source_reg"},
+            "Missing registration naming profile")
+    guide = read("architecture/developer-guide.yaml")
+    require({r["order"] for r in guide["sections"]} == {r["order"] for r in design["sections"]},
+            "Developer guide must cover every template section")
+    shared = read("architecture/shared-data-design.yaml")
+    all_tables = logical["tables"] + shared["tables"]
+    require(len({r["name"] for r in all_tables}) == len(all_tables), "Duplicate dictionary table")
+    for definition in (logical, shared):
+        base_names = [r["name"] for r in definition["common_columns"]]
+        for item in definition["tables"]:
+            names = base_names + [r["name"] for r in item["columns"]]
+            require(len(names) == len(set(names)), "Duplicate column in " + item["name"])
+            require(item["status"] and item["columns"], "Incomplete logical table")
+            for column in item["columns"]:
+                require(set(("name", "type", "required", "key", "rule", "upload")) <= set(column),
+                        "Incomplete column format")
+    uploads = read("templates/upload-profiles.yaml")
+    require({p["component_code"] for p in uploads["profiles"]} == {p["code"] for p in profiles},
+            "Template/registration profile mismatch")
+    marts = read("architecture/virtual-marts.yaml")
+    require(len({r["view"] for r in marts["definitions"]}) == len(marts["definitions"]),
+            "Duplicate mart view")
+    require(len({r[0] for r in guide["test_cases"]}) == len(guide["test_cases"]),
+            "Duplicate planned test reference")
+    print("PASS: naming additions, 18-section developer derivative, table formats, template profiles and mart definitions.")
+
     transcript = read("discussions/user-excerpts.json")
     require(transcript["complete_provider_export"] is False, "Do not claim complete transcript")
     require(len(transcript["excerpts"]) == 21, "Discussion excerpt count mismatch")
@@ -155,7 +186,7 @@ def main():
     for standard in baseline["catalogue"]:
         require((ROOT / standard["rule_source"]).is_file(), "Missing canonical rule source")
         for rule_ref in standard["rule_refs"]:
-            require(rule_ref in {"D67", naming["decision_ref"]} or rule_ref in rule_refs,
+            require(rule_ref in {"D67", "NAM-LOWER-01", naming["decision_ref"]} or rule_ref in rule_refs,
                     "Unknown consolidated rule reference: " + rule_ref)
     decisions = read("decisions/decisions.yaml")
     reconciliation = decisions["reconciliation"]
@@ -175,7 +206,7 @@ def main():
                     "Implemented mapping needs repository and exact commit")
     print("PASS: six approved maintained groups, 23 standards, linked ownership and "
           "10 reconciliation items. Individual pending rule approval is unchanged.")
-    print("PASS: 44 tabs, 1695 historical rows, 52 terms, 12 frozen rules, 23 standards, "
+    print("PASS: 44 tabs, 1695 historical rows, 53 current terms (52 base), 12 base rules, 23 standards, "
           "18 design sections, 5 source texts and 21 selected discussion excerpts.")
     print("Scope: content consistency only. No authority cutover, code extraction, production "
           "compliance, native-document rendering or source deletion verified.")

@@ -1,12 +1,12 @@
 # Features
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
-Transitional domain inventory plus cross-suite requirement links; no implementation inferred. These references are discussion inventory keys; they do not allocate new architecture components.
+Transitional domain inventory, shared requirements and proposed employee/vendor/aggregator/source registration; ownership/BRD pending where stated. These references are discussion inventory keys; they do not allocate new architecture components.
 
 | Feature | Ref | Owner | Requirement state |
 | --- | --- | --- | --- |
@@ -62,3 +62,6 @@ Transitional domain inventory plus cross-suite requirement links; no implementat
 | [Search at every level](features/feat-common-draft-10.md) | FEAT-COMMON-DRAFT-10 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
 | [Configurable errors and source traceability](features/feat-common-draft-11.md) | FEAT-COMMON-DRAFT-11 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
 | [Shared architecture and history](features/feat-common-draft-12.md) | FEAT-COMMON-DRAFT-12 | Shared cross-suite capability; exact architectural placement pending | Recorded requirements/design directions; implementation not verified |
+| [Vendor Registration](features/vnd-reg.md) | vnd_reg | Architectural placement pending | User-authorized proposed registration boundary; not implemented |
+| [Aggregator Registration](features/agg-reg.md) | agg_reg | Architectural placement pending | User-authorized proposed registration boundary; not implemented |
+| [Source Registration](features/source-reg.md) | source_reg | Architectural placement pending | User-authorized proposed registration boundary; not implemented |

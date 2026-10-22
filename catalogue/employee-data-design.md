@@ -1,7 +1,7 @@
 # Employee Management logical database design
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -25,17 +25,17 @@ Proposed logical Employee Management data design; no DDL or migration performed
 
 | Proposed table | Purpose | Indicative fields | Status |
 | --- | --- | --- | --- |
-| emp.emp | Stable employee identity | id; sys_emp_id; name; father_name; nationality reference | Proposed logical table and indicative fields; not deployed |
-| emp.emp_identity | National identity details | emp_id; identity type; protected number; protected matching token; verification status | Proposed logical table and indicative fields; not deployed |
-| emp.emp_contact | Contact details | emp_id; contact type/value; primary flag; verification status | Proposed logical table and indicative fields; not deployed |
-| emp.emp_address | Addresses | emp_id; address type; address fields; effective dates | Proposed logical table and indicative fields; not deployed |
-| emp.employment | Employment relationship | emp_id; organization reference; employment type; current status | Proposed logical table and indicative fields; not deployed |
-| emp.employment_period | Joining, exit and rejoining | employment_id; joining date; exit date/reason | Proposed logical table and indicative fields; not deployed |
-| emp.emp_assignment | Department, role, group and location assignments | employment_id; assignment type; owning master reference; effective dates | Proposed logical table and indicative fields; not deployed |
-| emp.emp_id_map | External system IDs | emp_id; source system; external ID; effective dates | Proposed logical table and indicative fields; not deployed |
-| emp.emp_doc | Employee links to shared document storage | emp_id; document type; document reference; verification status | Proposed logical table and indicative fields; not deployed |
-| emp.emp_bank | Payment account details | emp_id; protected account details; verification status; effective dates | Proposed logical table and indicative fields; not deployed |
-| emp.emp_field_value | Configured custom field responses | emp_id; field-definition reference; typed value; configuration version | Proposed logical table and indicative fields; not deployed |
+| emp.emp | Stable employee identity | sys_emp_id; name; father_name; dob; nationality_ref | Proposed logical table and indicative fields; not deployed |
+| emp.emp_identity | National identity details | emp_id; identity_type_ref; number_encrypted; match_token; verification_status; valid_from; valid_to | Proposed logical table and indicative fields; not deployed |
+| emp.emp_contact | Contact details | emp_id; contact_type; value_encrypted; is_primary; verification_status | Proposed logical table and indicative fields; not deployed |
+| emp.emp_address | Addresses | emp_id; address_type; line_1_encrypted; line_2_encrypted; city; region; country_ref; postal_code; valid_from; valid_to | Proposed logical table and indicative fields; not deployed |
+| emp.employment | Employment relationship | emp_id; org_ref; employment_type_ref; status | Proposed logical table and indicative fields; not deployed |
+| emp.employment_period | Joining, exit and rejoining | employment_id; joining_date; ended_on; exit_reason | Proposed logical table and indicative fields; not deployed |
+| emp.emp_assignment | Department, role, group and location assignments | employment_id; assignment_type; master_ref; valid_from; valid_to | Proposed logical table and indicative fields; not deployed |
+| emp.emp_id_map | External system IDs | emp_id; source_ref; external_id; valid_from; valid_to | Proposed logical table and indicative fields; not deployed |
+| emp.emp_doc | Employee links to shared document storage | emp_id; document_ref; document_type_ref; verification_status | Proposed logical table and indicative fields; not deployed |
+| emp.emp_bank | Payment account details | emp_id; account_number_encrypted; holder_name_encrypted; bank_code; verification_status; valid_from; valid_to | Proposed logical table and indicative fields; not deployed |
+| emp.emp_field_value | Configured custom field responses | emp_id; field_ref; field_def_ver; value_type; value_encrypted | Proposed logical table and indicative fields; not deployed |
 
 ## Relationships
 

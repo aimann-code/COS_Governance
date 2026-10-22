@@ -7,11 +7,11 @@
       "Draft_Ref": "STD-DRAFT-1",
       "Standard_Name": "Naming Standard",
       "Purpose": "Names, prefixes, abbreviations, aliases and source-file conventions",
-      "Version": "0.2.1",
+      "Version": "0.2.2",
       "Catalogue_Direction": "Frozen naming with explicit user-approved lowercase amendment",
-      "Rule_Completion": "12 retained rules, with NAM-LOWER-01 amendments to two preservation exceptions; 52 terms unchanged; implementation migration pending",
+      "Rule_Completion": "12 base rules with explicit amendments; 53 controlled terms; scoped registration and virtual-view profiles; live migration pending",
       "Owner": "",
-      "Source": "D67 base; NAM-LOWER-01 current user amendment recorded 23-Oct-2026",
+      "Source": "D67 base; NAM-LOWER-01; NAM-REG-01",
       "canonical_file": "standards/naming.yaml"
     },
     {
@@ -2278,6 +2278,16 @@
       "Approval Status": "Approved by user; not published",
       "Implementation_Status": "Governance definition recorded; application changes not performed",
       "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
+    },
+    {
+      "Review Ref": "VIRTUAL-MART-01",
+      "Scope": "COS",
+      "Standard Name": "Data Standard",
+      "Rule": "All reports, dashboards and their file/Google Sheet outputs read database-backed authorized virtual marts through the reporting service. System/domain tables remain authoritative; no parallel editable reporting master. Field selection and filters use governed datasets; enforce entity, subscription, group/field/record access. Physical view schema/grain/ownership and performance plans remain design work.",
+      "Decision Ref": "VIRTUAL-MART-01",
+      "Version": "0.1.0",
+      "Approval Status": "User-selected direction; authorized recording; not published",
+      "Implementation_Status": "Design only; reporting views/service not deployed"
     }
   ],
   "rule_details": [
@@ -7708,6 +7718,46 @@
       "Mapping_Status": "Approved decision supplement",
       "Rule_Approval": "Approved by user; not published",
       "Source": "GITHUB-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "VIRTUAL-MART-01",
+      "Standard_Name": "Data Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Reporting and output paths",
+      "Mapping_Status": "User-authorized direction",
+      "Rule_Approval": "User-selected direction; authorized recording; not published",
+      "Source": "VIRTUAL-MART-01"
+    },
+    {
+      "Rule_Ref": "VIRTUAL-MART-01",
+      "Standard_Name": "Backend Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Reporting and output paths",
+      "Mapping_Status": "User-authorized direction",
+      "Rule_Approval": "User-selected direction; authorized recording; not published",
+      "Source": "VIRTUAL-MART-01"
+    },
+    {
+      "Rule_Ref": "VIRTUAL-MART-01",
+      "Standard_Name": "Frontend Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Reporting and output paths",
+      "Mapping_Status": "User-authorized direction",
+      "Rule_Approval": "User-selected direction; authorized recording; not published",
+      "Source": "VIRTUAL-MART-01"
+    },
+    {
+      "Rule_Ref": "VIRTUAL-MART-01",
+      "Standard_Name": "API / Integration Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Reporting and output paths",
+      "Mapping_Status": "User-authorized direction",
+      "Rule_Approval": "User-selected direction; authorized recording; not published",
+      "Source": "VIRTUAL-MART-01"
     }
   ],
   "versions": [
@@ -8020,6 +8070,16 @@
       "Effective_To": "",
       "Supersedes": "0.2.0 only for current sys_emp_id/emp_reg preservation exceptions",
       "Evidence": "NAM-LOWER-01; user update git hub"
+    },
+    {
+      "Standard_Ref": "STD-DRAFT-1",
+      "Version": "0.2.2",
+      "Approval_Status": "User-authorized scoped naming additions",
+      "Publication_Status": "Not published",
+      "Effective_From": "",
+      "Effective_To": "",
+      "Supersedes": "0.2.1 within scoped profile additions only",
+      "Evidence": "NAM-REG-01"
     }
   ],
   "applicability": [
@@ -8371,5 +8431,5 @@
     }
   ],
   "exceptions": [],
-  "note": "Current naming authority is Naming 0.2.1 with explicit NAM-LOWER-01 amendment; 0.2.0 and old prefix proposals remain historical. Current scoped supplements and individual approvals remain separate from implementation/publication."
+  "note": "Current naming authority is Naming 0.2.2 with explicit NAM-LOWER-01 amendment; 0.2.0 and old prefix proposals remain historical. Current scoped supplements and individual approvals remain separate from implementation/publication. NAM-REG-01 adds source and scoped registration/virtual-view profiles; no application rename performed."
 }

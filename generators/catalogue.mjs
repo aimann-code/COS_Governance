@@ -49,6 +49,12 @@ export function buildCatalogue(src) {
       ["[Implementation links](implementation.md)","Pinned ownership mappings to application code; partial inventory"],
       ["[Decisions](decisions.md)","Recorded directions, source decisions and reconciliation items"],
       ["[Common requirements](common-requirements.md)","Cross-suite configurable features, controls and open decisions"],
+      ["[Developer guide](developer-guide.md)","18-section design derivative and implementation sequence"],
+      ["[Developer matrix](developer-matrix.md)","Proposed files, functions, DTOs, APIs and connections"],
+      ["[Table formats](table-formats.md)","Column-level logical data dictionary"],
+      ["[Virtual marts](virtual-marts.md)","Database reporting grain and authority"],
+      ["[Upload templates](upload-templates.md)","Where definitions, files, staging and DB records belong"],
+      ["[Test plan](test-plan.md)","Planned full-flow tests and evidence requirements"],
       ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"]
     ])+
     "\n## Browse the known HRMS hierarchy\n\n"+
@@ -157,6 +163,94 @@ export function buildCatalogue(src) {
     body+="\n## Shared logical records\n\n"+e.shared_records.map(x=>"- "+x).join("\n")+"\n\n## Pending design work\n\n"+e.pending.map(x=>"- "+x).join("\n")+"\n\n"+
       "[Canonical logical design](../architecture/emp-data-design.yaml) · [Evidence](../"+e.source_evidence+")\n";
     out["catalogue/employee-data-design.md"]=body;
+  }
+  if(n.profiles) {
+    out["catalogue/naming.md"]+="\n## Scoped naming profiles\n\n"+
+      table(["Domain","Component code","Meaning"],n.profiles.registration.domains.map(p=>[p.domain,p.code,p.meaning]))+
+      "\nRegistration pattern: "+n.profiles.registration.pattern+". "+n.profiles.registration.scope+"\n\n"+
+      "Virtual view pattern: "+n.profiles.mart.pattern+". "+n.profiles.mart.scope+"\n";
+  }
+  if(src.guide) {
+    const g=src.guide,reg=n.profiles.registration.domains;
+    let guide=header("Developer guide")+g.status+"\n\n"+
+      table(["Property","Value"],[["Project",g.project],["Guide version",g.version],["Application evidence",g.application_ref],["Template","[18-section structure](../"+g.template_source+")"],["Source and authorization","[Evidence](../"+g.evidence+")"]]);
+    for(const section of g.sections) {
+      const template=t.sections.find(x=>x.order===section.order);
+      guide+="\n## "+section.order+". "+template.name+"\n\n"+table(["Area","Developer instruction"],section.rows);
+    }
+    guide+="\n## Architecture block diagram\n\n\`\`\`mermaid\nflowchart TD\n  UI[Forms and dashboards] --> API[Authenticated APIs]\n  API --> POLICY[Access and configuration]\n  POLICY --> REG[Registration orchestration]\n  REG --> HANDLERS[Domain handlers]\n  HANDLERS --> DB[Domain and shared tables]\n  INPUT[Files, email and Sheets] --> IMPORT[Parse, map and validate]\n  IMPORT --> REG\n  DB --> MART[Virtual marts]\n  POLICY --> REPORT[Report service]\n  REPORT --> MART\n  REPORT --> OUTPUT[Views, downloads and Sheets]\n\`\`\`\n";
+    guide+="\n## Developer handoff\n\n[Implementation matrix](developer-matrix.md) · [Table formats](table-formats.md) · [Virtual marts](virtual-marts.md) · [Uploads and storage](upload-templates.md) · [Test plan](test-plan.md)\n\n"+
+      table(["Task","Deliverable","Dependency","Assignment"],g.tasks)+
+      "\nNo GitHub Issue or developer assignment is created by this table. Exact Ritesh username and assignment authorization remain unresolved.\n";
+    out["catalogue/developer-guide.md"]=guide;
+    let matrix=header("Developer implementation matrix")+
+      "Proposed implementation names and contracts; not an inventory of existing code. Owners/packages for shared/vendor/aggregator/source work remain to be finalized. Each production task must pin its design commit and link actual code/tests.\n\n"+
+      table(["Registration","Controller file","Service file","Handler file","Repo file","Request / response DTO","Method","API"],reg.map(p=>[p.code,p.symbol+"RegController.java",p.symbol+"RegService.java",p.symbol+"RegHandler.java",p.symbol+"Repo.java",p.symbol+"RegReqDTO / "+p.symbol+"RegResDTO","register"+p.symbol,"POST /api/v1/"+p.resource]));
+    matrix+="\n## Shared files and functions\n\n"+
+      table(["Class and Java file","Proposed package suffix","Functions","Responsibility"],g.services.map(r=>[r[0]+" / "+r[0]+".java",r[1],r[2],r[3]]))+
+      "\nShared registration orchestration: RegService.java. Proposed frontend files: "+reg.map(p=>p.code.replaceAll("_","-")+".tsx").join(", ")+". Class symbols use PascalCase; functions camelCase; physical Java public-class files match class names. Package/root placement remains a reviewed design choice.\n";
+    matrix+="\n## API matrix\n\n"+table(["Method","Route","Operation ID","Request","Response","Gate"],g.api_rows)+
+      "\n## DTO field matrix\n\n"+table(["Payload","Field","Type","Meaning"],g.dto_fields)+
+      "\n## Connection matrix\n\n"+table(["Connection","Mechanism","Identity","Rule"],g.connections)+
+      "\n## Required traceability columns\n\n"+
+      table(["Group","Columns"],[
+      ["Ownership","suite; engine; module; component; requirement ref"],
+      ["Frontend","screen; route; file; action"],
+      ["API/DTO","method; route; operation; controller; DTO; version"],
+      ["Execution","service; handler; function; repo; transaction"],
+      ["Data/reporting","table/key; relationship; mart/view; connection"],
+      ["Security","subscription; entity/group/field/record policy"],
+      ["Processing","config/key/mapping versions; idempotency; error/history"],
+      ["Verification","acceptance case; actual test/code refs; result/evidence"],
+      ["Status","proposal; implementation; verification; publication"]
+      ])+
+      "\nExisting implementation mappings remain [pinned evidence](implementation.md). This proposal does not rename those artifacts.\n";
+    out["catalogue/developer-matrix.md"]=matrix;
+    out["catalogue/test-plan.md"]=header("Full flow test plan")+
+      "All cases below are planned. No application tests are executed by generating this document. Governance CI checks source integrity and reproducible documentation only.\n\n"+
+      table(["ID","Scenario","Expected result"],g.test_cases)+
+      "\n## Evidence per executed case\n\n"+table(["Evidence","Required content"],[
+      ["Context","Design/application commit, environment, actor/group and subscription"],
+      ["Input","Authorized synthetic fixture and source position; no secrets/live data in repo"],
+      ["Action","API/UI request, config/key/template version and confirmation"],
+      ["Expected/actual","Assertion, observed outcome, timing and failure/defect reference"],
+      ["Database","Committed or rolled-back records, claims/history and outbox consistency"],
+      ["Outputs","Authorized report/Sheet rows, filters, destination and confirmed write mode"]
+      ])+"\nUnit + PostgreSQL integration + API + browser tests are required as applicable. Pending business policies must be resolved before corresponding production acceptance.\n";
+  }
+  if(src.employeeData && src.sharedData) {
+    const sources=[["architecture/emp-data-design.yaml",src.employeeData],["architecture/shared-data-design.yaml",src.sharedData]];
+    const all=sources.flatMap(([source,def])=>def.tables.map(tb=>({source,def,tb})));
+    const tablePath=name=>"tables/"+slug(name)+".md";
+    out["catalogue/table-formats.md"]=header("Proposed database table formats")+
+      "Logical data dictionary only. Types, schema placement, constraints and indexes need physical review. Protected text/token labels are not executable PostgreSQL types. Vendor/aggregator tables are scaffolds pending working-sheet gathering. Direct DB-table uploads are not supported; component templates use authorized business fields.\n\n"+
+      table(["Table","Purpose","State"],all.map(({tb})=>["["+tb.name+"]("+tablePath(tb.name)+")",tb.purpose,tb.status]))+
+      "\n[Upload template and storage design](upload-templates.md) · [Employee ER diagram](employee-data-design.md)\n";
+    for(const {source,def,tb} of all) {
+      const columns=[...def.common_columns,...tb.columns];
+      out["catalogue/"+tablePath(tb.name)]=header(tb.name+" table format",1)+
+        tb.status+"\n\n"+tb.purpose+"\n\n"+
+        table(["Column","Proposed type","Required","Key/reference","Validation/meaning","Upload"],columns.map(c=>[c.name,c.type,c.required,c.key,c.rule,c.upload]))+
+        "\n## Constraints and indexes\n\n"+[...def.common_constraints,...tb.constraints,...(tb.indexes||[])].map(x=>"- "+x).join("\n")+"\n\n"+
+        (tb.upload_policy||"Only authorized component DTO/template operations; PK/scope/audit/token columns are system-managed.")+
+        "\n\n[Canonical specification](../../"+source+") · [All table formats](../table-formats.md) · [Developer guide](../developer-guide.md)\n";
+    }
+  }
+  if(src.marts) {
+    const v=src.marts;
+    out["catalogue/virtual-marts.md"]=header("Virtual reporting marts")+v.status+"\n\n"+v.reporting_path+"\n\n"+
+      table(["Mart","Proposed view","Grain","Inputs","Notes"],v.definitions.map(x=>[x.code,x.view,x.grain,x.inputs.join(", ")||"Pending domain schema",x.notes]))+
+      "\n## Rules\n\n"+v.rules.map(x=>"- "+x).join("\n")+"\n\n[Canonical mart design](../architecture/virtual-marts.yaml) · [Developer guide](developer-guide.md)\n";
+  }
+  if(src.uploads) {
+    const u=src.uploads;
+    out["catalogue/upload-templates.md"]=header("Upload templates and data storage")+u.status+"\n\n"+u.definition_policy+"\n\n"+
+      table(["Item","Where","Database role","State"],u.storage.map(x=>[x.item,x.location,x.database_role,x.state]))+
+      "\n## Template profiles\n\n"+table(["Component","Formats","Fields","Required metadata","Readiness"],u.profiles.map(x=>[x.component_code,x.formats.join(", "),x.field_selection,x.required_metadata.join(", "),x.working_sheet_status]))+
+      "\n## Processing flow\n\n"+u.flow.map((x,i)=>(i+1)+". "+x).join("\n")+
+      "\n\n## Next working sheet inventory format\n\n"+table(["Column","Purpose"],u.next_gathering_columns.map(x=>[x,"Capture without silently dropping source fields; unresolved mapping remains explicit"]))+
+      "\n## Pending\n\n"+u.pending.map(x=>"- "+x).join("\n")+"\n\n"+
+      "[Canonical template/storage definition](../templates/upload-profiles.yaml) · [Table formats](table-formats.md)\n";
   }
   return out;
 }

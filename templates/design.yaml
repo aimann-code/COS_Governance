@@ -1,6 +1,6 @@
 {
   "name": "COS Design Standard output structure",
-  "status": "adapted draft; naming 0.2.0 remains independently frozen",
+  "status": "Autoinspire-adapted draft; naming resolves through standards/naming.yaml and manifest",
   "reference": "Autoinspire Promotion Engine Design for reference only.pdf",
   "reference_scope": "Presentation, organization and explanatory structure only. No promotion rules, rule engine or technology adoption.",
   "source_reference": "https://drive.google.com/file/d/15yyw9RB7GmEiPitoOZ99h7hR49UgYRtG/view",
@@ -110,5 +110,13 @@
     "historical",
     "pending"
   ],
-  "diagram_policy": "Retain editable source and source versions; label mockup and running-app capture separately"
+  "diagram_policy": "Retain editable source and source versions; label mockup and running-app capture separately",
+  "version": "0.1.1",
+  "naming_source": "standards/naming.yaml",
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "summary": "Replace stale naming 0.2.0 reference with canonical current naming resolution; retain 18-section presentation structure."
+    }
+  ]
 }

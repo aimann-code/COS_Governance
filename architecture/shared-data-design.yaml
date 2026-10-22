@@ -1,0 +1,1720 @@
+{
+  "version": "0.1.0",
+  "status": "Proposed logical data dictionary; physical schema/ownership/DDL pending",
+  "source_ref": "DEV-GUIDE-01",
+  "common_columns": [
+    {
+      "name": "id",
+      "type": "uuid",
+      "required": "Yes",
+      "key": "PK",
+      "rule": "Immutable internal ID; server assigned",
+      "upload": "No"
+    },
+    {
+      "name": "scope_id",
+      "type": "text",
+      "required": "Yes",
+      "key": "Scoped reference",
+      "rule": "Authenticated entity context; map existing meta.scope before migration",
+      "upload": "No"
+    },
+    {
+      "name": "row_ver",
+      "type": "integer",
+      "required": "Yes",
+      "key": "",
+      "rule": "Positive optimistic-lock version",
+      "upload": "No"
+    },
+    {
+      "name": "created_at",
+      "type": "timestamptz",
+      "required": "Yes",
+      "key": "",
+      "rule": "Server time",
+      "upload": "No"
+    },
+    {
+      "name": "created_by",
+      "type": "text",
+      "required": "Yes",
+      "key": "",
+      "rule": "Authenticated actor/system reference",
+      "upload": "No"
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamptz",
+      "required": "Yes",
+      "key": "",
+      "rule": "Server time",
+      "upload": "No"
+    },
+    {
+      "name": "updated_by",
+      "type": "text",
+      "required": "Yes",
+      "key": "",
+      "rule": "Authenticated actor/system reference",
+      "upload": "No"
+    }
+  ],
+  "common_constraints": [
+    "UNIQUE(scope_id,id) for composite same-scope foreign keys, in addition to immutable primary ID.",
+    "Same-scope FK checks for employee-owned relationships; external master type/scope validation.",
+    "Current configured keys enforced through versioned claims and transaction-safe duplicate protection.",
+    "Business identifier uniqueness scope and physical encrypted types remain pending design decisions."
+  ],
+  "tables": [
+    {
+      "name": "config.field_def",
+      "purpose": "Registered field meaning/type",
+      "columns": [
+        {
+          "name": "object_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "field_code",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "data_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "definition_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "sensitivity",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Unique field code in its registered namespace/version"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.entity_field",
+      "purpose": "Entity field policy",
+      "columns": [
+        {
+          "name": "field_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "component_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "config_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "label",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "read_only",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "validation_spec",
+          "type": "jsonb",
+          "required": "Configured",
+          "key": "",
+          "rule": "Supported validators only; no executable user code",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.form_field",
+      "purpose": "Form layout and dependency mapping",
+      "columns": [
+        {
+          "name": "form_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "field_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "order_num",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "parent_field_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "dependency_spec",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.unique_rule",
+      "purpose": "Versioned composite uniqueness",
+      "columns": [
+        {
+          "name": "object_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "rule_name",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "config_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "is_default",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "outcome",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "Cannot bypass complete-key single-match update gates",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "At least two selected fields checked before activation",
+        "Default scope and activation conflicts require transaction-safe enforcement"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.unique_rule_field",
+      "purpose": "Selected composite-key fields",
+      "columns": [
+        {
+          "name": "rule_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to config.unique_rule",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "field_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "order_num",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "normalization_spec",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Unique field/order within rule"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.unique_claim",
+      "purpose": "Protected key-to-record association",
+      "columns": [
+        {
+          "name": "rule_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to config.unique_rule",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "rule_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "record_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "record_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "Resolve only through registered domain adapter",
+          "upload": "Configured"
+        },
+        {
+          "name": "key_token",
+          "type": "protected token",
+          "required": "Yes",
+          "key": "",
+          "rule": "Canonical protected comparison token; algorithm/key rotation pending",
+          "upload": "No"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Unique(scope_id,rule_id,rule_ver,key_token)",
+        "Version activation reconciles all existing claims before writes switch"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "auth.access_group",
+      "purpose": "Entity group permissions",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "admin_capabilities",
+          "type": "jsonb",
+          "required": "Configured",
+          "key": "",
+          "rule": "Explicit administration permissions",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "auth.group_perm",
+      "purpose": "Hierarchy/field read-write grants",
+      "columns": [
+        {
+          "name": "group_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to auth.access_group",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "object_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "field_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "can_read",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "can_write",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Inheritance/future-child/multi-group conflicts pending"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "auth.user_group",
+      "purpose": "Effective group assignments",
+      "columns": [
+        {
+          "name": "user_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "group_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to auth.access_group",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "valid_from",
+          "type": "timestamptz",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "valid_to",
+          "type": "timestamptz",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.entitlement",
+      "purpose": "Subscribed suite/engine scope",
+      "columns": [
+        {
+          "name": "object_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "valid_from",
+          "type": "timestamptz",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "valid_to",
+          "type": "timestamptz",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.preference",
+      "purpose": "Confirmed user/entity selections",
+      "columns": [
+        {
+          "name": "user_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "preference_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "object_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "settings",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "Validate allowed selections; no credentials",
+          "upload": "Configured"
+        },
+        {
+          "name": "config_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "confirmation_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.confirmation",
+      "purpose": "Bind confirmation to reviewed action",
+      "columns": [
+        {
+          "name": "user_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "action",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "payload_digest",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "Bind fields/range/mode/filter/config versions",
+          "upload": "Configured"
+        },
+        {
+          "name": "confirmed_at",
+          "type": "timestamptz",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "expires_at",
+          "type": "timestamptz",
+          "required": "Configured",
+          "key": "",
+          "rule": "Expiry policy pending",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.source",
+      "purpose": "External data source registration",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "source_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "connection_ref",
+          "type": "text",
+          "required": "Configured",
+          "key": "",
+          "rule": "Protected credential reference, not secret value",
+          "upload": "Configured"
+        },
+        {
+          "name": "linked_object_type",
+          "type": "text",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "linked_record_id",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "profile_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.source_profile",
+      "purpose": "Parsing and extraction configuration",
+      "columns": [
+        {
+          "name": "source_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to integration.source",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "profile_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "format",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "parser_spec",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "Registered parser options only",
+          "upload": "Configured"
+        },
+        {
+          "name": "mapping_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "template_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.mapping",
+      "purpose": "Confirmed mapping profile",
+      "columns": [
+        {
+          "name": "component_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "profile_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "source_profile_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "confirmation_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.mapping_field",
+      "purpose": "Source-to-system field mapping",
+      "columns": [
+        {
+          "name": "mapping_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to integration.mapping",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "source_field",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "target_field_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "transform_spec",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "match_method",
+          "type": "text",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "confirmed",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.import_job",
+      "purpose": "Bulk input execution",
+      "columns": [
+        {
+          "name": "source_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "template_ver",
+          "type": "integer",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "mapping_ver",
+          "type": "integer",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "config_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "mode",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "file_ref",
+          "type": "text",
+          "required": "Configured",
+          "key": "",
+          "rule": "Approved private storage reference",
+          "upload": "Configured"
+        },
+        {
+          "name": "idempotency_key",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Scoped idempotency uniqueness",
+        "Per-row versus all-or-nothing batch policy pending"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.import_row",
+      "purpose": "Raw/staged row with origin",
+      "columns": [
+        {
+          "name": "job_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to integration.import_job",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "source_position",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "Sheet/row/cell or PDF page/table/record or email attachment position",
+          "upload": "Configured"
+        },
+        {
+          "name": "payload_encrypted",
+          "type": "protected text",
+          "required": "Configured",
+          "key": "",
+          "rule": "Encrypt at rest; retention and sensitive-data policy required",
+          "upload": "Authorized input only"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "target_record_id",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.processing_error",
+      "purpose": "Traceable configurable error",
+      "columns": [
+        {
+          "name": "job_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "row_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "request_ref",
+          "type": "text",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "error_code",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "field_refs",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "source_context",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "Authorized/masked provenance",
+          "upload": "Configured"
+        },
+        {
+          "name": "message_template_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "config.error_template",
+      "purpose": "Configurable user-facing errors",
+      "columns": [
+        {
+          "name": "error_code",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "template_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "locale",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "template_text",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "allowed_placeholders",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.sheet_profile",
+      "purpose": "Google Sheet input/output selections",
+      "columns": [
+        {
+          "name": "source_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "spreadsheet_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "tab_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "range_spec",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "direction",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "mapping_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "preference_ref",
+          "type": "uuid",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.sync_run",
+      "purpose": "Confirmed Google Sheet execution",
+      "columns": [
+        {
+          "name": "profile_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to integration.sheet_profile",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "confirmation_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "write_mode",
+          "type": "text",
+          "required": "Configured",
+          "key": "",
+          "rule": "Append or clear-and-write for output",
+          "upload": "Configured"
+        },
+        {
+          "name": "filter_spec",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "checkpoint",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "idempotency_key",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.email_profile",
+      "purpose": "Message/attachment extraction rules",
+      "columns": [
+        {
+          "name": "source_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "sender_filter",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "subject_filter",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "header_filter",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "content_selection",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "extraction_profile_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.processed_source",
+      "purpose": "Duplicate source ingestion guard",
+      "columns": [
+        {
+          "name": "source_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "message_ref",
+          "type": "text",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "attachment_ref",
+          "type": "text",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "source_digest",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "job_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Scoped source identity uniqueness; duplicate policy reviewed"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "report.mart_def",
+      "purpose": "Virtual mart registration",
+      "columns": [
+        {
+          "name": "code",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "view_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "Registered view; no arbitrary SQL",
+          "upload": "Configured"
+        },
+        {
+          "name": "grain",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "allowed_fields",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "definition_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "report.report_def",
+      "purpose": "Report dataset and output contract",
+      "columns": [
+        {
+          "name": "mart_id",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "FK",
+          "rule": "Same-scope reference to report.mart_def",
+          "upload": "Via authorized business-key lookup"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "definition_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "controlled_output",
+          "type": "boolean",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "allowed_filters",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "report.saved_view",
+      "purpose": "Confirmed report/dashboard preferences",
+      "columns": [
+        {
+          "name": "user_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "report_ref",
+          "type": "uuid",
+          "required": "Configured",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "view_name",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "columns",
+          "type": "jsonb",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "filters",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "sort_group",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "layout",
+          "type": "jsonb",
+          "required": "Optional",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "confirmation_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "audit.change_event",
+      "purpose": "Configuration/field/data/audit events",
+      "columns": [
+        {
+          "name": "event_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "target_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "target_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "request_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "change_encrypted",
+          "type": "protected text",
+          "required": "Configured",
+          "key": "",
+          "rule": "Encrypt at rest; retain protected old/new or snapshot reference",
+          "upload": "Authorized input only"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Immutable required audit history; correction policy explicit"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "integration.outbox",
+      "purpose": "Committed domain events",
+      "columns": [
+        {
+          "name": "event_type",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "record_ref",
+          "type": "uuid",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "record_ver",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "payload_ref",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "delivery_status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "attempt_num",
+          "type": "integer",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Idempotent retry and per-event delivery tracking"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "vnd.vnd",
+      "purpose": "Vendor identity scaffold",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": "Configured",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Entity-admin key fields and full vendor profile pending working-sheet extraction"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    },
+    {
+      "name": "agg.agg",
+      "purpose": "Aggregator identity scaffold",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": "Configured",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "required": "Yes",
+          "key": "",
+          "rule": "",
+          "upload": "Configured"
+        }
+      ],
+      "inherits": "common_columns",
+      "constraints": [
+        "Entity-admin key fields and domain profile pending working-sheet extraction; distinct from source"
+      ],
+      "status": "Proposed logical table; ownership/schema/types and DDL require review"
+    }
+  ],
+  "scope_note": "Schema/table names are proposals. Reuse existing auth/meta/config/audit records when equivalent; do not deploy duplicate identity stores.",
+  "working_sheet_status": "Not gathered by this work; next phase supplies full domain columns and mappings.",
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "version": "0.1.0",
+      "summary": "Table formats for shared controls and vendor/aggregator scaffolds; source registration is integration.source."
+    }
+  ]
+}

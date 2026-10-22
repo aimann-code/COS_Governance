@@ -1,7 +1,7 @@
 # API / Integration Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -39,6 +39,7 @@
 | DRAFT-API-R19 | Maintain an authoritative machine-readable contract or approved equivalent and generate examples/documentation from pinned schemas; do not assume annotations alone are complete. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | DRAFT-API-R20 | Record implementation/build/integration evidence for each operation, including unavailable sources and stub responses; code presence alone is not end-to-end delivery. | 0.1.1 | Pending | Initial detailed draft; Pending |
 | API-PATH-01 | Use /api/v1/<resource> as the default API path; cos is not required in the path. Use /api/cos/v1/<resource> only when a shared host requires product separation. This supplements NAM-FRZ-R11 without changing frozen Naming 0.2.0. Existing routes remain unchanged until an explicitly reviewed compatibility migration. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
+| VIRTUAL-MART-01 | All reports, dashboards and their file/Google Sheet outputs read database-backed authorized virtual marts through the reporting service. System/domain tables remain authoritative; no parallel editable reporting master. Field selection and filters use governed datasets; enforce entity, subscription, group/field/record access. Physical view schema/grain/ownership and performance plans remain design work. | 0.1.0 | User-selected direction; authorized recording; not published | User-authorized direction; User-selected direction; authorized recording; not published |
 
 ## Applicability and exceptions
 

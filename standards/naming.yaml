@@ -1,9 +1,9 @@
 {
   "standard": "Naming Standard",
-  "version": "0.2.1",
-  "status": "frozen base with explicit user-approved lowercase amendment; not published",
-  "decision_ref": "NAM-LOWER-01",
-  "approval_evidence": "User: SYS_EMP_ID & EMP_Reg make it lower case; user later: update git hub",
+  "version": "0.2.2",
+  "status": "frozen base with user-authorized scoped registration/source/mart naming additions; not published",
+  "decision_ref": "NAM-REG-01",
+  "approval_evidence": "User update github in backend develop devloper guide following displayed names, matrices and virtual mart proposal",
   "preserve": [
     "sys_emp_id",
     "emp_reg"
@@ -53,10 +53,10 @@
     },
     {
       "ref": "NAM-FRZ-R08",
-      "rule": "Use UPPER_SNAKE_CASE constants/controlled codes except explicitly preserved tokens sys_emp_id and emp_reg. Use full readable frontend/document labels; omit architecture-level suffix words from frontend navigation.",
+      "rule": "Use UPPER_SNAKE_CASE constants/controlled codes except explicitly preserved lowercase sys_emp_id and registration component codes governed by profiles.registration. Use full readable frontend/document labels; omit architecture-level suffix words from frontend navigation.",
       "status": "User-approved amendment to frozen naming; not published",
-      "source_version": "0.2.1",
-      "decision_ref": "NAM-LOWER-01"
+      "source_version": "0.2.2",
+      "decision_ref": "NAM-REG-01"
     },
     {
       "ref": "NAM-FRZ-R09",
@@ -552,6 +552,15 @@
       "example": "dto",
       "aliases": "",
       "status": "Frozen by user"
+    },
+    {
+      "term": "Source",
+      "shortcode": "source",
+      "meaning": "External data source; distinct from vendor and aggregator business identity",
+      "scope": "Internal source-registration code; preserve external contracts",
+      "example": "SourceRegService",
+      "aliases": "",
+      "status": "User-authorized naming addition; implementation pending"
     }
   ],
   "change_policy": "Explicit decision and compatibility review; no automatic code/API/database renames",
@@ -577,6 +586,58 @@
       "decision_ref": "NAM-LOWER-01",
       "summary": "Explicitly supersede the two uppercase preservation exceptions; other frozen terms and casing profiles unchanged.",
       "historical_source": "migration/naming-v0.2.0.json"
+    },
+    {
+      "version": "0.2.2",
+      "previous_version": "0.2.1",
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-REG-01",
+      "summary": "Add source term and scoped registration/view patterns; retain lowercase aliases and existing 52 terms.",
+      "historical_source": "migration/naming-v0.2.1.json"
     }
-  ]
+  ],
+  "previous_decision_ref": "NAM-LOWER-01",
+  "profiles": {
+    "registration": {
+      "pattern": "<domain>_reg",
+      "scope": "Registration component codes only; does not lowercase every existing controlled code",
+      "status": "User-authorized naming profile; deployment pending",
+      "domains": [
+        {
+          "domain": "Employee",
+          "code": "emp_reg",
+          "symbol": "Emp",
+          "resource": "emp",
+          "meaning": "Employee business identity"
+        },
+        {
+          "domain": "Vendor",
+          "code": "vnd_reg",
+          "symbol": "Vnd",
+          "resource": "vnd",
+          "meaning": "Supplier or service-provider identity"
+        },
+        {
+          "domain": "Aggregator",
+          "code": "agg_reg",
+          "symbol": "Agg",
+          "resource": "agg",
+          "meaning": "Aggregator business-platform identity"
+        },
+        {
+          "domain": "Source",
+          "code": "source_reg",
+          "symbol": "Source",
+          "resource": "sources",
+          "meaning": "Data source/connection configuration, linked to applicable domain identity"
+        }
+      ]
+    },
+    "mart": {
+      "pattern": "vw_<domain>_<purpose>",
+      "example": "vw_emp_directory",
+      "scope": "Proposed database virtual reporting views; exact schema, grain and ownership registered in design",
+      "status": "User-authorized design naming profile; views not implemented"
+    }
+  }
 }

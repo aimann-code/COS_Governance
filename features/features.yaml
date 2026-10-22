@@ -1,5 +1,5 @@
 {
-  "status": "Transitional domain inventory plus cross-suite requirement links; no implementation inferred",
+  "status": "Transitional domain inventory, shared requirements and proposed employee/vendor/aggregator/source registration; ownership/BRD pending where stated",
   "features": [
     {
       "ref": "emp_reg",
@@ -545,6 +545,33 @@
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
       "requirement_group_ref": "COMMON-REUSE"
+    },
+    {
+      "ref": "vnd_reg",
+      "name": "Vendor Registration",
+      "owner": "Architectural placement pending",
+      "behaviour": "Supplier or service-provider identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
+      "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
+      "status": "User-authorized proposed registration boundary; not implemented",
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
+    },
+    {
+      "ref": "agg_reg",
+      "name": "Aggregator Registration",
+      "owner": "Architectural placement pending",
+      "behaviour": "Aggregator business-platform identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
+      "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
+      "status": "User-authorized proposed registration boundary; not implemented",
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
+    },
+    {
+      "ref": "source_reg",
+      "name": "Source Registration",
+      "owner": "Architectural placement pending",
+      "behaviour": "Data source/connection configuration, linked to applicable domain identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
+      "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
+      "status": "User-authorized proposed registration boundary; not implemented",
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
     }
   ],
   "traceability": [

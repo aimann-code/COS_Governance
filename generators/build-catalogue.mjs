@@ -16,7 +16,11 @@ const input = {
   design: read('templates/design.yaml'),
   ownership: read('architecture/ownership.yaml'),
   common: read('features/common.yaml'),
-  employeeData: read('architecture/emp-data-design.yaml')
+  employeeData: read('architecture/emp-data-design.yaml'),
+  sharedData: read('architecture/shared-data-design.yaml'),
+  guide: read('architecture/developer-guide.yaml'),
+  marts: read('architecture/virtual-marts.yaml'),
+  uploads: read('templates/upload-profiles.yaml')
 };
 const pages = buildCatalogue(input);
 pages['catalogue/generated-manifest.json'] = JSON.stringify({

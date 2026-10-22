@@ -1,9 +1,9 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
-  "naming_version": "0.2.1",
+  "naming_version": "0.2.2",
   "entry_points": {
     "standards": "standards/standards.yaml",
     "naming": "standards/naming.yaml",
@@ -21,7 +21,11 @@
     "standards_baseline": "standards/baseline.yaml",
     "catalogue": "catalogue/README.md",
     "common_requirements": "features/common.yaml",
-    "employee_data_design": "architecture/emp-data-design.yaml"
+    "employee_data_design": "architecture/emp-data-design.yaml",
+    "developer_guide": "architecture/developer-guide.yaml",
+    "shared_data_design": "architecture/shared-data-design.yaml",
+    "upload_templates": "templates/upload-profiles.yaml",
+    "virtual_marts": "architecture/virtual-marts.yaml"
   },
   "authority": {
     "current": "Existing approved source records and user instructions remain authoritative during migration",
@@ -45,7 +49,7 @@
   ],
   "governance_format": "YAML files use the JSON-compatible YAML 1.2 subset; checked with Python standard json parser",
   "source_model": {
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "approved by user; source migration/cutover pending",
     "file": "architecture/source-map.yaml",
     "decision": "SOURCE-MAP-01"
@@ -55,12 +59,12 @@
     "generator": "generators/catalogue.mjs",
     "command": "node generators/build-catalogue.mjs --write",
     "check": "node generators/build-catalogue.mjs --check",
-    "scope": "23 standards, 38 architecture entries, 52 feature inventory entries; 74 common requirements and proposed logical employee data design; not full COS inventory",
+    "scope": "23 standards, 38 architecture entries, 55 features, 75 common requirements; developer guide, 42 proposed logical table formats and virtual marts; not full COS inventory",
     "expected_counts": {
       "standards": 23,
       "architecture": 38,
-      "features": 52,
-      "common_requirements": 74
+      "features": 55,
+      "common_requirements": 75
     }
   },
   "change_history": [
@@ -101,6 +105,20 @@
       ],
       "approval": "User update git hub",
       "limits": "No app code, DB, API contract migration, merge, publication or authority cutover. Subsequent new design discussion requires its own update approval."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.3",
+      "draft_version": "0.3.4",
+      "summary": "Generate Autoinspire-derived developer guide, code/API/test matrices, table formats, virtual marts and template/upload storage plan; record naming profile additions.",
+      "decision_refs": [
+        "DEV-GUIDE-01",
+        "NAM-REG-01",
+        "VIRTUAL-MART-01",
+        "UPLOAD-STORAGE-01"
+      ],
+      "approval": "User update github in backend develop devloper guide",
+      "limits": "No working-sheet gathering, live data, actual upload templates, issue assignment, application code changes, schema migration, merge or publication."
     }
   ]
 }

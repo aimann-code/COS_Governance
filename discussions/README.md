@@ -21,3 +21,5 @@ Append corrections and superseding decisions; preserve historical wording. Do no
 - [Proposed HRMS mapping — 23-Oct-2026](hrms-mapping-23-Oct-2026.md): five modules, 28 components, retrieval coverage and unresolved ownership; authorized recording of proposal.
 
 - [Common requirements and lowercase naming amendment — 23-Oct-2026](common-requirements-23-Oct-2026.md): latest uniqueness, access, import/report/sync/search/default/error refinements; selected evidence and supersession.
+
+- [Developer guide authorization and limits](developer-guide-23-Oct-2026.md): Autoinspire-derived output, table formats, marts, naming and upload storage; working-sheet gathering deferred.

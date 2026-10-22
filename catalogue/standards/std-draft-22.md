@@ -1,7 +1,7 @@
 # Backend Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -36,6 +36,7 @@
 | DRAFT-BE-R16 | Use forward versioned migrations and explicitly retire/redirect old API paths; keep legacy data until reviewed migration/disposition. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-BE-R17 | Keep secrets, scopes, principal lookup and external source ownership server-controlled; do not accept actor/approver identities from clients. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-BE-R18 | Separate source presence, passing local tests, deployed service and production readiness; record environment-specific evidence. | 0.1.0 | Pending | Initial detailed draft; Pending |
+| VIRTUAL-MART-01 | All reports, dashboards and their file/Google Sheet outputs read database-backed authorized virtual marts through the reporting service. System/domain tables remain authoritative; no parallel editable reporting master. Field selection and filters use governed datasets; enforce entity, subscription, group/field/record access. Physical view schema/grain/ownership and performance plans remain design work. | 0.1.0 | User-selected direction; authorized recording; not published | User-authorized direction; User-selected direction; authorized recording; not published |
 
 ## Applicability and exceptions
 

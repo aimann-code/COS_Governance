@@ -1013,6 +1013,35 @@
       "status": "Proposed logical design recorded; no physical DB or DDL approval inferred",
       "recorded_on": "23-Oct-2026",
       "canonical_source": "architecture/emp-data-design.yaml"
+    },
+    {
+      "ref": "NAM-REG-01",
+      "decision": "Record source term, scoped emp_reg/vnd_reg/agg_reg/source_reg component pattern and vw_<domain>_<purpose> view pattern.",
+      "status": "User-authorized scoped naming/design additions; implementation pending",
+      "recorded_on": "23-Oct-2026",
+      "canonical_source": "standards/naming.yaml",
+      "source": "User update github in backend following displayed naming proposal"
+    },
+    {
+      "ref": "DEV-GUIDE-01",
+      "decision": "Generate 18-section Autoinspire-derived developer guide with implementation/API/DTO/connection/test/task matrices and per-table formats.",
+      "status": "User-authorized derivative design; implementation and executed application tests not claimed",
+      "recorded_on": "23-Oct-2026",
+      "canonical_source": "architecture/developer-guide.yaml"
+    },
+    {
+      "ref": "VIRTUAL-MART-01",
+      "decision": "All reporting reads database virtual marts through controlled reporting service.",
+      "status": "User direction recorded; views not implemented",
+      "recorded_on": "23-Oct-2026",
+      "canonical_source": "standards/standards.yaml"
+    },
+    {
+      "ref": "UPLOAD-STORAGE-01",
+      "decision": "Version template definitions in GitHub; generate entity-specific blanks via application; real files in approved private storage, staged rows/outcomes in DB, validated records in owning tables. Working-sheet gathering comes next.",
+      "status": "Proposed storage/data-flow design recorded; no file moves, new storage adoption or uploads",
+      "recorded_on": "23-Oct-2026",
+      "canonical_source": "templates/upload-profiles.yaml"
     }
   ],
   "pending": [

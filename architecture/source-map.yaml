@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "approved source model; migration and authority cutover pending",
   "approval": {
     "evidence": "User approved goahead after the six-group source-of-truth proposal",
@@ -45,7 +45,10 @@
       "owner": "COS_Governance",
       "files": [
         "architecture/objects.yaml",
-        "architecture/emp-data-design.yaml"
+        "architecture/emp-data-design.yaml",
+        "architecture/developer-guide.yaml",
+        "architecture/shared-data-design.yaml",
+        "architecture/virtual-marts.yaml"
       ],
       "fields": [
         "object_ref",
@@ -124,7 +127,8 @@
       "name": "Design Templates",
       "owner": "COS_Governance",
       "files": [
-        "templates/design.yaml"
+        "templates/design.yaml",
+        "templates/upload-profiles.yaml"
       ],
       "fields": [
         "output_type",
@@ -210,6 +214,10 @@
     {
       "recorded_on": "23-Oct-2026",
       "summary": "Add central shared requirement and logical employee data design sources within existing six logical groups; no new group or cutover."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "summary": "Register developer/mart/shared-table design and upload-profile sources within six groups; no new authority cutover."
     }
   ]
 }

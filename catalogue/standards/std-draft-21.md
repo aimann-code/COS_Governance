@@ -1,7 +1,7 @@
 # Frontend Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.3; naming 0.2.1; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -37,6 +37,7 @@
 | DRAFT-FE-R17 | Use DD-MMM-YYYY for user-readable dates while retaining typed values and wire formats; format money and timezone deliberately. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DRAFT-FE-R18 | Label design previews, demo mode and running-app screenshots accurately; test current connected flows separately from historical demo tests. | 0.1.0 | Pending | Initial detailed draft; Pending |
 | DATE-TIME-01 | Use DD-MMM-YYYY for user-readable dates, for example 23-Oct-2026. Use hh-mm-ss AM/PM for user-readable time, for example 02-05-09 PM. This display convention does not replace typed dates/timestamps or redefine API wire formats. | 0.1.0 | Approved by user; not published | Approved decision supplement; Approved by user; not published |
+| VIRTUAL-MART-01 | All reports, dashboards and their file/Google Sheet outputs read database-backed authorized virtual marts through the reporting service. System/domain tables remain authoritative; no parallel editable reporting master. Field selection and filters use governed datasets; enforce entity, subscription, group/field/record access. Physical view schema/grain/ownership and performance plans remain design work. | 0.1.0 | User-selected direction; authorized recording; not published | User-authorized direction; User-selected direction; authorized recording; not published |
 
 ## Applicability and exceptions
 

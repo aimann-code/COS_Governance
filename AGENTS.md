@@ -2,7 +2,7 @@
 
 Read cos-governance.yaml and relevant maintained definitions before editing. Source roles: Ashish COS for governance, Ritesh code for implementation, Autoinspire for design-document presentation only.
 
-Naming 0.2.1 retains the frozen base with explicit NAM-LOWER-01 amendment: use sys_emp_id and emp_reg. Previous SYS_EMP_ID/EMP_Reg spelling is preserved as historical/compatibility evidence, not current governance spelling. Do not reintroduce mandatory COS prefixes or rename live contracts without reviewed migration. Use the controlled terms, PascalCase classes, camelCase methods, kebab-case custom TS files and snake_case DB identifiers; employee schema is emp after a separately authorized migration.
+Naming 0.2.2 retains the frozen base with explicit NAM-LOWER-01 amendment: use sys_emp_id and emp_reg. Previous SYS_EMP_ID/EMP_Reg spelling is preserved as historical/compatibility evidence, not current governance spelling. Do not reintroduce mandatory COS prefixes or rename live contracts without reviewed migration. Use the controlled terms, PascalCase classes, camelCase methods, kebab-case custom TS files and snake_case DB identifiers; employee schema is emp after a separately authorized migration.
 
 Preserve decision status separately from implementation, verification and publication. Do not infer approvals. Discussion archives distinguish verbatim excerpts from summaries and disclose missing messages/timestamps.
 
@@ -22,3 +22,6 @@ Before future GitHub writes, show proposed content and summary and ask `Update G
 
 ## Shared requirements and logical DB design — 23-Oct-2026
 Read features/common.yaml for current cross-suite requirements and architecture/emp-data-design.yaml for proposed logical employee data. Entity administrators select uniqueness with two or more required fields; no source can update without a complete configured key and exactly one match. System owns fields; external sheets are interfaces. Saving/changing preferences always needs confirmation; every Google Sheet export needs append/clear-range confirmation. Apply subscription, entity/group/hierarchy and field permissions to every channel. Actual defaults, inheritance/group-conflict policy and physical DB design remain pending. Do not treat requirement recording as implementation.
+
+## Developer derivatives and template storage — 23-Oct-2026
+Use architecture/developer-guide.yaml and data-design sources for generated coder handoff. Naming includes scoped registration and virtual-view profiles via NAM-REG-01. All reporting reads controlled DB virtual marts. Upload template definitions live in templates/upload-profiles.yaml; entity-specific blank downloads are runtime generated after configuration/permission/key resolution. Real source files remain in approved private storage; no live data in GitHub. Working-sheet extraction is the next phase, not completed. Do not confuse logical table formats with deployed DDL or planned tests with executed results.
