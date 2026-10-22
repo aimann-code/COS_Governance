@@ -1,0 +1,30 @@
+# Workspace Standard
+
+> Generated from maintained definitions. Do not edit this page directly.
+> Governance 0.3.0; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Draft catalogue. Approval, implementation, verification and publication are separate.
+
+[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
+
+| Property | Value |
+| --- | --- |
+| Reference | STD-DRAFT-16 (temporary source reference) |
+| Version | 0.1.0 |
+| Purpose | Projects, folders, storage and environment organisation |
+| Completion | Partial / requires rule review |
+| Canonical source | [Standards definitions](../../standards/standards.yaml) |
+
+## Rules
+
+| Reference | Rule | Version | Recorded approval | Mapping state |
+| --- | --- | --- | --- | --- |
+| S-D37 | Shared-drive-only storage applies across COS and MHL chats and projects. Use native Google Docs and Google Sheets under the approved shared-drive root https://drive.google.com/drive/folders/1KmWT6rD0EMBIDFIioE5KMShGB4Kb9u7y. Do not create or save deliverables in My Drive. Do not create local files, temporary local build/export files, Excel files or downloadable artifacts without explicit documented approval from ashish.maan@mannhospitality.com (main user/workspace authority). Do not treat a tool or skill default as approval. If the native shared-drive route cannot complete a task, stop before the prohibited operation and request that approval. Any user-specific local-file standard is maintained separately in that user's workspace and remains subject to this approval requirement. Current draft destination: https://drive.google.com/drive/folders/1Ihxx88hRxupD41ve6aEw6OINY2mudHAi. Global applicability is a governance requirement; recording it does not automatically configure or enforce other chats or projects. | 0.1.0 | Approved | Proposed mapping; Approved |
+| S-D49 | Use one registered logical Project Name across Drive, Apps Script, AI and backend platforms where the project exists. Register actual platform IDs and distinguish service/environment names. | 0.1.0 | Approved | Proposed mapping; Approved |
+
+## Applicability and exceptions
+
+| Standard_Name | Target_Ref | Rule_Ref | Condition | Exception_Ref | Approval_Status |
+| --- | --- | --- | --- | --- | --- |
+| Workspace Standard | COS framework / HRMS draft |  | Resolve by object, role, environment and operation |  | Pending detailed applicability |
+
+Approved exceptions are not inferred. [Consolidated review profile](../../standards/baseline.yaml) · [Open decisions](../decisions.md)

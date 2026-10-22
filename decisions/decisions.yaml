@@ -927,6 +927,20 @@
         "No GitHub authority cutover",
         "No Drive deletion or application rename"
       ]
+    },
+    {
+      "ref": "CATALOGUE-01",
+      "decision": "Create a clickable generated COS Catalogue in GitHub for standards, names, architecture, features, design availability and implementation links.",
+      "status": "User-authorized catalogue implementation; no rule approval or authority cutover",
+      "recorded_on": "23-Oct-2026",
+      "source": "User selected GitHub and requested COS Catalogue",
+      "affected_targets": [
+        "catalogue/",
+        "generators/catalogue.mjs",
+        "generators/build-catalogue.mjs",
+        "README.md",
+        "workflow"
+      ]
     }
   ],
   "pending": [

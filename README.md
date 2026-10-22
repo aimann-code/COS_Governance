@@ -1,6 +1,11 @@
 # COS_Governance
 
-Private COS governance migration draft 0.2.0, recorded 23-Oct-2026. Start at [cos-governance.yaml](cos-governance.yaml).
+Private COS governance migration draft 0.3.0, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+
+## Browse without reading YAML
+- [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
+- [Employee Registration](catalogue/architecture/arch-draft-4.md) · [Features](catalogue/features.md) · [Design](catalogue/design.md)
+- [Implementation](catalogue/implementation.md) · [Decisions](catalogue/decisions.md)
 
 ## Current state
 - The six-group source model is approved: [source map](architecture/source-map.yaml). Migration and authority cutover remain pending.
@@ -42,8 +47,12 @@ Source snapshots are immutable historical evidence, not competing editable live 
 ```sh
 python generators/validate.py
 python generators/render.py
+node generators/build-catalogue.mjs --check
 ```
 The renderer creates seven draft Markdown previews, including the approved source map and consolidated standards review. Individual pending rules remain pending. It is not a Java application generator or native Google Docs publication pipeline. Technical extraction, full semantic migration and cutover still need implementation/review.
 
 ## Changes
 Use a pull request; identify source instruction, before/after, reason, impacted consumers, approval state and actual checks. Frozen naming changes require an explicit decision. Keep permanent existing IDs, preserve framework/external names and use forward DB migrations. Git history complements, but does not replace, Ashish's native-document/database recovery rules.
+
+## Catalogue generation
+The checked-in catalogue is a reproducible view of the maintained definitions. Run `node generators/build-catalogue.mjs --write` after source changes, then `--check`. CI rejects stale pages and broken local links. Edit the source definitions instead of catalogue pages. This adds readable navigation, not new approvals or a complete code inventory.

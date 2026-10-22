@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.0",
@@ -18,7 +18,8 @@
     "flow": "docs/flow.md",
     "source_map": "architecture/source-map.yaml",
     "ownership": "architecture/ownership.yaml",
-    "standards_baseline": "standards/baseline.yaml"
+    "standards_baseline": "standards/baseline.yaml",
+    "catalogue": "catalogue/README.md"
   },
   "authority": {
     "current": "Existing approved source records and user instructions remain authoritative during migration",
@@ -46,5 +47,12 @@
     "status": "approved by user; source migration/cutover pending",
     "file": "architecture/source-map.yaml",
     "decision": "SOURCE-MAP-01"
+  },
+  "catalogue": {
+    "status": "generated draft view; authority cutover pending",
+    "generator": "generators/catalogue.mjs",
+    "command": "node generators/build-catalogue.mjs --write",
+    "check": "node generators/build-catalogue.mjs --check",
+    "scope": "23 standards, 8 architecture entries, 14 feature records; not a complete COS inventory"
   }
 }

@@ -17,6 +17,8 @@ jobs:
           persist-credentials: false
       - name: Validate preserved sources and frozen naming
         run: python3 generators/validate.py
+      - name: Check reproducible COS Catalogue and links
+        run: node generators/build-catalogue.mjs --check
       - name: Generate draft review views
         run: python3 generators/render.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
