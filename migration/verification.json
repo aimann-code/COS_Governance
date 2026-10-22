@@ -1,0 +1,40 @@
+{
+  "recorded_on": "23-Oct-2026",
+  "verified_commit": "39a2e646240152413ddd21d4c84181b7b1ebb6b4",
+  "scope": "Initial repository preservation import and draft generators",
+  "repository_private": true,
+  "readback": {
+    "files_matched": 24,
+    "failures": 0,
+    "method": "Exact connector content comparison with prepared source strings"
+  },
+  "checks": {
+    "run_id": 39842161528,
+    "url": "https://github.com/aimann-code/COS_Governance/actions/runs/39842161528",
+    "conclusion": "success",
+    "validation": "passed",
+    "markdown_generation": "passed",
+    "preview_artifact": {
+      "name": "governance-draft-previews",
+      "id": 12454245836,
+      "expiry": "29-Oct-2026; temporary review output; regenerate from source"
+    }
+  },
+  "preserved": {
+    "tabs": 44,
+    "rows_including_headers": 1695,
+    "source_documents": 5,
+    "shortcode_terms": 52,
+    "frozen_rules": 12,
+    "selected_user_excerpts": 21
+  },
+  "limits": [
+    "No complete provider transcript",
+    "No native layout/formula/revision backup in readable snapshots",
+    "Semantic source consolidation not complete",
+    "No authority cutover or source deletion",
+    "No application/DB/API rename",
+    "No native Google Docs publication or application-code extraction/generation"
+  ],
+  "next": "Review and complete canonical field/screen/feature semantics before declaring authority cutover"
+}
