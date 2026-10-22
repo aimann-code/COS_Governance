@@ -88,6 +88,16 @@ export function buildCatalogue(src) {
       ["Type",ar.Object_Type],["Shortcode",ar.Short_Code||"Unassigned"],["Source reference",ar.Draft_Ref+" (temporary)"],["Hierarchy",chain.parts.map(x=>x.Display_Name).join(" → ")+(chain.unresolved?" — placement unresolved":"")],["Responsibility",ar.Responsibility],["Design/registration state",ar.Status],["Source design",ar.Source?"[Historical design reference]("+ar.Source+")":"Not available"]
     ]);
     body+="\n## Children\n\n"+(children.length?table(["Object","Type","Status"],children.map(x=>[archLink(x,"../"),x.Object_Type,x.Status])):"No child definition recorded in this imported scope.\n");
+    if(ar.Display_Name==="HRMS" && src.architecture.hrms_scope) {
+      const scope=src.architecture.hrms_scope;
+      const modules=a.filter(x=>x.Object_Type==="Module"&&x.Parent_Draft_Ref==="HRMS");
+      body+="\n## Proposed module and component map\n\n"+scope.status+"\n\n"+
+        table(["Module","Components"],modules.map(mod=>[archLink(mod,"../"),a.filter(c=>c.Parent_Draft_Ref===mod.Display_Name&&c.Object_Type==="Component").map(c=>archLink(c,"../")).join("; ")]));
+      body+="\n## Shared capabilities\n\n"+table(["Capability","Treatment"],scope.shared_capabilities.map(x=>[x.capability,x.treatment]));
+      body+="\n## Module data flows\n\n"+table(["From","To","Information"],scope.flows.map(x=>[x.from,x.to,x.data]));
+      body+="\n## Pending decisions and verification\n\n"+scope.pending.map(x=>"- "+x).join("\n")+"\n\n"+
+        "[Source and approval evidence](../../"+scope.source_evidence+"). "+scope.coverage+"\n";
+    }
     body+="\n## Features\n\n"+(features.length?table(["Feature","Status","Open"],features.map(x=>[featLink(x,"../"),x.status,x.open])):"No direct feature assignment recorded. [Browse feature inventory](../features.md).\n");
     body+="\n## Implementation and ownership\n\n"+(maps.length?table(["Artifact","Owning architecture object","Implementation evidence","Dataset authority"],maps.map(x=>[codeLink(x,x.ref),x.architecture_owner||"Unresolved",x.implementation_status,x.dataset_authority])):"No implementation mapping recorded for this object. This does not mean all child functionality is absent.\n");
     body+="\n## Applicable standards\n\n[Standards catalogue](../standards.md) · [Frozen naming](../naming.md). Exact object-level applicability and approved exceptions require reconciliation; this page does not silently apply every rule.\n";
@@ -102,7 +112,7 @@ export function buildCatalogue(src) {
     const matches=a.filter(r=>r.Display_Name===fe.name||fe.owner.split(" / ").includes(r.Display_Name));
     const maps=o.filter(r=>r.feature_refs.includes(fe.ref));
     let body=header(fe.name,1)+table(["Property","Value"],[
-      ["Feature ref",fe.ref],["Owner",ownerText(fe)],["Requirement/design state",fe.status],["Behaviour",fe.behaviour],["Open decisions/gaps",fe.open],["Acceptance criteria",fe.acceptance_criteria_status]
+      ["Feature ref",fe.ref],["Owner",ownerText(fe)],["Requirement/design state",fe.status],["Behaviour",fe.behaviour],["Architecture responsibility",a.find(x=>x.Draft_Ref===fe.architecture_ref)?.Responsibility||"Not mapped"],["Open decisions/gaps",fe.open],["Acceptance criteria",fe.acceptance_criteria_status]
     ])+"\n## Architecture links\n\n"+(matches.length?matches.map(x=>"- "+archLink(x,"../")).join("\n")+"\n":"Placement is unresolved; no hierarchy invented.\n");
     body+="\n## Implementation evidence\n\n"+(maps.length?table(["Source","Architecture owner","State"],maps.map(x=>[codeLink(x,x.ref),x.architecture_owner||"Unresolved",x.implementation_status])):"No linked implementation mapping in this partial inventory. Detailed code extraction remains future work.\n");
     body+="\n## Design and standards\n\n[Design sections](../design.md) · [Naming](../naming.md) · [Standards](../standards.md) · [Decisions](../decisions.md)\n\nMissing screens, DTO schemas, rules and acceptance criteria are not fabricated by the catalogue.\n";

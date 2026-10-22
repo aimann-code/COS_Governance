@@ -1,7 +1,7 @@
 # Bulk Upload
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -12,6 +12,7 @@
 | Owner | Shared/domain mapping pending |
 | Requirement/design state | required capability; implementation gap |
 | Behaviour | Validate, map, preview, submit and report row outcomes |
+| Architecture responsibility | Not mapped |
 | Open decisions/gaps | Expanded-profile bulk import not completed in reviewed implementation |
 | Acceptance criteria | must be completed and reviewed before implementation |
 

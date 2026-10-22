@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.0",
@@ -53,7 +53,12 @@
     "generator": "generators/catalogue.mjs",
     "command": "node generators/build-catalogue.mjs --write",
     "check": "node generators/build-catalogue.mjs --check",
-    "scope": "23 standards, 8 architecture entries, 14 feature records; not a complete COS inventory"
+    "scope": "23 standards, 38 architecture entries, 40 feature records; five proposed HRMS modules and 28 components; not a complete COS inventory",
+    "expected_counts": {
+      "standards": 23,
+      "architecture": 38,
+      "features": 40
+    }
   },
   "change_history": [
     {
@@ -69,6 +74,17 @@
       ],
       "approval": "User: update git hub",
       "limits": "Internal draft revision only; no authority cutover, standard publication, application migration or global versioning policy adopted."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.1",
+      "draft_version": "0.3.2",
+      "summary": "Record proposed HRMS module/component mapping, shared capability boundaries and data flows; regenerate catalogue.",
+      "decision_refs": [
+        "HRMS-MAP-01"
+      ],
+      "approval": "User yes to recording the proposed HRMS mapping",
+      "limits": "Internal draft revision; no blanket requirements approval, code migration, PR merge or publication."
     }
   ]
 }

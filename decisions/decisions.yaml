@@ -977,6 +977,16 @@
       "source": "Visible chat; user: update git hub",
       "canonical_rule": "standards/standards.yaml#GITHUB-CONFIRM-01",
       "implementation": "No application route or historic filename changed"
+    },
+    {
+      "ref": "HRMS-MAP-01",
+      "decision": "Retain HRMS engine name under Enterprise Management; record five proposed modules and 28 proposed components, shared capability boundaries and inter-module data flows.",
+      "status": "User authorized GitHub recording of proposal; no full BRD approval, code changes or publication",
+      "recorded_on": "23-Oct-2026",
+      "source": "User: Use HRMS; then yes to Update Git Hub with this proposed HRMS mapping",
+      "canonical_source": "architecture/objects.yaml",
+      "evidence": "discussions/hrms-mapping-23-Oct-2026.md",
+      "limits": "Dashboard observations are candidate requirements. Contractor payment ownership, detailed policies and implementation checks remain pending."
     }
   ],
   "pending": [

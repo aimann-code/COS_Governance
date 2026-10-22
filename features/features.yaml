@@ -1,5 +1,5 @@
 {
-  "status": "preserved discussion requirement inventory; not completed BRD",
+  "status": "Transitional requirement inventory expanded by proposed HRMS mapping; not completed BRD; no implementation inference",
   "features": [
     {
       "ref": "EMP_Reg",
@@ -8,7 +8,9 @@
       "behaviour": "HR direct registration; current implementation has drafts and direct registration",
       "open": "Business uniqueness and manual/auto ID differences remain to reconcile with source design",
       "status": "draft requirement inventory",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "architecture_ref": "ARCH-DRAFT-4",
+      "source_ref": "HRMS-MAP-01"
     },
     {
       "ref": "EMP_Dtl",
@@ -17,7 +19,9 @@
       "behaviour": "Permitted employee search/details and linked own-profile access",
       "open": "Field-level policies and source contracts",
       "status": "draft requirement inventory",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "architecture_ref": "ARCH-DRAFT-5",
+      "source_ref": "HRMS-MAP-01"
     },
     {
       "ref": "EMP_Update",
@@ -26,7 +30,8 @@
       "behaviour": "Employee proposes own-profile changes; HR reviews. Authorized HR editing remains direct.",
       "open": "Domain-specific workflow must not be replaced by universal administrator approval",
       "status": "source requirement; reconcile implementation evidence",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "architecture_ref": "ARCH-DRAFT-5"
     },
     {
       "ref": "Form_Config",
@@ -76,11 +81,12 @@
     {
       "ref": "Payroll",
       "name": "Payroll",
-      "owner": "Placement pending",
+      "owner": "HRMS / Payroll Management",
       "behaviour": "Later design after standards",
-      "open": "No payroll calculations or payment-routing design implemented here",
-      "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "open": "Detailed calculations, rules and implementation verification remain pending.",
+      "status": "Proposed module scope; see HRMS-MAP-01",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "architecture_ref": "ARCH-DRAFT-28"
     },
     {
       "ref": "Agg_Master",
@@ -126,6 +132,292 @@
       "open": "Hierarchy and uniqueness pending",
       "status": "planned scope",
       "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-1",
+      "name": "Employment Lifecycle",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-9",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-2",
+      "name": "Organization Assignment",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-10",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-3",
+      "name": "Employee Documents",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-11",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-4",
+      "name": "Shift Configuration",
+      "owner": "HRMS / Shift & Roster Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-13",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-5",
+      "name": "Roster Planning",
+      "owner": "HRMS / Shift & Roster Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-14",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-6",
+      "name": "Roster Assignment",
+      "owner": "HRMS / Shift & Roster Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-15",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-7",
+      "name": "Roster Changes",
+      "owner": "HRMS / Shift & Roster Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-16",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-8",
+      "name": "Attendance Import",
+      "owner": "HRMS / Attendance Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-18",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-9",
+      "name": "Attendance Processing",
+      "owner": "HRMS / Attendance Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-19",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-10",
+      "name": "Attendance Corrections",
+      "owner": "HRMS / Attendance Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-20",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-11",
+      "name": "Attendance Exceptions",
+      "owner": "HRMS / Attendance Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-21",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-12",
+      "name": "Overtime Calculation",
+      "owner": "HRMS / Attendance Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-22",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-13",
+      "name": "Leave Configuration",
+      "owner": "HRMS / Leave Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-24",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-14",
+      "name": "Leave Balances",
+      "owner": "HRMS / Leave Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-25",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-15",
+      "name": "Leave Requests",
+      "owner": "HRMS / Leave Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-26",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-16",
+      "name": "Leave Processing",
+      "owner": "HRMS / Leave Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-27",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-17",
+      "name": "Salary Structure",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-29",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-18",
+      "name": "Payroll Groups",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-30",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-19",
+      "name": "Variable Pay Inputs",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-31",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-20",
+      "name": "Loans & Advances",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-32",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-21",
+      "name": "Reimbursements",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-33",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-22",
+      "name": "Payroll Processing",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-34",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-23",
+      "name": "Payroll Review & Finalization",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-35",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-24",
+      "name": "Payment Reconciliation",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-36",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-25",
+      "name": "Statutory Processing",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-37",
+      "source_ref": "HRMS-MAP-01"
+    },
+    {
+      "ref": "FEAT-HRMS-DRAFT-26",
+      "name": "Final Settlement",
+      "owner": "HRMS / Payroll Management",
+      "behaviour": "Component responsibility is maintained in architecture/objects.yaml.",
+      "open": "Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed.",
+      "status": "Proposed architecture inventory; not an approved complete BRD",
+      "acceptance_criteria_status": "Pending detailed requirement review",
+      "architecture_ref": "ARCH-DRAFT-38",
+      "source_ref": "HRMS-MAP-01"
     }
   ],
   "traceability": [

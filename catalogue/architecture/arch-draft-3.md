@@ -1,7 +1,7 @@
 # Employee Management
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -12,16 +12,19 @@
 | Shortcode | EMP_MGT |
 | Source reference | ARCH-DRAFT-3 (temporary) |
 | Hierarchy | Enterprise Management → HRMS → Employee Management |
-| Responsibility | Employee identity and management capabilities |
-| Design/registration state | Proposed code |
+| Responsibility | Employee identity, profile and employment lifecycle |
+| Design/registration state | Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved |
 | Source design | [Historical design reference](https://docs.google.com/document/d/1ALDYB1ZNpx3kKGfJmae-PFg01zs7YU3FDA1qRgNzl4o) |
 
 ## Children
 
 | Object | Type | Status |
 | --- | --- | --- |
-| [Employee Registration](../architecture/arch-draft-4.md) | Component | User requirement |
-| [Employee Details](../architecture/arch-draft-5.md) | Component | Proposed component boundary |
+| [Employee Registration](../architecture/arch-draft-4.md) | Component | Proposed component boundary; requirements/implementation verification pending |
+| [Employee Details](../architecture/arch-draft-5.md) | Component | Proposed component boundary; requirements/implementation verification pending |
+| [Employment Lifecycle](../architecture/arch-draft-9.md) | Component | Proposed component boundary; requirements/implementation verification pending |
+| [Organization Assignment](../architecture/arch-draft-10.md) | Component | Proposed component boundary; requirements/implementation verification pending |
+| [Employee Documents](../architecture/arch-draft-11.md) | Component | Proposed component boundary; requirements/implementation verification pending |
 
 ## Features
 
@@ -30,6 +33,9 @@
 | [Employee Registration](../features/emp-reg.md) | draft requirement inventory | Business uniqueness and manual/auto ID differences remain to reconcile with source design |
 | [Employee Details](../features/emp-dtl.md) | draft requirement inventory | Field-level policies and source contracts |
 | [Employee Update](../features/emp-update.md) | source requirement; reconcile implementation evidence | Domain-specific workflow must not be replaced by universal administrator approval |
+| [Employment Lifecycle](../features/feat-hrms-draft-1.md) | Proposed architecture inventory; not an approved complete BRD | Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed. |
+| [Organization Assignment](../features/feat-hrms-draft-2.md) | Proposed architecture inventory; not an approved complete BRD | Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed. |
+| [Employee Documents](../features/feat-hrms-draft-3.md) | Proposed architecture inventory; not an approved complete BRD | Detailed rules, permissions, inputs/outputs and acceptance criteria must be gathered and reviewed. |
 
 ## Implementation and ownership
 

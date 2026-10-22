@@ -71,6 +71,40 @@ def main():
     require(len(design["sections"]) == 18, "Missing design sections")
     features = read("features/features.yaml")["features"]
     require(len({r["ref"] for r in features}) == len(features), "Duplicate feature reference")
+    architecture = read("architecture/objects.yaml")
+    nodes = architecture["architecture"]
+    by_name = {r["Display_Name"]: r for r in nodes}
+    require(len(by_name) == len(nodes), "Duplicate architecture display name")
+    require(len({r["Draft_Ref"] for r in nodes}) == len(nodes), "Duplicate architecture draft ref")
+    allowed_parent = {"Engine": "Suite", "Module": "Engine", "Component": "Module"}
+    for row in nodes:
+        parent = row["Parent_Draft_Ref"]
+        if row["Object_Type"] in allowed_parent:
+            require(parent in by_name, "Missing parent for " + row["Display_Name"])
+            require(by_name[parent]["Object_Type"] == allowed_parent[row["Object_Type"]],
+                    "Wrong parent type for " + row["Display_Name"])
+        seen = set()
+        current = row
+        while current["Parent_Draft_Ref"]:
+            require(current["Display_Name"] not in seen, "Architecture cycle")
+            seen.add(current["Display_Name"])
+            require(current["Parent_Draft_Ref"] in by_name, "Unresolved parent reference")
+            current = by_name[current["Parent_Draft_Ref"]]
+    modules = [r for r in nodes if r["Object_Type"] == "Module" and r["Parent_Draft_Ref"] == "HRMS"]
+    module_names = {r["Display_Name"] for r in modules}
+    components = [r for r in nodes if r["Object_Type"] == "Component" and r["Parent_Draft_Ref"] in module_names]
+    require(len(modules) == architecture["hrms_scope"]["counts"]["modules"] == 5, "HRMS module scope mismatch")
+    require(len(components) == architecture["hrms_scope"]["counts"]["components"] == 28, "HRMS component scope mismatch")
+    require(by_name["HRMS"]["Parent_Draft_Ref"] == "Enterprise Management", "Wrong HRMS suite")
+    require(by_name["Employee Registration"]["Short_Code"] == "EMP_Reg", "Lost registration code")
+    refs = {r["Draft_Ref"] for r in nodes}
+    for feature in features:
+        if feature.get("architecture_ref"):
+            require(feature["architecture_ref"] in refs, "Unknown feature architecture reference")
+    expected = manifest["catalogue"]["expected_counts"]
+    require(len(nodes) == expected["architecture"] and len(features) == expected["features"],
+            "Catalogue expected scope mismatch")
+    print("PASS: five HRMS modules, 28 components, typed parent references, no cycles and feature mappings.")
     transcript = read("discussions/user-excerpts.json")
     require(transcript["complete_provider_export"] is False, "Do not claim complete transcript")
     require(len(transcript["excerpts"]) == 21, "Discussion excerpt count mismatch")

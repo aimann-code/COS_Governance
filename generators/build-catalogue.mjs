@@ -23,7 +23,7 @@ pages['catalogue/generated-manifest.json'] = JSON.stringify({
   naming_version: input.naming.version,
   application_ref: input.manifest.application.ref,
   pages: Object.keys(pages).sort(),
-  counts: {standards: 23, architecture: 8, features: 14},
+  counts: input.manifest.catalogue.expected_counts,
   generator: 'generators/catalogue.mjs',
   regenerate: 'node generators/build-catalogue.mjs --write',
   verify: 'node generators/build-catalogue.mjs --check',
@@ -33,9 +33,10 @@ pages['catalogue/generated-manifest.json'] = JSON.stringify({
 function require(condition, message) {
   if (!condition) throw new Error(message);
 }
-require(input.standards.definitions.length === 23, 'Catalogue scope changed: review expected standards');
-require(input.architecture.architecture.length === 8, 'Catalogue architecture scope changed');
-require(input.features.features.length === 14, 'Catalogue feature scope changed');
+const expected = input.manifest.catalogue.expected_counts;
+require(input.standards.definitions.length === expected.standards, 'Catalogue standards scope changed');
+require(input.architecture.architecture.length === expected.architecture, 'Catalogue architecture scope changed');
+require(input.features.features.length === expected.features, 'Catalogue feature scope changed');
 const known = new Set(Object.keys(pages).map(p => resolve(root, p)));
 for (const [path, body] of Object.entries(pages)) {
   require(resolve(root, path).startsWith(root + sep), 'Output escapes repository');
@@ -71,5 +72,5 @@ if (mode === '--write') {
     require(Object.hasOwn(pages, path), 'Untracked stale catalogue page: ' + path);
   }
 }
-console.log('PASS: 53 reproducible Markdown pages, generated manifest and local link targets.');
+console.log('PASS: ' + Object.keys(pages).filter(p => p.endsWith('.md')).length + ' reproducible Markdown pages, generated manifest and local link targets.');
 console.log('Scope: reference integrity only; not complete COS coverage or production compliance.');

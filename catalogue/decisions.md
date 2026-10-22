@@ -1,7 +1,7 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -25,6 +25,7 @@ Source references are temporary/history references unless an approved permanent 
 | BACKUP-TIME-01 | Approved scoped standard: Operations Standard; canonical rule BACKUP-TIME-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
 | API-PATH-01 | Approved scoped standard: API / Integration Standard; canonical rule API-PATH-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
 | GITHUB-CONFIRM-01 | Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| HRMS-MAP-01 | Retain HRMS engine name under Enterprise Management; record five proposed modules and 28 proposed components, shared capability boundaries and inter-module data flows. | User authorized GitHub recording of proposal; no full BRD approval, code changes or publication |
 
 ## Reconciliation
 

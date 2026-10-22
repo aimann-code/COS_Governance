@@ -1,13 +1,14 @@
 # COS_Governance
 
-Private COS governance migration draft 0.3.0, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+Private COS governance migration draft 0.3.2, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
 ## Browse without reading YAML
 - [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
-- [Employee Registration](catalogue/architecture/arch-draft-4.md) · [Features](catalogue/features.md) · [Design](catalogue/design.md)
+- [HRMS modules and components](catalogue/architecture/arch-draft-2.md) · [Employee Registration](catalogue/architecture/arch-draft-4.md) · [Features](catalogue/features.md) · [Design](catalogue/design.md)
 - [Implementation](catalogue/implementation.md) · [Decisions](catalogue/decisions.md)
 
 ## Current state
+- Proposed HRMS architecture: **5 modules / 28 components**, with shared capability boundaries and module data flows. [Browse HRMS](catalogue/architecture/arch-draft-2.md). Detailed BRD, code verification and pending ownership decisions remain open.
 - The six-group source model is approved: [source map](architecture/source-map.yaml). Migration and authority cutover remain pending.
 - Frozen Naming Standard **0.2.0**, source decision **D67**: 32 code terms, 20 retained terms, 12 rules.
 - Existing workbook's **44 tabs / 1,695 populated rows** captured as readable historical values.

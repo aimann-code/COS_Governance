@@ -1,7 +1,7 @@
 # Employee Registration
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.1; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.2; naming 0.2.0; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -12,8 +12,8 @@
 | Shortcode | EMP_Reg |
 | Source reference | ARCH-DRAFT-4 (temporary) |
 | Hierarchy | Enterprise Management → HRMS → Employee Management → Employee Registration |
-| Responsibility | Required registration with Manual/Auto modes and custom fields |
-| Design/registration state | User requirement |
+| Responsibility | Configured employee creation, manual/auto ID behaviour, duplicate validation and custom fields; preserve SYS_EMP_ID. Existing implementation must be improved, reconciled and tested. |
+| Design/registration state | Proposed component boundary; requirements/implementation verification pending |
 | Source design | [Historical design reference](https://docs.google.com/document/d/1ALDYB1ZNpx3kKGfJmae-PFg01zs7YU3FDA1qRgNzl4o) |
 
 ## Children
