@@ -1,0 +1,284 @@
+{
+  "status": "proposed dispositions; original records preserved; deletion not performed",
+  "registers": [
+    {
+      "name": "Readme",
+      "action": "generate",
+      "target": "README.md / manifest navigation",
+      "notes": "Keep existing source as historical evidence"
+    },
+    {
+      "name": "Register_Catalogue",
+      "action": "generate",
+      "target": "README.md / manifest navigation",
+      "notes": "Keep existing source as historical evidence"
+    },
+    {
+      "name": "Standard_Plan",
+      "action": "generate",
+      "target": "standards review output",
+      "notes": "No independent manual rule body"
+    },
+    {
+      "name": "Standards_Review",
+      "action": "generate",
+      "target": "standards review output",
+      "notes": "No independent manual rule body"
+    },
+    {
+      "name": "Decision_Register",
+      "action": "merge",
+      "target": "decisions/decisions.yaml",
+      "notes": "Keep decision history and unresolved items"
+    },
+    {
+      "name": "Change_Register",
+      "action": "link",
+      "target": "PR/commit/check/release evidence plus historical snapshot",
+      "notes": "Git alone does not preserve business approval or replace existing evidence"
+    },
+    {
+      "name": "Document_Register",
+      "action": "generate",
+      "target": "output/source manifests",
+      "notes": "Generator runs only recorded after actual successful execution"
+    },
+    {
+      "name": "Object_Register",
+      "action": "merge",
+      "target": "architecture/objects.yaml",
+      "notes": "Preserve identities and qualified approval states"
+    },
+    {
+      "name": "Standard_Register",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Impact_Register",
+      "action": "link",
+      "target": "PR/commit/check/release evidence plus historical snapshot",
+      "notes": "Git alone does not preserve business approval or replace existing evidence"
+    },
+    {
+      "name": "AI_Chat_Register",
+      "action": "preserve",
+      "target": "discussion/source references",
+      "notes": "Unknown provider IDs stay blank"
+    },
+    {
+      "name": "AI_Chat_Object_Map",
+      "action": "preserve",
+      "target": "discussion/source references",
+      "notes": "Unknown provider IDs stay blank"
+    },
+    {
+      "name": "Verification_Register",
+      "action": "link",
+      "target": "PR/commit/check/release evidence plus historical snapshot",
+      "notes": "Git alone does not preserve business approval or replace existing evidence"
+    },
+    {
+      "name": "Release_Register",
+      "action": "link",
+      "target": "PR/commit/check/release evidence plus historical snapshot",
+      "notes": "Git alone does not preserve business approval or replace existing evidence"
+    },
+    {
+      "name": "Backup_Register",
+      "action": "preserve",
+      "target": "historical snapshot and future recovery manifest",
+      "notes": "Ashish backup policy retained; Git is not DB or native-doc restore backup"
+    },
+    {
+      "name": "Consolidation_Review",
+      "action": "retire-manual-after-verification",
+      "target": "migration history",
+      "notes": "Remain source evidence; no deletion now"
+    },
+    {
+      "name": "Standard_Definition",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Standard_Version",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Standard_Rule_Map",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Standard_Command_Map",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Standard_Applicability",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Architecture_Register",
+      "action": "merge",
+      "target": "architecture/objects.yaml",
+      "notes": "Preserve identities and qualified approval states"
+    },
+    {
+      "name": "Service_Register",
+      "action": "generate",
+      "target": "application-code catalogue",
+      "notes": "Generator not implemented; historical planned definitions are not executable code"
+    },
+    {
+      "name": "API_Register",
+      "action": "generate",
+      "target": "API catalogue",
+      "notes": "Contract authority approach must be agreed"
+    },
+    {
+      "name": "DTO_Register",
+      "action": "generate",
+      "target": "application-code catalogue",
+      "notes": "Generator not implemented; historical planned definitions are not executable code"
+    },
+    {
+      "name": "Function_Register",
+      "action": "generate",
+      "target": "application-code catalogue",
+      "notes": "Generator not implemented; historical planned definitions are not executable code"
+    },
+    {
+      "name": "Code_File_Register",
+      "action": "generate",
+      "target": "application-code catalogue",
+      "notes": "Generator not implemented; historical planned definitions are not executable code"
+    },
+    {
+      "name": "Table_Register",
+      "action": "generate",
+      "target": "migration-derived physical schema catalogue",
+      "notes": "Retain business ownership/intended relationships in architecture/features; no blind loss of design intent"
+    },
+    {
+      "name": "Field_Register",
+      "action": "split",
+      "target": "business field definitions plus generated physical schema",
+      "notes": "Business meanings, controlled values and policies require reviewed transfer; not fully semantically consolidated yet"
+    },
+    {
+      "name": "Table_Field_Map",
+      "action": "generate",
+      "target": "migration-derived physical schema catalogue",
+      "notes": "Retain business ownership/intended relationships in architecture/features; no blind loss of design intent"
+    },
+    {
+      "name": "Relationship_Register",
+      "action": "generate",
+      "target": "migration-derived physical schema catalogue",
+      "notes": "Retain business ownership/intended relationships in architecture/features; no blind loss of design intent"
+    },
+    {
+      "name": "Screen_Register",
+      "action": "split",
+      "target": "features plus code-derived screen inventory",
+      "notes": "Intent and implemented states remain distinguishable"
+    },
+    {
+      "name": "Screen_Control_Register",
+      "action": "split",
+      "target": "features plus code-derived screen inventory",
+      "notes": "Intent and implemented states remain distinguishable"
+    },
+    {
+      "name": "Asset_Register",
+      "action": "merge",
+      "target": "template/source asset references",
+      "notes": "Assets not extracted or converted by this migration"
+    },
+    {
+      "name": "Diagram_Register",
+      "action": "merge",
+      "target": "template/source asset references",
+      "notes": "Assets not extracted or converted by this migration"
+    },
+    {
+      "name": "Example_Register",
+      "action": "merge",
+      "target": "templates/design.yaml and future examples/output definitions",
+      "notes": "Original records preserved in source snapshot; detailed semantic migration pending"
+    },
+    {
+      "name": "Output_Profile_Register",
+      "action": "merge",
+      "target": "templates/design.yaml and future examples/output definitions",
+      "notes": "Original records preserved in source snapshot; detailed semantic migration pending"
+    },
+    {
+      "name": "Standard_Exception",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Document_Section_Register",
+      "action": "retire-manual-after-verification",
+      "target": "historical source snapshot; templates and generated outputs",
+      "notes": "No delete authorized; narrative details need reconciliation first"
+    },
+    {
+      "name": "Design_Table_Register",
+      "action": "retire-manual-after-verification",
+      "target": "historical source snapshot; templates and generated outputs",
+      "notes": "No delete authorized; narrative details need reconciliation first"
+    },
+    {
+      "name": "Generation_Run_Register",
+      "action": "generate",
+      "target": "output/source manifests",
+      "notes": "Generator runs only recorded after actual successful execution"
+    },
+    {
+      "name": "Pending_Register",
+      "action": "merge",
+      "target": "decisions/decisions.yaml",
+      "notes": "Keep decision history and unresolved items"
+    },
+    {
+      "name": "Standard_Rule_Detail",
+      "action": "merge",
+      "target": "standards/standards.yaml; decisions/decisions.yaml as applicable",
+      "notes": "Preserve pending/approved/superseded status; commands are specifications only"
+    },
+    {
+      "name": "Code_Shortcode",
+      "action": "maintain",
+      "target": "standards/naming.yaml",
+      "notes": "Frozen naming 0.2.0; D67"
+    }
+  ],
+  "cutover_gates": [
+    "All authoritative business definitions and accepted/superseded decisions reconciled",
+    "Source IDs/links and naming baseline verified",
+    "Domain field/screen semantics transferred without loss",
+    "Application consumers and source authority updated explicitly",
+    "Generated outputs verified and reviewed",
+    "Explicit cutover and retention/deletion decision"
+  ],
+  "current_gaps": [
+    "Physical code/API/DB inventory extraction not automated",
+    "Business field/screen narrative reconciliation not complete",
+    "No native Google Docs publication pipeline",
+    "No complete provider chat export",
+    "No global approval or release"
+  ]
+}

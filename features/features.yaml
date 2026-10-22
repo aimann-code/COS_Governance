@@ -1,0 +1,139 @@
+{
+  "status": "preserved discussion requirement inventory; not completed BRD",
+  "features": [
+    {
+      "ref": "EMP_Reg",
+      "name": "Employee Registration",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "HR direct registration; current implementation has drafts and direct registration",
+      "open": "Business uniqueness and manual/auto ID differences remain to reconcile with source design",
+      "status": "draft requirement inventory",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "EMP_Dtl",
+      "name": "Employee Details",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "Permitted employee search/details and linked own-profile access",
+      "open": "Field-level policies and source contracts",
+      "status": "draft requirement inventory",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "EMP_Update",
+      "name": "Employee Update",
+      "owner": "HRMS / Employee Management",
+      "behaviour": "Employee proposes own-profile changes; HR reviews. Authorized HR editing remains direct.",
+      "open": "Domain-specific workflow must not be replaced by universal administrator approval",
+      "status": "source requirement; reconcile implementation evidence",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Form_Config",
+      "name": "Form Configuration",
+      "owner": "Shared ownership pending",
+      "behaviour": "Approved custom fields, values, permissions and configuration change history",
+      "open": "Administrator review of configuration changes",
+      "status": "source requirement",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Reg_Shared",
+      "name": "Shared Registration",
+      "owner": "Shared ownership pending",
+      "behaviour": "Reuse drafts, form rendering, validation infrastructure, transport, history, import/sync and approval facilities",
+      "open": "Domain-specific payloads, uniqueness, authority and repositories",
+      "status": "user direction; detailed design pending",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Reg_Bulk",
+      "name": "Bulk Upload",
+      "owner": "Shared/domain mapping pending",
+      "behaviour": "Validate, map, preview, submit and report row outcomes",
+      "open": "Expanded-profile bulk import not completed in reviewed implementation",
+      "status": "required capability; implementation gap",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Sheet_Sync",
+      "name": "Google Sheets Sync",
+      "owner": "Integration/shared ownership pending",
+      "behaviour": "Authorized source, mapping, preview and defined source/conflict policy",
+      "open": "Live integration not configured; no schedule activated",
+      "status": "required capability; implementation gap",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Change_Hist",
+      "name": "Change History",
+      "owner": "Shared/domain mapping pending",
+      "behaviour": "Separate configuration changes, field-definition changes, data-value history and security audit",
+      "open": "Sensitive history protected; transaction and retention policies explicit",
+      "status": "user direction",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Payroll",
+      "name": "Payroll",
+      "owner": "Placement pending",
+      "behaviour": "Later design after standards",
+      "open": "No payroll calculations or payment-routing design implemented here",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Agg_Master",
+      "name": "Aggregator Master",
+      "owner": "Placement pending",
+      "behaviour": "Later domain master and registration design",
+      "open": "Domain meaning, keys and acceptance criteria pending",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Vnd_Master",
+      "name": "Vendor Master",
+      "owner": "Placement pending",
+      "behaviour": "Later domain master and registration design",
+      "open": "Domain rules pending",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Ing_Master",
+      "name": "Ingredient Master",
+      "owner": "Placement pending",
+      "behaviour": "Later canonical ingredient master design",
+      "open": "Units, duplicate matching and ownership pending",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Brand_Reg",
+      "name": "Brand Registration",
+      "owner": "Placement pending",
+      "behaviour": "Reuse registration infrastructure with brand rules",
+      "open": "Detailed BRD pending",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    },
+    {
+      "ref": "Loc_Reg",
+      "name": "Location Registration",
+      "owner": "Placement pending",
+      "behaviour": "Reuse registration infrastructure with location rules",
+      "open": "Hierarchy and uniqueness pending",
+      "status": "planned scope",
+      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+    }
+  ],
+  "traceability": [
+    "feature",
+    "screen/action",
+    "API/DTO",
+    "service/function",
+    "database/history",
+    "acceptance test"
+  ]
+}

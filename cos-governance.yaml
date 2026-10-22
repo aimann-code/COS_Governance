@@ -1,0 +1,41 @@
+{
+  "project": "COS_Governance",
+  "version": "0.1.0",
+  "status": "draft migration; no authority cutover or published release",
+  "recorded_on": "23-Oct-2026",
+  "naming_version": "0.2.0",
+  "entry_points": {
+    "standards": "standards/standards.yaml",
+    "naming": "standards/naming.yaml",
+    "architecture": "architecture/objects.yaml",
+    "features": "features/features.yaml",
+    "design": "templates/design.yaml",
+    "decisions": "decisions/decisions.yaml",
+    "sources": "migration/source-manifest.json",
+    "migration": "migration/register-map.yaml",
+    "discussion": "discussions/README.md",
+    "comparison": "comparisons/design-comparison.md",
+    "flow": "docs/flow.md"
+  },
+  "authority": {
+    "current": "Existing approved source records and user instructions remain authoritative during migration",
+    "cutover": "Pending content reconciliation and explicit adoption",
+    "source_roles": {
+      "ashish": "Architecture, standards, file/storage/backup/naming baseline as qualified by approval status",
+      "ritesh": "Implementation baseline; do not elevate code-derived choices to global policy",
+      "autoinspire": "Design-document organization and examples only"
+    }
+  },
+  "application": {
+    "repository": "aimann-code/EMPRegister",
+    "ref": "b2b156c44ba7744bf6cb81c19eb3a05d8633fdba",
+    "governance_adoption": "not installed"
+  },
+  "limits": [
+    "No Drive file deleted, moved, made read-only or edited by this migration",
+    "No application code or database renamed",
+    "No global publication or automatic document/code generator claimed",
+    "Git history does not replace database/document recovery rules"
+  ],
+  "governance_format": "YAML files use the JSON-compatible YAML 1.2 subset; checked with Python standard json parser"
+}

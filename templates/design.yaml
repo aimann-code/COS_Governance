@@ -1,0 +1,114 @@
+{
+  "name": "COS Design Standard output structure",
+  "status": "adapted draft; naming 0.2.0 remains independently frozen",
+  "reference": "Autoinspire Promotion Engine Design for reference only.pdf",
+  "reference_scope": "Presentation, organization and explanatory structure only. No promotion rules, rule engine or technology adoption.",
+  "source_reference": "https://drive.google.com/file/d/15yyw9RB7GmEiPitoOZ99h7hR49UgYRtG/view",
+  "applies_to": [
+    "suite",
+    "engine",
+    "module",
+    "component"
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "name": "Document control",
+      "content": "Identity, version, approval/publication status, owner and pinned source manifest"
+    },
+    {
+      "order": 2,
+      "name": "Business objectives",
+      "content": "Problem, actors, desired outcomes and constraints"
+    },
+    {
+      "order": 3,
+      "name": "Requirements and features",
+      "content": "Scope, exclusions, feature references and worked examples"
+    },
+    {
+      "order": 4,
+      "name": "Architecture",
+      "content": "Suite/engine/module/component, boundaries, contracts and deployment"
+    },
+    {
+      "order": 5,
+      "name": "Reuse",
+      "content": "Reuse/extend/create assessment and accountable ownership"
+    },
+    {
+      "order": 6,
+      "name": "Functional design",
+      "content": "Rules, calculations, fixed/configurable behaviour and exceptions"
+    },
+    {
+      "order": 7,
+      "name": "Frontend",
+      "content": "Navigation, screens/mockups, fields/actions, loading/error/empty/conflict states, accessibility"
+    },
+    {
+      "order": 8,
+      "name": "Workflow",
+      "content": "Actors, transitions, approvals, direct operations, concurrency and failures"
+    },
+    {
+      "order": 9,
+      "name": "Database",
+      "content": "ER diagram, types, PK/FK/UQ/check/indexes, migration and reconciliation"
+    },
+    {
+      "order": 10,
+      "name": "API and DTO",
+      "content": "Names, methods/routes, schemas, permissions, examples, errors, idempotency and compatibility"
+    },
+    {
+      "order": 11,
+      "name": "Code design",
+      "content": "Projects/packages, classes/files, methods, repositories and dependency mappings"
+    },
+    {
+      "order": 12,
+      "name": "Configuration and history",
+      "content": "Versioned configuration; config history, field-definition history and data history"
+    },
+    {
+      "order": 13,
+      "name": "Security",
+      "content": "Authentication, scope/record/field access, secrets, encryption, audit and retention"
+    },
+    {
+      "order": 14,
+      "name": "Integration",
+      "content": "Bulk preview, Sheets authority/mapping/conflicts, external events and retry/deduplication"
+    },
+    {
+      "order": 15,
+      "name": "Masters and reporting",
+      "content": "Dataset authority, grain, filters, calculations, marts and dashboards"
+    },
+    {
+      "order": 16,
+      "name": "Operations",
+      "content": "Deployment, limits, monitoring, backups, restore and rollout/rollback"
+    },
+    {
+      "order": 17,
+      "name": "Verification",
+      "content": "Acceptance examples, planned versus executed tests, evidence and unresolved limitations"
+    },
+    {
+      "order": 18,
+      "name": "Decisions and summary",
+      "content": "Open decisions, impacts, readiness and source references"
+    }
+  ],
+  "non_applicable": "Record Not applicable with a reason",
+  "states": [
+    "current implementation",
+    "approved requirement",
+    "proposal",
+    "historical",
+    "pending"
+  ],
+  "diagram_policy": "Retain editable source and source versions; label mockup and running-app capture separately"
+}
