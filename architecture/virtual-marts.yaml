@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "status": "Proposed reporting mart catalogue; no SQL views implemented",
+  "source_ref": "VIRTUAL-MART-01",
+  "reporting_path": "Domain DB > governed virtual mart > authorized report service > dashboard/download/Google Sheet",
+  "definitions": [
+    {
+      "code": "emp_directory",
+      "view": "vw_emp_directory",
+      "grain": "One employee at defined current/as-of employment/assignment scope",
+      "inputs": [
+        "emp.emp",
+        "emp.employment",
+        "emp.employment_period",
+        "emp.emp_assignment"
+      ],
+      "notes": "Choose as-of rules and one-to-many aggregation before joins to prevent duplicate employee counts."
+    },
+    {
+      "code": "vnd_directory",
+      "view": "vw_vnd_directory",
+      "grain": "One vendor per entity",
+      "inputs": [
+        "vnd.vnd"
+      ],
+      "notes": "Full vendor schema and permitted reporting fields pending working sheets."
+    },
+    {
+      "code": "agg_directory",
+      "view": "vw_agg_directory",
+      "grain": "One aggregator per entity",
+      "inputs": [
+        "agg.agg"
+      ],
+      "notes": "Sources linked separately; aggregate or drill to sources without multiplying business rows."
+    },
+    {
+      "code": "payroll_results",
+      "view": "vw_payroll_results",
+      "grain": "One finalized employee payroll result per employment/pay period/run version; final grain pending payroll design",
+      "inputs": [],
+      "notes": "Payroll input schema/calculations pending; read approved immutable domain results, not mutable working values."
+    },
+    {
+      "code": "reconciliation",
+      "view": "vw_reconciliation",
+      "grain": "Explicit reconciliation item/match-group grain pending Finance design",
+      "inputs": [],
+      "notes": "Unmatched/matched/difference sources and joins pending; no Finance data imported by this guide."
+    }
+  ],
+  "rules": [
+    "All reporting paths use registered virtual mart definitions; no alternative editable master.",
+    "Enforce entity/subscription/group/field/record permissions including aggregate leakage checks.",
+    "Register explicit grain, joins, approved measures, fields/operators and version.",
+    "User filtering/columns are structured allowed selections; no arbitrary SQL or table names.",
+    "Virtual views read domain tables. Index/query tuning follows workload; materialization requires a separate explicit decision."
+  ],
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "version": "0.1.0",
+      "summary": "Record mart examples, grain requirements and reporting authority; no materialization or views deployed."
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "version": "0.1.2",
+  "status": "approved source model; migration and authority cutover pending",
+  "approval": {
+    "evidence": "User approved goahead after the six-group source-of-truth proposal",
+    "recorded_on": "23-Oct-2026",
+    "scope": "Six groups, generated technical views, source locations and preservation policy"
+  },
+  "common_fields": [
+    "version",
+    "source_ref",
+    "change_history"
+  ],
+  "groups": [
+    {
+      "ref": "standards",
+      "name": "Standards",
+      "owner": "COS_Governance",
+      "files": [
+        "standards/standards.yaml",
+        "standards/naming.yaml",
+        "standards/baseline.yaml"
+      ],
+      "fields": [
+        "standard_ref",
+        "name",
+        "scope",
+        "rule",
+        "applicability",
+        "version",
+        "approval_status",
+        "exception",
+        "source_decision"
+      ],
+      "outputs": [
+        "Standards documents",
+        "Coding guidelines",
+        "Validation rules"
+      ],
+      "rule": "Rule bodies have one canonical source; baseline references rules without copying editable bodies"
+    },
+    {
+      "ref": "architecture",
+      "name": "Architecture",
+      "owner": "COS_Governance",
+      "files": [
+        "architecture/objects.yaml",
+        "architecture/emp-data-design.yaml",
+        "architecture/developer-guide.yaml",
+        "architecture/shared-data-design.yaml",
+        "architecture/virtual-marts.yaml"
+      ],
+      "fields": [
+        "object_ref",
+        "display_name",
+        "shortcode",
+        "type",
+        "parent",
+        "responsibility",
+        "owner",
+        "dependencies",
+        "status"
+      ],
+      "outputs": [
+        "Architecture designs",
+        "Block diagrams"
+      ],
+      "rule": "Distinguish business architecture objects from code packages, classes and deployments"
+    },
+    {
+      "ref": "features",
+      "name": "Features",
+      "owner": "Owning application repository; shared capabilities referenced centrally",
+      "files": [
+        "features/features.yaml",
+        "features/common.yaml"
+      ],
+      "fields": [
+        "feature_ref",
+        "requirement",
+        "purpose",
+        "actors",
+        "inputs",
+        "outputs",
+        "rules",
+        "configuration",
+        "workflow",
+        "permissions",
+        "history",
+        "acceptance_criteria"
+      ],
+      "outputs": [
+        "Module designs",
+        "Component designs",
+        "Workflow diagrams",
+        "Test specifications"
+      ],
+      "rule": "Current governance feature file remains migration inventory until reviewed application-side transfer; no simultaneous editable copies"
+    },
+    {
+      "ref": "decisions",
+      "name": "Decisions",
+      "owner": "Scope owner: governance for reusable rules; owning application for domain choices",
+      "files": [
+        "decisions/decisions.yaml"
+      ],
+      "fields": [
+        "ref",
+        "problem",
+        "options",
+        "decision",
+        "reason",
+        "authority",
+        "status",
+        "affected_targets",
+        "supersedes"
+      ],
+      "outputs": [
+        "Decision history",
+        "Comparison summaries",
+        "Open-decision lists"
+      ],
+      "rule": "Preserve accepted/proposed/rejected/superseded statuses and evidence"
+    },
+    {
+      "ref": "templates",
+      "name": "Design Templates",
+      "owner": "COS_Governance",
+      "files": [
+        "templates/design.yaml",
+        "templates/upload-profiles.yaml"
+      ],
+      "fields": [
+        "output_type",
+        "applicable_scope",
+        "section_order",
+        "required_content",
+        "example_format",
+        "diagram_requirements",
+        "rendering_rules"
+      ],
+      "outputs": [
+        "Consistent designs",
+        "Developer guides"
+      ],
+      "rule": "Autoinspire supplies presentation structure, not its technology/business logic"
+    },
+    {
+      "ref": "ownership",
+      "name": "Ownership Mappings",
+      "owner": "COS_Governance for architecture mappings; application for detailed implementation mappings",
+      "files": [
+        "architecture/ownership.yaml"
+      ],
+      "fields": [
+        "architecture_owner",
+        "feature_ref",
+        "repository",
+        "code_location",
+        "contract_ref",
+        "dataset_authority",
+        "implementation_status"
+      ],
+      "outputs": [
+        "Traceability views",
+        "Intent versus implementation comparisons"
+      ],
+      "rule": "Mapping links to actual implementation; never duplicates every method/column"
+    }
+  ],
+  "technical_sources": [
+    {
+      "information": "Files/classes/repos/method signatures",
+      "source": "Application code",
+      "manual_context": "Business purpose, architecture ownership, intended behaviour and acceptance criteria"
+    },
+    {
+      "information": "API routes and DTO shapes",
+      "source": "Selected authoritative contract approach",
+      "manual_context": "Meaning, permissions and compatibility; contract strategy pending"
+    },
+    {
+      "information": "Physical tables/columns/keys/indexes/relationships",
+      "source": "Reviewed migrations and verified schema",
+      "manual_context": "Business semantics, intended relationships and authority"
+    },
+    {
+      "information": "Screens/routes/components",
+      "source": "Frontend code",
+      "manual_context": "User journeys and expected behaviour"
+    },
+    {
+      "information": "Verification results",
+      "source": "Actual executed checks",
+      "manual_context": "Acceptance criteria and verified scope"
+    }
+  ],
+  "business_data": "Field meaning, controlled-value meaning and master-data ownership remain explicit in domain feature/data definitions; actual master records remain in the application database.",
+  "transitions": [
+    "Complete semantic migration",
+    "Verify and approve repository baseline",
+    "Explicitly declare authority cutover",
+    "Stop editing superseded sources",
+    "Retire redundant active registers",
+    "Decide history retention/deletion separately"
+  ],
+  "non_effects": [
+    "No Drive source modified/deleted/read-only",
+    "No application or database rename",
+    "No publication or merge approval inferred",
+    "No new permanent identifiers allocated"
+  ],
+  "change_history": [
+    {
+      "recorded_on": "23-Oct-2026",
+      "summary": "Add central shared requirement and logical employee data design sources within existing six logical groups; no new group or cutover."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "summary": "Register developer/mart/shared-table design and upload-profile sources within six groups; no new authority cutover."
+    }
+  ]
+}

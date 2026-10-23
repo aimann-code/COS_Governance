@@ -1,0 +1,33 @@
+name: Governance draft checks
+on:
+  push:
+    branches: [main, draft/governance-migration]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Validate preserved sources and frozen naming
+        run: python3 generators/validate.py
+      - name: Check reproducible COS Catalogue and links
+        run: node generators/build-catalogue.mjs --check
+      - name: Generate draft review views
+        run: python3 generators/render.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: governance-draft-previews
+          path: .generated/
+          include-hidden-files: true
+          retention-days: 7
+      - name: Record scope
+        run: |
+          echo "Validated initial migration content and generated Markdown previews." >> "$GITHUB_STEP_SUMMARY"
+          echo "No source-authority cutover, native-document publication, application rename or database migration." >> "$GITHUB_STEP_SUMMARY"

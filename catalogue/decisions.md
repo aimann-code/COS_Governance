@@ -1,0 +1,125 @@
+# Decisions and reconciliation
+
+> Generated from maintained definitions. Do not edit this page directly.
+> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Draft catalogue. Approval, implementation, verification and publication are separate.
+
+[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
+
+Source references are temporary/history references unless an approved permanent identity exists. Recording a proposal does not approve it.
+
+## Current discussion directions
+
+| Ref | Direction | Status |
+| --- | --- | --- |
+| SOURCE-01 | User selected Ashish COS for file/backup/storage/naming and Ritesh code for implementation; Autoinspire for design structure only | accepted direction |
+| NAME-01 | Use employee schema emp instead of people; physical migration still pending | accepted direction |
+| NAME-02 | COS is selective, not mandatory on every class/method/API/DTO/file/database object | frozen via D67 |
+| REUSE-01 | Use reusable registration capabilities for employee/vendor/aggregator/brand/location, with domain-specific rules and repositories | accepted direction; detailed design pending |
+| HISTORY-01 | Retain this chat's naming/features/comparison discussions and superseded proposals in the repository | accepted direction; archive coverage disclosed |
+| MIGRATION-01 | Retire redundant manual registers after verified migration; retain a controlled historical baseline | accepted direction; cutover/deletion not performed |
+| GITHUB-01 | Set up a separate private governance repository and initial draft; application repository remains separate | authorized by user ok do it; created |
+| SOURCE-MAP-01 | Approve six maintained groups, their required fields and generated outputs; keep application-specific features/decisions/implementation in their owning repository and governed definitions/templates centrally. | approved source model; implementation/migration pending where stated |
+| CATALOGUE-01 | Create a clickable generated COS Catalogue in GitHub for standards, names, architecture, features, design availability and implementation links. | User-authorized catalogue implementation; no rule approval or authority cutover |
+| DATE-TIME-01 | Approved scoped standard: Data Standard; canonical rule DATE-TIME-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| BACKUP-TIME-01 | Approved scoped standard: Operations Standard; canonical rule BACKUP-TIME-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| API-PATH-01 | Approved scoped standard: API / Integration Standard; canonical rule API-PATH-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| GITHUB-CONFIRM-01 | Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml. | approved by user; governance recorded; not globally published |
+| HRMS-MAP-01 | Retain HRMS engine name under Enterprise Management; record five proposed modules and 28 proposed components, shared capability boundaries and inter-module data flows. | User authorized GitHub recording of proposal; no full BRD approval, code changes or publication |
+| NAM-LOWER-01 | Explicitly change SYS_EMP_ID to sys_emp_id and EMP_Reg to emp_reg; other naming rules/terms retained. | User-selected and authorized for governance recording; implementation migration pending |
+| COMMON-REQ-01 | Record consolidated common requirements for entity-configured uniqueness/fields, access groups/subscriptions, confirmed preferences/defaults, uploads/sync/email, reports/search and traceable configurable errors. | User requirements/design directions recorded; detailed implementation pending |
+| EMP-DATA-01 | Record proposed logical Employee Management data model, updated to current configurable uniqueness and lowercase identifiers. | Proposed logical design recorded; no physical DB or DDL approval inferred |
+| NAM-REG-01 | Record source term, scoped emp_reg/vnd_reg/agg_reg/source_reg component pattern and vw_<domain>_<purpose> view pattern. | User-authorized scoped naming/design additions; implementation pending |
+| DEV-GUIDE-01 | Generate 18-section Autoinspire-derived developer guide with implementation/API/DTO/connection/test/task matrices and per-table formats. | User-authorized derivative design; implementation and executed application tests not claimed |
+| VIRTUAL-MART-01 | All reporting reads database virtual marts through controlled reporting service. | User direction recorded; views not implemented |
+| UPLOAD-STORAGE-01 | Version template definitions in GitHub; generate entity-specific blanks via application; real files in approved private storage, staged rows/outcomes in DB, validated records in owning tables. Working-sheet gathering comes next. | Proposed storage/data-flow design recorded; no file moves, new storage adoption or uploads |
+| GITHUB-SOURCE-01 | GitHub is the maintained location for governance/design/code/skills, with shared and owning-application skill locations; retain private data separation and explicit installation status. | User selected and authorized recording; no skill installed or backup job enabled |
+| APP-DRAFT-01 | Publish the prepared configurable employee uniqueness increment as a draft application PR, without merge or deployment. | Draft PR opened; full application tests and migration execution pending |
+
+## Reconciliation
+
+| Ref | Topic | Difference | Status | Next |
+| --- | --- | --- | --- | --- |
+| RECON-01 | Prefix and casing | Earlier mandatory COS prefixes versus frozen selective-prefix naming | resolved | Use frozen naming definitions; preserve old record bodies |
+| RECON-02 | Register authority | Earlier editable workbook versus approved repository source model | pending cutover | Verify semantic migration and explicitly adopt before retiring workbook authority |
+| RECON-03 | Native backup location | Project Backups versus Ashish central 03_Backup | resolved direction; rollout pending | Use Ashish central destination for future authorized native backups; historical copies stay traceable |
+| RECON-04 | Backup filename time/collision | Original timestamp pattern versus later unresolved time/collision clarification | partially resolved; collision handling pending | Use the approved timestamp convention. Select collision handling separately; do not silently choose overwrite, suffix or retry behavior. |
+| RECON-05 | Recovery scope | Git revision history versus native-document/database backups | resolved scope; operational targets pending | Keep artifact-specific recovery and verify restore separately |
+| RECON-06 | Technology versus standard | Proposed TypeScript backend versus Java/Spring implementation | resolved direction; rename work pending | Do not rewrite historic proposal; align language-specific implementation names separately |
+| RECON-07 | API contract authority | Code-derived routes/DTOs versus intended design contracts | pending | Choose code-first with checked outputs or specification-first and define compatibility |
+| RECON-08 | Schema versus semantic data | Typed field design versus encrypted aggregate implementation | pending reconciliation | Use migrations for physical structure and transfer field meanings without loss |
+| RECON-09 | Employee identity policy | Manual/Auto/composite identity requirement versus current registration behaviour | partially resolved direction; domain configuration/migration pending | Complete key configuration/defaults and identity scope, manual/auto ID behaviour and migration impact review. |
+| RECON-10 | Development storage scope | Shared-drive/local-file restrictions versus approved GitHub repository and remote checks | pending general policy; current repo authorized | Keep governed native outputs in approved storage; obtain scope decisions for other execution/storage |
+
+## Preserved source decisions
+
+| Ref | Topic | Decision | Approval | Implementation |
+| --- | --- | --- | --- | --- |
+| D01 | COS scope | COS maintains reusable framework architecture, design and global standards. | Pending | Not implemented |
+| D02 | MHL scope | MHL maintains entity architecture, configuration, COS adoption and approved local exceptions. | Pending | Not implemented |
+| D03 | Six logical files | Maintain Architecture, Standards and Registers separately for COS and MHL. | Pending | Not implemented |
+| D04 | Names | Use COS_Architecture_gov, COS_Standards_gov, COS_Registers_gov and corresponding MHL names. | Pending | Not implemented |
+| D05 | Permanent files | Each logical file has permanent _dft and _pub files with stable IDs. | Pending | Not implemented |
+| D06 | Backup suffix | Use _bck consistently. | Pending | Not implemented |
+| D07 | Backup filename | Use <filename>_bck_v<version>_<YYYYMMDD_HHMMSS>; timezone Asia/Kolkata. | Pending | Not implemented |
+| D08 | Versions | Maintain internal version and status. Versions appear in backups, not permanent filenames. | Pending | Not implemented |
+| D09 | Archive | Published backups preserve previous approved versions; separate _arch copies are unnecessary. | Pending | Not implemented |
+| D10 | Document backup | Back up existing documents before logical content updates; initial creation has no previous version. | Pending | Not implemented |
+| D11 | Sheet backup | Back up structural, material logic, bulk or destructive changes and reprocessing. | Pending | Not implemented |
+| D12 | Data appends | No full backup for routine appends; retain unique IDs, timestamps and source/run references. | Pending | Not implemented |
+| D13 | Record edits | Log record ID, old/new values, actor and timestamp; back up bulk/destructive edits. | Pending | Not implemented |
+| D14 | Publication | Back up draft and publication; apply approved changes inside the existing published file. | Pending | Not implemented |
+| D15 | Live data | Preserve latest live data during publishing and existing tab IDs where possible. | Pending | Not implemented |
+| D16 | Short codes | Separate permanent ID, short code, display name and filename; final prefixes unresolved. | Pending | Not implemented |
+| D17 | AI standard name | AI Standard is the umbrella containing AI Chat Standard. | Pending | Not implemented |
+| D18 | Draft-first response | Show summary and relevant examples before generating or updating files. | Pending | Not implemented |
+| D19 | Selection block | Display content, dataset, status, update, new-file and backup controls. | Pending | Not implemented |
+| D20 | Generation permission | Obtain explicit permission to write; content approval alone is insufficient. | Pending | Not implemented |
+| D21 | Content choices | Add Content first and default; Summary, Full, Example, Suggestion and None. | Pending | Not implemented |
+| D22 | Other selections | Show Dataset: Table Header/Test Dataset/Full Dataset/None. Status: Draft/Approved. Update File, Generate New File and Backup: Yes/No. | Pending | Not implemented |
+| D23 | AI Chat fields | AI Chat display column; separate provider, chat ID/link and optional project name/ID/link; unknown values blank. | Pending | Not implemented |
+| D24 | Chat ownership | Scope and Entity follow design responsibility; project membership does not establish authority. | Pending | Not implemented |
+| D25 | Chat mapping | One active primary design chat per object; retain supporting and historical links. | Pending | Not implemented |
+| D26 | Cross-chat decisions | Any chat may propose changes; shared approved decisions establish authority. | Pending | Not implemented |
+| D27 | Decision history | Retain superseded decisions with replacement references and reasons. | Pending | Not implemented |
+| D28 | Change control | Track approval, targets, implementation, verification and publication separately. | Pending | Not implemented |
+| D29 | Source lineage | Retain source references and adopted, superseded and unresolved status. | Pending | Not implemented |
+| D30 | Work sequence | Finalise governance, reconcile sources and then consolidate approved changes. | Pending | Not implemented |
+| D31 | Current stage | Complete six drafts authorised 20-Oct-2026; no publication or source consolidation. | Pending | Six drafts prepared; not published |
+| D32 | Single-screen selection | Show all controls together with All files or individual file selection. Retain separate per-file selections where needed. | Pending | Not implemented |
+| D33 | Latest 10 | Test Dataset means latest 10 actual records by identified date/timestamp, or all if fewer. Ask when latest cannot be determined. Never substitute invented examples. | Pending | Not implemented |
+| D34 | Submission output | After Submit Selection, display selected files tab headers or document section headings and requested dataset views. | Pending | Not implemented |
+| D35 | Defaults | Show Content Add Content; Show Dataset None; Content Status Draft; Update File No; Generate New File No; Backup Yes when updating otherwise disabled No. | Pending | Not implemented |
+| D36 | Selection behaviour | None clears other options in its row. For one target Update and New are mutually exclusive. Submit previews intent; explicit generation permission is required. | Pending | Not implemented |
+| D37 | Global strict storage rule | Shared-drive-only storage applies across COS and MHL chats and projects. Use native Google Docs and Google Sheets under the approved shared-drive root https://drive.google.com/drive/folders/1KmWT6rD0EMBIDFIioE5KMShGB4Kb9u7y. Do not create or save deliverables in My Drive. Do not create local files, temporary local build/export files, Excel files or downloadable artifacts without explicit documented approval from ashish.maan@mannhospitality.com (main user/workspace authority). Do not treat a tool or skill default as approval. If the native shared-drive route cannot complete a task, stop before the prohibited operation and request that approval. Any user-specific local-file standard is maintained separately in that user's workspace and remains subject to this approval requirement. Current draft destination: https://drive.google.com/drive/folders/1Ihxx88hRxupD41ve6aEw6OINY2mudHAi. Global applicability is a governance requirement; recording it does not automatically configure or enforce other chats or projects. | Approved | Recorded; six drafts and four backups moved; cross-chat enforcement not automated |
+| D38 | Readable date format | Use DD-MMM-YYYY for user-readable date displays and the date portion of timestamps, for example 20-Oct-2026. Preserve typed date/timestamp values; apply display formatting rather than replacing underlying values with text. This instruction specifies the date format only; time-of-day format and same-day backup filename uniqueness remain unresolved. Existing files are not renamed and historical records are not rewritten by this registration. | Approved | Recorded; existing-file/date-format rollout pending C13 |
+| D39 | Dual identifiers | Retain both a UUID and a readable prefixed ID for registered records. Any later removal requires dependency review and an approved migration. | Approved | Documented; implementation/allocation pending as applicable |
+| D40 | Relational keys | Proposed schema uses immutable UUID primary keys and UUID foreign keys. Readable IDs are unique alternate keys; relationships are stored explicitly rather than inferred from ID text. | Pending | Documented; implementation/allocation pending as applicable |
+| D41 | Hierarchical short codes | MHL short codes express domain, business function, source and table/field context. COS codes express suite, engine, module and component context. Final segment order, abbreviations and prefix allocations require approval. | Pending | Documented; implementation/allocation pending as applicable |
+| D42 | Existing and external identities | Preserve existing SYS_EMP_ID and source-provided IDs. Link external identities through source/account-qualified mappings; keep mapping identity separate from the employee or transaction identity. | Pending | Documented; implementation/allocation pending as applicable |
+| D43 | Database automation | Configure UUID defaults, readable-ID allocation, keys, constraints and audit behaviour explicitly. Database enforcement does not replace maintaining approved business definitions and ownership. | Pending | Documented; implementation/allocation pending as applicable |
+| D44 | Object-to-table ownership | Register one accountable owner object per table and explicit reader/writer/producer/consumer relationships. One architecture object can own multiple tables or no direct operational table. | Pending | Documented; implementation/allocation pending as applicable |
+| D45 | Development sequence | Define architecture and shared contracts top-down, then implement one dependency-complete component and workflow bottom-up. Do not require every suite to be fully designed before implementation. | Pending | Documented; implementation/allocation pending as applicable |
+| D46 | Cross-domain integration | Use shared UUID identities, explicit foreign keys within a database and approved APIs/events across services. Many-to-many relationships use mapping tables; no comma-separated foreign-key lists. | Pending | Documented; implementation/allocation pending as applicable |
+| D47 | Project boundaries | Keep architecture objects, delivery projects and deployments distinct. Do not automatically create a technical project for every component. | Pending | Documented; implementation/allocation pending as applicable |
+| D48 | Initial project candidates | COS_Governance, COS_Shared_Services and MHL_Payroll are proposed starting logical projects only. Project names and total count are not frozen and no projects are authorised for creation by this entry. | Pending | Documented; implementation/allocation pending as applicable |
+| D49 | Consistent project names | Use one registered logical Project Name across Drive, Apps Script, AI and backend platforms where the project exists. Register actual platform IDs and distinguish service/environment names. | Approved | Documented; implementation/allocation pending as applicable |
+| D50 | Object chat lifecycle | Maintain one active primary design chat per object. Proposed rollout creates suite, engine, module and component chats progressively as design starts, retaining parent references and superseded mappings. | Pending | Documented; implementation/allocation pending as applicable |
+| D51 | Chat preregistration | Register planned chat name and object mapping first; configure/create the AI project and chat; record the actual provider chat/project IDs and links; verify mapping before activation. | Approved | Documented; implementation/allocation pending as applicable |
+| D52 | Platform identity separation | Separate internal chat/project UUIDs from provider-assigned IDs. Unknown provider IDs remain blank; preserve verified links and record any unavailable-ID limitation. | Pending | Documented; implementation/allocation pending as applicable |
+| D53 | Schema governance registers | Proposed catalogues cover tables, fields, table-field usage, keys, key fields, relationships, prefixes, allocations, aliases, projects and platform mappings. Register implementation status separately from design intent. | Pending | Documented; implementation/allocation pending as applicable |
+| D54 | Backup location and move exemption | Moving files without content/structural change requires no backup. All future backup copies go to approved shared-drive folder 03_Backup: https://drive.google.com/drive/folders/1dQ_2t8ibU30HBx7x1gilqZA_JfRPbjpN. Six existing backup copies were relocated there; working drafts remain in Draft_V5. | Approved | Backup relocation verified; rule recorded |
+| D55 | Readable date and backup timestamps | Apply DD-MMM-YYYY to user-visible dates, per D38. Time-of-day representation and backup filename collision handling remain unresolved; do not silently freeze a new time convention. | Approved | Documented; implementation/allocation pending as applicable |
+| D57 | Schema catalogue authority | Database catalogue describes implemented technical structure; approved design registers describe business meaning, intended schema and ownership. Reconcile deviations instead of manually maintaining duplicate technical schemas. | Pending | Documented; implementation/allocation pending as applicable |
+| D58 | Governance prefix proposals | Proposed governance type prefixes include COS-DEC/COS-CHG/COS-STD and MHL equivalents, plus registered table, field, relationship, mapping, source and project types. Final prefix reservation, sequence width and hierarchical segment order require review of existing sheets; no permanent IDs are allocated by this update. | Pending | Documented; implementation/allocation pending as applicable |
+| D59 | Central register source | Use this selected workbook as the editable source for standards, architecture/design, examples and generation specifications. | Approved | Draft records populated; generator not implemented |
+| D60 | Standard catalogue | Retain the user's 20 standard categories. Catalogue selection does not approve all individual rules. | Approved | 20 definitions registered; rule completion pending |
+| D61 | Generated standard documents | Generate all-standard or selected-standard readable documents from versioned records and approved applicability. | Approved | Output profiles specified; not generated |
+| D62 | Generated design and examples | Generate Design & Architecture, DB diagrams, screens and example tables from registered definitions; retain source/version provenance. | Approved | Definitions and existing embedded references registered; renderer pending |
+| D63 | Shared and employee-specific names | Use COS prefixes for custom functions/API operations/DTOs/services; EMP only for employee-specific contracts and handlers. Preserve SYS_EMP_ID and EMP_Reg. | Approved | Current design names aligned; global publication and installed code migration pending |
+| D64 | Technical ownership and files | Record API, DTO, service, function and source-file ownership against architecture objects; distinguish architectural level from technical role. | Approved | Draft mappings registered; exact shared architecture placement pending |
+| D65 | Rendering and asset workflow | Proposed asset catalogue records embedded objects, standalone files, mockup/screenshot provenance, render layouts and source manifests separately. | Pending | Existing embedded objects registered; standalone asset storage and implementation pending |
+| D66 | Create nine initial detailed standard drafts | Create Architecture, Coding (Development alias), Naming, Frontend, Backend, URL, API (API / Integration), Security and Data standards in the selected central workbook, with rule examples and validation. Creation does not approve detailed rule text or enforce code changes. | Approved for drafting | 162 initial detailed draft rules authored; approval, code compliance and publication pending |
+| D67 | Freeze shortcode-based naming | Freeze the immediately preceding shortcode table and naming patterns: 32 code terms, 20 unchanged terms, selective COS prefix, PascalCase classes/types, camelCase methods, kebab-case TS/React files, lower_snake_case DB identifiers, UPPER_SNAKE_CASE constants; preserve SYS_EMP_ID and EMP_Reg. reg means registration. Do not apply historical COS_ACTION_OBJECT or mandatory COS class/file prefixes in this revised scope. | Frozen by user; not published | Naming recorded in central source; source code/API/database migrations and dependent document reconciliation remain pending |
+
+[Decision source](../decisions/decisions.yaml) · [Discussion archive](../discussions/README.md)

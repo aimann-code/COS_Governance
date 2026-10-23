@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COS governance entry manifest",
+  "type": "object",
+  "required": [
+    "project",
+    "version",
+    "status",
+    "naming_version",
+    "entry_points",
+    "authority",
+    "application"
+  ],
+  "properties": {
+    "project": {
+      "const": "COS_Governance"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "naming_version": {
+      "type": "string"
+    },
+    "entry_points": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "authority": {
+      "type": "object"
+    },
+    "application": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
