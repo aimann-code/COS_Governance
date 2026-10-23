@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "initial mapping links; not an exhaustive technical inventory",
   "reference_policy": "Artifact refs below are local mapping references; architecture display refs do not allocate permanent COS IDs.",
   "mappings": [
@@ -61,6 +61,34 @@
       "dataset_authority": "Domain-specific masters retain their own authoritative writers",
       "implementation_status": "Planned shared capability; owner placement unresolved",
       "note": "Do not present planned RegService/RegHandler as existing code"
+    },
+    {
+      "ref": "draft-composite-key-core",
+      "architecture_owner": null,
+      "feature_refs": [
+        "FEAT-COMMON-DRAFT-1"
+      ],
+      "code_location": "apps/api/src/main/java/com/cos/shared/reg/UniqueKeyRule.java",
+      "dataset_authority": "Pure reusable matching code; no dataset writer",
+      "repository": "aimann-code/EMPRegister",
+      "ref_commit": "e6c51155564652547314575955eb8203538af438",
+      "contract_ref": "Draft PR https://github.com/aimann-code/EMPRegister/pull/1",
+      "implementation_status": "Generated source in draft PR; 18 pure-core tests and syntax checks passed, full Spring/PostgreSQL tests pending; not merged or deployed"
+    },
+    {
+      "ref": "draft-emp-key-service",
+      "architecture_owner": "Employee Management",
+      "feature_refs": [
+        "emp_reg",
+        "EMP_Update",
+        "FEAT-COMMON-DRAFT-1"
+      ],
+      "code_location": "apps/api/src/main/java/com/cos/hrms/onboarding/EmpUniqueKeyService.java",
+      "dataset_authority": "Scoped configuration and employee key claims; existing people records remain domain authority",
+      "repository": "aimann-code/EMPRegister",
+      "ref_commit": "e6c51155564652547314575955eb8203538af438",
+      "contract_ref": "Draft PR https://github.com/aimann-code/EMPRegister/pull/1",
+      "implementation_status": "Generated source in draft PR; 18 pure-core tests and syntax checks passed, full Spring/PostgreSQL tests pending; not merged or deployed"
     }
   ],
   "change_history": [
@@ -68,6 +96,11 @@
       "recorded_on": "23-Oct-2026",
       "decision_ref": "NAM-LOWER-01",
       "summary": "Governance feature references changed to emp_reg; pinned implementation evidence unchanged."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "APP-DRAFT-01",
+      "summary": "Link draft shared/employee uniqueness source separately from existing pinned baseline; do not claim production verification."
     }
   ]
 }

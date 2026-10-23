@@ -1,7 +1,7 @@
 # Configurable uniqueness
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -22,7 +22,10 @@ Placement is unresolved; no hierarchy invented.
 
 ## Implementation evidence
 
-No linked implementation mapping in this partial inventory. Detailed code extraction remains future work.
+| Source | Architecture owner | State |
+| --- | --- | --- |
+| [draft-composite-key-core](https://github.com/aimann-code/EMPRegister/blob/e6c51155564652547314575955eb8203538af438/apps/api/src/main/java/com/cos/shared/reg/UniqueKeyRule.java) | Unresolved | Generated source in draft PR; 18 pure-core tests and syntax checks passed, full Spring/PostgreSQL tests pending; not merged or deployed |
+| [draft-emp-key-service](https://github.com/aimann-code/EMPRegister/blob/e6c51155564652547314575955eb8203538af438/apps/api/src/main/java/com/cos/hrms/onboarding/EmpUniqueKeyService.java) | Employee Management | Generated source in draft PR; 18 pure-core tests and syntax checks passed, full Spring/PostgreSQL tests pending; not merged or deployed |
 
 ## Common requirements
 

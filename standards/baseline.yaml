@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
@@ -133,7 +133,8 @@
         "DRAFT-COD-R02",
         "DRAFT-COD-R08",
         "DRAFT-COD-R15",
-        "GITHUB-CONFIRM-01"
+        "GITHUB-CONFIRM-01",
+        "GITHUB-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending"
@@ -172,7 +173,8 @@
       "source_version": "0.1.0",
       "rule_source": "standards/standards.yaml",
       "rule_refs": [
-        "GITHUB-CONFIRM-01"
+        "GITHUB-CONFIRM-01",
+        "GITHUB-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -194,7 +196,8 @@
       "rule_refs": [
         "S-D54",
         "DRAFT-DAT-R19",
-        "BACKUP-TIME-01"
+        "BACKUP-TIME-01",
+        "GITHUB-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -208,7 +211,8 @@
         "S-D37",
         "S-D49",
         "S-D54",
-        "BACKUP-TIME-01"
+        "BACKUP-TIME-01",
+        "GITHUB-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -218,7 +222,9 @@
       "name": "Tool Standard",
       "source_version": "0.1.0",
       "rule_source": "standards/standards.yaml",
-      "rule_refs": [],
+      "rule_refs": [
+        "GITHUB-SOURCE-01"
+      ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
     },
@@ -245,7 +251,8 @@
         "S-D61",
         "S-D62",
         "DATE-TIME-01",
-        "BACKUP-TIME-01"
+        "BACKUP-TIME-01",
+        "GITHUB-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -370,6 +377,13 @@
         "GITHUB-CONFIRM-01"
       ],
       "disposition": "User confirmation required for each described GitHub update; no implicit merge or publication."
+    },
+    {
+      "topic": "GitHub maintained sources and skills",
+      "source_refs": [
+        "GITHUB-SOURCE-01"
+      ],
+      "disposition": "Current repository-owned definitions/skills maintained in GitHub; private data outside repo. No skill installation, full historical migration/deletion or backup automation."
     }
   ],
   "aliases": {

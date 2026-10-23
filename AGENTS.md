@@ -25,3 +25,6 @@ Read features/common.yaml for current cross-suite requirements and architecture/
 
 ## Developer derivatives and template storage — 23-Oct-2026
 Use architecture/developer-guide.yaml and data-design sources for generated coder handoff. Naming includes scoped registration and virtual-view profiles via NAM-REG-01. All reporting reads controlled DB virtual marts. Upload template definitions live in templates/upload-profiles.yaml; entity-specific blank downloads are runtime generated after configuration/permission/key resolution. Real source files remain in approved private storage; no live data in GitHub. Working-sheet extraction is the next phase, not completed. Do not confuse logical table formats with deployed DDL or planned tests with executed results.
+
+## GitHub maintained sources and skills — 23-Oct-2026
+Follow GITHUB-SOURCE-01 in standards/standards.yaml. Shared skills belong in this repository's skills/skill-name/SKILL.md; app skills in their owning repository. Repository storage is not runtime installation/activation. Keep one maintained source, generated derivatives, private data/secrets outside GitHub and artifact-specific recovery. Preserve old source history; no automatic migration/deletion or new sharing. The authorized application uniqueness work is linked as a draft PR, not production verified. Continue confirming each GitHub update.

@@ -252,5 +252,18 @@ export function buildCatalogue(src) {
       "\n## Pending\n\n"+u.pending.map(x=>"- "+x).join("\n")+"\n\n"+
       "[Canonical template/storage definition](../templates/upload-profiles.yaml) · [Table formats](table-formats.md)\n";
   }
+  const storage=s.rules.find(r=>r["Review Ref"]==="GITHUB-SOURCE-01");
+  if(storage) {
+    out["catalogue/repository-storage.md"]=header("Repository and skills storage")+
+      storage.Rule+"\n\n"+table(["Content","Maintained location","Boundary"],storage.locations)+
+      "\n## Skill contents\n\n"+table(["Section","Required information"],storage.skill_fields)+
+      "\nNo SKILL.md is created or installed by recording this standard. Environment discovery/installation and repository backup remain separate work.\n\n"+
+      "[Canonical storage rule](../standards/standards.yaml) · [Authorization](../discussions/github-skills-storage-23-Oct-2026.md)\n";
+    out["skills/README.md"]="# Shared skills source directory\n\n"+
+      "> Generated policy/index view. Edit GITHUB-SOURCE-01 in standards/standards.yaml, then regenerate. This file is not a skill.\n\n"+
+      "Shared skill source belongs at skills/skill-name/SKILL.md. Application-specific skills belong in their owning application's skills directory. No new skill has been created, moved, installed or activated by this storage-policy update.\n\n"+
+      "[Repository and skills storage standard](../catalogue/repository-storage.md) · [COS Catalogue](../catalogue/README.md)\n";
+    out["catalogue/README.md"]+="\n## Maintained repository and skills source\n\n[Repository/skills storage](repository-storage.md) · [Shared skills directory](../skills/README.md). Source storage is separate from runtime installation; no actual skill has been created or installed in this update.\n";
+  }
   return out;
 }

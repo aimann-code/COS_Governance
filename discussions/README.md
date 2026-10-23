@@ -23,3 +23,5 @@ Append corrections and superseding decisions; preserve historical wording. Do no
 - [Common requirements and lowercase naming amendment — 23-Oct-2026](common-requirements-23-Oct-2026.md): latest uniqueness, access, import/report/sync/search/default/error refinements; selected evidence and supersession.
 
 - [Developer guide authorization and limits](developer-guide-23-Oct-2026.md): Autoinspire-derived output, table formats, marts, naming and upload storage; working-sheet gathering deferred.
+
+- [GitHub maintained sources and skills](github-skills-storage-23-Oct-2026.md): selected policy/PR authorization, skill installation limits and pending project standard.

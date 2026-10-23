@@ -1,7 +1,7 @@
 # COS Catalogue
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -69,3 +69,7 @@ Start here to browse definitions without reading YAML or JSON. Use the links bel
 This catalogue covers the imported scope, not every possible COS suite or engine. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.
 
 [Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md)
+
+## Maintained repository and skills source
+
+[Repository/skills storage](repository-storage.md) · [Shared skills directory](../skills/README.md). Source storage is separate from runtime installation; no actual skill has been created or installed in this update.

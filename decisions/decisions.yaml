@@ -1042,6 +1042,26 @@
       "status": "Proposed storage/data-flow design recorded; no file moves, new storage adoption or uploads",
       "recorded_on": "23-Oct-2026",
       "canonical_source": "templates/upload-profiles.yaml"
+    },
+    {
+      "ref": "GITHUB-SOURCE-01",
+      "decision": "GitHub is the maintained location for governance/design/code/skills, with shared and owning-application skill locations; retain private data separation and explicit installation status.",
+      "status": "User selected and authorized recording; no skill installed or backup job enabled",
+      "recorded_on": "23-Oct-2026",
+      "source": "User we will kep everything on github now..so skill also; latest Yes",
+      "canonical_rule": "standards/standards.yaml"
+    },
+    {
+      "ref": "APP-DRAFT-01",
+      "decision": "Publish the prepared configurable employee uniqueness increment as a draft application PR, without merge or deployment.",
+      "status": "Draft PR opened; full application tests and migration execution pending",
+      "recorded_on": "23-Oct-2026",
+      "source": "User Yes to storage standard and prepared code draft PR",
+      "repository": "aimann-code/EMPRegister",
+      "branch": "draft/configurable-employee-uniqueness",
+      "commit": "e6c51155564652547314575955eb8203538af438",
+      "pull_request": "https://github.com/aimann-code/EMPRegister/pull/1",
+      "evidence": "18 core contract checks and 10-source syntax checks performed locally; Spring/PostgreSQL suite not run"
     }
   ],
   "pending": [

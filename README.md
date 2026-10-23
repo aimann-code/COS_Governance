@@ -1,6 +1,6 @@
 # COS_Governance
 
-Private COS governance migration draft 0.3.4, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+Private COS governance migration draft 0.3.5, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
 ## Browse without reading YAML
 - [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
@@ -8,6 +8,8 @@ Private COS governance migration draft 0.3.4, recorded 23-Oct-2026. Open the **[
 - [Implementation](catalogue/implementation.md) · [Decisions](catalogue/decisions.md)
 
 ## Current state
+- [Repository and skills storage](skills/README.md): maintained source policy; no skill installed or activated.
+- Application uniqueness increment: [draft PR](https://github.com/aimann-code/EMPRegister/pull/1); full Spring/PostgreSQL checks pending, no merge or deployment.
 - [Developer guide](catalogue/developer-guide.md) · [Developer matrix](catalogue/developer-matrix.md) · [Table formats](catalogue/table-formats.md)
 - [Virtual marts](catalogue/virtual-marts.md) · [Templates and upload storage](catalogue/upload-templates.md) · [Test plan](catalogue/test-plan.md)
 - [Common requirements](catalogue/common-requirements.md): 74 recorded requirements across 12 shared capability groups; implementation pending.

@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "status": "draft migration; no authority cutover or published release",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.2",
@@ -119,6 +119,18 @@
       ],
       "approval": "User update github in backend develop devloper guide",
       "limits": "No working-sheet gathering, live data, actual upload templates, issue assignment, application code changes, schema migration, merge or publication."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.4",
+      "draft_version": "0.3.5",
+      "summary": "Record GitHub/skills storage standard and link authorized application draft PR evidence; project-boundary amendment remains pending separately.",
+      "decision_refs": [
+        "GITHUB-SOURCE-01",
+        "APP-DRAFT-01"
+      ],
+      "approval": "User Yes",
+      "limits": "No actual skill installation/migration, repository backup automation, project rename, app merge/deployment or Drive deletion."
     }
   ]
 }

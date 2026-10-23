@@ -1,7 +1,7 @@
 # Operations Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.4; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -30,6 +30,7 @@
 | S-D15 | Preserve latest live data during publishing and existing tab IDs where possible. | 0.1.0 | Pending | Proposed mapping; Pending |
 | S-D54 | Moving files without content/structural change requires no backup. All future backup copies go to approved shared-drive folder 03_Backup: https://drive.google.com/drive/folders/1dQ_2t8ibU30HBx7x1gilqZA_JfRPbjpN. Six existing backup copies were relocated there; working drafts remain in Draft_V5. | 0.1.0 | Approved | Proposed mapping; Approved |
 | S-D55 | Apply DD-MMM-YYYY to user-visible dates, per D38. Time-of-day representation and backup filename collision handling remain unresolved; do not silently freeze a new time convention. Current disposition: Historical wording retained. DATE-TIME-01 and BACKUP-TIME-01 resolve display time and backup timestamp; only same-second backup collisions remain pending. | 0.1.0 | Approved | Proposed mapping; Approved |
+| GITHUB-SOURCE-01 | Maintain current requirements, standards, architecture/design, developer guides, naming, source code, tests and skills in their owning GitHub repositories. Keep one maintained source per fact and generate readable derivatives. Shared skills live in COS_Governance/skills/<skill-name>/SKILL.md; application-specific skills live in the owning application's skills/<skill-name>/SKILL.md. Supporting scripts/references/assets stay with the skill. GitHub storage does not install or activate a skill; environment installation/connection is separately configured and must not be claimed. Do not put credentials, real employee/upload records or operational DB data in GitHub. Keep those in approved private storage/DB with artifact-specific recovery. Do not maintain duplicate editable Drive copies of GitHub-owned definitions. Preserve original/historical Drive sources until their migration/retention is explicitly resolved. Repository backup policy remains required; Git history alone is not complete recovery. Continue asking before each described GitHub update; no implicit merge, deployment or sharing change. | 0.1.0 | User-selected storage standard; authorized recording; not published | User-selected scoped standard; User-selected storage standard; authorized recording; not published |
 
 ## Applicability and exceptions
 
