@@ -4,6 +4,7 @@ Checks apply to migrated structured sources, not repository/production complianc
 import json
 import re
 from pathlib import Path
+from check_architecture import validate_architecture
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,8 +28,8 @@ def main():
         require((ROOT / path).is_file(), "Missing entry point: " + path)
         require(ROOT in (ROOT / path).resolve().parents, "Entry escapes repository")
     naming = read("standards/naming.yaml")
-    require(naming["version"] == manifest["naming_version"] == "0.2.2", "Naming version mismatch")
-    require(naming["decision_ref"] == "NAM-REG-01" and naming["previous_decision_ref"] == "NAM-LOWER-01" and naming["base_decision_ref"] == "D67", "Missing freeze evidence")
+    require(naming["version"] == manifest["naming_version"] == "0.2.3", "Naming version mismatch")
+    require(naming["decision_ref"] == "NAM-DOC-01" and naming["previous_decision_ref"] == "NAM-REG-01" and naming["base_decision_ref"] == "D67", "Missing freeze evidence")
     terms = naming["terms"]
     require(len(terms) == 53, "Expected 52 base terms and one authorized source term")
     codes = [row["shortcode"] for row in terms]
@@ -80,11 +81,22 @@ def main():
     features = read("features/features.yaml")["features"]
     require(len({r["ref"] for r in features}) == len(features), "Duplicate feature reference")
     architecture = read("architecture/objects.yaml")
+    validate_architecture(architecture, read("architecture/source-inventory.yaml"))
+    require(read("migration/naming-v0.2.2.json")["version"] == "0.2.2", "Missing previous naming snapshot")
+    require(naming['terms'] == read('migration/naming-v0.2.2.json')['terms'], 'Documentation supplement changed controlled terms')
+    for rows, key in [(architecture['architecture'], 'File_Slug'), (standards['definitions'], 'File_Slug'), (features, 'file_slug')]:
+        slugs = [r[key] for r in rows]
+        require(len(slugs) == len(set(slugs)) and all(re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', value) for value in slugs), 'Invalid/duplicate readable file slugs')
+    workflow = read('standards/workflow.yaml')
+    require(workflow['stages'] == ['Draft', 'Review', 'Published'], 'Unapproved stage change')
+    require(workflow['phases'] == ['Requirements', 'Design & Architecture', 'Development', 'Testing', 'Deployment', 'Operations'], 'Unapproved lifecycle change')
+    require(workflow['branch_policy']['no_automatic_sync'] is True, 'Do not claim automatic chat synchronization')
+    print('PASS: source platform, 9 suites, 47 engines, aliases, stable parents, readable slugs and workflow definition.')
     nodes = architecture["architecture"]
     by_name = {r["Display_Name"]: r for r in nodes}
     require(len(by_name) == len(nodes), "Duplicate architecture display name")
     require(len({r["Draft_Ref"] for r in nodes}) == len(nodes), "Duplicate architecture draft ref")
-    allowed_parent = {"Engine": "Suite", "Module": "Engine", "Component": "Module"}
+    allowed_parent = {"Suite": "Platform", "Engine": "Suite", "Module": "Engine", "Component": "Module"}
     for row in nodes:
         parent = row["Parent_Draft_Ref"]
         if row["Object_Type"] in allowed_parent:
@@ -186,7 +198,7 @@ def main():
     for standard in baseline["catalogue"]:
         require((ROOT / standard["rule_source"]).is_file(), "Missing canonical rule source")
         for rule_ref in standard["rule_refs"]:
-            require(rule_ref in {"D67", "NAM-LOWER-01", naming["decision_ref"]} or rule_ref in rule_refs,
+            require(rule_ref in {"D67", "NAM-LOWER-01", "NAM-REG-01", naming["decision_ref"]} or rule_ref in rule_refs,
                     "Unknown consolidated rule reference: " + rule_ref)
     decisions = read("decisions/decisions.yaml")
     reconciliation = decisions["reconciliation"]
@@ -214,3 +226,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

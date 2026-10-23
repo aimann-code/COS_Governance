@@ -20,7 +20,8 @@ const input = {
   sharedData: read('architecture/shared-data-design.yaml'),
   guide: read('architecture/developer-guide.yaml'),
   marts: read('architecture/virtual-marts.yaml'),
-  uploads: read('templates/upload-profiles.yaml')
+  uploads: read('templates/upload-profiles.yaml'),
+  workflow: read('standards/workflow.yaml')
 };
 const pages = buildCatalogue(input);
 pages['catalogue/generated-manifest.json'] = JSON.stringify({
@@ -80,3 +81,4 @@ if (mode === '--write') {
 }
 console.log('PASS: ' + Object.keys(pages).filter(p => p.endsWith('.md')).length + ' reproducible Markdown pages, generated manifest and local link targets.');
 console.log('Scope: reference integrity only; not complete COS coverage or production compliance.');
+

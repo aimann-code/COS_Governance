@@ -1,0 +1,3640 @@
+{
+  "status": "source header inventory; not approved schema",
+  "fields": [
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 1,
+      "Source header": "SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 2,
+      "Source header": "Task",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 3,
+      "Source header": "SubTask",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 4,
+      "Source header": "The Day on which Task need to complete",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 5,
+      "Source header": "Action",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 6,
+      "Source header": "Penalties First Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 7,
+      "Source header": "Penalties Second Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 8,
+      "Source header": "Penalties Penalties Third Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 9,
+      "Source header": "Assign",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Workflow",
+      "Column": 10,
+      "Source header": "Currently Assign",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Catgeories_Configuration",
+      "Column": 1,
+      "Source header": "Categories",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Catgeories_Configuration",
+      "Column": 2,
+      "Source header": "Accounts",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 1,
+      "Source header": "Sub Catgeory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 2,
+      "Source header": "Main Catgeory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 3,
+      "Source header": "zoho sub account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 4,
+      "Source header": "zoho main account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 1,
+      "Source header": "Main Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 2,
+      "Source header": "Sub Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 3,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 5,
+      "Source header": "Duplicate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 6,
+      "Source header": "PP Inventory Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 7,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 9,
+      "Source header": "Closing Stock",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 10,
+      "Source header": "Added By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 11,
+      "Source header": "Store Par Level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 12,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 13,
+      "Source header": "Month Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 14,
+      "Source header": "Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 15,
+      "Source header": "UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 16,
+      "Source header": "UOM Inventory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 17,
+      "Source header": "Issue UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 18,
+      "Source header": "Wastage UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 19,
+      "Source header": "Receipe UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 20,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 21,
+      "Source header": "Item Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 22,
+      "Source header": "HSN/SAC",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 23,
+      "Source header": "Department Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 24,
+      "Source header": "RKK",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 25,
+      "Source header": "Indian",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Item_List",
+      "Column": 26,
+      "Source header": "Chaat",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 1,
+      "Source header": "SR No",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 2,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 3,
+      "Source header": "Vendor Code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 4,
+      "Source header": "Vendor Nmae For Accounting Tool",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 5,
+      "Source header": "Folder Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 6,
+      "Source header": "Invoice number smaple",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 7,
+      "Source header": "GST Portal B2B ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 8,
+      "Source header": "Invoice Period",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 9,
+      "Source header": "Payment Cycle",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 10,
+      "Source header": "Bill Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 11,
+      "Source header": "Payout By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 12,
+      "Source header": "Company Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 13,
+      "Source header": "Contact Person Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 14,
+      "Source header": "Name for Accounting Tool",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 15,
+      "Source header": "Phone",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 16,
+      "Source header": "Email Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 17,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 18,
+      "Source header": "GST Identification Number (GSTIN)",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 19,
+      "Source header": "Registered Address",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 20,
+      "Source header": "Beneficiary Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 21,
+      "Source header": "Account Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 22,
+      "Source header": "IFSC code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 23,
+      "Source header": "Bank Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 24,
+      "Source header": "TDS TaxID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 1,
+      "Source header": "HSN_Code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 4,
+      "Source header": "date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 5,
+      "Source header": "aa",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 6,
+      "Source header": "dd",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 7,
+      "Source header": "ff",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 8,
+      "Source header": "ee",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "HSN_Code",
+      "Column": 9,
+      "Source header": "ff",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Taxes",
+      "Column": 1,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Taxes",
+      "Column": 2,
+      "Source header": "Tax Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_Taxes",
+      "Column": 3,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 1,
+      "Source header": "Supply Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 2,
+      "Source header": "Bill Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 3,
+      "Source header": "Due Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 4,
+      "Source header": "Bill/Expense",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 5,
+      "Source header": "Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 6,
+      "Source header": "Week_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 7,
+      "Source header": "Month_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 8,
+      "Source header": "VENDOR NAME",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 9,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 10,
+      "Source header": "ZOHO UPDATE",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 11,
+      "Source header": "Vendor Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 12,
+      "Source header": "Bill Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 13,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 14,
+      "Source header": "Zoho Need to Update",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 15,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 16,
+      "Source header": "UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 17,
+      "Source header": "PP Qty",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 18,
+      "Source header": "PP Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 19,
+      "Source header": "Quantity",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 20,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 21,
+      "Source header": "Subtotal",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 22,
+      "Source header": "Discount Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 23,
+      "Source header": "SubTotal After Discount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 24,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 25,
+      "Source header": "Tax Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 26,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 27,
+      "Source header": "Tax Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 28,
+      "Source header": "Net Bill value",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 29,
+      "Source header": "Discount After Tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 30,
+      "Source header": "Cess",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 31,
+      "Source header": "TCS",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 32,
+      "Source header": "Round_OFF",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 33,
+      "Source header": "Tcs Total",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 34,
+      "Source header": "Total",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 35,
+      "Source header": "R.M.C amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 36,
+      "Source header": "Final Bill",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 37,
+      "Source header": "Payment Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 38,
+      "Source header": "Payment Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 39,
+      "Source header": "Payout created on Razorpay",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 40,
+      "Source header": "TDS TaxID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 41,
+      "Source header": "Item Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 42,
+      "Source header": "HSN/SAC",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 43,
+      "Source header": "Discount Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 44,
+      "Source header": "Discount Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 45,
+      "Source header": "Is Discount Before Tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 46,
+      "Source header": "Entity Discount Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 47,
+      "Source header": "Discount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 48,
+      "Source header": "Discount Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 49,
+      "Source header": "GST Identification Number (GSTIN)",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 50,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 51,
+      "Source header": "Payment Terms Label",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 52,
+      "Source header": "TCS Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 53,
+      "Source header": "TCS Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 54,
+      "Source header": "Nature Of Collection",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Inventory",
+      "Column": 55,
+      "Source header": "Bill status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Zoho_DV",
+      "Column": 1,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 1,
+      "Source header": "Supply Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 2,
+      "Source header": "Bill Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 3,
+      "Source header": "Due Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 4,
+      "Source header": "Bill/Expense",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 5,
+      "Source header": "Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 6,
+      "Source header": "Week_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 7,
+      "Source header": "Month_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 8,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 9,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 10,
+      "Source header": "ZOHO UPDATE",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 11,
+      "Source header": "Vendor Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 12,
+      "Source header": "Bill Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 13,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 14,
+      "Source header": "Zoho Need to Update",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 15,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 16,
+      "Source header": "UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 17,
+      "Source header": "PP Qty",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 18,
+      "Source header": "PP Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 19,
+      "Source header": "Quantity",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 20,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 21,
+      "Source header": "Subtotal",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 22,
+      "Source header": "Discount Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 23,
+      "Source header": "SubTotal After Discount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 24,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 25,
+      "Source header": "Tax Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 26,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 27,
+      "Source header": "Tax Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 28,
+      "Source header": "Net Bill value",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 29,
+      "Source header": "Discount After Tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 30,
+      "Source header": "Cess",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 31,
+      "Source header": "TCS",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 32,
+      "Source header": "Round_OFF",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 33,
+      "Source header": "Tcs Total",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 34,
+      "Source header": "Total",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 35,
+      "Source header": "R.M.C amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 36,
+      "Source header": "Final Bill",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 37,
+      "Source header": "Payment Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 38,
+      "Source header": "Payment Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 39,
+      "Source header": "Payout created on Razorpay",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 40,
+      "Source header": "TDS TaxID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 41,
+      "Source header": "Item Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 42,
+      "Source header": "HSN/SAC",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 43,
+      "Source header": "Discount Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 44,
+      "Source header": "Discount Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 45,
+      "Source header": "Is Discount Before Tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 46,
+      "Source header": "Entity Discount Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 47,
+      "Source header": "Discount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 48,
+      "Source header": "Discount Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 49,
+      "Source header": "GST Identification Number (GSTIN)",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 50,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 51,
+      "Source header": "Payment Terms Label",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 52,
+      "Source header": "TCS Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 53,
+      "Source header": "TCS Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 54,
+      "Source header": "Nature Of Collection",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Hyperpure_Credit_Note",
+      "Column": 55,
+      "Source header": "Bill status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 1,
+      "Source header": "SL NO",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 2,
+      "Source header": "Reference No",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 3,
+      "Source header": "Expense Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 4,
+      "Source header": "Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 5,
+      "Source header": "Paid Through",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 6,
+      "Source header": "Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 7,
+      "Source header": "Expense Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 8,
+      "Source header": "Item",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 9,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 10,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 11,
+      "Source header": "Invoice Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 12,
+      "Source header": "Petpooja cash",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 13,
+      "Source header": "Cash Received",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 14,
+      "Source header": "Cash Payments",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 15,
+      "Source header": "Closing Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 16,
+      "Source header": "Daily Cash Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 17,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 18,
+      "Source header": "REFERENCE",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 19,
+      "Source header": "Payment Number Prefix",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 20,
+      "Source header": "Payment Number Suffix",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 21,
+      "Source header": "Payment Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 22,
+      "Source header": "\u00a0Amount Applied to Bill",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 23,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 24,
+      "Source header": "Mode",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 25,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 26,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 27,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 28,
+      "Source header": "Expense Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 29,
+      "Source header": "Month 2",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_FY_2025_2026",
+      "Column": 30,
+      "Source header": "Financial_Year",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 1,
+      "Source header": "Payment Number Prefix",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 2,
+      "Source header": "Payment Number Suffix",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 3,
+      "Source header": "Expense Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 4,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 5,
+      "Source header": "Deposit To",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 6,
+      "Source header": "MODE",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 7,
+      "Source header": "Status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 8,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 9,
+      "Source header": "Customer Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 10,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 11,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 12,
+      "Source header": "Expense Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 13,
+      "Source header": "Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 14,
+      "Source header": "SUM of Debit",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Cash_Ledger_Payment_Upload",
+      "Column": 15,
+      "Source header": "SUM of \u00a0Amount Applied to Bill",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 1,
+      "Source header": "Value with tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 2,
+      "Source header": "Tax Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 3,
+      "Source header": "Value without tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 1,
+      "Source header": "Category SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 2,
+      "Source header": "Main category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 3,
+      "Source header": "SR No",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 4,
+      "Source header": "Sub Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 5,
+      "Source header": "Sub Category Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Expense_Category_List",
+      "Column": 6,
+      "Source header": "Category Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Monthly Payments",
+      "Column": 1,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Monthly Payments",
+      "Column": 2,
+      "Source header": "Vendor",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Monthly Payments",
+      "Column": 3,
+      "Source header": "Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Monthly Payments",
+      "Column": 4,
+      "Source header": "Bill Need to add ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Monthly Payments",
+      "Column": 5,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "UOM",
+      "Column": 1,
+      "Source header": "Unit f Measures",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 1,
+      "Source header": "Transaction Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 2,
+      "Source header": "Paid By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 3,
+      "Source header": "Payment Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 4,
+      "Source header": "Vendor Payment Mode",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 5,
+      "Source header": "Customer Payment Mode",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 6,
+      "Source header": "Payment Status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 7,
+      "Source header": "Uploaded to QB",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 8,
+      "Source header": "Company Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 9,
+      "Source header": "Month Start",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 10,
+      "Source header": "Ledger",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 11,
+      "Source header": "CKN Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 12,
+      "Source header": "Hyperpure wallet Laod",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 13,
+      "Source header": "Sales/Payment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 14,
+      "Source header": "Bill Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 15,
+      "Source header": "Cash ledger Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 16,
+      "Source header": "Invoice Period",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 17,
+      "Source header": "Brand Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 18,
+      "Source header": "Zomato Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 19,
+      "Source header": "Payment Cycle",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 20,
+      "Source header": "Hyperpure Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Data Validation",
+      "Column": 21,
+      "Source header": "Transaction Type 2",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 1,
+      "Source header": "Entry Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 2,
+      "Source header": "MHL Entry Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 3,
+      "Source header": "Expense Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 4,
+      "Source header": "Narration",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 5,
+      "Source header": "Transaction ID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 6,
+      "Source header": "Status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 7,
+      "Source header": "Opening Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 8,
+      "Source header": "Credit",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 9,
+      "Source header": "Debit",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 10,
+      "Source header": "Closing Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 11,
+      "Source header": "Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 12,
+      "Source header": "Paid Through",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 13,
+      "Source header": "Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 14,
+      "Source header": "Expense Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 15,
+      "Source header": "Item",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 16,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 17,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 18,
+      "Source header": "Invoice Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 19,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 20,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 21,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 22,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 23,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Khagendra Omni Ledger (UV)",
+      "Column": 24,
+      "Source header": "Expense Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 1,
+      "Source header": "Entry Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 2,
+      "Source header": "MHL Entry Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 3,
+      "Source header": "Expense Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 4,
+      "Source header": "Narration",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 5,
+      "Source header": "Transaction ID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 6,
+      "Source header": "Status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 7,
+      "Source header": "Opening Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 8,
+      "Source header": "Credit",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 9,
+      "Source header": "Debit",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 10,
+      "Source header": "Closing Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 11,
+      "Source header": "Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 12,
+      "Source header": "Paid Through",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 13,
+      "Source header": "Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 14,
+      "Source header": "Expense Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 15,
+      "Source header": "Item",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 16,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 17,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 18,
+      "Source header": "Invoice Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 19,
+      "Source header": "\u00a0Amount Applied to Bill",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 20,
+      "Source header": "Cash Received",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 21,
+      "Source header": "Cash Payments",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 22,
+      "Source header": "Closing Balance 2",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 23,
+      "Source header": "Daily Cash Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 24,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 25,
+      "Source header": "Status 2",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 26,
+      "Source header": "MODE",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 27,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 28,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 29,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 30,
+      "Source header": "ITC Eligibility",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "STORE Omni Ledger (UV)",
+      "Column": 31,
+      "Source header": "Expense Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Month_Lookup",
+      "Column": 1,
+      "Source header": "SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Month_Lookup",
+      "Column": 2,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S1",
+      "Tab": "Month_Lookup",
+      "Column": 3,
+      "Source header": "Month_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Catgeories_Configuration",
+      "Column": 1,
+      "Source header": "Categories",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Catgeories_Configuration",
+      "Column": 2,
+      "Source header": "Accounts",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 1,
+      "Source header": "Sub Catgeory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 2,
+      "Source header": "Main Catgeory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 3,
+      "Source header": "zoho sub account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Sub_Categories_Configuration",
+      "Column": 4,
+      "Source header": "zoho main account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 1,
+      "Source header": "Main Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 2,
+      "Source header": "Sub Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 3,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 4,
+      "Source header": " ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 5,
+      "Source header": "Duplicate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 6,
+      "Source header": "PP Inventory Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 7,
+      "Source header": "Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 8,
+      "Source header": " ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 9,
+      "Source header": "Closing Stock",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 10,
+      "Source header": "Added By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 11,
+      "Source header": "Store Par Level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 12,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 13,
+      "Source header": "Month Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 14,
+      "Source header": "Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 15,
+      "Source header": "UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 16,
+      "Source header": "UOM Inventory",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 17,
+      "Source header": "Issue UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 18,
+      "Source header": "Wastage UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 19,
+      "Source header": "Receipe UOM",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 20,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 21,
+      "Source header": "Item Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 22,
+      "Source header": "HSN/SAC",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 23,
+      "Source header": "Department Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 24,
+      "Source header": "RKK",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 25,
+      "Source header": "Indian",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 26,
+      "Source header": "Chaat",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 27,
+      "Source header": "Chinese",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 28,
+      "Source header": "T&G",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 29,
+      "Source header": "Biryani",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 30,
+      "Source header": "Juice",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Item_List",
+      "Column": 31,
+      "Source header": "Sweet",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 1,
+      "Source header": "SR No",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 2,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 3,
+      "Source header": "Vendor Code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 4,
+      "Source header": "Vendor Nmae For Accounting Tool",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 5,
+      "Source header": "Folder Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 6,
+      "Source header": "Invoice number smaple",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 7,
+      "Source header": "GST Portal B2B ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 8,
+      "Source header": "Invoice Period",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 9,
+      "Source header": "Payment Cycle",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 10,
+      "Source header": "Bill Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 11,
+      "Source header": "Payout By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 12,
+      "Source header": "Company Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 13,
+      "Source header": "Contact Person Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 14,
+      "Source header": "Name for Accounting Tool",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 15,
+      "Source header": "Phone",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 16,
+      "Source header": "Email Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 17,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 18,
+      "Source header": "GST Identification Number (GSTIN)",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 19,
+      "Source header": "Registered Address",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 20,
+      "Source header": "Beneficiary Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 21,
+      "Source header": "Account Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 22,
+      "Source header": "IFSC code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 23,
+      "Source header": "Bank Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Book_Vendors",
+      "Column": 24,
+      "Source header": "TDS TaxID",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_DV",
+      "Column": 1,
+      "Source header": "GST Treatment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Taxes",
+      "Column": 1,
+      "Source header": "Tax Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Taxes",
+      "Column": 2,
+      "Source header": "Tax Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Zoho_Taxes",
+      "Column": 3,
+      "Source header": "Tax Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "HSN_Code",
+      "Column": 1,
+      "Source header": "HSN_Code",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 1,
+      "Source header": "Value with tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 2,
+      "Source header": "Tax Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Reverse_GST_Calculator",
+      "Column": 3,
+      "Source header": "Value without tax",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 1,
+      "Source header": "Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 2,
+      "Source header": "Invoice Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 3,
+      "Source header": "Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 4,
+      "Source header": "Description",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 5,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 6,
+      "Source header": "Invoice Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 7,
+      "Source header": "Amount paid in cash",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 8,
+      "Source header": "Cash Received",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 9,
+      "Source header": "Closing Balance",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 10,
+      "Source header": "BALANCE CASH",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Cash_Ledger",
+      "Column": 11,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 1,
+      "Source header": "Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 2,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 3,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 4,
+      "Source header": "Qty",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 5,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 6,
+      "Source header": "Total",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 7,
+      "Source header": "Wastage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 8,
+      "Source header": "Pcs",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 9,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 10,
+      "Source header": "Wastage Percentage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 11,
+      "Source header": "Yield (Pcs/Kg)",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 12,
+      "Source header": "Week_NO",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Chicken Inventory",
+      "Column": 13,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 1,
+      "Source header": "Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 2,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 3,
+      "Source header": "Vencoba Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 4,
+      "Source header": "KPTA Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 5,
+      "Source header": "KPTA-5 Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 6,
+      "Source header": "Vendor Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 7,
+      "Source header": "Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 8,
+      "Source header": "FF OUT",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 9,
+      "Source header": "GLL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 10,
+      "Source header": "AFF",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 11,
+      "Source header": "SKIN OUT",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 12,
+      "Source header": "TDR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 13,
+      "Source header": "BRR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 14,
+      "Source header": "CRR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 15,
+      "Source header": "KBB",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 16,
+      "Source header": "KLL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 17,
+      "Source header": "LPP",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 18,
+      "Source header": "WNG",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 19,
+      "Source header": "SWW",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 20,
+      "Source header": "CBL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 21,
+      "Source header": "TBL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Rate_Auto",
+      "Column": 22,
+      "Source header": "OTH",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 1,
+      "Source header": "Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 2,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 3,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 4,
+      "Source header": "Qty",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 5,
+      "Source header": "Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 6,
+      "Source header": "Wastage",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Wastage",
+      "Column": 7,
+      "Source header": "Pcs",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 1,
+      "Source header": "CKN Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 2,
+      "Source header": "Star Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 3,
+      "Source header": "End Date",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 4,
+      "Source header": "Vendor Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 5,
+      "Source header": "Factor_Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 6,
+      "Source header": "FF OUT",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 7,
+      "Source header": "GLL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 8,
+      "Source header": "AFF",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 9,
+      "Source header": "SKIN OUT",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 10,
+      "Source header": "TDR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 11,
+      "Source header": "BRR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 12,
+      "Source header": "CRR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 13,
+      "Source header": "KBB",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 14,
+      "Source header": "KLL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 15,
+      "Source header": "LPP",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 16,
+      "Source header": "WNG",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 17,
+      "Source header": "SWW",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 18,
+      "Source header": "CBL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 19,
+      "Source header": "TBL",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Factor_Setup",
+      "Column": 20,
+      "Source header": "OTH",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Data_Validation",
+      "Column": 1,
+      "Source header": "Vendor Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "CKN_Data_Validation",
+      "Column": 2,
+      "Source header": "Vendor Live Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 1,
+      "Source header": "Category SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 2,
+      "Source header": "Main category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 3,
+      "Source header": "SR No",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 4,
+      "Source header": "Sub Category",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 5,
+      "Source header": "Sub Category Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Expense_Category_List",
+      "Column": 6,
+      "Source header": "Category Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Monthly Payments",
+      "Column": 1,
+      "Source header": "Item Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Monthly Payments",
+      "Column": 2,
+      "Source header": "Vendor",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Monthly Payments",
+      "Column": 3,
+      "Source header": "Amount",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Monthly Payments",
+      "Column": 4,
+      "Source header": "Bill Need to add ",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Monthly Payments",
+      "Column": 5,
+      "Source header": "Comment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "UOM",
+      "Column": 1,
+      "Source header": "Unit f Measures",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 1,
+      "Source header": "Transaction Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 2,
+      "Source header": "Paid By",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 3,
+      "Source header": "Payment Account",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 4,
+      "Source header": "Vendor Payment Mode",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 5,
+      "Source header": "Customer Payment Mode",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 6,
+      "Source header": "Payment Status",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 7,
+      "Source header": "Uploaded to QB",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 8,
+      "Source header": "Company Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 9,
+      "Source header": "Month Start",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 10,
+      "Source header": "Ledger",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 11,
+      "Source header": "CKN Rate",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 12,
+      "Source header": "Hyperpure wallet Laod",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 13,
+      "Source header": "Sales/Payment",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 14,
+      "Source header": "Bill Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 15,
+      "Source header": "Cash ledger Transaction Details",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 16,
+      "Source header": "Invoice Period",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 17,
+      "Source header": "Brand Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 18,
+      "Source header": "Zomato Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 19,
+      "Source header": "Payment Cycle",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 20,
+      "Source header": "Hyperpure Id",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Data Validation",
+      "Column": 21,
+      "Source header": "Closing stock",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 1,
+      "Source header": "SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 2,
+      "Source header": "Task",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 3,
+      "Source header": "SubTask",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 4,
+      "Source header": "The Day on which Task need to complete",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 5,
+      "Source header": "Action",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 6,
+      "Source header": "Penalties First Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 7,
+      "Source header": "Penalties Second Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 8,
+      "Source header": "Penalties Penalties Third Time if found in next level",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 9,
+      "Source header": "Assign",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Workflow",
+      "Column": 10,
+      "Source header": "Currently Assign",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "DV_For_Stock",
+      "Column": 1,
+      "Source header": "Department Name",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "DV_For_Stock",
+      "Column": 2,
+      "Source header": "Transaction Type",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "DV_For_Stock",
+      "Column": 3,
+      "Source header": "Raw Material",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "DV_For_Stock",
+      "Column": 4,
+      "Source header": "Area",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "DV_For_Stock",
+      "Column": 5,
+      "Source header": "Purpose",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Month_Lookup",
+      "Column": 1,
+      "Source header": "SR",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Month_Lookup",
+      "Column": 2,
+      "Source header": "Month",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    },
+    {
+      "File ref": "S2",
+      "Tab": "Month_Lookup",
+      "Column": 3,
+      "Source header": "Month_Number",
+      "Definition status": "Source header; meaning/type/requiredness pending review"
+    }
+  ],
+  "excluded_header_occurrences": 81,
+  "exclusion_reason": "Unconfirmed or link/formula-like header cells excluded; preserved in private workbook only"
+}

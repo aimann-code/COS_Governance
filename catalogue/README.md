@@ -1,7 +1,7 @@
 # COS Catalogue
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -12,7 +12,7 @@ Start here to browse definitions without reading YAML or JSON. Use the links bel
 | --- | --- |
 | [Standards](standards.md) | 23 standards, versions, approval states and recorded rules |
 | [Naming](naming.md) | 53 controlled terms and 12 frozen rules |
-| [Architecture](architecture.md) | 38 registered draft entries and parent/child navigation |
+| [Architecture](architecture.md) | 93 registered draft entries and parent/child navigation |
 | [Features](features.md) | 55 requirements/features and unresolved acceptance criteria |
 | [Design structure](design.md) | 18 required design sections; scope and completion limits |
 | [Implementation links](implementation.md) | Pinned ownership mappings to application code; partial inventory |
@@ -26,49 +26,103 @@ Start here to browse definitions without reading YAML or JSON. Use the links bel
 | [Test plan](test-plan.md) | Planned full-flow tests and evidence requirements |
 | [Employee data design](employee-data-design.md) | Proposed logical tables and relationships; not deployed |
 
-## Browse the known HRMS hierarchy
+## Browse the COS hierarchy
 
-- [Enterprise Management](architecture/arch-draft-1.md) — Suite; Established reference; registration IDs pending
-- [HRMS](architecture/arch-draft-2.md) — Engine; HRMS name explicitly confirmed; proposed five-module design; publication pending
-- [Employee Management](architecture/arch-draft-3.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
-- [Employee Registration](architecture/arch-draft-4.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Employee Details](architecture/arch-draft-5.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Employment Lifecycle](architecture/arch-draft-9.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Organization Assignment](architecture/arch-draft-10.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Employee Documents](architecture/arch-draft-11.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Shift & Roster Management](architecture/arch-draft-12.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
-- [Shift Configuration](architecture/arch-draft-13.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Roster Planning](architecture/arch-draft-14.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Roster Assignment](architecture/arch-draft-15.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Roster Changes](architecture/arch-draft-16.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Attendance Management](architecture/arch-draft-17.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
-- [Attendance Import](architecture/arch-draft-18.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Attendance Processing](architecture/arch-draft-19.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Attendance Corrections](architecture/arch-draft-20.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Attendance Exceptions](architecture/arch-draft-21.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Overtime Calculation](architecture/arch-draft-22.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Leave Management](architecture/arch-draft-23.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
-- [Leave Configuration](architecture/arch-draft-24.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Leave Balances](architecture/arch-draft-25.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Leave Requests](architecture/arch-draft-26.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Leave Processing](architecture/arch-draft-27.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Payroll Management](architecture/arch-draft-28.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
-- [Salary Structure](architecture/arch-draft-29.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Payroll Groups](architecture/arch-draft-30.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Variable Pay Inputs](architecture/arch-draft-31.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Loans & Advances](architecture/arch-draft-32.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Reimbursements](architecture/arch-draft-33.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Payroll Processing](architecture/arch-draft-34.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Payroll Review & Finalization](architecture/arch-draft-35.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Payment Reconciliation](architecture/arch-draft-36.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Statutory Processing](architecture/arch-draft-37.md) — Component; Proposed component boundary; requirements/implementation verification pending
-- [Final Settlement](architecture/arch-draft-38.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Enterprise Management](architecture/enterprise-management.md) — Suite; Established reference; registration IDs pending
+- [HRMS](architecture/hrms.md) — Engine; HRMS name explicitly confirmed; proposed five-module design; publication pending
+- [Employee Management](architecture/employee-management.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
+- [Employee Registration](architecture/emp-reg.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Employee Details](architecture/employee-details.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Employment Lifecycle](architecture/employment-lifecycle.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Organization Assignment](architecture/organization-assignment.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Employee Documents](architecture/employee-documents.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Shift & Roster Management](architecture/shift-roster-management.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
+- [Shift Configuration](architecture/shift-configuration.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Roster Planning](architecture/roster-planning.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Roster Assignment](architecture/roster-assignment.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Roster Changes](architecture/roster-changes.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Attendance Management](architecture/attendance-management.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
+- [Attendance Import](architecture/attendance-import.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Attendance Processing](architecture/attendance-processing.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Attendance Corrections](architecture/attendance-corrections.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Attendance Exceptions](architecture/attendance-exceptions.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Overtime Calculation](architecture/overtime-calculation.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Leave Management](architecture/leave-management.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
+- [Leave Configuration](architecture/leave-configuration.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Leave Balances](architecture/leave-balances.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Leave Requests](architecture/leave-requests.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Leave Processing](architecture/leave-processing.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Payroll Management](architecture/payroll-management.md) — Module; Proposed architecture; user authorized GitHub recording; detailed design/implementation not approved
+- [Salary Structure](architecture/salary-structure.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Payroll Groups](architecture/payroll-groups.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Variable Pay Inputs](architecture/variable-pay-inputs.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Loans & Advances](architecture/loans-advances.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Reimbursements](architecture/reimbursements.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Payroll Processing](architecture/payroll-processing.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Payroll Review & Finalization](architecture/payroll-review-finalization.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Payment Reconciliation](architecture/payment-reconciliation.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Statutory Processing](architecture/statutory-processing.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Final Settlement](architecture/final-settlement.md) — Component; Proposed component boundary; requirements/implementation verification pending
+- [Platform Governance](architecture/platform-governance.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Governance Engine](architecture/governance-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Security Engine](architecture/security-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Configuration Engine](architecture/configuration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Platform Administration Engine](architecture/platform-administration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Common Data](architecture/common-data.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Master Data Engine](architecture/master-data-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Data Set Engine](architecture/data-set-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Reference Data Engine](architecture/reference-data-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Data Governance Engine](architecture/data-governance-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Product & Commercial](architecture/product-commercial.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Menu Engine](architecture/menu-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Recipe Engine](architecture/recipe-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Packaging Engine](architecture/packaging-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Pricing Engine](architecture/pricing-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Supply & Operations](architecture/supply-operations.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Procurement Engine](architecture/procurement-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Inventory Engine](architecture/inventory-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Production Engine](architecture/production-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Kitchen Operations Engine](architecture/kitchen-operations-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Sales & Customer](architecture/sales-customer.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Sales Engine](architecture/sales-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Customer Experience Engine](architecture/customer-experience-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Marketing Engine](architecture/marketing-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Delivery & Logistics Engine](architecture/delivery-logistics-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Finance Engine](architecture/finance-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Quality Assurance Engine](architecture/quality-assurance-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Asset & Maintenance Engine](architecture/asset-maintenance-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Compliance & Audit Engine](architecture/compliance-audit-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Franchise Management Engine](architecture/franchise-management-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [AI & Analytics](architecture/ai-analytics.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [BI & Reporting Engine](architecture/bi-reporting-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [KPI & Dashboards Engine](architecture/kpi-dashboards-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Forecasting Engine](architecture/forecasting-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [AI Assistant Engine](architecture/ai-assistant-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Recommendations Engine](architecture/recommendations-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Decision Support Engine](architecture/decision-support-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Integration](architecture/integration.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [API Management Engine](architecture/api-management-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Internal Engine Integration Engine](architecture/internal-engine-integration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [External System Integration Engine](architecture/external-system-integration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Event Integration Engine](architecture/event-integration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Data Integration Engine](architecture/data-integration-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Integration Monitoring Engine](architecture/integration-monitoring-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Technology & Platform Services](architecture/technology-platform-services.md) — Suite; Source inventory imported; detailed design and implementation assessment pending
+- [Application Services Engine](architecture/application-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Database Services Engine](architecture/database-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Identity & Access Engine](architecture/identity-access-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Notification Services Engine](architecture/notification-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [File & Document Services Engine](architecture/file-document-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Search Services Engine](architecture/search-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [AI/ML Services Engine](architecture/ai-ml-services-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [Logging & Monitoring Engine](architecture/logging-monitoring-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
+- [DevOps / Infrastructure Engine](architecture/devops-infrastructure-engine.md) — Engine; Source inventory imported; detailed design and implementation assessment pending
 
-## Current limits
+## Coverage and current limits
 
-This catalogue covers the imported scope, not every possible COS suite or engine. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.
+All 9 suites and 47 engines from the original COS v1.1.0 inventory are accounted for. Module/component detail remains HRMS-focused. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.
 
-[Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md)
+[Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md) · [Workflow and handover](workflow.md) · [Path compatibility map](path-map.md)
 
 ## Maintained repository and skills source
 

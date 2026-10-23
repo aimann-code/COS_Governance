@@ -1,12 +1,12 @@
 # Naming and shortcodes
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
-Frozen Naming Standard **0.2.2**, source decision **NAM-REG-01**. COS prefixes are selective. Current preserved tokens: sys_emp_id, emp_reg. Existing application names have not been migrated.
+Frozen Naming Standard **0.2.3**, source decision **NAM-DOC-01**. COS prefixes are selective. Current preserved tokens: sys_emp_id, emp_reg. Existing application names have not been migrated.
 
 | Reference | Rule | Status |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ Frozen Naming Standard **0.2.2**, source decision **NAM-REG-01**. COS prefixes a
 
 ## Current scoped supplements
 
-The approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/std-draft-11.md) and [URL Standard](standards/std-draft-23.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.
+The approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/api-integration.md) and [URL Standard](standards/url.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.
 
 ## Scoped naming profiles
 
@@ -99,3 +99,17 @@ The approved API-PATH-01 decision specifies the default API base path. It supple
 Registration pattern: <domain>_reg. Registration component codes only; does not lowercase every existing controlled code
 
 Virtual view pattern: vw_<domain>_<purpose>. Proposed database virtual reporting views; exact schema, grain and ownership registered in design
+
+## Repository documentation filenames
+
+| Control | Rule |
+| --- | --- |
+| status | User-authorized documentation supplement; application naming unchanged |
+| canonical_file_rule | Repository documentation/definition filenames use readable kebab-case. Preserve framework/tool filenames such as README.md, AGENTS.md, SKILL.md and existing required config names. |
+| page_rule | Use stable descriptive File_Slug for generated architecture, standard and feature pages. IDs, versions, status and owners belong in content. Do not rename on each stage/version transition. |
+| examples | catalogue/architecture/hrms.md; catalogue/architecture/emp-reg.md; catalogue/standards/ai-analytics.md |
+| compatibility | Generate old-path pointer pages and a path map. New links use descriptive paths. Historical source snapshots remain unchanged. |
+| backup | Export/backup artifacts use separately approved backup timestamp rules; same-second collision handling pending. |
+| limits | No new project name, application class/API/DB rename or permanent identity allocation. |
+
+[Old-to-new paths](path-map.md)

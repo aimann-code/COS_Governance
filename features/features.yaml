@@ -12,7 +12,8 @@
       "architecture_ref": "ARCH-DRAFT-4",
       "source_ref": "HRMS-MAP-01",
       "previous_ref": "EMP_Reg",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "employee-registration"
     },
     {
       "ref": "EMP_Dtl",
@@ -23,7 +24,8 @@
       "status": "draft requirement inventory",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
       "architecture_ref": "ARCH-DRAFT-5",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "employee-details"
     },
     {
       "ref": "EMP_Update",
@@ -33,7 +35,8 @@
       "open": "Domain-specific workflow must not be replaced by universal administrator approval",
       "status": "source requirement; reconcile implementation evidence",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "architecture_ref": "ARCH-DRAFT-5"
+      "architecture_ref": "ARCH-DRAFT-5",
+      "file_slug": "employee-update"
     },
     {
       "ref": "Form_Config",
@@ -43,7 +46,8 @@
       "open": "Administrator review of configuration changes",
       "status": "source requirement",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "form-configuration"
     },
     {
       "ref": "Reg_Shared",
@@ -53,7 +57,8 @@
       "open": "Domain-specific payloads, uniqueness, authority and repositories",
       "status": "user direction; detailed design pending",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "shared-registration"
     },
     {
       "ref": "Reg_Bulk",
@@ -63,7 +68,8 @@
       "open": "Expanded-profile bulk import not completed in reviewed implementation",
       "status": "required capability; implementation gap",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "bulk-upload"
     },
     {
       "ref": "Sheet_Sync",
@@ -73,7 +79,8 @@
       "open": "Live integration not configured; no schedule activated",
       "status": "required capability; implementation gap",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "google-sheets-sync"
     },
     {
       "ref": "Change_Hist",
@@ -83,7 +90,8 @@
       "open": "Sensitive history protected; transaction and retention policies explicit",
       "status": "user direction",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "common_requirements_source": "features/common.yaml"
+      "common_requirements_source": "features/common.yaml",
+      "file_slug": "change-history"
     },
     {
       "ref": "Payroll",
@@ -93,7 +101,8 @@
       "open": "Detailed calculations, rules and implementation verification remain pending.",
       "status": "Proposed module scope; see HRMS-MAP-01",
       "acceptance_criteria_status": "must be completed and reviewed before implementation",
-      "architecture_ref": "ARCH-DRAFT-28"
+      "architecture_ref": "ARCH-DRAFT-28",
+      "file_slug": "payroll"
     },
     {
       "ref": "Agg_Master",
@@ -102,7 +111,8 @@
       "behaviour": "Later domain master and registration design",
       "open": "Domain meaning, keys and acceptance criteria pending",
       "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "file_slug": "aggregator-master"
     },
     {
       "ref": "Vnd_Master",
@@ -111,7 +121,8 @@
       "behaviour": "Later domain master and registration design",
       "open": "Domain rules pending",
       "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "file_slug": "vendor-master"
     },
     {
       "ref": "Ing_Master",
@@ -120,7 +131,8 @@
       "behaviour": "Later canonical ingredient master design",
       "open": "Units, duplicate matching and ownership pending",
       "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "file_slug": "ingredient-master"
     },
     {
       "ref": "Brand_Reg",
@@ -129,7 +141,8 @@
       "behaviour": "Reuse registration infrastructure with brand rules",
       "open": "Detailed BRD pending",
       "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "file_slug": "brand-registration"
     },
     {
       "ref": "Loc_Reg",
@@ -138,7 +151,8 @@
       "behaviour": "Reuse registration infrastructure with location rules",
       "open": "Hierarchy and uniqueness pending",
       "status": "planned scope",
-      "acceptance_criteria_status": "must be completed and reviewed before implementation"
+      "acceptance_criteria_status": "must be completed and reviewed before implementation",
+      "file_slug": "location-registration"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-1",
@@ -149,7 +163,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-9",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "employment-lifecycle"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-2",
@@ -160,7 +175,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-10",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "organization-assignment"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-3",
@@ -171,7 +187,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-11",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "employee-documents"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-4",
@@ -182,7 +199,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-13",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "shift-configuration"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-5",
@@ -193,7 +211,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-14",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "roster-planning"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-6",
@@ -204,7 +223,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-15",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "roster-assignment"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-7",
@@ -215,7 +235,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-16",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "roster-changes"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-8",
@@ -226,7 +247,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-18",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "attendance-import"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-9",
@@ -237,7 +259,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-19",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "attendance-processing"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-10",
@@ -248,7 +271,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-20",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "attendance-corrections"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-11",
@@ -259,7 +283,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-21",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "attendance-exceptions"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-12",
@@ -270,7 +295,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-22",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "overtime-calculation"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-13",
@@ -281,7 +307,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-24",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "leave-configuration"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-14",
@@ -292,7 +319,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-25",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "leave-balances"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-15",
@@ -303,7 +331,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-26",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "leave-requests"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-16",
@@ -314,7 +343,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-27",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "leave-processing"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-17",
@@ -325,7 +355,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-29",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "salary-structure"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-18",
@@ -336,7 +367,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-30",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "payroll-groups"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-19",
@@ -347,7 +379,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-31",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "variable-pay-inputs"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-20",
@@ -358,7 +391,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-32",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "loans-advances"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-21",
@@ -369,7 +403,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-33",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "reimbursements"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-22",
@@ -380,7 +415,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-34",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "payroll-processing"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-23",
@@ -391,7 +427,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-35",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "payroll-review-finalization"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-24",
@@ -402,7 +439,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-36",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "payment-reconciliation"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-25",
@@ -413,7 +451,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-37",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "statutory-processing"
     },
     {
       "ref": "FEAT-HRMS-DRAFT-26",
@@ -424,7 +463,8 @@
       "status": "Proposed architecture inventory; not an approved complete BRD",
       "acceptance_criteria_status": "Pending detailed requirement review",
       "architecture_ref": "ARCH-DRAFT-38",
-      "source_ref": "HRMS-MAP-01"
+      "source_ref": "HRMS-MAP-01",
+      "file_slug": "final-settlement"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-1",
@@ -434,7 +474,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-UNIQUE"
+      "requirement_group_ref": "COMMON-UNIQUE",
+      "file_slug": "configurable-uniqueness"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-2",
@@ -444,7 +485,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-FIELD"
+      "requirement_group_ref": "COMMON-FIELD",
+      "file_slug": "entity-field-and-form-control"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-3",
@@ -454,7 +496,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-ACCESS"
+      "requirement_group_ref": "COMMON-ACCESS",
+      "file_slug": "access-groups"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-4",
@@ -464,7 +507,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-SUBSCRIPTION"
+      "requirement_group_ref": "COMMON-SUBSCRIPTION",
+      "file_slug": "entity-subscriptions"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-5",
@@ -474,7 +518,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-PREF"
+      "requirement_group_ref": "COMMON-PREF",
+      "file_slug": "preferences-and-defaults"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-6",
@@ -484,7 +529,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-IMPORT"
+      "requirement_group_ref": "COMMON-IMPORT",
+      "file_slug": "bulk-upload-and-templates"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-7",
@@ -494,7 +540,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-SHEET"
+      "requirement_group_ref": "COMMON-SHEET",
+      "file_slug": "google-sheet-input-and-output"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-8",
@@ -504,7 +551,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-EMAIL"
+      "requirement_group_ref": "COMMON-EMAIL",
+      "file_slug": "email-extraction"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-9",
@@ -514,7 +562,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-REPORT"
+      "requirement_group_ref": "COMMON-REPORT",
+      "file_slug": "reports-and-dashboards"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-10",
@@ -524,7 +573,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-SEARCH"
+      "requirement_group_ref": "COMMON-SEARCH",
+      "file_slug": "search-at-every-level"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-11",
@@ -534,7 +584,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-ERROR"
+      "requirement_group_ref": "COMMON-ERROR",
+      "file_slug": "configurable-errors-and-source-traceability"
     },
     {
       "ref": "FEAT-COMMON-DRAFT-12",
@@ -544,7 +595,8 @@
       "open": "Detailed design, APIs, migrations and acceptance verification pending; see canonical group and pending decisions.",
       "status": "Recorded requirements/design directions; implementation not verified",
       "acceptance_criteria_status": "Derived review checklist provided; executable acceptance tests pending",
-      "requirement_group_ref": "COMMON-REUSE"
+      "requirement_group_ref": "COMMON-REUSE",
+      "file_slug": "shared-architecture-and-history"
     },
     {
       "ref": "vnd_reg",
@@ -553,7 +605,8 @@
       "behaviour": "Supplier or service-provider identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
       "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
       "status": "User-authorized proposed registration boundary; not implemented",
-      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction",
+      "file_slug": "vendor-registration"
     },
     {
       "ref": "agg_reg",
@@ -562,7 +615,8 @@
       "behaviour": "Aggregator business-platform identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
       "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
       "status": "User-authorized proposed registration boundary; not implemented",
-      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction",
+      "file_slug": "aggregator-registration"
     },
     {
       "ref": "source_reg",
@@ -571,7 +625,8 @@
       "behaviour": "Data source/connection configuration, linked to applicable domain identity; proposed developer matrix in architecture/developer-guide.yaml and names in standards/naming.yaml.",
       "open": "Domain working-sheet fields, master ownership and actual implementation remain pending.",
       "status": "User-authorized proposed registration boundary; not implemented",
-      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction"
+      "acceptance_criteria_status": "Domain-specific acceptance cases pending working-sheet extraction",
+      "file_slug": "source-registration"
     }
   ],
   "traceability": [
