@@ -25,3 +25,6 @@ Append corrections and superseding decisions; preserve historical wording. Do no
 - [Developer guide authorization and limits](developer-guide-23-Oct-2026.md): Autoinspire-derived output, table formats, marts, naming and upload storage; working-sheet gathering deferred.
 
 - [GitHub maintained sources and skills](github-skills-storage-23-Oct-2026.md): selected policy/PR authorization, skill installation limits and pending project standard.
+
+
+- [Architecture coverage, readable paths and workflow/handover](architecture-workflow-update-23-Oct-2026.md) — scoped approval summary; not complete transcript.

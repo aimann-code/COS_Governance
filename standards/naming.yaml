@@ -1,9 +1,9 @@
 {
   "standard": "Naming Standard",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "status": "frozen base with user-authorized scoped registration/source/mart naming additions; not published",
-  "decision_ref": "NAM-REG-01",
-  "approval_evidence": "User update github in backend develop devloper guide following displayed names, matrices and virtual mart proposal",
+  "decision_ref": "NAM-DOC-01",
+  "approval_evidence": "User yes update github to displayed architecture, filenames and lifecycle update; 23-Oct-2026",
   "preserve": [
     "sys_emp_id",
     "emp_reg"
@@ -594,9 +594,17 @@
       "decision_ref": "NAM-REG-01",
       "summary": "Add source term and scoped registration/view patterns; retain lowercase aliases and existing 52 terms.",
       "historical_source": "migration/naming-v0.2.1.json"
+    },
+    {
+      "version": "0.2.3",
+      "previous_version": "0.2.2",
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-DOC-01",
+      "summary": "Readable stable repository documentation paths, compatibility pointers and explicit path mapping; base rules/53 terms unchanged.",
+      "historical_source": "migration/naming-v0.2.2.json"
     }
   ],
-  "previous_decision_ref": "NAM-LOWER-01",
+  "previous_decision_ref": "NAM-REG-01",
   "profiles": {
     "registration": {
       "pattern": "<domain>_reg",
@@ -638,6 +646,19 @@
       "example": "vw_emp_directory",
       "scope": "Proposed database virtual reporting views; exact schema, grain and ownership registered in design",
       "status": "User-authorized design naming profile; views not implemented"
+    },
+    "documentation": {
+      "status": "User-authorized documentation supplement; application naming unchanged",
+      "canonical_file_rule": "Repository documentation/definition filenames use readable kebab-case. Preserve framework/tool filenames such as README.md, AGENTS.md, SKILL.md and existing required config names.",
+      "page_rule": "Use stable descriptive File_Slug for generated architecture, standard and feature pages. IDs, versions, status and owners belong in content. Do not rename on each stage/version transition.",
+      "examples": [
+        "catalogue/architecture/hrms.md",
+        "catalogue/architecture/emp-reg.md",
+        "catalogue/standards/ai-analytics.md"
+      ],
+      "compatibility": "Generate old-path pointer pages and a path map. New links use descriptive paths. Historical source snapshots remain unchanged.",
+      "backup": "Export/backup artifacts use separately approved backup timestamp rules; same-second collision handling pending.",
+      "limits": "No new project name, application class/API/DB rename or permanent identity allocation."
     }
   }
 }

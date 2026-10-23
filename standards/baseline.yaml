@@ -1,17 +1,17 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
     "source": "standards/naming.yaml",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "decision": "NAM-REG-01",
     "base_decision": "D67",
     "previous_amendment": "NAM-LOWER-01"
   },
   "source_priority": [
     "Explicit current user decisions within their scope",
-    "Naming 0.2.2 frozen base with explicit scoped amendments",
+    "Naming 0.2.3 frozen base with explicit scoped amendments",
     "Ashish COS governing controls with their recorded statuses",
     "Pending source rules retained as proposals",
     "Implementation supplies evidence; Autoinspire supplies presentation only"
@@ -20,15 +20,16 @@
     {
       "standard_ref": "STD-DRAFT-1",
       "name": "Naming Standard",
-      "source_version": "0.2.2",
+      "source_version": "0.2.3",
       "rule_source": "standards/naming.yaml",
       "rule_refs": [
         "D67",
         "NAM-LOWER-01",
-        "NAM-REG-01"
+        "NAM-REG-01",
+        "NAM-DOC-01"
       ],
       "approval": "User-authorized scoped amendments; not published",
-      "completion": "12 base rules with explicit amendments; 53 controlled terms; scoped registration and virtual-view profiles; live migration pending"
+      "completion": "12 base rules; 53 terms; scoped naming and documentation profiles; implementation migration separate"
     },
     {
       "standard_ref": "STD-DRAFT-2",
@@ -40,7 +41,9 @@
         "DRAFT-ARC-R02",
         "DRAFT-ARC-R03",
         "DRAFT-ARC-R04",
-        "DRAFT-ARC-R10"
+        "DRAFT-ARC-R10",
+        "ARCH-INVENTORY-01",
+        "WORKFLOW-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending"
@@ -59,7 +62,8 @@
         "DRAFT-DAT-R14",
         "DRAFT-DAT-R18",
         "DATE-TIME-01",
-        "VIRTUAL-MART-01"
+        "VIRTUAL-MART-01",
+        "ARCH-INVENTORY-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending"
@@ -80,7 +84,9 @@
       "name": "Suite & Engine Standard",
       "source_version": "0.1.0",
       "rule_source": "standards/standards.yaml",
-      "rule_refs": [],
+      "rule_refs": [
+        "ARCH-INVENTORY-01"
+      ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
     },
@@ -134,7 +140,9 @@
         "DRAFT-COD-R08",
         "DRAFT-COD-R15",
         "GITHUB-CONFIRM-01",
-        "GITHUB-SOURCE-01"
+        "GITHUB-SOURCE-01",
+        "WORKFLOW-01",
+        "CHAT-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending"
@@ -174,7 +182,8 @@
       "rule_source": "standards/standards.yaml",
       "rule_refs": [
         "GITHUB-CONFIRM-01",
-        "GITHUB-SOURCE-01"
+        "GITHUB-SOURCE-01",
+        "CHAT-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -184,7 +193,9 @@
       "name": "QA Standard",
       "source_version": "0.1.0",
       "rule_source": "standards/standards.yaml",
-      "rule_refs": [],
+      "rule_refs": [
+        "WORKFLOW-01"
+      ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
     },
@@ -197,7 +208,8 @@
         "S-D54",
         "DRAFT-DAT-R19",
         "BACKUP-TIME-01",
-        "GITHUB-SOURCE-01"
+        "GITHUB-SOURCE-01",
+        "WORKFLOW-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -212,7 +224,9 @@
         "S-D49",
         "S-D54",
         "BACKUP-TIME-01",
-        "GITHUB-SOURCE-01"
+        "GITHUB-SOURCE-01",
+        "NAM-DOC-01",
+        "CHAT-SOURCE-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -252,7 +266,9 @@
         "S-D62",
         "DATE-TIME-01",
         "BACKUP-TIME-01",
-        "GITHUB-SOURCE-01"
+        "GITHUB-SOURCE-01",
+        "NAM-DOC-01",
+        "WORKFLOW-01"
       ],
       "approval": "Preserve individual source approvals; no blanket approval",
       "completion": "Partial / requires rule review"
@@ -384,6 +400,16 @@
         "GITHUB-SOURCE-01"
       ],
       "disposition": "Current repository-owned definitions/skills maintained in GitHub; private data outside repo. No skill installation, full historical migration/deletion or backup automation."
+    },
+    {
+      "topic": "Architecture coverage, documentation paths and cross-chat handover",
+      "source_refs": [
+        "ARCH-INVENTORY-01",
+        "NAM-DOC-01",
+        "WORKFLOW-01",
+        "CHAT-SOURCE-01"
+      ],
+      "disposition": "Approved scoped update; no release-stage adoption, project rename, branch merge or permission enforcement claimed."
     }
   ],
   "aliases": {

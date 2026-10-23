@@ -1,0 +1,176 @@
+{
+  "version": "0.1.0",
+  "status": "Approved stage/lifecycle direction; implementation of enforcement and Project board pending",
+  "source_ref": "WORKFLOW-01",
+  "recorded_on": "23-Oct-2026",
+  "stages": [
+    "Draft",
+    "Review",
+    "Published"
+  ],
+  "phases": [
+    "Requirements",
+    "Design & Architecture",
+    "Development",
+    "Testing",
+    "Deployment",
+    "Operations"
+  ],
+  "distinction": [
+    [
+      "Branch",
+      "Versioned workspace containing file changes; branch name does not grant approval."
+    ],
+    [
+      "Stage",
+      "Readiness of a particular artifact in its lifecycle phase."
+    ],
+    [
+      "Lifecycle phase",
+      "Kind of work happening; each deliverable has its own stage. Testing can run alongside development."
+    ],
+    [
+      "Edit owner",
+      "Accountable editor for the active work item/phase; read/comment rights are separate."
+    ],
+    [
+      "Published baseline",
+      "Explicitly approved immutable commit and artifact paths that development is authorized to consume."
+    ],
+    [
+      "Merge",
+      "Integration into a branch. A merged Draft document remains Draft; merge alone does not publish every artifact."
+    ]
+  ],
+  "phase_deliverables": [
+    [
+      "Requirements",
+      "Requirement owner",
+      "Approved requirements, acceptance criteria and open decisions"
+    ],
+    [
+      "Design & Architecture",
+      "Design owner",
+      "Approved architecture, DB, GUI, APIs/DTOs, naming, tests and dependency design"
+    ],
+    [
+      "Development",
+      "Developer",
+      "Reviewed code merged against linked requirement/design baselines"
+    ],
+    [
+      "Testing",
+      "Tester",
+      "Accepted test results with executed/pending evidence and blocking defects"
+    ],
+    [
+      "Deployment",
+      "Release owner",
+      "Approved release deployed with rollback plan and deployment evidence"
+    ],
+    [
+      "Operations",
+      "Operations owner",
+      "Accepted operational handover, monitoring and recovery evidence"
+    ]
+  ],
+  "fields": [
+    [
+      "work_item",
+      "Owning GitHub issue/PR or registered work-item reference"
+    ],
+    [
+      "object_ref",
+      "Owning suite/engine/module/component local/permanent reference"
+    ],
+    [
+      "phase",
+      "One configured lifecycle phase"
+    ],
+    [
+      "stage",
+      "Draft, Review or Published"
+    ],
+    [
+      "edit_owner",
+      "Actual assigned person/group; no guessed usernames"
+    ],
+    [
+      "requirement_baseline",
+      "Repository + immutable commit + artifact paths + approval evidence; required before coding"
+    ],
+    [
+      "architecture_baseline",
+      "Repository + immutable commit + artifact paths + approval evidence; required before coding"
+    ],
+    [
+      "working_branch",
+      "Owning repository and topic branch"
+    ],
+    [
+      "change_requests",
+      "Linked changes and disposition"
+    ],
+    [
+      "review_evidence",
+      "Reviewer, decision and evidence links"
+    ],
+    [
+      "test_evidence",
+      "Actual checks, results, limitations and defects"
+    ],
+    [
+      "handover",
+      "Previous/new owner, accepted scope, baseline and timestamp"
+    ]
+  ],
+  "rules": [
+    "During Chat Editing, a developer must not implement the current Draft. Continue only against the last explicitly published baseline; if none exists, coding waits.",
+    "During Developer Editing, the active requirement/design baseline is fixed. The design owner can read/comment/answer questions and prepare separate drafts/change requests; cannot silently replace the active baseline.",
+    "A new change request records impact, dependency and reviewer approval before the developer adopts a new baseline.",
+    "Handover is per work item/component/change, not a global lock on all COS work.",
+    "Draft to Review requires a preview and identified reviewer. Review to Published requires explicit approval, exact commit/path evidence and phase-specific checks.",
+    "Published content changes through a new revision starting Draft; preserve the prior published commit and approvals.",
+    "Developer review and code review are activities under Review in their respective phases, not additional stages.",
+    "Developed means accepted Development output; it does not mean deployed. Test Development belongs to Testing and can proceed alongside Development.",
+    "Published never implies public repository exposure or automatic publication of ChatGPT conversations.",
+    "Branch protections, owner assignment and required checks must enforce policy operationally; recording this definition does not install technical locks."
+  ],
+  "branch_policy": {
+    "published_reference": "main after reviewed integration; consumers also check artifact Published status and exact approved baseline commit",
+    "draft_reference": "Explicit topic branch for proposals; this authorized update uses existing draft/governance-migration",
+    "patterns": [
+      [
+        "chat/<topic>",
+        "Requirements/design proposals"
+      ],
+      [
+        "feature/<topic>",
+        "Implementation"
+      ],
+      [
+        "fix/<topic>",
+        "Corrections"
+      ]
+    ],
+    "compatibility": "feat means feature; existing draft/* or feat/* branches are not automatically renamed.",
+    "no_automatic_sync": true,
+    "read_protocol": [
+      "Read cos-governance.yaml and AGENTS.md, then relevant definitions.",
+      "Record repository, branch and resolved commit at session start.",
+      "Default reads may select main; explicitly select the branch for draft work.",
+      "Check source inventory/aliases before declaring an architecture object absent.",
+      "Refresh head before each write and reconcile changes; update refs using expected SHA.",
+      "Report commit, branch, changed paths and actual checks after each approved write."
+    ],
+    "write_protocol": "Show content and summary; ask Update Git Hub - Yes/No; wait for the described affirmative scope. No implicit merge, deployment, publication or access change.",
+    "handover_protocol": "After approved baseline publication, link its immutable commit and paths to the developer work item. Other chats must reread GitHub; open chats do not receive automatic updates."
+  },
+  "pending": [
+    "Actual GitHub Project fields/board and technical enforcement are not configured.",
+    "No real developer assignment, permission changes or lock automation created.",
+    "Alpha/Beta/Gamma/Production release taxonomy excluded from this update pending separate confirmation.",
+    "Project-boundary/name standard remains separately pending."
+  ],
+  "evidence": "discussions/architecture-workflow-update-23-Oct-2026.md"
+}

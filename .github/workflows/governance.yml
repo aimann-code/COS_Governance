@@ -19,6 +19,8 @@ jobs:
         run: python3 generators/validate.py
       - name: Check reproducible COS Catalogue and links
         run: node generators/build-catalogue.mjs --check
+      - name: Check architecture coverage regression cases
+        run: python3 -m unittest discover -s generators -p 'test_*.py'
       - name: Generate draft review views
         run: python3 generators/render.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -31,3 +33,4 @@ jobs:
         run: |
           echo "Validated initial migration content and generated Markdown previews." >> "$GITHUB_STEP_SUMMARY"
           echo "No source-authority cutover, native-document publication, application rename or database migration." >> "$GITHUB_STEP_SUMMARY"
+

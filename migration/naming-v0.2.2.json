@@ -1,0 +1,643 @@
+{
+  "standard": "Naming Standard",
+  "version": "0.2.2",
+  "status": "frozen base with user-authorized scoped registration/source/mart naming additions; not published",
+  "decision_ref": "NAM-REG-01",
+  "approval_evidence": "User update github in backend develop devloper guide following displayed names, matrices and virtual mart proposal",
+  "preserve": [
+    "sys_emp_id",
+    "emp_reg"
+  ],
+  "rules": [
+    {
+      "ref": "NAM-FRZ-R01",
+      "rule": "Use the frozen Code_Shortcode catalogue for code terms. Abbreviations are controlled; do not independently introduce alternatives.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R02",
+      "rule": "Use COS where it identifies the framework/project or governed document and com.cos namespaces. Do not require COS on every internal class, method, file, DTO, route or database object. Shared names omit emp; domain-specific names include the applicable shortcode.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R03",
+      "rule": "Classes and React component symbols use PascalCase; Java public-class filenames match exactly. Repository classes use the Repo suffix.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R04",
+      "rule": "Custom Java/TypeScript methods use camelCase with clear action/object meaning; they no longer require COS_ACTION_OBJECT.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R05",
+      "rule": "Use PascalCase purpose/direction plus DTO suffix for transport types; shared envelopes omit a domain token and domain payloads include one. Internal commands remain distinct from transport DTOs.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R06",
+      "rule": "Use kebab-case role-based TypeScript utility filenames and kebab-case React component filenames without a mandatory cos- prefix.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R07",
+      "rule": "Use lower_snake_case schema, table and column identifiers. Employee-domain schema is emp rather than people. Scope/ownership still determines whether a table belongs in that schema.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R08",
+      "rule": "Use UPPER_SNAKE_CASE constants/controlled codes except explicitly preserved lowercase sys_emp_id and registration component codes governed by profiles.registration. Use full readable frontend/document labels; omit architecture-level suffix words from frontend navigation.",
+      "status": "User-approved amendment to frozen naming; not published",
+      "source_version": "0.2.2",
+      "decision_ref": "NAM-REG-01"
+    },
+    {
+      "ref": "NAM-FRZ-R09",
+      "rule": "Within a namespace a shortcode has one meaning. reg means registration; use Register for a governed catalogue where needed. Do not use res for both response and resource.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R10",
+      "rule": "Preserve the explicitly approved lowercase identifiers sys_emp_id and emp_reg. Master names have no RPT suffix. Preserve legacy spelling through explicit compatibility mappings; do not silently rename external headers or values.",
+      "status": "User-approved amendment to frozen naming; not published",
+      "source_version": "0.2.1",
+      "decision_ref": "NAM-LOWER-01"
+    },
+    {
+      "ref": "NAM-FRZ-R11",
+      "rule": "Use resource-oriented URLs and clear unique camelCase operation IDs without a mandatory COS prefix. Preserve required framework/tool/third-party names and explicitly map exceptions.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    },
+    {
+      "ref": "NAM-FRZ-R12",
+      "rule": "Frozen naming changes require an explicit decision and impact mapping. Existing code, database columns, API properties/routes, encryption contexts and references are migrated only through reviewed compatibility handling; this freeze does not perform those changes.",
+      "status": "Frozen by user; not published",
+      "source_version": "0.2.0"
+    }
+  ],
+  "terms": [
+    {
+      "term": "Employee",
+      "shortcode": "emp",
+      "meaning": "Employee",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "EmpRegService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Registration",
+      "shortcode": "reg",
+      "meaning": "Registration",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "RegService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Repository",
+      "shortcode": "repo",
+      "meaning": "Repository",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "EmpRepo",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Aggregator",
+      "shortcode": "agg",
+      "meaning": "Aggregator",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "AggRegHandler",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Vendor",
+      "shortcode": "vnd",
+      "meaning": "Vendor",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "VndRepo",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Ingredient",
+      "shortcode": "ing",
+      "meaning": "Ingredient",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "IngMaster",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Brand",
+      "shortcode": "brand",
+      "meaning": "Brand",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "BrandRegHandler",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Location",
+      "shortcode": "loc",
+      "meaning": "Location",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "LocRepo",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Organization",
+      "shortcode": "org",
+      "meaning": "Organization",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "OrgConfig",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Department",
+      "shortcode": "dept",
+      "meaning": "Department",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "DeptMaster",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Configuration",
+      "shortcode": "config",
+      "meaning": "Configuration",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "RegConfigService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Definition",
+      "shortcode": "def",
+      "meaning": "Definition",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "FieldDef",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Request",
+      "shortcode": "req",
+      "meaning": "Request",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "RegReqDTO",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Response",
+      "shortcode": "res",
+      "meaning": "Response",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "RegResDTO",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Document",
+      "shortcode": "doc",
+      "meaning": "Document",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "EmpDocService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Reference",
+      "shortcode": "ref",
+      "meaning": "Reference",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "source_ref",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Identifier",
+      "shortcode": "id",
+      "meaning": "Identifier",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "emp_id",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Version",
+      "shortcode": "ver",
+      "meaning": "Version",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "config_ver",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "History",
+      "shortcode": "hist",
+      "meaning": "History",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "EmpHistRepo",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Transaction",
+      "shortcode": "txn",
+      "meaning": "Transaction",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "TxnService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Mapping",
+      "shortcode": "map",
+      "meaning": "Mapping",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "FieldMap",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Synchronization",
+      "shortcode": "sync",
+      "meaning": "Synchronization",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "SheetSyncService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Validation",
+      "shortcode": "validation",
+      "meaning": "Validation",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "RegValidationService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Approval",
+      "shortcode": "approval",
+      "meaning": "Approval",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "ApprovalService",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Permission",
+      "shortcode": "perm",
+      "meaning": "Permission",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "FieldPerm",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Parameter",
+      "shortcode": "param",
+      "meaning": "Parameter",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "ReportParam",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Attribute",
+      "shortcode": "attr",
+      "meaning": "Attribute",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "FieldAttr",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Quantity",
+      "shortcode": "qty",
+      "meaning": "Quantity",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "qty",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Amount",
+      "shortcode": "amt",
+      "meaning": "Amount",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "total_amt",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Number",
+      "shortcode": "num",
+      "meaning": "Number",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "invoice_num",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Sequence",
+      "shortcode": "seq",
+      "meaning": "Sequence",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "emp_id_seq",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Temporary",
+      "shortcode": "temp",
+      "meaning": "Temporary",
+      "scope": "Internal code; preserve established/external contracts",
+      "example": "temp_ref",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Service",
+      "shortcode": "service",
+      "meaning": "service",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "service",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Controller",
+      "shortcode": "controller",
+      "meaning": "controller",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "controller",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Handler",
+      "shortcode": "handler",
+      "meaning": "handler",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "handler",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Field",
+      "shortcode": "field",
+      "meaning": "field",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "field",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Value",
+      "shortcode": "value",
+      "meaning": "value",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "value",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Master",
+      "shortcode": "master",
+      "meaning": "master",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "master",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Report",
+      "shortcode": "report",
+      "meaning": "report",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "report",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Status",
+      "shortcode": "status",
+      "meaning": "status",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "status",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Type",
+      "shortcode": "type",
+      "meaning": "type",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "type",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Name",
+      "shortcode": "name",
+      "meaning": "name",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "name",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Code",
+      "shortcode": "code",
+      "meaning": "code",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "code",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Key",
+      "shortcode": "key",
+      "meaning": "key",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "key",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Role",
+      "shortcode": "role",
+      "meaning": "role",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "role",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Group",
+      "shortcode": "group",
+      "meaning": "group",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "group",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Audit",
+      "shortcode": "audit",
+      "meaning": "audit",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "audit",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Event",
+      "shortcode": "event",
+      "meaning": "event",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "event",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Draft",
+      "shortcode": "draft",
+      "meaning": "draft",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "draft",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Bulk",
+      "shortcode": "bulk",
+      "meaning": "bulk",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "bulk",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Api",
+      "shortcode": "api",
+      "meaning": "api",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "api",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Dto",
+      "shortcode": "dto",
+      "meaning": "dto",
+      "scope": "Retain familiar term; do not further abbreviate",
+      "example": "dto",
+      "aliases": "",
+      "status": "Frozen by user"
+    },
+    {
+      "term": "Source",
+      "shortcode": "source",
+      "meaning": "External data source; distinct from vendor and aggregator business identity",
+      "scope": "Internal source-registration code; preserve external contracts",
+      "example": "SourceRegService",
+      "aliases": "",
+      "status": "User-authorized naming addition; implementation pending"
+    }
+  ],
+  "change_policy": "Explicit decision and compatibility review; no automatic code/API/database renames",
+  "base_decision_ref": "D67",
+  "aliases": [
+    {
+      "previous": "SYS_EMP_ID",
+      "current": "sys_emp_id",
+      "scope": "Business identifier spelling; existing contracts require compatibility migration"
+    },
+    {
+      "previous": "EMP_Reg",
+      "current": "emp_reg",
+      "scope": "Registration component code and current feature reference"
+    }
+  ],
+  "migration_status": "Governance names updated only; application code, external headers, API properties, database and encryption contexts not renamed.",
+  "change_history": [
+    {
+      "version": "0.2.1",
+      "previous_version": "0.2.0",
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-LOWER-01",
+      "summary": "Explicitly supersede the two uppercase preservation exceptions; other frozen terms and casing profiles unchanged.",
+      "historical_source": "migration/naming-v0.2.0.json"
+    },
+    {
+      "version": "0.2.2",
+      "previous_version": "0.2.1",
+      "recorded_on": "23-Oct-2026",
+      "decision_ref": "NAM-REG-01",
+      "summary": "Add source term and scoped registration/view patterns; retain lowercase aliases and existing 52 terms.",
+      "historical_source": "migration/naming-v0.2.1.json"
+    }
+  ],
+  "previous_decision_ref": "NAM-LOWER-01",
+  "profiles": {
+    "registration": {
+      "pattern": "<domain>_reg",
+      "scope": "Registration component codes only; does not lowercase every existing controlled code",
+      "status": "User-authorized naming profile; deployment pending",
+      "domains": [
+        {
+          "domain": "Employee",
+          "code": "emp_reg",
+          "symbol": "Emp",
+          "resource": "emp",
+          "meaning": "Employee business identity"
+        },
+        {
+          "domain": "Vendor",
+          "code": "vnd_reg",
+          "symbol": "Vnd",
+          "resource": "vnd",
+          "meaning": "Supplier or service-provider identity"
+        },
+        {
+          "domain": "Aggregator",
+          "code": "agg_reg",
+          "symbol": "Agg",
+          "resource": "agg",
+          "meaning": "Aggregator business-platform identity"
+        },
+        {
+          "domain": "Source",
+          "code": "source_reg",
+          "symbol": "Source",
+          "resource": "sources",
+          "meaning": "Data source/connection configuration, linked to applicable domain identity"
+        }
+      ]
+    },
+    "mart": {
+      "pattern": "vw_<domain>_<purpose>",
+      "example": "vw_emp_directory",
+      "scope": "Proposed database virtual reporting views; exact schema, grain and ownership registered in design",
+      "status": "User-authorized design naming profile; views not implemented"
+    }
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "version": "0.1.0",
+  "status": "Preserved normalized source inventory; not a new frozen COS release",
+  "source": {
+    "name": "COS_Full_Export_v1.1.0.docx",
+    "version": "1.1.0",
+    "source_status": "FROZEN",
+    "drive_file_id": "1NeeSlA61_FNUFVo8ip6Uq9pM5RFTHxe-",
+    "sha256": "baeb9bcddee81b18876ca6947dacbc803b94b2c346e5d8a97332791e19261b1b",
+    "extraction": "Suite table and section 4 suite/engine headings from the user attachment; source names retained",
+    "recorded_on": "23-Oct-2026"
+  },
+  "counts": {
+    "Platform": 1,
+    "Suite": 9,
+    "Engine": 47
+  },
+  "items": [
+    {
+      "ref": "source-cos",
+      "name": "CulinaOS Platform",
+      "type": "Platform",
+      "code": "COS",
+      "parent_ref": ""
+    },
+    {
+      "ref": "source-cos-pgs",
+      "name": "Platform Governance Suite",
+      "type": "Suite",
+      "code": "COS-PGS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-governance-engine",
+      "name": "Governance Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pgs"
+    },
+    {
+      "ref": "source-security-engine",
+      "name": "Security Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pgs"
+    },
+    {
+      "ref": "source-configuration-engine",
+      "name": "Configuration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pgs"
+    },
+    {
+      "ref": "source-platform-administration-engine",
+      "name": "Platform Administration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pgs"
+    },
+    {
+      "ref": "source-cos-cds",
+      "name": "Common Data Suite",
+      "type": "Suite",
+      "code": "COS-CDS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-master-data-engine",
+      "name": "Master Data Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-cds"
+    },
+    {
+      "ref": "source-data-set-engine",
+      "name": "Data Set Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-cds"
+    },
+    {
+      "ref": "source-reference-data-engine",
+      "name": "Reference Data Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-cds"
+    },
+    {
+      "ref": "source-data-governance-engine",
+      "name": "Data Governance Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-cds"
+    },
+    {
+      "ref": "source-cos-pcs",
+      "name": "Product & Commercial Suite",
+      "type": "Suite",
+      "code": "COS-PCS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-menu-engine",
+      "name": "Menu Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pcs"
+    },
+    {
+      "ref": "source-recipe-engine",
+      "name": "Recipe Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pcs"
+    },
+    {
+      "ref": "source-packaging-engine",
+      "name": "Packaging Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pcs"
+    },
+    {
+      "ref": "source-pricing-engine",
+      "name": "Pricing Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-pcs"
+    },
+    {
+      "ref": "source-cos-sos",
+      "name": "Supply & Operations Suite",
+      "type": "Suite",
+      "code": "COS-SOS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-procurement-engine",
+      "name": "Procurement Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-sos"
+    },
+    {
+      "ref": "source-inventory-engine",
+      "name": "Inventory Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-sos"
+    },
+    {
+      "ref": "source-production-engine",
+      "name": "Production Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-sos"
+    },
+    {
+      "ref": "source-kitchen-operations-engine",
+      "name": "Kitchen Operations Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-sos"
+    },
+    {
+      "ref": "source-cos-scs",
+      "name": "Sales & Customer Suite",
+      "type": "Suite",
+      "code": "COS-SCS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-sales-engine",
+      "name": "Sales Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-scs"
+    },
+    {
+      "ref": "source-customer-experience-engine",
+      "name": "Customer Experience Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-scs"
+    },
+    {
+      "ref": "source-marketing-engine",
+      "name": "Marketing Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-scs"
+    },
+    {
+      "ref": "source-delivery-logistics-engine",
+      "name": "Delivery & Logistics Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-scs"
+    },
+    {
+      "ref": "source-cos-ems",
+      "name": "Enterprise Management Suite",
+      "type": "Suite",
+      "code": "COS-EMS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-finance-engine",
+      "name": "Finance Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-hr-engine",
+      "name": "HR Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-quality-assurance-engine",
+      "name": "Quality Assurance Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-asset-maintenance-engine",
+      "name": "Asset & Maintenance Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-compliance-audit-engine",
+      "name": "Compliance & Audit Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-franchise-management-engine",
+      "name": "Franchise Management Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-ems"
+    },
+    {
+      "ref": "source-cos-aas",
+      "name": "AI & Analytics Suite",
+      "type": "Suite",
+      "code": "COS-AAS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-bi-reporting-engine",
+      "name": "BI & Reporting Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-kpi-dashboards-engine",
+      "name": "KPI & Dashboards Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-forecasting-engine",
+      "name": "Forecasting Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-ai-assistant-engine",
+      "name": "AI Assistant Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-recommendations-engine",
+      "name": "Recommendations Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-decision-support-engine",
+      "name": "Decision Support Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-aas"
+    },
+    {
+      "ref": "source-cos-int",
+      "name": "Integration Suite",
+      "type": "Suite",
+      "code": "COS-INT",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-api-management-engine",
+      "name": "API Management Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-internal-engine-integration-engine",
+      "name": "Internal Engine Integration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-external-system-integration-engine",
+      "name": "External System Integration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-event-integration-engine",
+      "name": "Event Integration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-data-integration-engine",
+      "name": "Data Integration Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-integration-monitoring-engine",
+      "name": "Integration Monitoring Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-int"
+    },
+    {
+      "ref": "source-cos-tps",
+      "name": "Technology & Platform Services",
+      "type": "Suite",
+      "code": "COS-TPS",
+      "parent_ref": "source-cos"
+    },
+    {
+      "ref": "source-application-services-engine",
+      "name": "Application Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-database-services-engine",
+      "name": "Database Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-identity-access-engine",
+      "name": "Identity & Access Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-notification-services-engine",
+      "name": "Notification Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-file-document-services-engine",
+      "name": "File & Document Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-search-services-engine",
+      "name": "Search Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-ai-ml-services-engine",
+      "name": "AI/ML Services Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-logging-monitoring-engine",
+      "name": "Logging & Monitoring Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    },
+    {
+      "ref": "source-devops-infrastructure-engine",
+      "name": "DevOps / Infrastructure Engine",
+      "type": "Engine",
+      "code": "",
+      "parent_ref": "source-cos-tps"
+    }
+  ],
+  "limits": [
+    "No detailed module/component inventory is supplied by this export.",
+    "Source status does not approve all later proposed module/component designs.",
+    "Source has Procurement Engine; Purchase is a search alias only. HR Engine is mapped to user-confirmed HRMS."
+  ]
+}

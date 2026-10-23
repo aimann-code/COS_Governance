@@ -1,7 +1,7 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.5; naming 0.2.2; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -35,6 +35,10 @@ Source references are temporary/history references unless an approved permanent 
 | UPLOAD-STORAGE-01 | Version template definitions in GitHub; generate entity-specific blanks via application; real files in approved private storage, staged rows/outcomes in DB, validated records in owning tables. Working-sheet gathering comes next. | Proposed storage/data-flow design recorded; no file moves, new storage adoption or uploads |
 | GITHUB-SOURCE-01 | GitHub is the maintained location for governance/design/code/skills, with shared and owning-application skill locations; retain private data separation and explicit installation status. | User selected and authorized recording; no skill installed or backup job enabled |
 | APP-DRAFT-01 | Publish the prepared configurable employee uniqueness increment as a draft application PR, without merge or deployment. | Draft PR opened; full application tests and migration execution pending |
+| ARCH-INVENTORY-01 | Reconcile original platform, 9 suites and 47 engines; retain HRMS naming and proposed detailed scope. | User authorized draft update; merge/publication separate |
+| NAM-DOC-01 | Use readable stable documentation filenames, regenerated links and legacy path pointers; preserve application naming. | User authorized draft update; merge/publication separate |
+| WORKFLOW-01 | Record approved Stage + Lifecycle Phase + Edit Owner + immutable published baseline; separate new drafts from active development. | User authorized draft update; merge/publication separate |
+| CHAT-SOURCE-01 | Explicit branch/commit reads and refresh before approved writes; no automatic chat synchronization. | User authorized draft update; merge/publication separate |
 
 ## Reconciliation
 

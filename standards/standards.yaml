@@ -7,12 +7,13 @@
       "Draft_Ref": "STD-DRAFT-1",
       "Standard_Name": "Naming Standard",
       "Purpose": "Names, prefixes, abbreviations, aliases and source-file conventions",
-      "Version": "0.2.2",
+      "Version": "0.2.3",
       "Catalogue_Direction": "Frozen naming with explicit user-approved lowercase amendment",
-      "Rule_Completion": "12 base rules with explicit amendments; 53 controlled terms; scoped registration and virtual-view profiles; live migration pending",
+      "Rule_Completion": "12 base rules; 53 controlled terms; approved scoped naming and readable documentation profiles; live migration pending",
       "Owner": "",
       "Source": "D67 base; NAM-LOWER-01; NAM-REG-01",
-      "canonical_file": "standards/naming.yaml"
+      "canonical_file": "standards/naming.yaml",
+      "File_Slug": "naming"
     },
     {
       "Record_UUID": "",
@@ -24,7 +25,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "architecture"
     },
     {
       "Record_UUID": "",
@@ -36,7 +38,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "data"
     },
     {
       "Record_UUID": "",
@@ -48,7 +51,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "master-data"
     },
     {
       "Record_UUID": "",
@@ -60,7 +64,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "suite-engine"
     },
     {
       "Record_UUID": "",
@@ -72,7 +77,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "module"
     },
     {
       "Record_UUID": "",
@@ -84,7 +90,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "component"
     },
     {
       "Record_UUID": "",
@@ -96,7 +103,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "parameter"
     },
     {
       "Record_UUID": "",
@@ -108,7 +116,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "versioning"
     },
     {
       "Record_UUID": "",
@@ -120,7 +129,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "development"
     },
     {
       "Record_UUID": "",
@@ -132,7 +142,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "api-integration"
     },
     {
       "Record_UUID": "",
@@ -144,7 +155,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "security"
     },
     {
       "Record_UUID": "",
@@ -156,7 +168,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "ai-analytics"
     },
     {
       "Record_UUID": "",
@@ -168,7 +181,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "qa"
     },
     {
       "Record_UUID": "",
@@ -180,7 +194,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "operations"
     },
     {
       "Record_UUID": "",
@@ -192,7 +207,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "workspace"
     },
     {
       "Record_UUID": "",
@@ -204,7 +220,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "tool"
     },
     {
       "Record_UUID": "",
@@ -216,7 +233,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "technology-stack"
     },
     {
       "Record_UUID": "",
@@ -228,7 +246,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "documentation"
     },
     {
       "Record_UUID": "",
@@ -240,7 +259,8 @@
       "Catalogue_Direction": "Selected by user",
       "Rule_Completion": "Partial / requires rule review",
       "Owner": "",
-      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued."
+      "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
+      "File_Slug": "confidentiality-access"
     },
     {
       "Record_UUID": "",
@@ -252,7 +272,8 @@
       "Catalogue_Direction": "Selected by current nine-standard request",
       "Rule_Completion": "Initial detailed draft prepared; approval and repository compliance pending",
       "Owner": "",
-      "Source": "Current user request create all standard; 22-Oct-2026"
+      "Source": "Current user request create all standard; 22-Oct-2026",
+      "File_Slug": "frontend"
     },
     {
       "Record_UUID": "",
@@ -264,7 +285,8 @@
       "Catalogue_Direction": "Selected by current nine-standard request",
       "Rule_Completion": "Initial detailed draft prepared; approval and repository compliance pending",
       "Owner": "",
-      "Source": "Current user request create all standard; 22-Oct-2026"
+      "Source": "Current user request create all standard; 22-Oct-2026",
+      "File_Slug": "backend"
     },
     {
       "Record_UUID": "",
@@ -276,7 +298,8 @@
       "Catalogue_Direction": "Selected by current nine-standard request",
       "Rule_Completion": "Initial detailed draft prepared; approval and repository compliance pending",
       "Owner": "",
-      "Source": "Current user request create all standard; 22-Oct-2026"
+      "Source": "Current user request create all standard; 22-Oct-2026",
+      "File_Slug": "url"
     }
   ],
   "rules": [
@@ -2384,6 +2407,50 @@
           "Track repository source versus installed/active environment separately"
         ]
       ]
+    },
+    {
+      "Review Ref": "ARCH-INVENTORY-01",
+      "Scope": "COS",
+      "Standard Name": "Architecture Standard",
+      "Rule": "Account for all 9 suites and 47 engines from architecture/source-inventory.yaml using architecture/objects.yaml. Resolve parents with stable local references, preserve aliases and source evidence. Distinguish inventory coverage, design readiness and verified implementation. No omission from partial imported scope proves absence from COS; do not invent detailed modules/components.",
+      "Decision Ref": "ARCH-INVENTORY-01",
+      "Version": "0.1.0",
+      "Approval Status": "User-authorized recording; publication requires reviewed integration",
+      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "Review Ref": "NAM-DOC-01",
+      "Scope": "COS",
+      "Standard Name": "Naming Standard",
+      "Rule": "Apply the documentation profile in standards/naming.yaml: descriptive stable kebab-case paths, in-content version/status/IDs, framework filename exceptions and generated compatibility path mappings. No unrelated code/API/DB renames.",
+      "Decision Ref": "NAM-DOC-01",
+      "Version": "0.1.0",
+      "Approval Status": "User-authorized recording; publication requires reviewed integration",
+      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "Review Ref": "WORKFLOW-01",
+      "Scope": "COS",
+      "Standard Name": "Development Standard",
+      "Rule": "Apply standards/workflow.yaml. Stage is Draft/Review/Published; lifecycle is Requirements, Design & Architecture, Development, Testing, Deployment, Operations. Track edit owner and immutable published baseline. Developers cannot consume a current Draft; active developer baselines change only through approved change requests. Technical enforcement and board configuration remain pending.",
+      "Decision Ref": "WORKFLOW-01",
+      "Version": "0.1.0",
+      "Approval Status": "User-authorized recording; publication requires reviewed integration",
+      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "Review Ref": "CHAT-SOURCE-01",
+      "Scope": "COS",
+      "Standard Name": "AI / Analytics Standard",
+      "Rule": "Apply standards/workflow.yaml branch read/write protocol: explicitly resolve repository/branch/commit; read source inventory and relevant definitions; refresh before writing, reconcile concurrent work and confirm each described update. Main is the integrated entry point, but artifact readiness and exact approved baselines control development. No automatic chat sync or implicit merge.",
+      "Decision Ref": "CHAT-SOURCE-01",
+      "Version": "0.1.0",
+      "Approval Status": "User-authorized recording; publication requires reviewed integration",
+      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
     }
   ],
   "rule_details": [
@@ -7914,6 +7981,106 @@
       "Mapping_Status": "User-selected scoped standard",
       "Rule_Approval": "User-selected storage standard; authorized recording; not published",
       "Source": "GITHUB-SOURCE-01"
+    },
+    {
+      "Rule_Ref": "ARCH-INVENTORY-01",
+      "Standard_Name": "Suite & Engine Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "ARCH-INVENTORY-01"
+    },
+    {
+      "Rule_Ref": "ARCH-INVENTORY-01",
+      "Standard_Name": "Data Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "ARCH-INVENTORY-01"
+    },
+    {
+      "Rule_Ref": "NAM-DOC-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "NAM-DOC-01"
+    },
+    {
+      "Rule_Ref": "NAM-DOC-01",
+      "Standard_Name": "Workspace Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "NAM-DOC-01"
+    },
+    {
+      "Rule_Ref": "WORKFLOW-01",
+      "Standard_Name": "Architecture Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "WORKFLOW-01"
+    },
+    {
+      "Rule_Ref": "WORKFLOW-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "WORKFLOW-01"
+    },
+    {
+      "Rule_Ref": "WORKFLOW-01",
+      "Standard_Name": "QA Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "WORKFLOW-01"
+    },
+    {
+      "Rule_Ref": "WORKFLOW-01",
+      "Standard_Name": "Operations Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "WORKFLOW-01"
+    },
+    {
+      "Rule_Ref": "CHAT-SOURCE-01",
+      "Standard_Name": "Development Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "CHAT-SOURCE-01"
+    },
+    {
+      "Rule_Ref": "CHAT-SOURCE-01",
+      "Standard_Name": "Workspace Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "Scope explicitly stated in rule and linked canonical definition",
+      "Mapping_Status": "User-authorized scoped supplement",
+      "Rule_Approval": "User-authorized recording; publication separate",
+      "Source": "CHAT-SOURCE-01"
     }
   ],
   "versions": [
@@ -8236,6 +8403,16 @@
       "Effective_To": "",
       "Supersedes": "0.2.1 within scoped profile additions only",
       "Evidence": "NAM-REG-01"
+    },
+    {
+      "Standard_Ref": "STD-DRAFT-1",
+      "Version": "0.2.3",
+      "Approval_Status": "User-authorized documentation filename supplement",
+      "Publication_Status": "Not published by this update",
+      "Effective_From": "",
+      "Effective_To": "",
+      "Supersedes": "0.2.2 documentation filename scope only",
+      "Evidence": "NAM-DOC-01; discussions/architecture-workflow-update-23-Oct-2026.md"
     }
   ],
   "applicability": [

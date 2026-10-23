@@ -1062,6 +1062,34 @@
       "commit": "e6c51155564652547314575955eb8203538af438",
       "pull_request": "https://github.com/aimann-code/EMPRegister/pull/1",
       "evidence": "18 core contract checks and 10-source syntax checks performed locally; Spring/PostgreSQL suite not run"
+    },
+    {
+      "ref": "ARCH-INVENTORY-01",
+      "decision": "Reconcile original platform, 9 suites and 47 engines; retain HRMS naming and proposed detailed scope.",
+      "status": "User authorized draft update; merge/publication separate",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "ref": "NAM-DOC-01",
+      "decision": "Use readable stable documentation filenames, regenerated links and legacy path pointers; preserve application naming.",
+      "status": "User authorized draft update; merge/publication separate",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "ref": "WORKFLOW-01",
+      "decision": "Record approved Stage + Lifecycle Phase + Edit Owner + immutable published baseline; separate new drafts from active development.",
+      "status": "User authorized draft update; merge/publication separate",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+    },
+    {
+      "ref": "CHAT-SOURCE-01",
+      "decision": "Explicit branch/commit reads and refresh before approved writes; no automatic chat synchronization.",
+      "status": "User authorized draft update; merge/publication separate",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
     }
   ],
   "pending": [

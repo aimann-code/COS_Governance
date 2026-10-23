@@ -5,9 +5,18 @@ export function buildCatalogue(src) {
   const safe=x=>String(x??"").replace(/\r?\n/g," ").replace(/\|/g,"\\|");
   const slug=x=>String(x).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
   const table=(head,rows)=>"| "+head.map(safe).join(" | ")+" |\n| "+head.map(()=>"---").join(" | ")+" |\n"+rows.map(r=>"| "+r.map(safe).join(" | ")+" |").join("\n")+"\n";
-  const path={arch:r=>"architecture/"+slug(r.Draft_Ref)+".md",feat:r=>"features/"+slug(r.ref)+".md",std:r=>"standards/"+slug(r.Draft_Ref)+".md"};
+  const path={arch:r=>"architecture/"+r.File_Slug+".md",feat:r=>"features/"+r.file_slug+".md",std:r=>"standards/"+r.File_Slug+".md"};
+  const compatibility=[];
+  for(const [kind,rows,oldKey] of [["arch",a,"Draft_Ref"],["feat",f,"ref"],["std",s.definitions,"Draft_Ref"]]) {
+    const dir={arch:"architecture",feat:"features",std:"standards"}[kind];
+    for(const r of rows) {
+      const current=path[kind](r),legacy=dir+"/"+slug(r[oldKey])+".md";
+      if(current!==legacy&&(kind!=="arch"||r.Draft_Ref.startsWith("ARCH-DRAFT-")))compatibility.push({legacy,current,title:r.Display_Name||r.name||r.Standard_Name});
+    }
+  }
   const header=(title,depth=0)=>"# "+title+"\n\n> Generated from maintained definitions. Do not edit this page directly.\n> Governance "+m.version+"; naming "+n.version+"; application evidence "+m.application.ref+".\n> Draft catalogue. Approval, implementation, verification and publication are separate.\n\n"+(depth?"[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)\n\n":"[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)\n\n");
   const named=new Map(a.map(r=>[r.Display_Name,r]));
+  const referenced=new Map(a.map(r=>[r.Draft_Ref,r]));
   const ownerText=r=>r.owner||"Unresolved";
   const archLink=(r,prefix="")=>"["+r.Display_Name+"]("+prefix+path.arch(r)+")";
   const featLink=(r,prefix="")=>"["+r.name+"]("+prefix+path.feat(r)+")";
@@ -31,8 +40,8 @@ export function buildCatalogue(src) {
   const ownedFeatures=r=>f.filter(x=>x.name===r.Display_Name||x.owner.split(" / ").includes(r.Display_Name));
   function ancestry(r) {
     const parts=[r],seen=new Set([r.Display_Name]);let cur=r;
-    while(cur.Parent_Draft_Ref) {
-      const p=named.get(cur.Parent_Draft_Ref);
+    while(cur.Parent_Ref) {
+      const p=referenced.get(cur.Parent_Ref);
       if(!p||seen.has(p.Display_Name))return {parts:parts.reverse(),unresolved:true};
       parts.push(p);seen.add(p.Display_Name);cur=p;
     }
@@ -57,9 +66,9 @@ export function buildCatalogue(src) {
       ["[Test plan](test-plan.md)","Planned full-flow tests and evidence requirements"],
       ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"]
     ])+
-    "\n## Browse the known HRMS hierarchy\n\n"+
+    "\n## Browse the COS hierarchy\n\n"+
     a.filter(x=>["Suite","Engine","Module","Component"].includes(x.Object_Type)).map(r=>"- "+archLink(r)+" — "+r.Object_Type+"; "+r.Status).join("\n")+
-    "\n\n## Current limits\n\nThis catalogue covers the imported scope, not every possible COS suite or engine. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.\n\n[Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md)\n";
+    "\n\n## Coverage and current limits\n\nAll 9 suites and 47 engines from the original COS v1.1.0 inventory are accounted for. Module/component detail remains HRMS-focused. Unallocated permanent IDs, shared placement and missing design details remain unresolved. A linked source file does not prove passing tests or production readiness. Original discussion history and source evidence remain preserved.\n\n[Source-of-truth map](../architecture/source-map.yaml) · [Discussion history](../discussions/README.md) · [Design comparison](../comparisons/design-comparison.md) · [Workflow and handover](workflow.md) · [Path compatibility map](path-map.md)\n";
   out["catalogue/standards.md"]=header("Standards")+
     "Naming "+n.version+" retains its frozen base and explicit amendment. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.\n\n"+
     table(["Standard","Source version","Approval / completion"],s.definitions.map(r=>[stdLink(r),r.Version,r.Rule_Completion]))+
@@ -83,18 +92,19 @@ export function buildCatalogue(src) {
     "Frozen Naming Standard **"+n.version+"**, source decision **"+n.decision_ref+"**. COS prefixes are selective. Current preserved tokens: "+n.preserve.join(", ")+". Existing application names have not been migrated.\n\n"+
     table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+
     "\n## Code terms\n\n"+table(["Term","Code","Meaning","Example"],n.terms.map(r=>[r.term,r.shortcode,r.meaning,r.example]))+
-    "\n[Maintained naming source](../standards/naming.yaml)\n\n## Current scoped supplements\n\nThe approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard](standards/std-draft-11.md) and [URL Standard](standards/std-draft-23.md). Backup timestamps and readable date/time are separately scoped in the standards catalogue.\n";
+    "\n[Maintained naming source](../standards/naming.yaml)\n\n## Current scoped supplements\n\nThe approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard]("+path.std(s.definitions.find(r=>r.Standard_Name==="API / Integration Standard"))+") and [URL Standard]("+path.std(s.definitions.find(r=>r.Standard_Name==="URL Standard"))+"). Backup timestamps and readable date/time are separately scoped in the standards catalogue.\n";
   out["catalogue/architecture.md"]=header("Architecture")+
-    "Parent references are resolved from the imported architecture records. These local draft references are not permanent COS IDs. Empty shared placement remains unresolved.\n\n"+
-    table(["Object","Type","Code","Parent","Status"],a.map(r=>[archLink(r),r.Object_Type,r.Short_Code||"Unassigned",r.Parent_Draft_Ref||"Root / placement unresolved",r.Status]))+
-    "\n[Architecture definitions](../architecture/objects.yaml)\n";
+    "Complete source coverage: **1 platform, 9 suites and 47 engines** from COS v1.1.0. Detailed modules/components remain HRMS proposals. Parent_Ref resolves stable local references; these are not permanent COS IDs. Shared capability placement remains unresolved. Missing detail does not mean an engine is absent.\n\n"+
+    table(["Object","Type","Code","Parent","Inventory","Design","Implementation"],a.map(r=>[archLink(r),r.Object_Type,r.Short_Code||"Unassigned",referenced.get(r.Parent_Ref)?.Display_Name||(r.Object_Type==="Platform"?"Root":"Placement unresolved"),r.Inventory_Status,r.Design_Status,r.Implementation_Status]))+
+    "\n[Architecture definitions](../architecture/objects.yaml) · [Preserved source inventory](../architecture/source-inventory.yaml) · [Workflow](workflow.md)\n";
   for(const ar of a) {
-    const chain=ancestry(ar),children=a.filter(x=>x.Parent_Draft_Ref===ar.Display_Name),direct=directFeatures(ar),features=ownedFeatures(ar);
+    const chain=ancestry(ar),children=a.filter(x=>x.Parent_Ref===ar.Draft_Ref),direct=directFeatures(ar),features=ownedFeatures(ar);
     const featureSet=new Set(features.map(x=>x.ref));
     const maps=o.filter(x=>x.architecture_owner===ar.Display_Name||x.feature_refs.some(fr=>featureSet.has(fr)));
     let body=header(ar.Display_Name,1)+table(["Property","Value"],[
       ["Type",ar.Object_Type],["Shortcode",ar.Short_Code||"Unassigned"],["Source reference",ar.Draft_Ref+" (temporary)"],["Hierarchy",chain.parts.map(x=>x.Display_Name).join(" → ")+(chain.unresolved?" — placement unresolved":"")],["Responsibility",ar.Responsibility],["Design/registration state",ar.Status],["Source design",ar.Source?"[Historical design reference]("+ar.Source+")":"Not available"]
     ]);
+    body+="\n"+table(["Coverage property","Value"],[["Source name",ar.Source_Name||"Proposed detailed object"],["Aliases",(ar.Aliases||[]).join(", ")||"None recorded"],["Stable parent reference",ar.Parent_Ref||"Root / unresolved"],["Inventory",ar.Inventory_Status],["Design",ar.Design_Status],["Implementation",ar.Implementation_Status]]);
     body+="\n## Children\n\n"+(children.length?table(["Object","Type","Status"],children.map(x=>[archLink(x,"../"),x.Object_Type,x.Status])):"No child definition recorded in this imported scope.\n");
     if(ar.Display_Name==="HRMS" && src.architecture.hrms_scope) {
       const scope=src.architecture.hrms_scope;
@@ -265,5 +275,27 @@ export function buildCatalogue(src) {
       "[Repository and skills storage standard](../catalogue/repository-storage.md) · [COS Catalogue](../catalogue/README.md)\n";
     out["catalogue/README.md"]+="\n## Maintained repository and skills source\n\n[Repository/skills storage](repository-storage.md) · [Shared skills directory](../skills/README.md). Source storage is separate from runtime installation; no actual skill has been created or installed in this update.\n";
   }
+  const docProfile=n.profiles.documentation;
+  const docText="\n## Repository documentation filenames\n\n"+table(["Control","Rule"],Object.entries(docProfile).map(([key,value])=>[key,Array.isArray(value)?value.join("; "):value]))+"\n[Old-to-new paths](";
+  out["catalogue/naming.md"]+=docText+"path-map.md)\n";
+  out["catalogue/"+path.std(s.definitions.find(r=>r.Standard_Name==="Naming Standard"))]+=docText+"../path-map.md)\n";
+  const w=src.workflow;
+  out["catalogue/workflow.md"]=header("Stages, lifecycle and developer handover")+
+    w.status+"\n\n"+table(["Control","Values"],[["Stage",w.stages.join(" → ")],["Lifecycle phase",w.phases.join(" → ")],["Release taxonomy","Separate decision pending; Alpha/Beta/Gamma not adopted by this update"]])+"\n## Branch versus status\n\n"+
+    table(["Control","Meaning"],w.distinction)+"\n## Phase handovers\n\n"+table(["Phase","Owner role","Published output"],w.phase_deliverables)+
+    "\n## Work-item fields\n\n"+table(["Field","Meaning"],w.fields)+"\n## Baseline and ownership rules\n\n"+w.rules.map(x=>"- "+x).join("\n")+
+    "\n\n## Branch and chat protocol\n\n"+table(["Branch","Purpose"],w.branch_policy.patterns)+"\n"+w.branch_policy.compatibility+"\n\n"+
+    w.branch_policy.read_protocol.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\n"+w.branch_policy.write_protocol+"\n\n"+w.branch_policy.handover_protocol+
+    "\n\n## Pending setup\n\n"+w.pending.map(x=>"- "+x).join("\n")+"\n\n[Canonical workflow definition](../standards/workflow.yaml) · [Approval evidence](../"+w.evidence+")\n";
+  out["catalogue/path-map.md"]=header("Documentation path compatibility map")+
+    "Primary links now use descriptive stable filenames. Historical paths below remain generated pointer pages so existing links continue to work. These local references are not permanent IDs. Do not edit pointer pages or this map directly.\n\n"+
+    table(["Artifact","Previous path","Current path"],compatibility.map(x=>[x.title,"["+x.legacy+"]("+x.legacy+")","["+x.current+"]("+x.current+")"]))+
+    "\n[Canonical filename standard](../standards/naming.yaml)\n";
+  for(const x of compatibility) {
+    const key="catalogue/"+x.legacy;
+    if(Object.hasOwn(out,key))throw new Error("Compatibility path collides with canonical path: "+key);
+    out[key]="# "+x.title+" — moved\n\n> Generated compatibility pointer. Do not edit.\n\n[Open the current "+x.title+" page]("+x.current.split("/").at(-1)+").\n\n[Complete path map](../path-map.md).\n";
+  }
   return out;
 }
+
