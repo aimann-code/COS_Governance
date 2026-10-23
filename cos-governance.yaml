@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "status": "Governance baseline integrated through PR4; this approval-reconciliation revision under review; individual artifact status applies",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.3",
@@ -172,6 +172,17 @@
       ],
       "approval": "User update in backened after tree preview, declared coverage and explicit exclusions.",
       "limits": "No new shortcode allocation, relationship ownership inference, global relationship schema adoption, main merge or application change."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.8",
+      "draft_version": "0.3.9",
+      "summary": "Record explicit AI confirmation before any stored artifact/resource creation; preserve other pending approvals and current branches.",
+      "decision_refs": [
+        "AI-CREATE-CONFIRM-01"
+      ],
+      "approval": "User set it as ai standard update github after the policy preview.",
+      "limits": "No new files/branches/repos/schema/code/skills beyond necessary confirmed source updates and generated derivatives; no merge, publication or deletion."
     }
   ],
   "publication_history": [

@@ -1,7 +1,7 @@
 # Stages, lifecycle and developer handover
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.8; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -109,3 +109,18 @@ After approved baseline publication, link its immutable commit and paths to the 
 Preserve original approval evidence; do not infer all-design approval from record/update/merge authorization. Existing affirmative authorization remains valid for its stated scope; do not ask the same permission again.
 
 [Current approval review](approval-review.md)
+
+## Confirmation before creating anything
+
+Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.
+
+| Preview field |
+| --- |
+| Proposed content or concrete scope |
+| Name |
+| Location |
+| Purpose |
+| Pending approvals |
+| Exclusions |
+
+Canonical rule: AI-CREATE-CONFIRM-01 in [AI / Analytics Standard](standards/ai-analytics.md).

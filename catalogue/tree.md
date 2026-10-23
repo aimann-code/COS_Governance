@@ -1,6 +1,6 @@
 # COS relational tree
 
-> Generated relational navigation; edit maintained definitions, not this view. Governance 0.3.8.
+> Generated relational navigation; edit maintained definitions, not this view. Governance 0.3.9.
 > Existing relationships only. A linked item is not automatically approved, implemented or deployed.
 
 [COS Catalogue](README.md) · [Architecture](architecture.md) · [Approval review](approval-review.md)
@@ -1002,7 +1002,7 @@ Table nesting is derived from qualified names; it does not invent service owners
 - [Security Standard](standards/security.md) — Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending
   - Recorded target: COS framework / HRMS draft; Pending detailed applicability
   - Recorded target: COS projects adopting this draft; Pending
-- [AI / Analytics Standard](standards/ai-analytics.md) — Partial / requires rule review
+- [AI / Analytics Standard](standards/ai-analytics.md) — Creation-confirmation rule approved; earlier AI/output rules retain their individual statuses and pending reviews
   - Recorded target: COS framework / HRMS draft; Pending detailed applicability
 - [QA Standard](standards/qa.md) — Partial / requires rule review
   - Recorded target: COS framework / HRMS draft; Pending detailed applicability

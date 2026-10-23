@@ -292,6 +292,7 @@ export function buildCatalogue(src) {
     w.pre_update_checkpoint.required_content.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\n"+
     w.pre_update_checkpoint.questions.map(x=>"- **"+x+"**").join("\n")+"\n\n"+
     w.pre_update_checkpoint.evidence_rule+" "+w.pre_update_checkpoint.repeat_rule+"\n\n[Current approval review](approval-review.md)\n";
+  out["catalogue/workflow.md"]+="\n## Confirmation before creating anything\n\n"+w.ai_creation_gate.rule+"\n\n"+table(["Preview field"],w.ai_creation_gate.preview_fields.map(x=>[x]))+"\nCanonical rule: "+w.ai_creation_gate.rule_ref+" in [AI / Analytics Standard](standards/ai-analytics.md).\n";
   const review=src.approvalReview;
   const decisionByRef=new Map(d.discussion_directions.map(x=>[x.ref,x]));
   out["catalogue/approval-review.md"]=header("Approval evidence and pending decisions")+

@@ -1289,6 +1289,23 @@
       "verification": "See current PR checks; no physical database or full code inventory inferred",
       "recorded_on": "23-Oct-2026",
       "source": "discussions/relational-tree-23-Oct-2026.md"
+    },
+    {
+      "ref": "AI-CREATE-CONFIRM-01",
+      "decision": "Require preview and explicit confirmation before any AI creation; reuse a current affirmative instruction only for its exact previewed scope.",
+      "status": "Approved user instruction; recorded in draft source; main integration pending",
+      "approval": "Approved",
+      "approval_scope": "AI creation-confirmation standard only; no unrelated creation or merge approval.",
+      "approval_evidence": [
+        "User before creating anything always confirm",
+        "User set it as ai standard update github",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Review branch; not merged into main",
+      "implementation": "Policy, contributor guidance and generated standard delivered; no automatic enforcement",
+      "verification": "Definition references and generated outputs checked; runtime enforcement not claimed",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "pending": [

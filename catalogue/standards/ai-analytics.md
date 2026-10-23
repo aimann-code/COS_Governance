@@ -1,7 +1,7 @@
 # AI / Analytics Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.8; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Relational tree](../tree.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -9,9 +9,9 @@
 | Property | Value |
 | --- | --- |
 | Reference | STD-DRAFT-13 (temporary source reference) |
-| Version | 0.1.0 |
+| Version | 0.1.1 |
 | Purpose | AI Chat/output, analytical definitions and evaluation |
-| Completion | Partial / requires rule review |
+| Completion | Creation-confirmation rule approved; earlier AI/output rules retain their individual statuses and pending reviews |
 | Canonical source | [Standards definitions](../../standards/standards.yaml) |
 
 ## Rules
@@ -20,6 +20,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | GITHUB-CONFIRM-01 | Before each GitHub update, reconcile available approval evidence and show: (1) approved changes included, (2) pending approvals and ambiguous decisions, (3) excluded items, and (4) proposed content/change summary. Ask Any pending approvals to resolve before this update? and then Update Git Hub - Yes/No? Wait for an affirmative instruction for the stated scope; do not repeatedly request the same approval once given. Resolve blocking ambiguity or explicitly agree its exclusion before dependent changes. Update approval labels only with traceable evidence; preserve history and keep approval, publication, implementation and verification separate. Authorization covers necessary commits, generated views and checks for that scope, not unrelated edits, merging, deployment or access changes. Read-only checks need no update approval. | 0.1.1 | Approved user instruction; scoped policy amendment | This amendment awaits reviewed integration; previous version was in main | Repository instruction and generated approval review delivered; no automatic enforcement claimed | Definition/generator checks; human approval semantics remain evidence-based | Approved decision supplement; Approved scoped pre-update checkpoint; current amendment awaits integration |
 | CHAT-SOURCE-01 | Apply standards/workflow.yaml branch read/write protocol: explicitly resolve repository/branch/commit; read source inventory and relevant definitions; refresh before writing, reconcile concurrent work and confirm each described update. Main is the integrated entry point, but artifact readiness and exact approved baselines control development. No automatic chat sync or implicit merge. | 0.1.0 | Approved for stated governance scope | Integrated into main through PR4 for stated scope | Repository guidance delivered; no background synchronization installed. | Repository reference checks passed; no automated chat synchronization claimed. | Direct category |
+| AI-CREATE-CONFIRM-01 | Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation. | 0.1.0 | Approved explicit user instruction | This rule is in the review branch; main integration pending | Repository instruction and generated standard recorded; no automatic lock or runtime permission enforcement installed | Source/reference and catalogue checks only | Explicitly approved AI creation-confirmation policy; Approved user instruction; main integration pending |
 | S-D17 | AI Standard is the umbrella containing AI Chat Standard. | 0.1.0 | Pending | See source; not independently reconciled | Not independently reconciled | Not independently reconciled | Proposed mapping; Pending |
 | S-D18 | Show summary and relevant examples before generating or updating files. | 0.1.0 | Pending | See source; not independently reconciled | Not independently reconciled | Not independently reconciled | Proposed mapping; Pending |
 | S-D19 | Display content, dataset, status, update, new-file and backup controls. | 0.1.0 | Pending | See source; not independently reconciled | Not independently reconciled | Not independently reconciled | Proposed mapping; Pending |

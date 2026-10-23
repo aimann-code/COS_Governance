@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "Evidence-backed reconciliation and pending decisions; no blanket approval",
   "recorded_on": "23-Oct-2026",
   "canonical_decisions": "decisions/decisions.yaml",
@@ -14,7 +14,8 @@
     "GITHUB-SOURCE-01",
     "GITHUB-CONFIRM-01",
     "APPROVAL-REVIEW-01",
-    "TREE-VIEW-01"
+    "TREE-VIEW-01",
+    "AI-CREATE-CONFIRM-01"
   ],
   "publication_evidence": {
     "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
@@ -88,7 +89,8 @@
   ],
   "completed_display_corrections": [
     "Architecture/naming generated display columns use Short Code; stored property names and assigned shortcodes unchanged.",
-    "Relational tree generated from current canonical references, with catalogue and source navigation; does not allocate missing relationships."
+    "Relational tree generated from current canonical references, with catalogue and source navigation; does not allocate missing relationships.",
+    "AI creation-confirmation requirement recorded after explicit user instruction; no new resource or branch created for this update."
   ],
   "limits": [
     "Review uses available conversation and repository evidence, not a complete provider chat export.",
