@@ -21,7 +21,8 @@ const input = {
   guide: read('architecture/developer-guide.yaml'),
   marts: read('architecture/virtual-marts.yaml'),
   uploads: read('templates/upload-profiles.yaml'),
-  workflow: read('standards/workflow.yaml')
+  workflow: read('standards/workflow.yaml'),
+  approvalReview: read('decisions/approval-review.yaml')
 };
 const pages = buildCatalogue(input);
 pages['catalogue/generated-manifest.json'] = JSON.stringify({

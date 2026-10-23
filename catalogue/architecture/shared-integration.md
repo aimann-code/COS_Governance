@@ -1,7 +1,7 @@
 # Shared Integration
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.7; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -9,7 +9,7 @@
 | Property | Value |
 | --- | --- |
 | Type | Shared capability |
-| Shortcode | Unassigned |
+| Short Code | Unassigned |
 | Source reference | ARCH-DRAFT-8 (temporary) |
 | Hierarchy | Shared Integration — placement unresolved |
 | Responsibility | Reusable file and Google Sheets source handling |

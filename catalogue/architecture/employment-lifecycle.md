@@ -1,7 +1,7 @@
 # Employment Lifecycle
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.7; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
@@ -9,7 +9,7 @@
 | Property | Value |
 | --- | --- |
 | Type | Component |
-| Shortcode | Unassigned |
+| Short Code | Unassigned |
 | Source reference | ARCH-DRAFT-9 (temporary) |
 | Hierarchy | CulinaOS Platform → Enterprise Management → HRMS → Employee Management → Employment Lifecycle |
 | Responsibility | Joining, activation, employment status changes, exit and rejoining history. |

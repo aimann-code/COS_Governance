@@ -80,7 +80,7 @@ export function buildCatalogue(src) {
     if(st.Standard_Name==="Naming Standard")body+=table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+"\n[All controlled shortcodes](../naming.md)\n";
     else {
       const rows=[...(groupMap.get(st.Standard_Name)?.values()||[])];
-      body+=rows.length?table(["Reference","Rule","Version","Recorded approval","Mapping state"],rows.map(({r,mapStatus})=>[r["Review Ref"],r.Rule+(r.Current_Disposition?" Current disposition: "+r.Current_Disposition:""),r.Version,r["Approval Status"],mapStatus])):"No detailed rules mapped yet. This standard requires completion and review.\n";
+      body+=rows.length?table(["Reference","Rule","Version","Approval","Publication","Implementation","Verification","Mapping state"],rows.map(({r,mapStatus})=>[r["Review Ref"],r.Rule+(r.Current_Disposition?" Current disposition: "+r.Current_Disposition:""),r.Version,r["Approval Status"],r.Publication_Status||"See source; not independently reconciled",r.Implementation_Status||"Not independently reconciled",r.Verification_Status||"Not independently reconciled",mapStatus])):"No detailed rules mapped yet. This standard requires completion and review.\n";
     }
     body+="\n## Applicability and exceptions\n\n";
     const app=s.applicability.filter(r=>Object.values(r).some(v=>v===st.Draft_Ref||v===st.Standard_Name));
@@ -91,18 +91,18 @@ export function buildCatalogue(src) {
   out["catalogue/naming.md"]=header("Naming and shortcodes")+
     "Frozen Naming Standard **"+n.version+"**, source decision **"+n.decision_ref+"**. COS prefixes are selective. Current preserved tokens: "+n.preserve.join(", ")+". Existing application names have not been migrated.\n\n"+
     table(["Reference","Rule","Status"],n.rules.map(r=>[r.ref,r.rule,r.status]))+
-    "\n## Code terms\n\n"+table(["Term","Code","Meaning","Example"],n.terms.map(r=>[r.term,r.shortcode,r.meaning,r.example]))+
+    "\n## Controlled terms\n\n"+table(["Term","Short Code","Meaning","Example"],n.terms.map(r=>[r.term,r.shortcode,r.meaning,r.example]))+
     "\n[Maintained naming source](../standards/naming.yaml)\n\n## Current scoped supplements\n\nThe approved API-PATH-01 decision specifies the default API base path. It supplements the frozen resource-oriented URL rule; it does not rename existing routes. See [API / Integration Standard]("+path.std(s.definitions.find(r=>r.Standard_Name==="API / Integration Standard"))+") and [URL Standard]("+path.std(s.definitions.find(r=>r.Standard_Name==="URL Standard"))+"). Backup timestamps and readable date/time are separately scoped in the standards catalogue.\n";
   out["catalogue/architecture.md"]=header("Architecture")+
     "Complete source coverage: **1 platform, 9 suites and 47 engines** from COS v1.1.0. Detailed modules/components remain HRMS proposals. Parent_Ref resolves stable local references; these are not permanent COS IDs. Shared capability placement remains unresolved. Missing detail does not mean an engine is absent.\n\n"+
-    table(["Object","Type","Code","Parent","Inventory","Design","Implementation"],a.map(r=>[archLink(r),r.Object_Type,r.Short_Code||"Unassigned",referenced.get(r.Parent_Ref)?.Display_Name||(r.Object_Type==="Platform"?"Root":"Placement unresolved"),r.Inventory_Status,r.Design_Status,r.Implementation_Status]))+
+    table(["Object","Type","Short Code","Parent","Inventory","Design","Implementation"],a.map(r=>[archLink(r),r.Object_Type,r.Short_Code||"Unassigned",referenced.get(r.Parent_Ref)?.Display_Name||(r.Object_Type==="Platform"?"Root":"Placement unresolved"),r.Inventory_Status,r.Design_Status,r.Implementation_Status]))+
     "\n[Architecture definitions](../architecture/objects.yaml) · [Preserved source inventory](../architecture/source-inventory.yaml) · [Workflow](workflow.md)\n";
   for(const ar of a) {
     const chain=ancestry(ar),children=a.filter(x=>x.Parent_Ref===ar.Draft_Ref),direct=directFeatures(ar),features=ownedFeatures(ar);
     const featureSet=new Set(features.map(x=>x.ref));
     const maps=o.filter(x=>x.architecture_owner===ar.Display_Name||x.feature_refs.some(fr=>featureSet.has(fr)));
     let body=header(ar.Display_Name,1)+table(["Property","Value"],[
-      ["Type",ar.Object_Type],["Shortcode",ar.Short_Code||"Unassigned"],["Source reference",ar.Draft_Ref+" (temporary)"],["Hierarchy",chain.parts.map(x=>x.Display_Name).join(" → ")+(chain.unresolved?" — placement unresolved":"")],["Responsibility",ar.Responsibility],["Design/registration state",ar.Status],["Source design",ar.Source?"[Historical design reference]("+ar.Source+")":"Not available"]
+      ["Type",ar.Object_Type],["Short Code",ar.Short_Code||"Unassigned"],["Source reference",ar.Draft_Ref+" (temporary)"],["Hierarchy",chain.parts.map(x=>x.Display_Name).join(" → ")+(chain.unresolved?" — placement unresolved":"")],["Responsibility",ar.Responsibility],["Design/registration state",ar.Status],["Source design",ar.Source?"[Historical design reference]("+ar.Source+")":"Not available"]
     ]);
     body+="\n"+table(["Coverage property","Value"],[["Source name",ar.Source_Name||"Proposed detailed object"],["Aliases",(ar.Aliases||[]).join(", ")||"None recorded"],["Stable parent reference",ar.Parent_Ref||"Root / unresolved"],["Inventory",ar.Inventory_Status],["Design",ar.Design_Status],["Implementation",ar.Implementation_Status]]);
     body+="\n## Children\n\n"+(children.length?table(["Object","Type","Status"],children.map(x=>[archLink(x,"../"),x.Object_Type,x.Status])):"No child definition recorded in this imported scope.\n");
@@ -151,10 +151,10 @@ export function buildCatalogue(src) {
     "\n[Maintained ownership links](../architecture/ownership.yaml)\n";
   out["catalogue/decisions.md"]=header("Decisions and reconciliation")+
     "Source references are temporary/history references unless an approved permanent identity exists. Recording a proposal does not approve it.\n\n## Current discussion directions\n\n"+
-    table(["Ref","Direction","Status"],d.discussion_directions.map(r=>[r.ref,r.decision,r.status]))+
+    table(["Ref","Direction","Recorded status","Approval","Publication","Implementation","Verification"],d.discussion_directions.map(r=>[r.ref,r.decision,r.status,r.approval||"See recorded status; evidence review pending",r.publication||"Not separately reconciled",r.implementation||"See recorded status",r.verification||"Not separately reconciled"]))+
     "\n## Reconciliation\n\n"+table(["Ref","Topic","Difference","Status","Next"],(d.reconciliation||[]).map(r=>[r.ref,r.topic,r.difference,r.status,r.next]))+
     "\n## Preserved source decisions\n\n"+table(["Ref","Topic","Decision","Approval","Implementation"],d.source_decisions.map(r=>[r["Review Ref"],r.Topic,r.Decision,r["Approval Status"],r["Implementation Status"]]))+
-    "\n[Decision source](../decisions/decisions.yaml) · [Discussion archive](../discussions/README.md)\n";
+    "\n[Decision source](../decisions/decisions.yaml) · [Discussion archive](../discussions/README.md) · [Approval review and pending decisions](approval-review.md)\n";
   if(src.common) {
     const c=src.common;
     let body=header("Shared requirements across suites and modules")+c.status+"\n\n"+c.scope+"\n\n";
@@ -287,6 +287,20 @@ export function buildCatalogue(src) {
     "\n\n## Branch and chat protocol\n\n"+table(["Branch","Purpose"],w.branch_policy.patterns)+"\n"+w.branch_policy.compatibility+"\n\n"+
     w.branch_policy.read_protocol.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\n"+w.branch_policy.write_protocol+"\n\n"+w.branch_policy.handover_protocol+
     "\n\n## Pending setup\n\n"+w.pending.map(x=>"- "+x).join("\n")+"\n\n[Canonical workflow definition](../standards/workflow.yaml) · [Approval evidence](../"+w.evidence+")\n";
+  out["catalogue/workflow.md"]+="\n## Mandatory pre-update approval checkpoint\n\n"+
+    w.pre_update_checkpoint.required_content.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\n"+
+    w.pre_update_checkpoint.questions.map(x=>"- **"+x+"**").join("\n")+"\n\n"+
+    w.pre_update_checkpoint.evidence_rule+" "+w.pre_update_checkpoint.repeat_rule+"\n\n[Current approval review](approval-review.md)\n";
+  const review=src.approvalReview;
+  const decisionByRef=new Map(d.discussion_directions.map(x=>[x.ref,x]));
+  out["catalogue/approval-review.md"]=header("Approval evidence and pending decisions")+
+    review.status+"\n\nApproval is not implementation. Main integration is not blanket approval of every Draft artifact. Historical source records remain preserved; current scoped decisions below show their evidence separately.\n\n## Reconciled decisions\n\n"+
+    table(["Reference","Approval","Approved scope","Publication","Implementation","Verification","Evidence"],review.reconciled_refs.map(ref=>{const x=decisionByRef.get(ref);if(!x)throw new Error("Unknown approval decision: "+ref);return [ref,x.approval,x.approval_scope,x.publication,x.implementation,x.verification,x.approval_evidence.join("; ")+(x.publication_evidence?"; [PR4]("+x.publication_evidence.pull_request+") @ "+x.publication_evidence.baseline_commit:"")];}))+
+    "\n## Pending decisions and approvals\n\n"+table(["Topic","State","Scope","Next step"],review.pending.map(x=>[x.topic,x.state,x.scope,x.next]))+
+    "\n## Display corrections\n\n"+review.completed_display_corrections.map(x=>"- "+x).join("\n")+
+    "\n\n## Limits\n\n"+review.limits.map(x=>"- "+x).join("\n")+
+    "\n\n[Canonical approval-review index](../decisions/approval-review.yaml) · [Canonical decisions](../decisions/decisions.yaml) · [Approval source evidence](../"+review.evidence+") · [Workflow](workflow.md)\n";
+  out["catalogue/README.md"]+="\n## Approval checkpoint\n\n[Approval evidence and pending decisions](approval-review.md). Before each update, show approved scope, unresolved approvals, exclusions and content summary. Ask about pending approvals, then confirm the described GitHub update.\n";
   out["catalogue/path-map.md"]=header("Documentation path compatibility map")+
     "Primary links now use descriptive stable filenames. Historical paths below remain generated pointer pages so existing links continue to work. These local references are not permanent IDs. Do not edit pointer pages or this map directly.\n\n"+
     table(["Artifact","Previous path","Current path"],compatibility.map(x=>[x.title,"["+x.legacy+"]("+x.legacy+")","["+x.current+"]("+x.current+")"]))+

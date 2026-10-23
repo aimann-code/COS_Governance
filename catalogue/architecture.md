@@ -1,14 +1,14 @@
 # Architecture
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.7; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
 Complete source coverage: **1 platform, 9 suites and 47 engines** from COS v1.1.0. Detailed modules/components remain HRMS proposals. Parent_Ref resolves stable local references; these are not permanent COS IDs. Shared capability placement remains unresolved. Missing detail does not mean an engine is absent.
 
-| Object | Type | Code | Parent | Inventory | Design | Implementation |
+| Object | Type | Short Code | Parent | Inventory | Design | Implementation |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Enterprise Management](architecture/enterprise-management.md) | Suite | COS-EMS | CulinaOS Platform | Imported | Detailed design pending | Not assessed by inventory import |
 | [HRMS](architecture/hrms.md) | Engine | HRMS | Enterprise Management | Imported | Proposed HRMS design; detailed approval pending | Not assessed by inventory import |
