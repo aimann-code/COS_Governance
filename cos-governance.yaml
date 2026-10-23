@@ -1,6 +1,6 @@
 {
   "project": "COS_Governance",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "status": "Governance baseline integrated through PR4; this approval-reconciliation revision under review; individual artifact status applies",
   "recorded_on": "23-Oct-2026",
   "naming_version": "0.2.3",
@@ -28,7 +28,8 @@
     "virtual_marts": "architecture/virtual-marts.yaml",
     "source_inventory": "architecture/source-inventory.yaml",
     "workflow": "standards/workflow.yaml",
-    "approval_review": "decisions/approval-review.yaml"
+    "approval_review": "decisions/approval-review.yaml",
+    "relational_tree": "catalogue/tree.md"
   },
   "authority": {
     "current": "Existing approved source records and user instructions remain authoritative during migration",
@@ -160,6 +161,17 @@
       ],
       "approval": "User update following preview of approval-reconciliation scope.",
       "limits": "No blanket approval of proposals, new shortcodes, branch rename, relational model implementation, main merge or application changes."
+    },
+    {
+      "recorded_on": "23-Oct-2026",
+      "previous_draft_version": "0.3.7",
+      "draft_version": "0.3.8",
+      "summary": "Deliver generated relational tree from existing source references, link navigation and add coverage/link regression checks.",
+      "decision_refs": [
+        "TREE-VIEW-01"
+      ],
+      "approval": "User update in backened after tree preview, declared coverage and explicit exclusions.",
+      "limits": "No new shortcode allocation, relationship ownership inference, global relationship schema adoption, main merge or application change."
     }
   ],
   "publication_history": [

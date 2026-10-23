@@ -1,10 +1,10 @@
 # Decisions and reconciliation
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.7; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.8; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
+[Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
 Source references are temporary/history references unless an approved permanent identity exists. Recording a proposal does not approve it.
 
@@ -40,6 +40,7 @@ Source references are temporary/history references unless an approved permanent 
 | WORKFLOW-01 | Record approved Stage + Lifecycle Phase + Edit Owner + immutable published baseline; separate new drafts from active development. | Approved for stated scope; governance source integrated in main; implementation/verification separately stated | Approved | Governance definition integrated into main; not blanket design or production approval | Workflow definitions and generated guide delivered; actual owner locks, permissions and Project board not configured. | Definition checks passed; runtime ownership enforcement not implemented/tested. |
 | CHAT-SOURCE-01 | Explicit branch/commit reads and refresh before approved writes; no automatic chat synchronization. | Approved for stated scope; governance source integrated in main; implementation/verification separately stated | Approved | Governance definition integrated into main; not blanket design or production approval | Repository guidance delivered; no background synchronization installed. | Repository reference checks passed; no automated chat synchronization claimed. |
 | APPROVAL-REVIEW-01 | Reconcile approval labels against available evidence, preserve history and show pending approvals before each scoped update. | Approved for scoped reconciliation and checkpoint recording; not blanket approval of pending designs. | Approved | Current change awaits reviewed integration | Evidence-backed metadata and generated review page | Repository reference/status checks; complete historical chat audit not claimed |
+| TREE-VIEW-01 | Generate and link actual relational navigation from existing architecture/features/implementation/data/standards/naming/file sources; expose unknown mappings rather than invent ownership. | User-authorized delivery; source under review in PR5 | Approved | PR5 update; not merged into main | Generated tree and generator regression checks delivered | See current PR checks; no physical database or full code inventory inferred |
 
 ## Reconciliation
 

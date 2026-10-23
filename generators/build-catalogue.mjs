@@ -22,7 +22,8 @@ const input = {
   marts: read('architecture/virtual-marts.yaml'),
   uploads: read('templates/upload-profiles.yaml'),
   workflow: read('standards/workflow.yaml'),
-  approvalReview: read('decisions/approval-review.yaml')
+  approvalReview: read('decisions/approval-review.yaml'),
+  sourceMap: read('architecture/source-map.yaml')
 };
 const pages = buildCatalogue(input);
 pages['catalogue/generated-manifest.json'] = JSON.stringify({

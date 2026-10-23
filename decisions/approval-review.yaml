@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "Evidence-backed reconciliation and pending decisions; no blanket approval",
   "recorded_on": "23-Oct-2026",
   "canonical_decisions": "decisions/decisions.yaml",
@@ -13,7 +13,8 @@
     "NAM-REG-01",
     "GITHUB-SOURCE-01",
     "GITHUB-CONFIRM-01",
-    "APPROVAL-REVIEW-01"
+    "APPROVAL-REVIEW-01",
+    "TREE-VIEW-01"
   ],
   "publication_evidence": {
     "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
@@ -45,16 +46,16 @@
     {
       "ref": "relational-catalogue",
       "topic": "Relational catalogue and tree",
-      "state": "User-requested direction; detailed specification pending",
+      "state": "Read-only tree delivered; detailed relationship specification pending",
       "scope": "Link architecture/features/files/schemas/tables/fields/skills/standards/naming with single canonical definitions.",
-      "next": "Show item/relationship schema, ownership and migration mappings before adoption."
+      "next": "Review stable item/relationship schema and ownership/migration mappings; generated tree already exposes existing references."
     },
     {
       "ref": "relation-validation",
       "topic": "Relation types, shared links and validation",
       "state": "Detailed design pending",
       "scope": "parent_of, owns, implements, uses, governed_by, stored_in, references, verified_by and derived_from are proposed.",
-      "next": "Review exact semantics and validation rules; then implement tree/diagrams and generated derivatives."
+      "next": "Existing tree coverage/link checks delivered; review exact relationship semantics and add further mappings/diagrams after approval."
     },
     {
       "ref": "project-boundary",
@@ -86,12 +87,13 @@
     }
   ],
   "completed_display_corrections": [
-    "Architecture/naming generated display columns use Short Code; stored property names and assigned shortcodes unchanged."
+    "Architecture/naming generated display columns use Short Code; stored property names and assigned shortcodes unchanged.",
+    "Relational tree generated from current canonical references, with catalogue and source navigation; does not allocate missing relationships."
   ],
   "limits": [
     "Review uses available conversation and repository evidence, not a complete provider chat export.",
     "No historical source snapshots rewritten.",
-    "No new shortcode allocation, branch renaming, app/schema changes, relational catalogue implementation, main merge or permission changes by this increment."
+    "No new shortcode allocation, branch renaming, app/schema changes, adoption of a new relationship schema, main merge or permission changes by this increment."
   ],
   "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
 }

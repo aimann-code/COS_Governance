@@ -1273,6 +1273,22 @@
       "verification": "Repository reference/status checks; complete historical chat audit not claimed",
       "recorded_on": "23-Oct-2026",
       "source": "discussions/approval-reconciliation-23-Oct-2026.md"
+    },
+    {
+      "ref": "TREE-VIEW-01",
+      "decision": "Generate and link actual relational navigation from existing architecture/features/implementation/data/standards/naming/file sources; expose unknown mappings rather than invent ownership.",
+      "status": "User-authorized delivery; source under review in PR5",
+      "approval": "Approved",
+      "approval_scope": "Prepared tree and generator/navigation integration only; missing ownership and new shortcode allocations remain excluded.",
+      "approval_evidence": [
+        "User still tree is not made; then update in backened after concrete preview.",
+        "discussions/relational-tree-23-Oct-2026.md"
+      ],
+      "publication": "PR5 update; not merged into main",
+      "implementation": "Generated tree and generator regression checks delivered",
+      "verification": "See current PR checks; no physical database or full code inventory inferred",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/relational-tree-23-Oct-2026.md"
     }
   ],
   "pending": [

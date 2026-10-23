@@ -30,3 +30,5 @@ Append corrections and superseding decisions; preserve historical wording. Do no
 - [Architecture coverage, readable paths and workflow/handover](architecture-workflow-update-23-Oct-2026.md) — scoped approval summary; not complete transcript.
 
 - [Approval reconciliation and mandatory pending-approval checkpoint](approval-reconciliation-23-Oct-2026.md) — scoped source correction; historical ambiguities retained.
+
+- [Relational tree delivery](relational-tree-23-Oct-2026.md) — concrete preview and scoped update authorization.

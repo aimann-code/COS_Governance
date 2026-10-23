@@ -1,4 +1,5 @@
 // Pure renderer. Definitions remain authoritative; pages are generated views.
+import { buildRelationalTree } from './tree.mjs';
 export function buildCatalogue(src) {
   const out = {};
   const m=src.manifest,a=src.architecture.architecture,f=src.features.features,n=src.naming,s=src.standards,b=src.baseline,d=src.decisions,t=src.design,o=src.ownership.mappings;
@@ -14,7 +15,7 @@ export function buildCatalogue(src) {
       if(current!==legacy&&(kind!=="arch"||r.Draft_Ref.startsWith("ARCH-DRAFT-")))compatibility.push({legacy,current,title:r.Display_Name||r.name||r.Standard_Name});
     }
   }
-  const header=(title,depth=0)=>"# "+title+"\n\n> Generated from maintained definitions. Do not edit this page directly.\n> Governance "+m.version+"; naming "+n.version+"; application evidence "+m.application.ref+".\n> Draft catalogue. Approval, implementation, verification and publication are separate.\n\n"+(depth?"[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)\n\n":"[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)\n\n");
+  const header=(title,depth=0)=>"# "+title+"\n\n> Generated from maintained definitions. Do not edit this page directly.\n> Governance "+m.version+"; naming "+n.version+"; application evidence "+m.application.ref+".\n> Draft catalogue. Approval, implementation, verification and publication are separate.\n\n"+(depth?"[COS Catalogue](../README.md) · [Relational tree](../tree.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)\n\n":"[Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)\n\n");
   const named=new Map(a.map(r=>[r.Display_Name,r]));
   const referenced=new Map(a.map(r=>[r.Draft_Ref,r]));
   const ownerText=r=>r.owner||"Unresolved";
@@ -310,6 +311,8 @@ export function buildCatalogue(src) {
     if(Object.hasOwn(out,key))throw new Error("Compatibility path collides with canonical path: "+key);
     out[key]="# "+x.title+" — moved\n\n> Generated compatibility pointer. Do not edit.\n\n[Open the current "+x.title+" page]("+x.current.split("/").at(-1)+").\n\n[Complete path map](../path-map.md).\n";
   }
+  Object.assign(out, buildRelationalTree(src));
+  out['catalogue/README.md']+='\n## Relational navigation\n\n[Open the COS relational tree](tree.md) — architecture, features, implementation evidence, schemas/tables/fields, standards, naming, maintained files and skills policy. Missing mappings remain explicit.\n';
   return out;
 }
 
