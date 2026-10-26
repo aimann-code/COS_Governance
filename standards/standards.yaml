@@ -164,9 +164,9 @@
       "Draft_Ref": "STD-DRAFT-13",
       "Standard_Name": "AI / Analytics Standard",
       "Purpose": "AI Chat/output, analytical definitions and evaluation",
-      "Version": "0.1.0",
+      "Version": "0.1.1",
       "Catalogue_Direction": "Selected by user",
-      "Rule_Completion": "Partial / requires rule review",
+      "Rule_Completion": "Creation-confirmation rule approved; earlier AI/output rules retain their individual statuses and pending reviews",
       "Owner": "",
       "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
       "File_Slug": "ai-analytics"
@@ -2295,12 +2295,25 @@
       "Review Ref": "GITHUB-CONFIRM-01",
       "Scope": "COS",
       "Standard Name": "AI / Analytics Standard",
-      "Rule": "Before any future GitHub update, show the proposed content and summary and ask: Update Git Hub - Yes/No. Perform the specified update only after an affirmative user instruction. Authorization covers the necessary commits, generated catalogue refresh and verification for that described update; it does not authorize unrelated edits, merging or publication. Read-only GitHub checks need no update approval.",
+      "Rule": "Before each GitHub update, reconcile available approval evidence and show: (1) approved changes included, (2) pending approvals and ambiguous decisions, (3) excluded items, and (4) proposed content/change summary. Ask Any pending approvals to resolve before this update? and then Update Git Hub - Yes/No? Wait for an affirmative instruction for the stated scope; do not repeatedly request the same approval once given. Resolve blocking ambiguity or explicitly agree its exclusion before dependent changes. Update approval labels only with traceable evidence; preserve history and keep approval, publication, implementation and verification separate. Authorization covers necessary commits, generated views and checks for that scope, not unrelated edits, merging, deployment or access changes. Read-only checks need no update approval.",
       "Decision Ref": "GITHUB-CONFIRM-01",
-      "Version": "0.1.0",
-      "Approval Status": "Approved by user; not published",
-      "Implementation_Status": "Governance definition recorded; application changes not performed",
-      "Source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026"
+      "Version": "0.1.1",
+      "Approval Status": "Approved user instruction; scoped policy amendment",
+      "Implementation_Status": "Repository instruction and generated approval review delivered; no automatic enforcement claimed",
+      "Source": "discussions/approval-reconciliation-23-Oct-2026.md",
+      "History": [
+        {
+          "version": "0.1.0",
+          "rule": "Before any future GitHub update, show the proposed content and summary and ask: Update Git Hub - Yes/No. Perform the specified update only after an affirmative user instruction. Authorization covers the necessary commits, generated catalogue refresh and verification for that described update; it does not authorize unrelated edits, merging or publication. Read-only GitHub checks need no update approval.",
+          "approval": "Approved by user; not published",
+          "source": "Visible chat decisions; user approved GitHub recording: update git hub; recorded 23-Oct-2026",
+          "recorded_on": "23-Oct-2026"
+        }
+      ],
+      "Approval_Scope": "Pre-update pending approval checkpoint and evidence-based status reconciliation.",
+      "Approval_Evidence": "User: always asked any pending approval before updating; then update.",
+      "Publication_Status": "This amendment awaits reviewed integration; previous version was in main",
+      "Verification_Status": "Definition/generator checks; human approval semantics remain evidence-based"
     },
     {
       "Review Ref": "VIRTUAL-MART-01",
@@ -2415,9 +2428,21 @@
       "Rule": "Account for all 9 suites and 47 engines from architecture/source-inventory.yaml using architecture/objects.yaml. Resolve parents with stable local references, preserve aliases and source evidence. Distinguish inventory coverage, design readiness and verified implementation. No omission from partial imported scope proves absence from COS; do not invent detailed modules/components.",
       "Decision Ref": "ARCH-INVENTORY-01",
       "Version": "0.1.0",
-      "Approval Status": "User-authorized recording; publication requires reviewed integration",
-      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
-      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "Approval Status": "Approved for stated governance scope",
+      "Implementation_Status": "Source inventory, parent references and generated navigation delivered.",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "Status_History": [
+        {
+          "previous_approval": "User-authorized recording; publication requires reviewed integration",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "Approval_Scope": "Import the original source suite/engine inventory and preserve HRMS proposals; not approval of unprovided detailed designs.",
+      "Approval_Evidence": "discussions/approval-reconciliation-23-Oct-2026.md",
+      "Publication_Status": "Integrated into main through PR4 for stated scope",
+      "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
+      "Verification_Status": "Source coverage, parent/alias regression checks and GitHub CI passed for PR4."
     },
     {
       "Review Ref": "NAM-DOC-01",
@@ -2426,9 +2451,21 @@
       "Rule": "Apply the documentation profile in standards/naming.yaml: descriptive stable kebab-case paths, in-content version/status/IDs, framework filename exceptions and generated compatibility path mappings. No unrelated code/API/DB renames.",
       "Decision Ref": "NAM-DOC-01",
       "Version": "0.1.0",
-      "Approval Status": "User-authorized recording; publication requires reviewed integration",
-      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
-      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "Approval Status": "Approved for stated governance scope",
+      "Implementation_Status": "Documentation paths and pointer pages generated.",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "Status_History": [
+        {
+          "previous_approval": "User-authorized recording; publication requires reviewed integration",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "Approval_Scope": "Descriptive repository documentation filenames and compatibility pointers only; no application naming migration.",
+      "Approval_Evidence": "discussions/approval-reconciliation-23-Oct-2026.md",
+      "Publication_Status": "Integrated into main through PR4 for stated scope",
+      "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
+      "Verification_Status": "Generated-page reproducibility and link checks passed for PR4."
     },
     {
       "Review Ref": "WORKFLOW-01",
@@ -2437,9 +2474,21 @@
       "Rule": "Apply standards/workflow.yaml. Stage is Draft/Review/Published; lifecycle is Requirements, Design & Architecture, Development, Testing, Deployment, Operations. Track edit owner and immutable published baseline. Developers cannot consume a current Draft; active developer baselines change only through approved change requests. Technical enforcement and board configuration remain pending.",
       "Decision Ref": "WORKFLOW-01",
       "Version": "0.1.0",
-      "Approval Status": "User-authorized recording; publication requires reviewed integration",
-      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
-      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "Approval Status": "Approved for stated governance scope",
+      "Implementation_Status": "Workflow definitions and generated guide delivered; actual owner locks, permissions and Project board not configured.",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "Status_History": [
+        {
+          "previous_approval": "User-authorized recording; publication requires reviewed integration",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "Approval_Scope": "Draft/Review/Published stages, six lifecycle phases, edit ownership and published baseline handover model.",
+      "Approval_Evidence": "discussions/approval-reconciliation-23-Oct-2026.md",
+      "Publication_Status": "Integrated into main through PR4 for stated scope",
+      "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
+      "Verification_Status": "Definition checks passed; runtime ownership enforcement not implemented/tested."
     },
     {
       "Review Ref": "CHAT-SOURCE-01",
@@ -2448,9 +2497,36 @@
       "Rule": "Apply standards/workflow.yaml branch read/write protocol: explicitly resolve repository/branch/commit; read source inventory and relevant definitions; refresh before writing, reconcile concurrent work and confirm each described update. Main is the integrated entry point, but artifact readiness and exact approved baselines control development. No automatic chat sync or implicit merge.",
       "Decision Ref": "CHAT-SOURCE-01",
       "Version": "0.1.0",
-      "Approval Status": "User-authorized recording; publication requires reviewed integration",
-      "Implementation_Status": "Definitions and generator checks delivered; permissions/Project automation not configured",
-      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "Approval Status": "Approved for stated governance scope",
+      "Implementation_Status": "Repository guidance delivered; no background synchronization installed.",
+      "Source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "Status_History": [
+        {
+          "previous_approval": "User-authorized recording; publication requires reviewed integration",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "Approval_Scope": "Explicit branch/commit selection, refresh-before-write and no automatic chat sync.",
+      "Approval_Evidence": "discussions/approval-reconciliation-23-Oct-2026.md",
+      "Publication_Status": "Integrated into main through PR4 for stated scope",
+      "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
+      "Verification_Status": "Repository reference checks passed; no automated chat synchronization claimed."
+    },
+    {
+      "Review Ref": "AI-CREATE-CONFIRM-01",
+      "Scope": "COS AI execution",
+      "Standard Name": "AI / Analytics Standard",
+      "Rule": "Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.",
+      "Decision Ref": "AI-CREATE-CONFIRM-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved explicit user instruction",
+      "Approval_Scope": "Confirmation before creating any stored artifact or external resource; exact scoped authorization persists.",
+      "Approval_Evidence": "User before creating anything always confirm; then set it as ai standard update github.",
+      "Publication_Status": "This rule is in the review branch; main integration pending",
+      "Implementation_Status": "Repository instruction and generated standard recorded; no automatic lock or runtime permission enforcement installed",
+      "Verification_Status": "Source/reference and catalogue checks only",
+      "Source": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "rule_details": [
@@ -7866,20 +7942,20 @@
       "Rule_Ref": "GITHUB-CONFIRM-01",
       "Standard_Name": "AI / Analytics Standard",
       "Rule_Source_Tab": "Repository maintained definition",
-      "Version": "0.1.0",
+      "Version": "0.1.1",
       "Applicability": "Only the scope explicitly stated in the rule",
       "Mapping_Status": "Approved decision supplement",
-      "Rule_Approval": "Approved by user; not published",
+      "Rule_Approval": "Approved scoped pre-update checkpoint; current amendment awaits integration",
       "Source": "GITHUB-CONFIRM-01"
     },
     {
       "Rule_Ref": "GITHUB-CONFIRM-01",
       "Standard_Name": "Development Standard",
       "Rule_Source_Tab": "Repository maintained definition",
-      "Version": "0.1.0",
+      "Version": "0.1.1",
       "Applicability": "Only the scope explicitly stated in the rule",
       "Mapping_Status": "Approved decision supplement",
-      "Rule_Approval": "Approved by user; not published",
+      "Rule_Approval": "Approved scoped pre-update checkpoint; current amendment awaits integration",
       "Source": "GITHUB-CONFIRM-01"
     },
     {
@@ -7989,7 +8065,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "ARCH-INVENTORY-01"
     },
     {
@@ -7999,7 +8075,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "ARCH-INVENTORY-01"
     },
     {
@@ -8009,7 +8085,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "NAM-DOC-01"
     },
     {
@@ -8019,7 +8095,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "NAM-DOC-01"
     },
     {
@@ -8029,7 +8105,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "WORKFLOW-01"
     },
     {
@@ -8039,7 +8115,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "WORKFLOW-01"
     },
     {
@@ -8049,7 +8125,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "WORKFLOW-01"
     },
     {
@@ -8059,7 +8135,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "WORKFLOW-01"
     },
     {
@@ -8069,7 +8145,7 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "CHAT-SOURCE-01"
     },
     {
@@ -8079,8 +8155,48 @@
       "Version": "0.1.0",
       "Applicability": "Scope explicitly stated in rule and linked canonical definition",
       "Mapping_Status": "User-authorized scoped supplement",
-      "Rule_Approval": "User-authorized recording; publication separate",
+      "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "CHAT-SOURCE-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "AI / Analytics Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Tool Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Workspace Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
     }
   ],
   "versions": [
@@ -8407,12 +8523,31 @@
     {
       "Standard_Ref": "STD-DRAFT-1",
       "Version": "0.2.3",
-      "Approval_Status": "User-authorized documentation filename supplement",
-      "Publication_Status": "Not published by this update",
+      "Approval_Status": "Approved scoped documentation filename supplement",
+      "Publication_Status": "Definition integrated into main through PR4; live adoption separate",
       "Effective_From": "",
       "Effective_To": "",
       "Supersedes": "0.2.2 documentation filename scope only",
-      "Evidence": "NAM-DOC-01; discussions/architecture-workflow-update-23-Oct-2026.md"
+      "Evidence": "NAM-DOC-01; discussions/architecture-workflow-update-23-Oct-2026.md",
+      "Status_History": [
+        {
+          "previous_approval": "User-authorized documentation filename supplement",
+          "previous_publication": "Not published by this update",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+    },
+    {
+      "Standard_Ref": "STD-DRAFT-13",
+      "Version": "0.1.1",
+      "Approval_Status": "AI-CREATE-CONFIRM-01 approved only; no blanket approval of other AI rules",
+      "Publication_Status": "Pending reviewed integration",
+      "Effective_From": "",
+      "Effective_To": "",
+      "Supersedes": "0.1.0 within added confirmation policy only",
+      "Evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "applicability": [

@@ -1,10 +1,10 @@
 # Suite & Engine Standard
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
+[COS Catalogue](../README.md) · [Relational tree](../tree.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
 
 | Property | Value |
 | --- | --- |
@@ -16,9 +16,9 @@
 
 ## Rules
 
-| Reference | Rule | Version | Recorded approval | Mapping state |
-| --- | --- | --- | --- | --- |
-| ARCH-INVENTORY-01 | Account for all 9 suites and 47 engines from architecture/source-inventory.yaml using architecture/objects.yaml. Resolve parents with stable local references, preserve aliases and source evidence. Distinguish inventory coverage, design readiness and verified implementation. No omission from partial imported scope proves absence from COS; do not invent detailed modules/components. | 0.1.0 | User-authorized recording; publication requires reviewed integration | User-authorized scoped supplement; User-authorized recording; publication separate |
+| Reference | Rule | Version | Approval | Publication | Implementation | Verification | Mapping state |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ARCH-INVENTORY-01 | Account for all 9 suites and 47 engines from architecture/source-inventory.yaml using architecture/objects.yaml. Resolve parents with stable local references, preserve aliases and source evidence. Distinguish inventory coverage, design readiness and verified implementation. No omission from partial imported scope proves absence from COS; do not invent detailed modules/components. | 0.1.0 | Approved for stated governance scope | Integrated into main through PR4 for stated scope | Source inventory, parent references and generated navigation delivered. | Source coverage, parent/alias regression checks and GitHub CI passed for PR4. | User-authorized scoped supplement; Approved for stated governance scope; see separate publication/implementation evidence |
 
 ## Applicability and exceptions
 

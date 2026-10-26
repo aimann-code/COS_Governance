@@ -1,0 +1,101 @@
+{
+  "version": "0.1.2",
+  "status": "Evidence-backed reconciliation and pending decisions; no blanket approval",
+  "recorded_on": "23-Oct-2026",
+  "canonical_decisions": "decisions/decisions.yaml",
+  "canonical_policy": "GITHUB-CONFIRM-01 in standards/standards.yaml",
+  "reconciled_refs": [
+    "ARCH-INVENTORY-01",
+    "NAM-DOC-01",
+    "WORKFLOW-01",
+    "CHAT-SOURCE-01",
+    "NAM-LOWER-01",
+    "NAM-REG-01",
+    "GITHUB-SOURCE-01",
+    "GITHUB-CONFIRM-01",
+    "APPROVAL-REVIEW-01",
+    "TREE-VIEW-01",
+    "AI-CREATE-CONFIRM-01"
+  ],
+  "publication_evidence": {
+    "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+    "merge_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
+    "scope": "Proof that PR4 entered main; does not approve every contained Draft artifact."
+  },
+  "pending": [
+    {
+      "ref": "shortcode-allocation",
+      "topic": "Missing architecture shortcodes",
+      "state": "Allocation review pending",
+      "scope": "Prepare candidates for 46 engines, 4 modules and 27 components. All 9 suites already have source shortcodes.",
+      "next": "Show allocation table and obtain explicit approval before assigning new values."
+    },
+    {
+      "ref": "shortcode-profile",
+      "topic": "Shortcode convention and type prefixes",
+      "state": "Proposed standard; decision pending",
+      "scope": "Casing/separators, uniqueness and recommendation to omit SUIT_/ENG_/MOD_/COMP_.",
+      "next": "Approve exact naming profile; do not freeze from a question alone."
+    },
+    {
+      "ref": "branch-prefix",
+      "topic": "features/<topic> branch prefix",
+      "state": "Proposed amendment; decision pending",
+      "scope": "Previous published policy uses feature/<topic>; feat is a compatibility abbreviation.",
+      "next": "Confirm plural features/ and compatibility; do not rename existing branches silently."
+    },
+    {
+      "ref": "relational-catalogue",
+      "topic": "Relational catalogue and tree",
+      "state": "Read-only tree delivered; detailed relationship specification pending",
+      "scope": "Link architecture/features/files/schemas/tables/fields/skills/standards/naming with single canonical definitions.",
+      "next": "Review stable item/relationship schema and ownership/migration mappings; generated tree already exposes existing references."
+    },
+    {
+      "ref": "relation-validation",
+      "topic": "Relation types, shared links and validation",
+      "state": "Detailed design pending",
+      "scope": "parent_of, owns, implements, uses, governed_by, stored_in, references, verified_by and derived_from are proposed.",
+      "next": "Existing tree coverage/link checks delivered; review exact relationship semantics and add further mappings/diagrams after approval."
+    },
+    {
+      "ref": "project-boundary",
+      "topic": "Project boundary and project name",
+      "state": "Separate approval pending",
+      "scope": "Earlier project-standard update was not committed.",
+      "next": "Re-present concrete project naming/boundary proposal."
+    },
+    {
+      "ref": "release-taxonomy",
+      "topic": "Alpha/Beta/Gamma/Production",
+      "state": "Separate confirmation pending",
+      "scope": "Excluded from PR4; Gamma definition was not separately confirmed.",
+      "next": "Confirm release taxonomy independently of lifecycle and approval stage."
+    },
+    {
+      "ref": "technical-enforcement",
+      "topic": "GitHub Project board and editing enforcement",
+      "state": "Implementation pending; configuration scope not authorized",
+      "scope": "Published ownership model is approved; board fields, permission rules and technical locks are not installed.",
+      "next": "Propose concrete configuration and permission impact."
+    },
+    {
+      "ref": "historical-approvals",
+      "topic": "Other historical pending labels",
+      "state": "Evidence review incomplete",
+      "scope": "Some source rules are historical proposals; complete provider transcript is not available.",
+      "next": "Resolve ambiguous approval per artifact using exact source evidence. Do not bulk approve every Pending row."
+    }
+  ],
+  "completed_display_corrections": [
+    "Architecture/naming generated display columns use Short Code; stored property names and assigned shortcodes unchanged.",
+    "Relational tree generated from current canonical references, with catalogue and source navigation; does not allocate missing relationships.",
+    "AI creation-confirmation requirement recorded after explicit user instruction; no new resource or branch created for this update."
+  ],
+  "limits": [
+    "Review uses available conversation and repository evidence, not a complete provider chat export.",
+    "No historical source snapshots rewritten.",
+    "No new shortcode allocation, branch renaming, app/schema changes, adoption of a new relationship schema, main merge or permission changes by this increment."
+  ],
+  "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+}

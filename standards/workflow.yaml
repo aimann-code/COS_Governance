@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "status": "Approved stage/lifecycle direction; implementation of enforcement and Project board pending",
   "source_ref": "WORKFLOW-01",
   "recorded_on": "23-Oct-2026",
@@ -138,7 +138,7 @@
   ],
   "branch_policy": {
     "published_reference": "main after reviewed integration; consumers also check artifact Published status and exact approved baseline commit",
-    "draft_reference": "Explicit topic branch for proposals; this authorized update uses existing draft/governance-migration",
+    "draft_reference": "Explicit topic branch for proposals; record the actual branch and commit for every update",
     "patterns": [
       [
         "chat/<topic>",
@@ -163,7 +163,7 @@
       "Refresh head before each write and reconcile changes; update refs using expected SHA.",
       "Report commit, branch, changed paths and actual checks after each approved write."
     ],
-    "write_protocol": "Show content and summary; ask Update Git Hub - Yes/No; wait for the described affirmative scope. No implicit merge, deployment, publication or access change.",
+    "write_protocol": "Before each GitHub update, reconcile available approval evidence and show: (1) approved changes included, (2) pending approvals and ambiguous decisions, (3) excluded items, and (4) proposed content/change summary. Ask Any pending approvals to resolve before this update? and then Update Git Hub - Yes/No? Wait for an affirmative instruction for the stated scope; do not repeatedly request the same approval once given. Resolve blocking ambiguity or explicitly agree its exclusion before dependent changes. Update approval labels only with traceable evidence; preserve history and keep approval, publication, implementation and verification separate. Authorization covers necessary commits, generated views and checks for that scope, not unrelated edits, merging, deployment or access changes. Read-only checks need no update approval.",
     "handover_protocol": "After approved baseline publication, link its immutable commit and paths to the developer work item. Other chats must reread GitHub; open chats do not receive automatic updates."
   },
   "pending": [
@@ -172,5 +172,40 @@
     "Alpha/Beta/Gamma/Production release taxonomy excluded from this update pending separate confirmation.",
     "Project-boundary/name standard remains separately pending."
   ],
-  "evidence": "discussions/architecture-workflow-update-23-Oct-2026.md"
+  "evidence": "discussions/architecture-workflow-update-23-Oct-2026.md",
+  "pre_update_checkpoint": {
+    "required_content": [
+      "Approved changes included",
+      "Pending approvals and ambiguous decisions",
+      "Excluded items",
+      "Proposed content/change summary"
+    ],
+    "questions": [
+      "Any pending approvals to resolve before this update?",
+      "Update Git Hub - Yes/No?"
+    ],
+    "evidence_rule": "Preserve original approval evidence; do not infer all-design approval from record/update/merge authorization.",
+    "separate_statuses": [
+      "approval",
+      "publication",
+      "implementation",
+      "verification"
+    ],
+    "repeat_rule": "Existing affirmative authorization remains valid for its stated scope; do not ask the same permission again.",
+    "review_source": "decisions/approval-review.yaml"
+  },
+  "ai_creation_gate": {
+    "rule_ref": "AI-CREATE-CONFIRM-01",
+    "rule": "Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.",
+    "preview_fields": [
+      "Proposed content or concrete scope",
+      "Name",
+      "Location",
+      "Purpose",
+      "Pending approvals",
+      "Exclusions"
+    ],
+    "scope": "AI actions creating stored artifacts/resources, not a change to human application forms",
+    "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+  }
 }

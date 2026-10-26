@@ -1,6 +1,6 @@
 # COS_Governance
 
-Private COS governance migration draft 0.3.6, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+Private COS governance migration draft 0.3.9, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
 ## Browse without reading YAML
 - [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
@@ -78,3 +78,13 @@ Read [cos-governance.yaml](cos-governance.yaml), [contributor guidance](AGENTS.m
 - [Documentation path compatibility map](catalogue/path-map.md)
 
 No automatic chat synchronization or technical editor lock is configured.
+
+## Approval review before changes
+
+[Approval evidence and pending decisions](catalogue/approval-review.md). Before each update, show approved scope, pending approvals, exclusions and content summary. Ask about pending approvals, then request the scoped GitHub update. Approval, publication, implementation and verification are separate. PR4 integration does not automatically approve every Draft design.
+
+## Relational tree
+
+[Browse the COS relational tree](catalogue/tree.md). Expand architecture, features, schema/table/field, standards, naming, maintained files and skills policy. It links existing canonical records and shows missing mappings explicitly.
+
+AI creation requires a preview of content/scope, name, location and purpose, disclosure of pending approvals/exclusions, and explicit confirmation. See [AI / Analytics Standard](catalogue/standards/ai-analytics.md) and [approval review](catalogue/approval-review.md).

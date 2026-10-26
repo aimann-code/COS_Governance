@@ -91,6 +91,25 @@ def main():
     require(workflow['stages'] == ['Draft', 'Review', 'Published'], 'Unapproved stage change')
     require(workflow['phases'] == ['Requirements', 'Design & Architecture', 'Development', 'Testing', 'Deployment', 'Operations'], 'Unapproved lifecycle change')
     require(workflow['branch_policy']['no_automatic_sync'] is True, 'Do not claim automatic chat synchronization')
+    checkpoint = workflow['pre_update_checkpoint']
+    require(checkpoint['questions'] == ['Any pending approvals to resolve before this update?', 'Update Git Hub - Yes/No?'], 'Missing pending-approval checkpoint')
+    require(set(checkpoint['separate_statuses']) == {'approval', 'publication', 'implementation', 'verification'}, 'Approval state must remain separate')
+    creation_gate = workflow['ai_creation_gate']
+    creation_rule = next(r for r in standards['rules'] if r['Review Ref'] == creation_gate['rule_ref'])
+    require(creation_rule['Rule'] == creation_gate['rule'] and creation_rule['Approval_Evidence'], 'Creation-confirmation policy/evidence mismatch')
+    require(set(creation_gate['preview_fields']) == {'Proposed content or concrete scope', 'Name', 'Location', 'Purpose', 'Pending approvals', 'Exclusions'}, 'Incomplete creation preview')
+    approval_review = read('decisions/approval-review.yaml')
+    current_decisions = {r['ref']: r for r in read('decisions/decisions.yaml')['discussion_directions']}
+    require(len(approval_review['reconciled_refs']) == len(set(approval_review['reconciled_refs'])), 'Duplicate approval review reference')
+    for ref in approval_review['reconciled_refs']:
+        require(ref in current_decisions, 'Approval review points to unknown decision')
+        row = current_decisions[ref]
+        require(row['approval'] == 'Approved' and row['approval_scope'] and row['approval_evidence'], 'Approval requires scope and evidence')
+        require(all(row.get(key) for key in ['publication', 'implementation', 'verification']), 'Missing separate decision status')
+    require(len({r['ref'] for r in approval_review['pending']}) == len(approval_review['pending']), 'Duplicate pending approval')
+    for ref in ['ARCH-INVENTORY-01', 'NAM-DOC-01', 'WORKFLOW-01', 'CHAT-SOURCE-01']:
+        require(current_decisions[ref]['publication_evidence']['baseline_commit'] == 'bd87cd2f41cf3ec5ad1b78aca0081d25937e46df', 'Lost PR4 merge evidence')
+        require(current_decisions[ref]['status_history'], 'Approval correction must preserve history')
     print('PASS: source platform, 9 suites, 47 engines, aliases, stable parents, readable slugs and workflow definition.')
     nodes = architecture["architecture"]
     by_name = {r["Display_Name"]: r for r in nodes}
@@ -190,6 +209,9 @@ def main():
         for path in group["files"]:
             require((ROOT / path).is_file(), "Missing maintained source " + path)
     baseline = read("standards/baseline.yaml")
+    require(baseline['frozen_naming']['decision'] == naming['decision_ref'], 'Naming baseline points to stale amendment')
+    require(naming['publication_evidence']['baseline_commit'] == 'bd87cd2f41cf3ec5ad1b78aca0081d25937e46df', 'Missing naming publication evidence')
+    require('not published' not in naming['status'] and all('not published' not in r['status'] for r in naming['rules']), 'Stale current naming publication label')
     require(len(baseline["catalogue"]) == 23, "Lost standard during consolidation")
     require({r["standard_ref"] for r in baseline["catalogue"]} ==
             {r["Draft_Ref"] for r in standards["definitions"]},

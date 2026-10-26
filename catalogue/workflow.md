@@ -1,10 +1,10 @@
 # Stages, lifecycle and developer handover
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
+[Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
 Approved stage/lifecycle direction; implementation of enforcement and Project board pending
 
@@ -83,7 +83,7 @@ feat means feature; existing draft/* or feat/* branches are not automatically re
 5. Refresh head before each write and reconcile changes; update refs using expected SHA.
 6. Report commit, branch, changed paths and actual checks after each approved write.
 
-Show content and summary; ask Update Git Hub - Yes/No; wait for the described affirmative scope. No implicit merge, deployment, publication or access change.
+Before each GitHub update, reconcile available approval evidence and show: (1) approved changes included, (2) pending approvals and ambiguous decisions, (3) excluded items, and (4) proposed content/change summary. Ask Any pending approvals to resolve before this update? and then Update Git Hub - Yes/No? Wait for an affirmative instruction for the stated scope; do not repeatedly request the same approval once given. Resolve blocking ambiguity or explicitly agree its exclusion before dependent changes. Update approval labels only with traceable evidence; preserve history and keep approval, publication, implementation and verification separate. Authorization covers necessary commits, generated views and checks for that scope, not unrelated edits, merging, deployment or access changes. Read-only checks need no update approval.
 
 After approved baseline publication, link its immutable commit and paths to the developer work item. Other chats must reread GitHub; open chats do not receive automatic updates.
 
@@ -95,3 +95,32 @@ After approved baseline publication, link its immutable commit and paths to the 
 - Project-boundary/name standard remains separately pending.
 
 [Canonical workflow definition](../standards/workflow.yaml) · [Approval evidence](../discussions/architecture-workflow-update-23-Oct-2026.md)
+
+## Mandatory pre-update approval checkpoint
+
+1. Approved changes included
+2. Pending approvals and ambiguous decisions
+3. Excluded items
+4. Proposed content/change summary
+
+- **Any pending approvals to resolve before this update?**
+- **Update Git Hub - Yes/No?**
+
+Preserve original approval evidence; do not infer all-design approval from record/update/merge authorization. Existing affirmative authorization remains valid for its stated scope; do not ask the same permission again.
+
+[Current approval review](approval-review.md)
+
+## Confirmation before creating anything
+
+Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.
+
+| Preview field |
+| --- |
+| Proposed content or concrete scope |
+| Name |
+| Location |
+| Purpose |
+| Pending approvals |
+| Exclusions |
+
+Canonical rule: AI-CREATE-CONFIRM-01 in [AI / Analytics Standard](standards/ai-analytics.md).

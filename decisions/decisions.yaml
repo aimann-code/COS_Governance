@@ -972,11 +972,27 @@
     {
       "ref": "GITHUB-CONFIRM-01",
       "decision": "Approved scoped standard: AI / Analytics Standard; canonical rule GITHUB-CONFIRM-01 in standards/standards.yaml.",
-      "status": "approved by user; governance recorded; not globally published",
+      "status": "Approved pre-update checkpoint; amended source pending integration",
       "recorded_on": "23-Oct-2026",
       "source": "Visible chat; user: update git hub",
       "canonical_rule": "standards/standards.yaml#GITHUB-CONFIRM-01",
-      "implementation": "No application route or historic filename changed"
+      "implementation": "Instruction and review catalogue recorded; no automatic enforcement.",
+      "status_history": [
+        {
+          "previous_status": "approved by user; governance recorded; not globally published",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Approval reconciliation and pending-approval checkpoint before every scoped GitHub update.",
+      "approval_evidence": [
+        "User: always asked any pending approval before updating",
+        "User: update",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Version 0.1.1 amendment under review; previous policy already integrated",
+      "verification": "Repository validation; no claim that future human decisions are automated."
     },
     {
       "ref": "HRMS-MAP-01",
@@ -991,11 +1007,32 @@
     {
       "ref": "NAM-LOWER-01",
       "decision": "Explicitly change SYS_EMP_ID to sys_emp_id and EMP_Reg to emp_reg; other naming rules/terms retained.",
-      "status": "User-selected and authorized for governance recording; implementation migration pending",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
       "source": "User make it lower case; latest update git hub",
       "canonical_source": "standards/naming.yaml",
-      "historical_source": "migration/naming-v0.2.0.json"
+      "historical_source": "migration/naming-v0.2.0.json",
+      "status_history": [
+        {
+          "previous_status": "User-selected and authorized for governance recording; implementation migration pending",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Use sys_emp_id and emp_reg as current governed names; preserve compatibility with old contracts.",
+      "approval_evidence": [
+        "User make it lower case; latest update git hub",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Governance spelling updated; physical application/API/database migration remains pending.",
+      "verification": "Governance naming checks passed; live-contract migration not verified."
     },
     {
       "ref": "COMMON-REQ-01",
@@ -1017,10 +1054,31 @@
     {
       "ref": "NAM-REG-01",
       "decision": "Record source term, scoped emp_reg/vnd_reg/agg_reg/source_reg component pattern and vw_<domain>_<purpose> view pattern.",
-      "status": "User-authorized scoped naming/design additions; implementation pending",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
       "canonical_source": "standards/naming.yaml",
-      "source": "User update github in backend following displayed naming proposal"
+      "source": "User update github in backend following displayed naming proposal",
+      "status_history": [
+        {
+          "previous_status": "User-authorized scoped naming/design additions; implementation pending",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Controlled source term, scoped registration component naming and proposed virtual-view naming profile.",
+      "approval_evidence": [
+        "User update github in backend following displayed naming proposal",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Naming profile recorded; actual domain implementations and physical views remain incomplete.",
+      "verification": "Controlled-term/profile consistency checked; runtime adoption not inferred."
     },
     {
       "ref": "DEV-GUIDE-01",
@@ -1046,10 +1104,31 @@
     {
       "ref": "GITHUB-SOURCE-01",
       "decision": "GitHub is the maintained location for governance/design/code/skills, with shared and owning-application skill locations; retain private data separation and explicit installation status.",
-      "status": "User selected and authorized recording; no skill installed or backup job enabled",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
       "source": "User we will kep everything on github now..so skill also; latest Yes",
-      "canonical_rule": "standards/standards.yaml"
+      "canonical_rule": "standards/standards.yaml",
+      "status_history": [
+        {
+          "previous_status": "User selected and authorized recording; no skill installed or backup job enabled",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Maintain shared governance/design/code/skills in their owning repositories; keep private data/secrets outside GitHub.",
+      "approval_evidence": [
+        "User we will kep everything on github now..so skill also; latest Yes",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Policy and index delivered; no skill installation or backup automation.",
+      "verification": "Policy source links checked; restore/installation not verified."
     },
     {
       "ref": "APP-DRAFT-01",
@@ -1066,30 +1145,167 @@
     {
       "ref": "ARCH-INVENTORY-01",
       "decision": "Reconcile original platform, 9 suites and 47 engines; retain HRMS naming and proposed detailed scope.",
-      "status": "User authorized draft update; merge/publication separate",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
-      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "status_history": [
+        {
+          "previous_status": "User authorized draft update; merge/publication separate",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Import the original source suite/engine inventory and preserve HRMS proposals; not approval of unprovided detailed designs.",
+      "approval_evidence": [
+        "discussions/architecture-workflow-update-23-Oct-2026.md",
+        "discussions/approval-reconciliation-23-Oct-2026.md",
+        "User yes update github for listed scope, followed by do it authorizing PR4 merge; see discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Source inventory, parent references and generated navigation delivered.",
+      "verification": "Source coverage, parent/alias regression checks and GitHub CI passed for PR4."
     },
     {
       "ref": "NAM-DOC-01",
       "decision": "Use readable stable documentation filenames, regenerated links and legacy path pointers; preserve application naming.",
-      "status": "User authorized draft update; merge/publication separate",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
-      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "status_history": [
+        {
+          "previous_status": "User authorized draft update; merge/publication separate",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Descriptive repository documentation filenames and compatibility pointers only; no application naming migration.",
+      "approval_evidence": [
+        "discussions/architecture-workflow-update-23-Oct-2026.md",
+        "discussions/approval-reconciliation-23-Oct-2026.md",
+        "User yes update github for listed scope, followed by do it authorizing PR4 merge; see discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Documentation paths and pointer pages generated.",
+      "verification": "Generated-page reproducibility and link checks passed for PR4."
     },
     {
       "ref": "WORKFLOW-01",
       "decision": "Record approved Stage + Lifecycle Phase + Edit Owner + immutable published baseline; separate new drafts from active development.",
-      "status": "User authorized draft update; merge/publication separate",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
-      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "status_history": [
+        {
+          "previous_status": "User authorized draft update; merge/publication separate",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Draft/Review/Published stages, six lifecycle phases, edit ownership and published baseline handover model.",
+      "approval_evidence": [
+        "discussions/architecture-workflow-update-23-Oct-2026.md",
+        "discussions/approval-reconciliation-23-Oct-2026.md",
+        "User yes update github for listed scope, followed by do it authorizing PR4 merge; see discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Workflow definitions and generated guide delivered; actual owner locks, permissions and Project board not configured.",
+      "verification": "Definition checks passed; runtime ownership enforcement not implemented/tested."
     },
     {
       "ref": "CHAT-SOURCE-01",
       "decision": "Explicit branch/commit reads and refresh before approved writes; no automatic chat synchronization.",
-      "status": "User authorized draft update; merge/publication separate",
+      "status": "Approved for stated scope; governance source integrated in main; implementation/verification separately stated",
       "recorded_on": "23-Oct-2026",
-      "source": "discussions/architecture-workflow-update-23-Oct-2026.md"
+      "source": "discussions/architecture-workflow-update-23-Oct-2026.md",
+      "status_history": [
+        {
+          "previous_status": "User authorized draft update; merge/publication separate",
+          "reason": "Reconcile approval and main integration evidence without promoting implementation readiness.",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ],
+      "approval": "Approved",
+      "approval_scope": "Explicit branch/commit selection, refresh-before-write and no automatic chat sync.",
+      "approval_evidence": [
+        "discussions/architecture-workflow-update-23-Oct-2026.md",
+        "discussions/approval-reconciliation-23-Oct-2026.md",
+        "User yes update github for listed scope, followed by do it authorizing PR4 merge; see discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Governance definition integrated into main; not blanket design or production approval",
+      "publication_evidence": {
+        "pull_request": "https://github.com/aimann-code/COS_Governance/pull/4",
+        "baseline_commit": "bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+      },
+      "implementation": "Repository guidance delivered; no background synchronization installed.",
+      "verification": "Repository reference checks passed; no automated chat synchronization claimed."
+    },
+    {
+      "ref": "APPROVAL-REVIEW-01",
+      "decision": "Reconcile approval labels against available evidence, preserve history and show pending approvals before each scoped update.",
+      "status": "Approved for scoped reconciliation and checkpoint recording; not blanket approval of pending designs.",
+      "approval": "Approved",
+      "approval_scope": "Current evidence-backed corrections and pre-update protocol only.",
+      "approval_evidence": [
+        "User update following the reconciliation proposal",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Current change awaits reviewed integration",
+      "implementation": "Evidence-backed metadata and generated review page",
+      "verification": "Repository reference/status checks; complete historical chat audit not claimed",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/approval-reconciliation-23-Oct-2026.md"
+    },
+    {
+      "ref": "TREE-VIEW-01",
+      "decision": "Generate and link actual relational navigation from existing architecture/features/implementation/data/standards/naming/file sources; expose unknown mappings rather than invent ownership.",
+      "status": "User-authorized delivery; source under review in PR5",
+      "approval": "Approved",
+      "approval_scope": "Prepared tree and generator/navigation integration only; missing ownership and new shortcode allocations remain excluded.",
+      "approval_evidence": [
+        "User still tree is not made; then update in backened after concrete preview.",
+        "discussions/relational-tree-23-Oct-2026.md"
+      ],
+      "publication": "PR5 update; not merged into main",
+      "implementation": "Generated tree and generator regression checks delivered",
+      "verification": "See current PR checks; no physical database or full code inventory inferred",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/relational-tree-23-Oct-2026.md"
+    },
+    {
+      "ref": "AI-CREATE-CONFIRM-01",
+      "decision": "Require preview and explicit confirmation before any AI creation; reuse a current affirmative instruction only for its exact previewed scope.",
+      "status": "Approved user instruction; recorded in draft source; main integration pending",
+      "approval": "Approved",
+      "approval_scope": "AI creation-confirmation standard only; no unrelated creation or merge approval.",
+      "approval_evidence": [
+        "User before creating anything always confirm",
+        "User set it as ai standard update github",
+        "discussions/approval-reconciliation-23-Oct-2026.md"
+      ],
+      "publication": "Review branch; not merged into main",
+      "implementation": "Policy, contributor guidance and generated standard delivered; no automatic enforcement",
+      "verification": "Definition references and generated outputs checked; runtime enforcement not claimed",
+      "recorded_on": "23-Oct-2026",
+      "source": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "pending": [

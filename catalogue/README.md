@@ -1,10 +1,10 @@
 # COS Catalogue
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
+[Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
 Start here to browse definitions without reading YAML or JSON. Use the links below; on GitHub you can use your browser's Find function to locate a name.
 
@@ -127,3 +127,11 @@ All 9 suites and 47 engines from the original COS v1.1.0 inventory are accounted
 ## Maintained repository and skills source
 
 [Repository/skills storage](repository-storage.md) · [Shared skills directory](../skills/README.md). Source storage is separate from runtime installation; no actual skill has been created or installed in this update.
+
+## Approval checkpoint
+
+[Approval evidence and pending decisions](approval-review.md). Before each update, show approved scope, unresolved approvals, exclusions and content summary. Ask about pending approvals, then confirm the described GitHub update.
+
+## Relational navigation
+
+[Open the COS relational tree](tree.md) — architecture, features, implementation evidence, schemas/tables/fields, standards, naming, maintained files and skills policy. Missing mappings remain explicit.

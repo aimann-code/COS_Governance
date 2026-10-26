@@ -1,15 +1,15 @@
 # Employee Registration
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
+[COS Catalogue](../README.md) · [Relational tree](../tree.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
 
 | Property | Value |
 | --- | --- |
 | Type | Component |
-| Shortcode | emp_reg |
+| Short Code | emp_reg |
 | Source reference | ARCH-DRAFT-4 (temporary) |
 | Hierarchy | CulinaOS Platform → Enterprise Management → HRMS → Employee Management → Employee Registration |
 | Responsibility | Configured employee creation, manual/auto ID behaviour, duplicate validation and custom fields; preserve sys_emp_id. Existing implementation must be improved, reconciled and tested. |

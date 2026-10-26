@@ -1,10 +1,10 @@
 # Standards
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[Home](README.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
+[Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
 
 Naming 0.2.3 retains its frozen base and explicit amendment. Other rules keep their individual recorded status. Catalogue membership and proposed mappings do not approve a rule or prove applicability to every component.
 
@@ -22,7 +22,7 @@ Naming 0.2.3 retains its frozen base and explicit amendment. Other rules keep th
 | [Development Standard](standards/development.md) | 0.1.1 | Initial detailed draft: 16 rules, examples and validation checks; approval/compliance pending |
 | [API / Integration Standard](standards/api-integration.md) | 0.1.1 | Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending |
 | [Security Standard](standards/security.md) | 0.1.1 | Initial detailed draft: 20 rules, examples and validation checks; approval/compliance pending |
-| [AI / Analytics Standard](standards/ai-analytics.md) | 0.1.0 | Partial / requires rule review |
+| [AI / Analytics Standard](standards/ai-analytics.md) | 0.1.1 | Creation-confirmation rule approved; earlier AI/output rules retain their individual statuses and pending reviews |
 | [QA Standard](standards/qa.md) | 0.1.0 | Partial / requires rule review |
 | [Operations Standard](standards/operations.md) | 0.1.0 | Partial / requires rule review |
 | [Workspace Standard](standards/workspace.md) | 0.1.0 | Partial / requires rule review |

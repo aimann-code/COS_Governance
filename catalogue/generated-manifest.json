@@ -1,10 +1,11 @@
 {
   "classification": "generated view; do not edit",
-  "governance_version": "0.3.6",
+  "governance_version": "0.3.9",
   "naming_version": "0.2.3",
   "application_ref": "b2b156c44ba7744bf6cb81c19eb3a05d8633fdba",
   "pages": [
     "catalogue/README.md",
+    "catalogue/approval-review.md",
     "catalogue/architecture.md",
     "catalogue/architecture/ai-analytics.md",
     "catalogue/architecture/ai-assistant-engine.md",
@@ -348,6 +349,7 @@
     "catalogue/tables/report-saved-view.md",
     "catalogue/tables/vnd-vnd.md",
     "catalogue/test-plan.md",
+    "catalogue/tree.md",
     "catalogue/upload-templates.md",
     "catalogue/virtual-marts.md",
     "catalogue/workflow.md",

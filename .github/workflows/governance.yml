@@ -21,6 +21,8 @@ jobs:
         run: node generators/build-catalogue.mjs --check
       - name: Check architecture coverage regression cases
         run: python3 -m unittest discover -s generators -p 'test_*.py'
+      - name: Check relational tree coverage and navigation
+        run: node --test generators/tree.test.mjs
       - name: Generate draft review views
         run: python3 generators/render.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
