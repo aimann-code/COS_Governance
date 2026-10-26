@@ -1,13 +1,13 @@
 {
-  "version": "0.1.5",
+  "version": "0.1.6",
   "status": "consolidated review profile; individual rule approval retained",
   "approved_source_model": "SOURCE-MAP-01",
   "frozen_naming": {
     "source": "standards/naming.yaml",
     "version": "0.2.3",
-    "decision": "NAM-REG-01",
+    "decision": "NAM-DOC-01",
     "base_decision": "D67",
-    "previous_amendment": "NAM-LOWER-01"
+    "previous_amendment": "NAM-REG-01"
   },
   "source_priority": [
     "Explicit current user decisions within their scope",
@@ -28,8 +28,15 @@
         "NAM-REG-01",
         "NAM-DOC-01"
       ],
-      "approval": "User-authorized scoped amendments; not published",
-      "completion": "12 base rules; 53 terms; scoped naming and documentation profiles; implementation migration separate"
+      "approval": "Approved frozen base and scoped amendments; definitions integrated through PR4; live migration separate",
+      "completion": "12 base rules; 53 terms; scoped naming and documentation profiles; implementation migration separate",
+      "approval_history": [
+        {
+          "previous": "User-authorized scoped amendments; not published",
+          "recorded_on": "23-Oct-2026",
+          "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
+        }
+      ]
     },
     {
       "standard_ref": "STD-DRAFT-2",
@@ -410,6 +417,14 @@
         "CHAT-SOURCE-01"
       ],
       "disposition": "Approved scoped update; no release-stage adoption, project rename, branch merge or permission enforcement claimed."
+    },
+    {
+      "topic": "Evidence-backed approval reconciliation",
+      "source_refs": [
+        "GITHUB-CONFIRM-01",
+        "APPROVAL-REVIEW-01"
+      ],
+      "disposition": "Show pending approvals before each update; preserve approval/publication/implementation/verification separately. See decisions/approval-review.yaml. No blanket approval or automated editing lock."
     }
   ],
   "aliases": {

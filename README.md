@@ -1,6 +1,14 @@
 # COS_Governance
 
-Private COS governance migration draft 0.3.6, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+
+## Architecture explorer
+
+**[Browse the complete clickable COS hierarchy](ARCHITECTURE.md)** — Platform → 9 suites → 47 engines → recorded modules and components. The HRMS design currently has 5 proposed modules and 28 proposed components; other engine-level detail is marked **Pending** rather than inferred.
+
+- [Architecture catalogue](catalogue/architecture.md) · [Relational tree](catalogue/tree.md) · [HRMS design](catalogue/architecture/hrms.md)
+- [Metadata-driven shared services](architecture/metadata-driven-component-standard.yaml) · [Shared database design](architecture/shared-data-design.yaml) · [Design template (UML, ERD, file hierarchy, developer matrix)](templates/design.yaml)
+- Each hierarchy item links to its own catalogue design page; approval, implementation, verification and publication statuses remain distinct.
 
 ## Browse without reading YAML
 - [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
@@ -78,3 +86,11 @@ Read [cos-governance.yaml](cos-governance.yaml), [contributor guidance](AGENTS.m
 - [Documentation path compatibility map](catalogue/path-map.md)
 
 No automatic chat synchronization or technical editor lock is configured.
+
+## Approval review before changes
+
+[Approval evidence and pending decisions](catalogue/approval-review.md). Before each update, show approved scope, pending approvals, exclusions and content summary. Ask about pending approvals, then request the scoped GitHub update. Approval, publication, implementation and verification are separate. PR4 integration does not automatically approve every Draft design.
+
+## Relational tree
+
+[Browse the COS relational tree](catalogue/tree.md). Expand architecture, features, schema/table/field, standards, naming, maintained files and skills policy. It links existing canonical records and shows missing mappings explicitly.

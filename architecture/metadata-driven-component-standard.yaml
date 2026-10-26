@@ -1,0 +1,161 @@
+{
+  "version": "0.1.0",
+  "status": "proposed draft; not published or implemented",
+  "working_user": "Ashish",
+  "design_template": "templates/design.yaml",
+  "scope": "All COS components",
+  "architecture": {
+    "pattern": "Versioned metadata + configuration -> shared service runtime -> typed domain handler -> domain-owned persistence",
+    "metadata_categories": [
+      "object",
+      "field",
+      "form",
+      "rule",
+      "workflow",
+      "permission",
+      "data contract",
+      "API",
+      "integration",
+      "event",
+      "audit",
+      "report",
+      "test"
+    ],
+    "execution": [
+      "resolve object/scope",
+      "authorize",
+      "load versioned configuration",
+      "render/validate",
+      "confirm where needed",
+      "execute domain transaction",
+      "audit/outbox",
+      "report/verify"
+    ],
+    "limitations": [
+      "Metadata does not replace complex algorithms",
+      "No universal unrestricted database writer",
+      "Changes requiring new schema/algorithms undergo code review and migration"
+    ]
+  },
+  "shared_registration": {
+    "domains": [
+      {
+        "name": "Employee",
+        "root": "emp.emp",
+        "component": "emp_reg"
+      },
+      {
+        "name": "Vendor",
+        "root": "vnd.vnd",
+        "component": "pending registration shortcode"
+      },
+      {
+        "name": "Aggregator",
+        "root": "agg.agg",
+        "component": "pending registration shortcode"
+      }
+    ],
+    "mapping": [
+      {
+        "service": "Field and form",
+        "tables": [
+          "config.field_def",
+          "config.entity_field",
+          "config.form_field"
+        ]
+      },
+      {
+        "service": "Uniqueness",
+        "tables": [
+          "config.unique_rule",
+          "config.unique_rule_field",
+          "config.unique_claim"
+        ]
+      },
+      {
+        "service": "Access",
+        "tables": [
+          "auth.access_group",
+          "auth.group_perm",
+          "auth.user_group"
+        ]
+      },
+      {
+        "service": "Source and import",
+        "tables": [
+          "integration.source",
+          "integration.source_profile",
+          "integration.mapping",
+          "integration.mapping_field",
+          "integration.import_job",
+          "integration.import_row"
+        ]
+      },
+      {
+        "service": "Audit and events",
+        "tables": [
+          "audit.change_event",
+          "integration.outbox"
+        ]
+      },
+      {
+        "service": "Reporting",
+        "tables": [
+          "report.mart_def",
+          "report.report_def"
+        ]
+      }
+    ],
+    "ownership": "Shared services interpret metadata; employee/vendor/aggregator handlers own authoritative writes. Source registration is separate from vendor/aggregator business registration.",
+    "integrity": "Use scoped object references and typed domain adapters to verify record existence and authorization; generic record_type/record_id alone is not a physical FK."
+  },
+  "uml": [
+    "use-case",
+    "component",
+    "class",
+    "sequence",
+    "activity",
+    "state",
+    "deployment"
+  ],
+  "database": [
+    "logical ERD",
+    "physical ERD",
+    "dictionary",
+    "keys and constraints",
+    "indexes",
+    "migration and rollback",
+    "data ownership"
+  ],
+  "proposed_file_hierarchy": [
+    "shared/metadata",
+    "shared/registration",
+    "shared/validation",
+    "shared/workflow",
+    "shared/import-sync",
+    "shared/access-audit",
+    "shared/reporting",
+    "hrms/employee-registration",
+    "vendor-domain/vendor-registration",
+    "aggregator-domain/aggregator-registration",
+    "database/migrations",
+    "docs/uml",
+    "docs/developer-matrix"
+  ],
+  "developer_matrix_columns": [
+    "requirement_ref",
+    "component_ref",
+    "metadata_ref",
+    "shared_service_ref",
+    "domain_handler",
+    "api_contract",
+    "table_columns",
+    "file_path",
+    "class_function",
+    "test_ref",
+    "owner",
+    "status",
+    "evidence"
+  ],
+  "verification": "These are target design conventions, not a verified existing code inventory; review EMPRegister implementation and existing schema before migration."
+}

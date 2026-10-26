@@ -1,15 +1,15 @@
 # Roster Planning
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.6; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.8; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
-[COS Catalogue](../README.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
+[COS Catalogue](../README.md) · [Relational tree](../tree.md) · [Architecture](../architecture.md) · [Standards](../standards.md) · [Features](../features.md)
 
 | Property | Value |
 | --- | --- |
 | Type | Component |
-| Shortcode | Unassigned |
+| Short Code | Unassigned |
 | Source reference | ARCH-DRAFT-14 (temporary) |
 | Hierarchy | CulinaOS Platform → Enterprise Management → HRMS → Shift & Roster Management → Roster Planning |
 | Responsibility | Prepare employee schedules for a selected period. |
