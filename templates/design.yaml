@@ -111,12 +111,123 @@
     "pending"
   ],
   "diagram_policy": "Retain editable source and source versions; label mockup and running-app capture separately",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "naming_source": "standards/naming.yaml",
   "change_history": [
     {
       "recorded_on": "23-Oct-2026",
       "summary": "Replace stale naming 0.2.0 reference with canonical current naming resolution; retain 18-section presentation structure."
+    },
+    {
+      "recorded_on": "26-Oct-2026",
+      "summary": "Ashish-approved draft expansion: mandatory metadata-driven component design, shared service mapping, UML, database design, file hierarchy and developer traceability matrix; no implementation or publication."
     }
-  ]
+  ],
+  "metadata_driven_policy": {
+    "status": "proposed mandatory design standard; not published",
+    "scope": "All COS suites, engines, modules and components",
+    "principle": "Each component declares versioned object, field, UI, rule, workflow, permission, data, API, integration, event, audit, report and verification metadata as applicable; registered shared services interpret metadata and delegate authoritative writes to typed domain handlers.",
+    "runtime_contract": [
+      "Resolve authenticated scope, object and effective configuration",
+      "Enforce entitlement and record/field access",
+      "Render configured UI and validate fields/rules",
+      "Execute versioned workflow and typed domain handler",
+      "Persist domain changes transactionally with uniqueness claims where applicable",
+      "Emit audit/outbox and expose authorized reports",
+      "Track configuration, implementation and verification versions"
+    ],
+    "guardrails": [
+      "No generic unrestricted table writer",
+      "No browser-to-database credentials",
+      "No silent change to active configuration; validate and confirm activation",
+      "Use domain-owned authoritative tables and repositories",
+      "New algorithms, schema migrations and unsupported integrations require reviewed code",
+      "Keep proposed, approved, implemented, tested and published statuses distinct"
+    ]
+  },
+  "uml_design": {
+    "required": "Choose applicable diagrams for each component and record N/A with reason",
+    "types": [
+      "Use case",
+      "Component",
+      "Class",
+      "Sequence",
+      "Activity",
+      "State",
+      "Deployment"
+    ],
+    "traceability": "Diagram IDs link to requirement, object, service, API, database, code and test IDs",
+    "format": "Retain editable source, version, legend, status and source references"
+  },
+  "database_design": {
+    "required": [
+      "Logical and physical ERD",
+      "Entity and table dictionary",
+      "PK/FK/UQ/check constraints, indexes, scope and sensitive fields",
+      "Polymorphic reference integrity policy",
+      "Migration, rollback, reconciliation and ownership"
+    ],
+    "separation": "Shared configuration/integration/audit/report/auth records are separate from domain-owned emp/vnd/agg records; no universal business table"
+  },
+  "file_hierarchy": {
+    "required": [
+      "Repository and module ownership",
+      "Frontend, backend, migrations, tests and design source paths",
+      "Existing-to-target path mapping and compatibility review"
+    ],
+    "rule": "Do not rename or relocate implemented code without explicit reviewed migration"
+  },
+  "developer_matrix": {
+    "required_columns": [
+      "requirement_ref",
+      "component_ref",
+      "metadata_ref",
+      "shared_service_ref",
+      "domain_handler",
+      "api_contract",
+      "database_table_columns",
+      "repository_file_path",
+      "function_or_class",
+      "test_ref",
+      "owner",
+      "design_status",
+      "implementation_status",
+      "verification_evidence"
+    ]
+  },
+  "shared_registration_mapping": {
+    "domains": [
+      {
+        "object": "Employee Registration",
+        "root_table": "emp.emp",
+        "ownership": "HRMS Employee Management"
+      },
+      {
+        "object": "Vendor Registration",
+        "root_table": "vnd.vnd",
+        "ownership": "Pending architecture placement"
+      },
+      {
+        "object": "Aggregator Registration",
+        "root_table": "agg.agg",
+        "ownership": "Pending architecture placement"
+      }
+    ],
+    "shared_tables": [
+      "config.field_def",
+      "config.entity_field",
+      "config.form_field",
+      "config.unique_rule",
+      "config.unique_rule_field",
+      "config.unique_claim",
+      "auth.group_perm",
+      "integration.source",
+      "integration.source_profile",
+      "integration.mapping_field",
+      "integration.import_job",
+      "audit.change_event",
+      "report.mart_def"
+    ],
+    "rule": "Shared services resolve object/scope/config and delegate domain writes; source registration is separate from business registration; references require scoped authorization and integrity checks."
+  }
 }
