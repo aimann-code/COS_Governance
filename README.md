@@ -2,6 +2,12 @@
 
 Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
+## 👩‍💻 Developers: start here
+
+**[➡️ COS System Design](catalogue/system-design.md)** — architecture style, technology stack, tenancy, metadata runtime, deployment, integration patterns and diagrams (SYS-DESIGN-01, Draft — approval pending).
+
+Then read: [Developer guide](catalogue/developer-guide.md) · [Developer matrix](catalogue/developer-matrix.md) · [Table formats](catalogue/table-formats.md) · [Canonical YAML](architecture/system-design.yaml)
+
 ## Architecture explorer
 
 **[Browse the complete clickable COS hierarchy](ARCHITECTURE.md)** — Platform → 9 suites → 47 engines → recorded modules and components. The HRMS design currently has 5 proposed modules and 28 proposed components; other engine-level detail is marked **Pending** rather than inferred.
