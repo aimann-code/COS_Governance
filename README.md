@@ -2,6 +2,14 @@
 
 Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
+## Architecture explorer
+
+**[Browse the complete clickable COS hierarchy](ARCHITECTURE.md)** — Platform → 9 suites → 47 engines → recorded modules and components. The HRMS design currently has 5 proposed modules and 28 proposed components; other engine-level detail is marked **Pending** rather than inferred.
+
+- [Architecture catalogue](catalogue/architecture.md) · [Relational tree](catalogue/tree.md) · [HRMS design](catalogue/architecture/hrms.md)
+- [Metadata-driven shared services](architecture/metadata-driven-component-standard.yaml) · [Shared database design](architecture/shared-data-design.yaml) · [Design template (UML, ERD, file hierarchy, developer matrix)](templates/design.yaml)
+- Each hierarchy item links to its own catalogue design page; approval, implementation, verification and publication statuses remain distinct.
+
 ## Browse without reading YAML
 - [Standards](catalogue/standards.md) · [Naming](catalogue/naming.md) · [Architecture](catalogue/architecture.md)
 - [HRMS modules and components](catalogue/architecture/hrms.md) · [Employee Registration](catalogue/architecture/emp-reg.md) · [Features](catalogue/features.md) · [Design](catalogue/design.md)
