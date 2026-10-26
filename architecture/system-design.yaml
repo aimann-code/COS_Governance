@@ -1,0 +1,613 @@
+{
+  "version": "0.1.0",
+  "status": "Proposed system design draft; not approved, implemented, verified or published",
+  "stage": "Draft",
+  "phase": "Design & Architecture",
+  "approval_status": "Pending",
+  "implementation_status": "Partially reflected by the EMPRegister baseline for Employee Management only; COS-wide runtime not implemented",
+  "verification_status": "Source inspection of the pinned application baseline only; no load, security or deployment test executed",
+  "publication_status": "Unpublished",
+  "source_ref": "SYS-DESIGN-01",
+  "recorded_on": "26-Oct-2026",
+  "scope": "Runtime system design for the whole CulinaOS platform: architecture style, technology stack, tenancy, metadata runtime, components, deployment, integration, data, security, non-functional targets and diagrams. Business hierarchy stays in architecture/objects.yaml; logical tables stay in the data-design files.",
+  "sources": {
+    "architecture": "architecture/objects.yaml",
+    "metadata_pattern": "architecture/metadata-driven-component-standard.yaml",
+    "shared_data": "architecture/shared-data-design.yaml",
+    "employee_data": "architecture/emp-data-design.yaml",
+    "developer_guide": "architecture/developer-guide.yaml",
+    "virtual_marts": "architecture/virtual-marts.yaml",
+    "backend_frontend_rules": "standards/standards.yaml (DRAFT-BE-R01..R18, DRAFT-FE-R01..R18)",
+    "application_baseline": "aimann-code/EMPRegister@b2b156c44ba7744bf6cb81c19eb3a05d8633fdba"
+  },
+  "non_effects": [
+    "Does not approve any Pending standard, rule, shortcode or decision.",
+    "Does not adopt the Technology Stack Standard; stack rows marked Proposed need explicit approval.",
+    "No application code, schema, deployment, cloud account or connector is created or changed.",
+    "Candidate non-functional targets are proposals until the business confirms them."
+  ],
+  "context": {
+    "summary": "CulinaOS (COS) is a metadata-driven operating platform for a multi-brand restaurant and cloud-kitchen business (initial company: MHL). One platform hosts 9 suites / 47 engines; each engine is delivered as configuration over shared runtime services plus a small amount of domain code.",
+    "actors": [
+      [
+        "Platform administrator",
+        "Manages tenants, entitlements, platform configuration and releases"
+      ],
+      [
+        "Entity administrator",
+        "Configures fields, forms, uniqueness keys, access groups and imports for a company/brand/outlet"
+      ],
+      [
+        "Operational user",
+        "HR, finance, purchase, kitchen and outlet staff using generated screens"
+      ],
+      [
+        "Reviewer / approver",
+        "Approves operation-specific changes per the authority matrix"
+      ],
+      [
+        "Developer",
+        "Builds domain handlers and shared services from Published baselines"
+      ],
+      [
+        "AI assistant",
+        "Reads governed definitions; never writes without explicit confirmation (GITHUB-CONFIRM-01, AI-CREATE-CONFIRM-01)"
+      ]
+    ],
+    "external_systems": [
+      [
+        "Petpooja",
+        "POS sales, raw materials, recipes, operational inventory",
+        "API scope UNVERIFIED"
+      ],
+      [
+        "Zoho Books",
+        "Invoice scanning, bills, vendor payables, accounting masters, journals",
+        "Organisation configuration pending"
+      ],
+      [
+        "Razorpay",
+        "Payments, settlements, payouts and/or payroll",
+        "Exact product and scope pending"
+      ],
+      [
+        "Attendo",
+        "Attendance source",
+        "API entitlement unverified"
+      ],
+      [
+        "Aggregators (Ownly and others)",
+        "Payout and order files",
+        "File-based; Ownly rules drafted"
+      ],
+      [
+        "Google Workspace",
+        "Sheets input/output, Drive files, Gmail extraction, optional SSO",
+        "Sheets sync not implemented"
+      ],
+      [
+        "GitHub",
+        "Governance definitions, code, CI",
+        "Live operational data excluded"
+      ]
+    ]
+  },
+  "architecture_style": {
+    "decision": "Modular monolith with metadata-driven shared services; one backend codebase and deployable, internally divided by suite/engine modules with enforced boundaries.",
+    "rationale": [
+      "Small team (four named working users) cannot operate 47 independently deployed services.",
+      "Shared services (config, uniqueness, access, import, report, audit) are used by every engine and need one transaction boundary with domain writes (DRAFT-BE-R06).",
+      "Module boundaries keep a later extraction possible for a suite that proves different scale, release cadence or ownership."
+    ],
+    "module_rules": [
+      "One Java module/package root per engine; shared services live in a platform module and never depend on domain modules.",
+      "Engines call each other only through published module APIs or outbox events, never through another engine's tables.",
+      "Each engine owns its database schema; cross-engine reads use APIs, events or governed virtual marts.",
+      "Boundary rules are checked in CI (module dependency tests) once the code structure is approved."
+    ],
+    "extraction_criteria": "Extract a module into its own service only with a recorded decision showing independent scaling, isolation, compliance or team-ownership need.",
+    "alternatives_considered": [
+      [
+        "Microservices per engine",
+        "Rejected for now: operational cost and distributed transactions outweigh benefits at current scale"
+      ],
+      [
+        "Low-code platform / spreadsheet-only",
+        "Rejected: cannot meet uniqueness, audit, permission and integration guarantees already approved"
+      ],
+      [
+        "Fully generic EAV data model",
+        "Rejected: core entities need real typed tables; JSONB only for configurable extra fields"
+      ]
+    ]
+  },
+  "technology_stack": [
+    {
+      "layer": "Backend language/runtime",
+      "choice": "Java 21 (LTS)",
+      "state": "In use at baseline",
+      "evidence": "apps/api/pom.xml java.version 21",
+      "notes": "Keep LTS; upgrade through a reviewed decision."
+    },
+    {
+      "layer": "Backend framework",
+      "choice": "Spring Boot 4.1 (Web MVC, Validation, Security, OAuth2 Resource Server)",
+      "state": "In use at baseline",
+      "evidence": "spring-boot-starter-parent 4.1.1",
+      "notes": "Add Spring Modulith (or ArchUnit) for module boundary checks - Proposed."
+    },
+    {
+      "layer": "Data access",
+      "choice": "Spring JDBC with explicit parameterised SQL in repositories",
+      "state": "In use at baseline",
+      "evidence": "spring-boot-starter-jdbc",
+      "notes": "Matches DRAFT-BE-R04. No ORM required; jOOQ is an optional later proposal."
+    },
+    {
+      "layer": "Database",
+      "choice": "PostgreSQL",
+      "state": "In use at baseline",
+      "evidence": "postgresql driver; local profile",
+      "notes": "Typed tables for core entities, JSONB for configurable extra fields and metadata payloads, schema per engine."
+    },
+    {
+      "layer": "Schema migration",
+      "choice": "Flyway, forward-only versioned migrations",
+      "state": "In use at baseline",
+      "evidence": "db/migration V1..V4",
+      "notes": "Matches DRAFT-BE-R16; separate migration identity per developer guide."
+    },
+    {
+      "layer": "Frontend",
+      "choice": "Next.js 16 + React 19 + TypeScript",
+      "state": "In use at baseline",
+      "evidence": "apps/web/package.json",
+      "notes": "Kebab-case file naming per Naming 0.2.3."
+    },
+    {
+      "layer": "Metadata-driven UI",
+      "choice": "Shared form/grid renderer driven by pinned config versions; JSON Schema shared by server and browser validation",
+      "state": "Proposed",
+      "evidence": "",
+      "notes": "Candidate libraries: react-hook-form + Zod or JSON Forms; TanStack Table for grids. Selection pending."
+    },
+    {
+      "layer": "Rules",
+      "choice": "Declarative rules as reviewed metadata (no executable code, no arbitrary SQL); complex logic in typed Java domain handlers",
+      "state": "Proposed",
+      "evidence": "DRAFT-BE-R10",
+      "notes": "Candidate expression language: CEL. Selection pending."
+    },
+    {
+      "layer": "Workflow/approvals",
+      "choice": "In-application state machine with persisted transitions and authority matrix",
+      "state": "Proposed",
+      "evidence": "DRAFT-BE-R07",
+      "notes": "Consider Temporal/Camunda only if long-running multi-party workflows exceed this."
+    },
+    {
+      "layer": "Background work",
+      "choice": "Same backend artifact started in worker role; DB-backed job claiming and transactional outbox",
+      "state": "Proposed (outbox table exists at baseline)",
+      "evidence": "DRAFT-BE-R12, DRAFT-BE-R13; integration.outbox",
+      "notes": "Message broker (RabbitMQ/Kafka) only after measured need."
+    },
+    {
+      "layer": "Identity",
+      "choice": "OIDC/OAuth2 tokens validated by the API; external IdP for workforce sign-in",
+      "state": "Partly in use (resource server); IdP selection Proposed",
+      "evidence": "spring-boot-starter-security-oauth2-resource-server",
+      "notes": "Candidates: Google Workspace SSO, Keycloak. Local password accounts at baseline need a migration decision."
+    },
+    {
+      "layer": "File/document storage",
+      "choice": "Private object storage for raw imports, exports and large documents; DB keeps metadata and hashes",
+      "state": "Proposed (baseline stores encrypted documents in PostgreSQL)",
+      "evidence": "EMPRegister README",
+      "notes": "Decision pending: keep in DB vs move to object storage."
+    },
+    {
+      "layer": "Reporting",
+      "choice": "Governed PostgreSQL views/materialized views as virtual marts; authorized report service; dashboard tool optional",
+      "state": "Proposed (VIRTUAL-MART-01 direction recorded)",
+      "evidence": "architecture/virtual-marts.yaml",
+      "notes": "Candidate BI tools: Metabase, Apache Superset."
+    },
+    {
+      "layer": "Search",
+      "choice": "PostgreSQL full-text and trigram indexes",
+      "state": "Proposed",
+      "evidence": "",
+      "notes": "Dedicated search engine only after measured need."
+    },
+    {
+      "layer": "Testing",
+      "choice": "JUnit + Spring test slices; Playwright end-to-end with axe accessibility checks",
+      "state": "In use at baseline",
+      "evidence": "package.json, playwright configs",
+      "notes": "Add Testcontainers PostgreSQL for integration tests - Proposed."
+    },
+    {
+      "layer": "Packaging/hosting",
+      "choice": "Container images; managed PostgreSQL; managed container runtime",
+      "state": "Proposed",
+      "evidence": "",
+      "notes": "Candidate: Google Cloud Run + Cloud SQL (fits Google Workspace usage). Provider decision pending."
+    },
+    {
+      "layer": "Observability",
+      "choice": "Structured JSON logs with correlation/run IDs, OpenTelemetry traces and metrics",
+      "state": "Proposed",
+      "evidence": "DRAFT-BE-R15",
+      "notes": "Backend to be chosen with hosting."
+    },
+    {
+      "layer": "CI/CD",
+      "choice": "GitHub Actions: build, tests, migrations dry-run, image build, environment promotion",
+      "state": "Proposed (governance CI exists)",
+      "evidence": ".github/workflows/governance.yml",
+      "notes": "Production deploy requires explicit approval."
+    }
+  ],
+  "tenancy": {
+    "model": "Single platform deployment serving multiple organisations; every business row carries scope_id resolved from the authenticated entity context.",
+    "hierarchy": [
+      "Platform",
+      "Organisation / group",
+      "Legal entity",
+      "Brand",
+      "Outlet / kitchen",
+      "Department / unit"
+    ],
+    "enforcement": [
+      "Server resolves scope from the authenticated principal and selected authorized entity; clients never supply actor or approver identity (DRAFT-BE-R17).",
+      "Repositories always filter by scope; composite (scope_id, id) foreign keys keep relations inside one scope (shared-data-design common constraints).",
+      "PostgreSQL row-level security as a second defence layer - Proposed.",
+      "Entitlements (config.entitlement) gate suites/engines per organisation."
+    ],
+    "open_questions": [
+      "Is sys_emp_id unique per organisation or per legal entity? (emp-data-design pending item)",
+      "Do franchises run as separate organisations or as entities within the group?",
+      "Which masters are shared across brands (items, vendors) and which are brand-specific?"
+    ]
+  },
+  "metadata_runtime": {
+    "principle": "Versioned metadata + configuration -> shared service runtime -> typed domain handler -> domain-owned persistence (metadata-driven-component-standard).",
+    "metadata_kinds": [
+      "object",
+      "field",
+      "form",
+      "rule",
+      "workflow",
+      "permission",
+      "data contract",
+      "API",
+      "integration",
+      "event",
+      "audit",
+      "report",
+      "test"
+    ],
+    "lifecycle": [
+      [
+        "Draft",
+        "Editable by entity administrator; validated against JSON Schema and reviewed field types"
+      ],
+      [
+        "Review",
+        "Preview of generated screen/import/report; impact on existing records shown"
+      ],
+      [
+        "Active",
+        "Immutable version; exactly one active version per object and scope"
+      ],
+      [
+        "Retired",
+        "Kept for history; records pinned to it remain readable"
+      ]
+    ],
+    "rules": [
+      "Every transaction, draft and import run stores the config version it used (DRAFT-BE-R11).",
+      "Active versions are immutable; changes create a new version and go through confirmation (config.confirmation).",
+      "Runtime caches config by (scope, object, version); activation publishes an outbox event that invalidates caches.",
+      "Rollback means re-activating an earlier version, never editing history.",
+      "Metadata may select reviewed field types, validators, layouts, uniqueness fields, permissions, mappings and report columns; it may not contain executable code, arbitrary SQL or new storage structures (DRAFT-BE-R10).",
+      "Needs beyond metadata (new algorithms, new tables) go through code review and Flyway migration."
+    ],
+    "data_placement": [
+      [
+        "Core business fields (identity, keys, money, dates, status)",
+        "Typed columns in the owning engine schema"
+      ],
+      [
+        "Entity-configured additional fields",
+        "Typed values referencing field-definition versions (e.g. emp.emp_field_value) or JSONB validated by schema"
+      ],
+      [
+        "Metadata definitions",
+        "config schema tables with JSONB payload plus typed key columns"
+      ],
+      [
+        "History and audit",
+        "audit.change_event and per-domain history, written in the same transaction"
+      ]
+    ]
+  },
+  "runtime_components": [
+    {
+      "name": "Web client",
+      "tech": "Next.js",
+      "responsibility": "Shell, navigation, metadata-rendered forms/grids, previews and confirmations",
+      "engine_refs": "Application Services"
+    },
+    {
+      "name": "API gateway layer",
+      "tech": "Spring MVC controllers",
+      "responsibility": "Authentication, transport validation, versioned /api/v1 routes (DRAFT-BE-R02)",
+      "engine_refs": "API Management"
+    },
+    {
+      "name": "Platform services",
+      "tech": "Spring module",
+      "responsibility": "ConfigService, UniqueKeyService, AccessService, SubscriptionService, PreferenceService, ErrorService",
+      "engine_refs": "Configuration, Security, Identity & Access"
+    },
+    {
+      "name": "Integration services",
+      "tech": "Spring module",
+      "responsibility": "ImportService, MappingService, SheetSyncService, email extraction, source adapters",
+      "engine_refs": "Integration suite"
+    },
+    {
+      "name": "Reporting services",
+      "tech": "Spring module + PostgreSQL views",
+      "responsibility": "ReportService, MartService, exports",
+      "engine_refs": "BI & Reporting, KPI & Dashboards"
+    },
+    {
+      "name": "Domain modules",
+      "tech": "Spring modules with handlers",
+      "responsibility": "Engine-specific invariants and algorithms (HRMS first; Finance/Ownly journals, Procurement, Inventory next)",
+      "engine_refs": "One per engine"
+    },
+    {
+      "name": "Worker",
+      "tech": "Same artifact, worker role",
+      "responsibility": "Import jobs, sheet syncs, outbox delivery, scheduled jobs; claims work once and rechecks authority (DRAFT-BE-R12)",
+      "engine_refs": "Data Integration, Event Integration"
+    },
+    {
+      "name": "Database",
+      "tech": "PostgreSQL",
+      "responsibility": "Schemas per engine plus auth, config, audit, integration, report",
+      "engine_refs": "Database Services"
+    },
+    {
+      "name": "Object storage",
+      "tech": "Private bucket",
+      "responsibility": "Raw source files, exports, large documents",
+      "engine_refs": "File & Document Services"
+    },
+    {
+      "name": "Identity provider",
+      "tech": "OIDC IdP",
+      "responsibility": "Workforce sign-in, MFA",
+      "engine_refs": "Identity & Access"
+    }
+  ],
+  "deployment": {
+    "environments": [
+      [
+        "local",
+        "Developer machine; embedded/local PostgreSQL as in EMPRegister scripts; synthetic data only"
+      ],
+      [
+        "test",
+        "CI-created; ephemeral database; automated tests"
+      ],
+      [
+        "staging",
+        "Production-like; masked or synthetic data; release candidate verification"
+      ],
+      [
+        "production",
+        "Real data; deploy only after explicit approval and recorded evidence (DRAFT-BE-R18)"
+      ]
+    ],
+    "units": [
+      [
+        "web",
+        "Next.js container, stateless, horizontally scalable"
+      ],
+      [
+        "api",
+        "Backend container in api role, stateless, horizontally scalable"
+      ],
+      [
+        "worker",
+        "Same backend image in worker role, scaled by queue depth"
+      ],
+      [
+        "database",
+        "Managed PostgreSQL with automated backups and point-in-time recovery"
+      ],
+      [
+        "storage",
+        "Private object storage bucket per environment"
+      ]
+    ],
+    "rules": [
+      "Images are immutable and promoted across environments; configuration and secrets come from the environment's secret manager.",
+      "Migrations run as a separate step with a migration identity before the new api/worker version starts.",
+      "Backups follow BACKUP-TIME-01 naming for exported backup files."
+    ],
+    "hosting_candidate": "Google Cloud: Cloud Run (web, api, worker), Cloud SQL for PostgreSQL, Cloud Storage, Secret Manager, Cloud Logging. Pending decision."
+  },
+  "integration_patterns": [
+    {
+      "pattern": "File import",
+      "used_for": "Aggregator payouts (Ownly), bulk employee upload, Attendo exports",
+      "flow": "Upload/source -> preserve raw file -> profile parse -> stage rows (integration.import_row) -> mapping -> preview -> confirmed execute -> domain write + audit -> errors traceable",
+      "idempotency": "integration.processed_source hash per source version"
+    },
+    {
+      "pattern": "API pull",
+      "used_for": "Petpooja, Zoho Books, Razorpay, Attendo (once verified)",
+      "flow": "Scheduled worker job -> adapter with approved connection -> stage -> same mapping/validation path as file import",
+      "idempotency": "Provider IDs mapped in id-map tables; sync_run checkpoints"
+    },
+    {
+      "pattern": "API push",
+      "used_for": "Zoho journals, payouts",
+      "flow": "Domain event -> outbox -> worker -> external call with idempotency key -> record response; unknown responses reconciled before retry",
+      "idempotency": "Payload hash plus external reference"
+    },
+    {
+      "pattern": "Webhook in",
+      "used_for": "Payment/settlement notifications",
+      "flow": "Verify signature -> store raw event -> process asynchronously",
+      "idempotency": "Provider event ID"
+    },
+    {
+      "pattern": "Google Sheet sync",
+      "used_for": "Interim working sheets and outputs",
+      "flow": "Preview exact ranges -> explicit append/clear confirmation -> write -> read back counts",
+      "idempotency": "sync_run bound to confirmation"
+    }
+  ],
+  "security": [
+    "OIDC sign-in with MFA for administrators; API validates tokens and resolves principal server-side.",
+    "Authorization layers: entitlement -> access group -> hierarchy scope -> record -> field (AccessService).",
+    "Encrypt sensitive fields (identity, bank, documents) at application level; keys in a secret manager; baseline already encrypts profile payloads and documents.",
+    "Secrets never in GitHub, preferences or metadata; external connections referenced by approved connection IDs.",
+    "Every mutation writes audit and history in the same transaction; logs redact secrets and documents.",
+    "Exports and Sheet outputs pass the same authorization as screens; masked values stay masked."
+  ],
+  "non_functional_candidates": [
+    {
+      "area": "Scale (initial)",
+      "candidate": "Up to 50 outlets, 2,000 employees, 300 concurrent users, 100k sales rows per day",
+      "status": "Candidate - confirm with business"
+    },
+    {
+      "area": "Interactive latency",
+      "candidate": "p95 under 500 ms for reads and single-record saves; imports asynchronous with progress",
+      "status": "Candidate"
+    },
+    {
+      "area": "Availability",
+      "candidate": "99.5% monthly during business hours for production",
+      "status": "Candidate"
+    },
+    {
+      "area": "Backup and recovery",
+      "candidate": "RPO 15 minutes (point-in-time recovery); RTO 4 hours; restore drill each quarter",
+      "status": "Candidate"
+    },
+    {
+      "area": "Import size",
+      "candidate": "Files up to 50,000 rows per run; limits configurable (DRAFT-BE-R14)",
+      "status": "Candidate"
+    },
+    {
+      "area": "Audit retention",
+      "candidate": "Financial and payroll history retained at least 8 years; confirm statutory requirement",
+      "status": "Candidate - legal review"
+    },
+    {
+      "area": "Data residency",
+      "candidate": "Primary region in India",
+      "status": "Candidate"
+    }
+  ],
+  "observability": [
+    "Correlation ID per request and run ID per job carried through logs, outbox and external calls.",
+    "Metrics: request latency, error codes, import rows by disposition, outbox lag, sync failures.",
+    "Alerts for failed jobs, outbox lag and authentication anomalies to authorized recipients only."
+  ],
+  "worked_example": {
+    "component": "Employee Registration (emp_reg)",
+    "steps": [
+      "Entity administrator activates field, form and uniqueness config versions for the entity.",
+      "Web client loads the pinned form version and renders fields; required/help/error text come from config.",
+      "API validates transport DTO, AccessService checks write scope and field access.",
+      "UniqueKeyService validates the complete configured key and claims it transactionally.",
+      "Employee handler writes emp tables, field values, audit event and outbox event in one transaction.",
+      "Worker delivers outbox events (e.g. Sheet output, notifications) after commit.",
+      "Employee directory mart (vw_emp_directory) serves reports with the same access rules."
+    ]
+  },
+  "diagrams": [
+    {
+      "id": "context",
+      "title": "System context",
+      "mermaid": "flowchart LR\n  U[\"Users: admins, HR, finance, outlet staff\"] --> W[\"COS Web (Next.js)\"]\n  W --> A[\"COS API (Spring Boot modular monolith)\"]\n  A --> DB[(\"PostgreSQL\")]\n  A --> OS[(\"Private object storage\")]\n  A <--> IDP[\"OIDC identity provider\"]\n  WK[\"COS Worker\"] --> DB\n  WK <--> EXT[\"Petpooja / Zoho Books / Razorpay / Attendo / Aggregators\"]\n  WK <--> G[\"Google Sheets / Drive / Gmail\"]\n  GH[\"GitHub: governance + code\"] -. \"CI/CD\" .-> A"
+    },
+    {
+      "id": "layers",
+      "title": "Metadata-driven runtime layers",
+      "mermaid": "flowchart TB\n  M[\"Versioned metadata: objects, fields, forms, rules, permissions, mappings, reports\"] --> S\n  subgraph S[\"Shared platform services\"]\n    CFG[ConfigService] --- ACC[AccessService] --- UK[UniqueKeyService]\n    IMP[ImportService] --- REP[ReportService] --- ERR[ErrorService]\n  end\n  S --> H[\"Typed domain handlers per engine\"]\n  H --> P[(\"Domain-owned schemas + audit + outbox\")]\n  P --> V[\"Governed virtual marts\"] --> R[\"Reports, dashboards, exports, Sheets\"]"
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment view (candidate)",
+      "mermaid": "flowchart LR\n  subgraph ENV[\"Environment: local / test / staging / production\"]\n    WEB[\"web container\"] --> API[\"api container\"]\n    API --> SQL[(\"Managed PostgreSQL + PITR\")]\n    WKR[\"worker container (same image)\"] --> SQL\n    API --> BKT[(\"Object storage\")]\n    WKR --> BKT\n    SEC[\"Secret manager\"] -.-> API\n    SEC -.-> WKR\n  end\n  CI[\"GitHub Actions\"] -->|\"immutable image + migration step\"| ENV"
+    },
+    {
+      "id": "save-sequence",
+      "title": "Configured record save",
+      "mermaid": "sequenceDiagram\n  participant UI as Web\n  participant API as API\n  participant CFG as ConfigService\n  participant ACC as AccessService\n  participant UK as UniqueKeyService\n  participant H as Domain handler\n  participant DB as PostgreSQL\n  UI->>API: PATCH /api/v1/emp/{id} (configVersion, rowVer)\n  API->>ACC: checkWrite(principal, scope, fields)\n  API->>CFG: resolveConfig(scope, object, version)\n  API->>UK: validateKey + claimKey\n  API->>H: apply domain rules\n  H->>DB: update + history + audit + outbox (one transaction)\n  DB-->>API: committed\n  API-->>UI: EmpResDTO (new rowVer)"
+    },
+    {
+      "id": "import-sequence",
+      "title": "File import with preview",
+      "mermaid": "sequenceDiagram\n  participant U as User\n  participant API as API\n  participant W as Worker\n  participant DB as PostgreSQL\n  U->>API: createImport(source file, profile)\n  API->>DB: store job, raw file reference, hash\n  W->>DB: parse + stage rows + mapping + errors\n  U->>API: previewImport\n  API-->>U: row outcomes, errors, counts\n  U->>API: executeImport (confirmation)\n  W->>DB: recheck config/key/access; domain writes + audit\n  W-->>U: final counts and traceable errors"
+    }
+  ],
+  "pending_decisions": [
+    {
+      "ref": "SD-P01",
+      "topic": "Approve modular monolith as the COS architecture style"
+    },
+    {
+      "ref": "SD-P02",
+      "topic": "Record the baseline stack (Java 21, Spring Boot 4.1, JDBC, Flyway, PostgreSQL, Next.js/React/TypeScript) as Technology Stack Standard rules"
+    },
+    {
+      "ref": "SD-P03",
+      "topic": "Hosting provider and region"
+    },
+    {
+      "ref": "SD-P04",
+      "topic": "Identity provider and migration of baseline local password accounts"
+    },
+    {
+      "ref": "SD-P05",
+      "topic": "Tenancy boundaries: organisation vs legal entity vs franchise; sys_emp_id uniqueness scope"
+    },
+    {
+      "ref": "SD-P06",
+      "topic": "Document storage: PostgreSQL (baseline) vs private object storage"
+    },
+    {
+      "ref": "SD-P07",
+      "topic": "Rule expression language and metadata UI renderer library"
+    },
+    {
+      "ref": "SD-P08",
+      "topic": "Confirm non-functional targets (scale, latency, availability, RPO/RTO, retention, residency)"
+    },
+    {
+      "ref": "SD-P09",
+      "topic": "Verify external API entitlements: Petpooja, Zoho Books, Razorpay, Attendo"
+    }
+  ],
+  "change_history": [
+    {
+      "recorded_on": "26-Oct-2026",
+      "version": "0.1.0",
+      "summary": "Initial proposed system design covering style, stack, tenancy, metadata runtime, components, deployment, integration, security, NFR candidates and diagrams.",
+      "approval": "Pending"
+    }
+  ]
+}

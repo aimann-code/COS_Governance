@@ -24,6 +24,7 @@ Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[
 - [Virtual marts](catalogue/virtual-marts.md) · [Templates and upload storage](catalogue/upload-templates.md) · [Test plan](catalogue/test-plan.md)
 - [Common requirements](catalogue/common-requirements.md): 75 recorded requirements across 12 shared capability groups; implementation pending.
 - [Employee data design](catalogue/employee-data-design.md): proposed logical tables/relationships; no physical migration.
+- [System design](catalogue/system-design.md): proposed runtime architecture, technology stack, tenancy, deployment, integration patterns and diagrams (SYS-DESIGN-01); approval pending.
 - Proposed HRMS architecture: **5 modules / 28 components**, with shared capability boundaries and module data flows. [Browse HRMS](catalogue/architecture/hrms.md). Detailed BRD, code verification and pending ownership decisions remain open.
 - The six-group source model is approved: [source map](architecture/source-map.yaml). Migration and authority cutover remain pending.
 - Naming Standard **0.2.3**: frozen D67 base plus explicit NAM-LOWER-01 amendment to `sys_emp_id` / `emp_reg`; 53 terms and 12 base rules, plus scoped registration/view and readable documentation profiles. Existing contracts require reviewed migration.

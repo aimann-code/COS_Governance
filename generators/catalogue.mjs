@@ -65,7 +65,8 @@ export function buildCatalogue(src) {
       ["[Virtual marts](virtual-marts.md)","Database reporting grain and authority"],
       ["[Upload templates](upload-templates.md)","Where definitions, files, staging and DB records belong"],
       ["[Test plan](test-plan.md)","Planned full-flow tests and evidence requirements"],
-      ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"]
+      ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"],
+      ["[System design](system-design.md)","Proposed runtime architecture, stack, deployment and diagrams; approval pending"]
     ])+
     "\n## Browse the COS hierarchy\n\n"+
     a.filter(x=>["Suite","Engine","Module","Component"].includes(x.Object_Type)).map(r=>"- "+archLink(r)+" — "+r.Object_Type+"; "+r.Status).join("\n")+
@@ -252,6 +253,29 @@ export function buildCatalogue(src) {
     out["catalogue/virtual-marts.md"]=header("Virtual reporting marts")+v.status+"\n\n"+v.reporting_path+"\n\n"+
       table(["Mart","Proposed view","Grain","Inputs","Notes"],v.definitions.map(x=>[x.code,x.view,x.grain,x.inputs.join(", ")||"Pending domain schema",x.notes]))+
       "\n## Rules\n\n"+v.rules.map(x=>"- "+x).join("\n")+"\n\n[Canonical mart design](../architecture/virtual-marts.yaml) · [Developer guide](developer-guide.md)\n";
+  }
+  if(src.systemDesign) {
+    const y=src.systemDesign;
+    out["catalogue/system-design.md"]=header("System design")+
+      table(["Property","Value"],[["Reference",y.source_ref],["Version",y.version],["Stage",y.stage],["Approval",y.approval_status],["Implementation",y.implementation_status],["Verification",y.verification_status],["Publication",y.publication_status]])+
+      "\n"+y.scope+"\n\n**Not affected:** "+y.non_effects.join(" ")+"\n\n## Context\n\n"+y.context.summary+"\n\n"+
+      table(["Actor","Role"],y.context.actors)+"\n"+table(["External system","Use","State"],y.context.external_systems)+
+      "\n## Architecture style\n\n"+y.architecture_style.decision+"\n\n"+y.architecture_style.rationale.map(x=>"- "+x).join("\n")+
+      "\n\n### Module rules\n\n"+y.architecture_style.module_rules.map(x=>"- "+x).join("\n")+"\n\n"+y.architecture_style.extraction_criteria+"\n\n"+
+      table(["Alternative","Outcome"],y.architecture_style.alternatives_considered)+
+      "\n## Technology stack\n\n"+table(["Layer","Choice","State","Evidence","Notes"],y.technology_stack.map(x=>[x.layer,x.choice,x.state,x.evidence,x.notes]))+
+      "\n## Tenancy\n\n"+y.tenancy.model+"\n\nHierarchy: "+y.tenancy.hierarchy.join(" → ")+"\n\n"+y.tenancy.enforcement.map(x=>"- "+x).join("\n")+"\n\nOpen questions:\n\n"+y.tenancy.open_questions.map(x=>"- "+x).join("\n")+
+      "\n\n## Metadata runtime\n\n"+y.metadata_runtime.principle+"\n\n"+table(["Config state","Meaning"],y.metadata_runtime.lifecycle)+"\n"+y.metadata_runtime.rules.map(x=>"- "+x).join("\n")+"\n\n"+table(["Data","Placement"],y.metadata_runtime.data_placement)+
+      "\n## Runtime components\n\n"+table(["Component","Technology","Responsibility","Engines"],y.runtime_components.map(x=>[x.name,x.tech,x.responsibility,x.engine_refs]))+
+      "\n## Deployment\n\n"+table(["Environment","Purpose"],y.deployment.environments)+"\n"+table(["Unit","Behaviour"],y.deployment.units)+"\n"+y.deployment.rules.map(x=>"- "+x).join("\n")+"\n\nHosting candidate: "+y.deployment.hosting_candidate+
+      "\n\n## Integration patterns\n\n"+table(["Pattern","Used for","Flow","Idempotency"],y.integration_patterns.map(x=>[x.pattern,x.used_for,x.flow,x.idempotency]))+
+      "\n## Security\n\n"+y.security.map(x=>"- "+x).join("\n")+
+      "\n\n## Non-functional candidates\n\n"+table(["Area","Candidate","Status"],y.non_functional_candidates.map(x=>[x.area,x.candidate,x.status]))+
+      "\n## Observability\n\n"+y.observability.map(x=>"- "+x).join("\n")+
+      "\n\n## Worked example: "+y.worked_example.component+"\n\n"+y.worked_example.steps.map((x,i)=>(i+1)+". "+x).join("\n")+
+      "\n\n## Diagrams\n\n"+y.diagrams.map(d=>"### "+d.title+"\n\n```mermaid\n"+d.mermaid+"\n```\n").join("\n")+
+      "\n## Pending decisions\n\n"+table(["Ref","Topic"],y.pending_decisions.map(x=>[x.ref,x.topic]))+
+      "\n[Canonical system design](../architecture/system-design.yaml) · [Metadata standard](../architecture/metadata-driven-component-standard.yaml) · [Developer guide](developer-guide.md) · [Virtual marts](virtual-marts.md)\n";
   }
   if(src.uploads) {
     const u=src.uploads;

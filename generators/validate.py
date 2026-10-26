@@ -185,6 +185,14 @@ def main():
             "Duplicate mart view")
     require(len({r[0] for r in guide["test_cases"]}) == len(guide["test_cases"]),
             "Duplicate planned test reference")
+    system = read("architecture/system-design.yaml")
+    require(system["stage"] == "Draft" and system["approval_status"] == "Pending",
+            "System design must stay Draft/Pending until explicitly approved")
+    require(len({r["layer"] for r in system["technology_stack"]}) == len(system["technology_stack"]),
+            "Duplicate technology stack layer")
+    require(len({d["id"] for d in system["diagrams"]}) == len(system["diagrams"]), "Duplicate diagram id")
+    require(len({p["ref"] for p in system["pending_decisions"]}) == len(system["pending_decisions"]),
+            "Duplicate system design pending decision")
     print("PASS: naming additions, 18-section developer derivative, table formats, template profiles and mart definitions.")
 
     transcript = read("discussions/user-excerpts.json")

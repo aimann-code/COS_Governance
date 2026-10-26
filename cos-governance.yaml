@@ -26,6 +26,7 @@
     "shared_data_design": "architecture/shared-data-design.yaml",
     "upload_templates": "templates/upload-profiles.yaml",
     "virtual_marts": "architecture/virtual-marts.yaml",
+    "system_design": "architecture/system-design.yaml",
     "source_inventory": "architecture/source-inventory.yaml",
     "workflow": "standards/workflow.yaml",
     "approval_review": "decisions/approval-review.yaml",

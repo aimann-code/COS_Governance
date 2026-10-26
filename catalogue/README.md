@@ -25,6 +25,7 @@ Start here to browse definitions without reading YAML or JSON. Use the links bel
 | [Upload templates](upload-templates.md) | Where definitions, files, staging and DB records belong |
 | [Test plan](test-plan.md) | Planned full-flow tests and evidence requirements |
 | [Employee data design](employee-data-design.md) | Proposed logical tables and relationships; not deployed |
+| [System design](system-design.md) | Proposed runtime architecture, stack, deployment and diagrams; approval pending |
 
 ## Browse the COS hierarchy
 
