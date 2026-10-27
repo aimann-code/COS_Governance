@@ -193,6 +193,17 @@ def main():
     require(len({d["id"] for d in system["diagrams"]}) == len(system["diagrams"]), "Duplicate diagram id")
     require(len({p["ref"] for p in system["pending_decisions"]}) == len(system["pending_decisions"]),
             "Duplicate system design pending decision")
+    sections = system.get("platform_sections", [])
+    require(len({x["id"] for x in sections}) == len(sections), "Duplicate platform section id")
+    diagram_ids = {d["id"] for d in system["diagrams"]}
+    for section in sections:
+        require(section.get("title") and (section.get("summary") or section.get("bullets")),
+                "Incomplete platform section " + section["id"])
+        for ref in section.get("diagrams", []):
+            require(ref in diagram_ids, "Unknown diagram " + ref + " in " + section["id"])
+        for t in section.get("tables", []):
+            require(all(len(r) == len(t["headers"]) for r in t["rows"]),
+                    "Table row width mismatch in " + section["id"])
     print("PASS: naming additions, 18-section developer derivative, table formats, template profiles and mart definitions.")
 
     transcript = read("discussions/user-excerpts.json")

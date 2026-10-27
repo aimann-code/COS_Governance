@@ -66,7 +66,7 @@ export function buildCatalogue(src) {
       ["[Upload templates](upload-templates.md)","Where definitions, files, staging and DB records belong"],
       ["[Test plan](test-plan.md)","Planned full-flow tests and evidence requirements"],
       ["[Employee data design](employee-data-design.md)","Proposed logical tables and relationships; not deployed"],
-      ["[System design](system-design.md)","Proposed runtime architecture, stack, deployment and diagrams; approval pending"]
+      ["[System design](system-design.md)","Proposed metadata-driven platform: core, plug-in engines, metadata model, runtime, stack, deployment; approval pending"]
     ])+
     "\n## Browse the COS hierarchy\n\n"+
     a.filter(x=>["Suite","Engine","Module","Component"].includes(x.Object_Type)).map(r=>"- "+archLink(r)+" — "+r.Object_Type+"; "+r.Status).join("\n")+
@@ -256,6 +256,22 @@ export function buildCatalogue(src) {
   }
   if(src.systemDesign) {
     const y=src.systemDesign;
+    const diag=new Map((y.diagrams||[]).map(d=>[d.id,d]));
+    const placed=new Set();
+    const mermaid=d=>"### "+d.title+"\n\n```mermaid\n"+d.mermaid+"\n```\n";
+    const platformSections=y=>{
+      const secs=y.platform_sections||[];
+      if(!secs.length) return "";
+      let o="\n## Metadata-driven platform\n\nContents: "+secs.map(x=>"["+x.title+"](#"+slug(x.title)+")").join(" · ")+"\n";
+      for(const x of secs){
+        o+="\n## "+x.title+"\n\n"+(x.summary?x.summary+"\n\n":"");
+        for(const t of (x.tables||[])) o+=(t.title?"**"+t.title+"**\n\n":"")+table(t.headers,t.rows)+"\n";
+        if(x.bullets&&x.bullets.length) o+=x.bullets.map(b=>"- "+b).join("\n")+"\n\n";
+        if(x.code) o+="```"+x.code.lang+"\n"+x.code.text+"\n```\n\n";
+        for(const id of (x.diagrams||[])){ const d=diag.get(id); if(d){ o+=mermaid(d)+"\n"; placed.add(id);} }
+      }
+      return o;
+    };
     out["catalogue/system-design.md"]=header("System design")+
       table(["Property","Value"],[["Reference",y.source_ref],["Version",y.version],["Stage",y.stage],["Approval",y.approval_status],["Implementation",y.implementation_status],["Verification",y.verification_status],["Publication",y.publication_status]])+
       "\n"+y.scope+"\n\n**Not affected:** "+y.non_effects.join(" ")+"\n\n## Context\n\n"+y.context.summary+"\n\n"+
@@ -263,6 +279,7 @@ export function buildCatalogue(src) {
       "\n## Architecture style\n\n"+y.architecture_style.decision+"\n\n"+y.architecture_style.rationale.map(x=>"- "+x).join("\n")+
       "\n\n### Module rules\n\n"+y.architecture_style.module_rules.map(x=>"- "+x).join("\n")+"\n\n"+y.architecture_style.extraction_criteria+"\n\n"+
       table(["Alternative","Outcome"],y.architecture_style.alternatives_considered)+
+      platformSections(y)+
       "\n## Technology stack\n\n"+table(["Layer","Choice","State","Evidence","Notes"],y.technology_stack.map(x=>[x.layer,x.choice,x.state,x.evidence,x.notes]))+
       "\n## Tenancy\n\n"+y.tenancy.model+"\n\nHierarchy: "+y.tenancy.hierarchy.join(" → ")+"\n\n"+y.tenancy.enforcement.map(x=>"- "+x).join("\n")+"\n\nOpen questions:\n\n"+y.tenancy.open_questions.map(x=>"- "+x).join("\n")+
       "\n\n## Metadata runtime\n\n"+y.metadata_runtime.principle+"\n\n"+table(["Config state","Meaning"],y.metadata_runtime.lifecycle)+"\n"+y.metadata_runtime.rules.map(x=>"- "+x).join("\n")+"\n\n"+table(["Data","Placement"],y.metadata_runtime.data_placement)+
@@ -273,7 +290,7 @@ export function buildCatalogue(src) {
       "\n\n## Non-functional candidates\n\n"+table(["Area","Candidate","Status"],y.non_functional_candidates.map(x=>[x.area,x.candidate,x.status]))+
       "\n## Observability\n\n"+y.observability.map(x=>"- "+x).join("\n")+
       "\n\n## Worked example: "+y.worked_example.component+"\n\n"+y.worked_example.steps.map((x,i)=>(i+1)+". "+x).join("\n")+
-      "\n\n## Diagrams\n\n"+y.diagrams.map(d=>"### "+d.title+"\n\n```mermaid\n"+d.mermaid+"\n```\n").join("\n")+
+      "\n\n## Diagrams\n\n"+y.diagrams.filter(d=>!placed.has(d.id)).map(mermaid).join("\n")+
       "\n## Pending decisions\n\n"+table(["Ref","Topic"],y.pending_decisions.map(x=>[x.ref,x.topic]))+
       "\n[Canonical system design](../architecture/system-design.yaml) · [Metadata standard](../architecture/metadata-driven-component-standard.yaml) · [Developer guide](developer-guide.md) · [Virtual marts](virtual-marts.md)\n";
   }

@@ -4,7 +4,7 @@ Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[
 
 ## 👩‍💻 Developers: start here
 
-**[➡️ COS System Design](catalogue/system-design.md)** — architecture style, technology stack, tenancy, metadata runtime, deployment, integration patterns and diagrams (SYS-DESIGN-01, Draft — approval pending).
+**[➡️ COS System Design](catalogue/system-design.md)** — metadata-driven platform: COS Core and plug-in engines, engine manifest, metadata model, layering and versioning, runtime pipeline, generic API, data storage, UI rendering, events, security, COS Studio, technology stack, deployment and diagrams (SYS-DESIGN-01 v0.2, Draft — approval pending).
 
 Then read: [Developer guide](catalogue/developer-guide.md) · [Developer matrix](catalogue/developer-matrix.md) · [Table formats](catalogue/table-formats.md) · [Canonical YAML](architecture/system-design.yaml)
 
