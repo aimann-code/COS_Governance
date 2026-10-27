@@ -26,3 +26,9 @@ Missing shortcode allocations, exact type-prefix/casing policy, plural features/
 No original source snapshots are rewritten. No application changes, permission changes, branch renames, main merge or new assignments are performed. Approval facts remain in canonical decision/rule records; the review index links to them. Complete historical approval coverage is not claimed.
 
 Naming publication metadata was also reconciled: current Naming 0.2.3/base rule status strings no longer claim source publication is pending after PR4 integration. Previous strings remain in metadata history. No naming rule wording, controlled term, profile or version is changed by this status-only correction. Historical version records remain historical.
+
+## Explicit confirmation before creation — 23-Oct-2026
+
+The user instructed: `before creating anything always confirm`. The assistant previewed the rule: show proposed content, name, location and purpose, list pending approvals/exclusions, ask and wait for explicit approval; apply to files, documents, branches, repositories, registers, schemas, tables, code and skills. The user then instructed: `set it as ai standard update github`. This confirms the exact policy update and necessary existing-source/generated derivative changes. It does not authorize further branch setup, deletion, application changes, merging or other proposed naming/design work.
+
+The AI rule is recorded as AI-CREATE-CONFIRM-01. Other historical/pending standards retain their statuses. Branch setup remains paused while content is frozen. No new branch, repository, application resource or skill is created for this update.

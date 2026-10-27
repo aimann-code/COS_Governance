@@ -1,7 +1,7 @@
 # Approval evidence and pending decisions
 
 > Generated from maintained definitions. Do not edit this page directly.
-> Governance 0.3.8; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
+> Governance 0.3.9; naming 0.2.3; application evidence b2b156c44ba7744bf6cb81c19eb3a05d8633fdba.
 > Draft catalogue. Approval, implementation, verification and publication are separate.
 
 [Home](README.md) · [Relational tree](tree.md) · [Architecture](architecture.md) · [Standards](standards.md) · [Naming](naming.md) · [Features](features.md) · [Design](design.md) · [Implementation](implementation.md) · [Decisions](decisions.md)
@@ -24,6 +24,7 @@ Approval is not implementation. Main integration is not blanket approval of ever
 | GITHUB-CONFIRM-01 | Approved | Approval reconciliation and pending-approval checkpoint before every scoped GitHub update. | Version 0.1.1 amendment under review; previous policy already integrated | Instruction and review catalogue recorded; no automatic enforcement. | Repository validation; no claim that future human decisions are automated. | User: always asked any pending approval before updating; User: update; discussions/approval-reconciliation-23-Oct-2026.md |
 | APPROVAL-REVIEW-01 | Approved | Current evidence-backed corrections and pre-update protocol only. | Current change awaits reviewed integration | Evidence-backed metadata and generated review page | Repository reference/status checks; complete historical chat audit not claimed | User update following the reconciliation proposal; discussions/approval-reconciliation-23-Oct-2026.md |
 | TREE-VIEW-01 | Approved | Prepared tree and generator/navigation integration only; missing ownership and new shortcode allocations remain excluded. | PR5 update; not merged into main | Generated tree and generator regression checks delivered | See current PR checks; no physical database or full code inventory inferred | User still tree is not made; then update in backened after concrete preview.; discussions/relational-tree-23-Oct-2026.md |
+| AI-CREATE-CONFIRM-01 | Approved | AI creation-confirmation standard only; no unrelated creation or merge approval. | Review branch; not merged into main | Policy, contributor guidance and generated standard delivered; no automatic enforcement | Definition references and generated outputs checked; runtime enforcement not claimed | User before creating anything always confirm; User set it as ai standard update github; discussions/approval-reconciliation-23-Oct-2026.md |
 
 ## Pending decisions and approvals
 
@@ -43,6 +44,7 @@ Approval is not implementation. Main integration is not blanket approval of ever
 
 - Architecture/naming generated display columns use Short Code; stored property names and assigned shortcodes unchanged.
 - Relational tree generated from current canonical references, with catalogue and source navigation; does not allocate missing relationships.
+- AI creation-confirmation requirement recorded after explicit user instruction; no new resource or branch created for this update.
 
 ## Limits
 

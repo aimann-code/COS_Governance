@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "Approved stage/lifecycle direction; implementation of enforcement and Project board pending",
   "source_ref": "WORKFLOW-01",
   "recorded_on": "23-Oct-2026",
@@ -193,5 +193,19 @@
     ],
     "repeat_rule": "Existing affirmative authorization remains valid for its stated scope; do not ask the same permission again.",
     "review_source": "decisions/approval-review.yaml"
+  },
+  "ai_creation_gate": {
+    "rule_ref": "AI-CREATE-CONFIRM-01",
+    "rule": "Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.",
+    "preview_fields": [
+      "Proposed content or concrete scope",
+      "Name",
+      "Location",
+      "Purpose",
+      "Pending approvals",
+      "Exclusions"
+    ],
+    "scope": "AI actions creating stored artifacts/resources, not a change to human application forms",
+    "evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
   }
 }

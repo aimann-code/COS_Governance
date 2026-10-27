@@ -164,9 +164,9 @@
       "Draft_Ref": "STD-DRAFT-13",
       "Standard_Name": "AI / Analytics Standard",
       "Purpose": "AI Chat/output, analytical definitions and evaluation",
-      "Version": "0.1.0",
+      "Version": "0.1.1",
       "Catalogue_Direction": "Selected by user",
-      "Rule_Completion": "Partial / requires rule review",
+      "Rule_Completion": "Creation-confirmation rule approved; earlier AI/output rules retain their individual statuses and pending reviews",
       "Owner": "",
       "Source": "Current design chat; 21-Oct-2026. Temporary Draft_Ref only; no permanent IDs issued.",
       "File_Slug": "ai-analytics"
@@ -2512,6 +2512,21 @@
       "Publication_Status": "Integrated into main through PR4 for stated scope",
       "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df",
       "Verification_Status": "Repository reference checks passed; no automated chat synchronization claimed."
+    },
+    {
+      "Review Ref": "AI-CREATE-CONFIRM-01",
+      "Scope": "COS AI execution",
+      "Standard Name": "AI / Analytics Standard",
+      "Rule": "Before creating any stored artifact or external resource, first show its proposed content or concrete scope, name, location and purpose, together with pending approvals and exclusions. Ask for confirmation and wait for an explicit affirmative instruction covering that scope before creation. This applies to files, documents, branches, repositories, registers, schemas, tables, code and skills, including reversible creations. An instruction authorizing an already-previewed specific update is valid confirmation for that update and its necessary commits/generated derivatives; do not repeatedly ask for the same confirmed scope. Questions, suggestions, silence and unrelated approvals do not authorize creation. Scope changes require a new preview and confirmation. Read-only inspection and in-chat previews can proceed. Do not create, rename, delete or merge unrelated resources, change permissions or publish/deploy under this confirmation.",
+      "Decision Ref": "AI-CREATE-CONFIRM-01",
+      "Version": "0.1.0",
+      "Approval Status": "Approved explicit user instruction",
+      "Approval_Scope": "Confirmation before creating any stored artifact or external resource; exact scoped authorization persists.",
+      "Approval_Evidence": "User before creating anything always confirm; then set it as ai standard update github.",
+      "Publication_Status": "This rule is in the review branch; main integration pending",
+      "Implementation_Status": "Repository instruction and generated standard recorded; no automatic lock or runtime permission enforcement installed",
+      "Verification_Status": "Source/reference and catalogue checks only",
+      "Source": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "rule_details": [
@@ -8142,6 +8157,46 @@
       "Mapping_Status": "User-authorized scoped supplement",
       "Rule_Approval": "Approved for stated governance scope; see separate publication/implementation evidence",
       "Source": "CHAT-SOURCE-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "AI / Analytics Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Tool Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Workspace Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
+    },
+    {
+      "Rule_Ref": "AI-CREATE-CONFIRM-01",
+      "Standard_Name": "Documentation Standard",
+      "Rule_Source_Tab": "Repository maintained definition",
+      "Version": "0.1.0",
+      "Applicability": "AI creation of stored artifacts and resources; not an application registration policy",
+      "Mapping_Status": "Explicitly approved AI creation-confirmation policy",
+      "Rule_Approval": "Approved user instruction; main integration pending",
+      "Source": "AI-CREATE-CONFIRM-01"
     }
   ],
   "versions": [
@@ -8483,6 +8538,16 @@
         }
       ],
       "Publication_Evidence": "https://github.com/aimann-code/COS_Governance/pull/4 @ bd87cd2f41cf3ec5ad1b78aca0081d25937e46df"
+    },
+    {
+      "Standard_Ref": "STD-DRAFT-13",
+      "Version": "0.1.1",
+      "Approval_Status": "AI-CREATE-CONFIRM-01 approved only; no blanket approval of other AI rules",
+      "Publication_Status": "Pending reviewed integration",
+      "Effective_From": "",
+      "Effective_To": "",
+      "Supersedes": "0.1.0 within added confirmation policy only",
+      "Evidence": "discussions/approval-reconciliation-23-Oct-2026.md"
     }
   ],
   "applicability": [

@@ -1,6 +1,6 @@
 # COS_Governance
 
-Private COS governance migration draft 0.3.8, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
+Private COS governance migration draft 0.3.9, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
 ## Architecture explorer
 
@@ -94,3 +94,5 @@ No automatic chat synchronization or technical editor lock is configured.
 ## Relational tree
 
 [Browse the COS relational tree](catalogue/tree.md). Expand architecture, features, schema/table/field, standards, naming, maintained files and skills policy. It links existing canonical records and shows missing mappings explicitly.
+
+AI creation requires a preview of content/scope, name, location and purpose, disclosure of pending approvals/exclusions, and explicit confirmation. See [AI / Analytics Standard](catalogue/standards/ai-analytics.md) and [approval review](catalogue/approval-review.md).

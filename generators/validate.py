@@ -94,6 +94,10 @@ def main():
     checkpoint = workflow['pre_update_checkpoint']
     require(checkpoint['questions'] == ['Any pending approvals to resolve before this update?', 'Update Git Hub - Yes/No?'], 'Missing pending-approval checkpoint')
     require(set(checkpoint['separate_statuses']) == {'approval', 'publication', 'implementation', 'verification'}, 'Approval state must remain separate')
+    creation_gate = workflow['ai_creation_gate']
+    creation_rule = next(r for r in standards['rules'] if r['Review Ref'] == creation_gate['rule_ref'])
+    require(creation_rule['Rule'] == creation_gate['rule'] and creation_rule['Approval_Evidence'], 'Creation-confirmation policy/evidence mismatch')
+    require(set(creation_gate['preview_fields']) == {'Proposed content or concrete scope', 'Name', 'Location', 'Purpose', 'Pending approvals', 'Exclusions'}, 'Incomplete creation preview')
     approval_review = read('decisions/approval-review.yaml')
     current_decisions = {r['ref']: r for r in read('decisions/decisions.yaml')['discussion_directions']}
     require(len(approval_review['reconciled_refs']) == len(set(approval_review['reconciled_refs'])), 'Duplicate approval review reference')
