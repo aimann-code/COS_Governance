@@ -305,6 +305,7 @@
     "catalogue/standards/url.md",
     "catalogue/standards/versioning.md",
     "catalogue/standards/workspace.md",
+    "catalogue/system-design.md",
     "catalogue/table-formats.md",
     "catalogue/tables/agg-agg.md",
     "catalogue/tables/audit-change-event.md",

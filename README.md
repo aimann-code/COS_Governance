@@ -2,6 +2,12 @@
 
 Private COS governance migration draft 0.3.9, recorded 23-Oct-2026. Open the **[COS Catalogue](catalogue/README.md)** to browse readable pages. [Source manifest](cos-governance.yaml).
 
+## 👩‍💻 Developers: start here
+
+**[➡️ COS System Design](catalogue/system-design.md)** — metadata-driven platform: COS Core and plug-in engines, engine manifest, metadata model, layering and versioning, runtime pipeline, generic API, data storage, UI rendering, events, security, COS Studio, technology stack, deployment and diagrams (SYS-DESIGN-01 v0.2, Draft — approval pending).
+
+Then read: [Developer guide](catalogue/developer-guide.md) · [Developer matrix](catalogue/developer-matrix.md) · [Table formats](catalogue/table-formats.md) · [Canonical YAML](architecture/system-design.yaml)
+
 ## Architecture explorer
 
 **[Browse the complete clickable COS hierarchy](ARCHITECTURE.md)** — Platform → 9 suites → 47 engines → recorded modules and components. The HRMS design currently has 5 proposed modules and 28 proposed components; other engine-level detail is marked **Pending** rather than inferred.
@@ -24,6 +30,7 @@ Private COS governance migration draft 0.3.9, recorded 23-Oct-2026. Open the **[
 - [Virtual marts](catalogue/virtual-marts.md) · [Templates and upload storage](catalogue/upload-templates.md) · [Test plan](catalogue/test-plan.md)
 - [Common requirements](catalogue/common-requirements.md): 75 recorded requirements across 12 shared capability groups; implementation pending.
 - [Employee data design](catalogue/employee-data-design.md): proposed logical tables/relationships; no physical migration.
+- [System design](catalogue/system-design.md): proposed runtime architecture, technology stack, tenancy, deployment, integration patterns and diagrams (SYS-DESIGN-01); approval pending.
 - Proposed HRMS architecture: **5 modules / 28 components**, with shared capability boundaries and module data flows. [Browse HRMS](catalogue/architecture/hrms.md). Detailed BRD, code verification and pending ownership decisions remain open.
 - The six-group source model is approved: [source map](architecture/source-map.yaml). Migration and authority cutover remain pending.
 - Naming Standard **0.2.3**: frozen D67 base plus explicit NAM-LOWER-01 amendment to `sys_emp_id` / `emp_reg`; 53 terms and 12 base rules, plus scoped registration/view and readable documentation profiles. Existing contracts require reviewed migration.

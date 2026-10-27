@@ -20,6 +20,7 @@ const input = {
   sharedData: read('architecture/shared-data-design.yaml'),
   guide: read('architecture/developer-guide.yaml'),
   marts: read('architecture/virtual-marts.yaml'),
+  systemDesign: read('architecture/system-design.yaml'),
   uploads: read('templates/upload-profiles.yaml'),
   workflow: read('standards/workflow.yaml'),
   approvalReview: read('decisions/approval-review.yaml'),
