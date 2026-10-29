@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "stage": "Draft",
+  "working_user": "Ashish",
+  "recorded_on": "29-Oct-2026",
+  "timezone": "Asia/Calcutta",
+  "approval": {
+    "scope": "Create COS_Finance_Engine from the linked commit and add README, source policy and reference catalogue",
+    "evidence": "User supplied Working user ashish and replied yes to the explicit three-file creation preview",
+    "limits": "Creation approval does not approve unresolved accounting/design decisions, publication, implementation or source migration"
+  },
+  "repository": {
+    "name": "aimann-code/COS_Governance",
+    "branch": "COS_Finance_Engine",
+    "base_commit": "ae5b1a17cb0cbcda0ea5f7cf0b13e9c002cf6ac2"
+  },
+  "raw_source": {
+    "provider": "google_drive",
+    "name": "10_RAW_DATA",
+    "file_id": "1MbNta9iM8x-3nJL4C-YeJye1aFWZuB7Y",
+    "url": "https://drive.google.com/drive/folders/1MbNta9iM8x-3nJL4C-YeJye1aFWZuB7Y",
+    "selection": "User-designated raw-file root; select report/provider subfolders explicitly through configuration",
+    "access": "Private source; repository reference grants no Drive access",
+    "runtime_connection": "Resolve authorized connection and credentials from private environment configuration"
+  },
+  "excluded_subtrees": [
+    {
+      "name": "02_HR",
+      "file_id": "1iHZrOzdjAyvIQEe67zzjnlPchTPLrh79",
+      "reason": "Outside finance intake scope; not traversed for this update"
+    }
+  ],
+  "source_rules": [
+    "Keep originals unchanged in approved private Drive storage; do not copy raw financial/employee records or credentials into GitHub.",
+    "Retain historical source folder/sheet references; no move, deletion, authority cutover or new sharing is performed.",
+    "Record source file/revision/checksum, source editor/update time when available, importer/time, sheet/table/row/column and run/configuration versions; do not infer missing metadata.",
+    "Resolve Report Profile first and extract each table through its applicable Table Profile; inventory unsupported/unmapped structures explicitly.",
+    "Keep raw evidence separate from cleaned/standard facts, calculations and derived reports.",
+    "Classify summary, helper, copied and pivot sections so they do not duplicate transaction amounts.",
+    "Separate source-file identity from run identity and business-record identity; retain overlapping/conflicting versions for review.",
+    "Verify actual file signature, MIME and layout; an XLSX may be labelled ZIP and source layouts can evolve.",
+    "Preserve source IDs as text, duplicate header occurrences and literal source signs.",
+    "Native Google Sheets outputs require authorized destination/range preview and the applicable append/clear-range confirmation."
+  ],
+  "catalogue": {
+    "path": "source-references.yaml",
+    "purpose": "Reference navigation and evidence coverage, not import authorization or a runtime file register",
+    "source_urls": "Persist only observed/user-supplied URLs; mapped attachment IDs without an observed original URL retain null URL",
+    "status": "Initial catalogue; metadata discovery is not complete content inspection",
+    "authority": "Master/mapping authority unresolved; registering a link does not activate it",
+    "coverage": "Read per-reference status and catalogue coverage; unexpanded folders remain explicitly recorded"
+  },
+  "document_rules": {
+    "canonical_source": "Maintain requirements, profile definitions, rules, design and guides once in GitHub; link generated views and historical evidence",
+    "real_data": "Private Drive/DB only; no real transaction samples embedded in this update",
+    "skills": "Inherited Ownly proposal remains historical Draft evidence. Application-specific skill ownership/transfer and runtime installation remain pending",
+    "later_governance": "The requested base predates later main/cos_arch_draft updates. Integration requires separate reviewed scope; no global standard changed here"
+  },
+  "pending": [
+    "Application repository, technology baseline and named reviewers",
+    "Finance modules/components and approved requirement/design baseline",
+    "Complete report/table profile samples and field mappings",
+    "Canonical master authority, legal-entity and Zoho organization/account/contact IDs",
+    "Accounting/GST/TDS treatment, matching/allocation, numbering and correction policies",
+    "Durable operational source register, connector implementation, schedules, notification recipients and access controls"
+  ],
+  "verification": {
+    "performed": [
+      "Direct listing of designated root and selected source folders",
+      "JSON-compatible YAML syntax and reference uniqueness checks",
+      "Repository content/diff readback after commit"
+    ],
+    "not_performed": [
+      "Full recursive raw-root inventory",
+      "Fresh content read/access check for every reference",
+      "Financial acceptance tests, formula recalculation, posting, scheduling or deployment"
+    ]
+  }
+}
